@@ -1,0 +1,73 @@
+---
+import logo from '../assets/logo.svg';
+---
+<header class="hero">
+  <div class="hero-content">
+    <div class="logo">
+      <!-- PEGA AQUÍ TU SVG TAL CUAL -->
+      <!-- (no hace falta cambiar nada dentro del SVG) -->
+       <img id="logo" src={logo.src} alt="" fetchpriority="high" />
+    </div>
+
+    <div class="hero-text">
+      <h1>Aplicaciones Hidráulicas del Tajo</h1>
+      <p>
+        Especialistas en soluciones hidráulicas, riego eficiente y gestión técnica del agua.
+      </p>
+    </div>
+  </div>
+</header>
+<style>
+    .hero {
+  background: linear-gradient(
+    135deg,
+    #1568A7 0%,
+    #0f3558 100%
+  );
+  color: white;
+  padding: 3.5rem 1.5rem;
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.logo svg {
+  width: 110px;
+  height: auto;
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.hero-text p {
+  margin-top: 0.75rem;
+  max-width: 620px;
+  color: #e5eef7;
+  font-size: 1.05rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo svg {
+    width: 90px;
+  }
+}
+
+</style>
