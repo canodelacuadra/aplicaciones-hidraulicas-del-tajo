@@ -1,5 +1,6 @@
 ---
 import Header from "../components/header.astro";
+import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
 ---
 
@@ -9,18 +10,20 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <title>{title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-  </body>
-  <Header></Header>
+    <Header />
 
     <main>
       <slot />
     </main>
-
-    <footer>
-      <p style=" color:#f5f7fa; ">📍 Tienda física · 📞 600 000 000</p>
-    </footer>
+    <Footer />
   </body>
 </html>
 
@@ -32,21 +35,16 @@ const { title } = Astro.props;
     --light: #f5f7fa;
   }
   body {
-    font-family: system-ui, sans-serif;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
     margin: 0;
     background: var(--bg);
     color: var(--dark);
   }
 
   header {
-    padding:1em;
+    padding: 1em;
     background: var(--primary);
     color: var(--light);
-  }
-
-  footer {
-    background: #0f3558;
-       color: var(--light);
   }
 
   main {
