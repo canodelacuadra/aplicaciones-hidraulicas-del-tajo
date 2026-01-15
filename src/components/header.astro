@@ -1,15 +1,14 @@
 ---
 import logo from '../assets/logo.svg';
 ---
+
 <header class="hero">
-  <div class="hero-content">
-    <div class="logo">
-      <!-- PEGA AQUÍ TU SVG TAL CUAL -->
-      <!-- (no hace falta cambiar nada dentro del SVG) -->
+  <div class="hero-content animate-container">
+    <div class="logo animate-logo">
        <img id="logo" src={logo.src} alt="" fetchpriority="high" />
     </div>
 
-    <div class="hero-text">
+    <div class="hero-text animate-text">
       <h1>Aplicaciones Hidráulicas del Tajo</h1>
       <p>
         Especialistas en soluciones hidráulicas, riego eficiente y gestión técnica del agua.
@@ -69,5 +68,41 @@ import logo from '../assets/logo.svg';
     width: 90px;
   }
 }
+/* Animaciones de entrada */
+.animate-container {
+  overflow: hidden;
+}
+
+.animate-logo {
+  animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+.animate-text {
+  opacity: 0;
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .animate-logo,
+  .animate-text {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 
 </style>
