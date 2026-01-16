@@ -1,12 +1,21 @@
 ---
 
 ---
+
 <footer class="site-footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path
+        d="M0,60 C240,40 480,80 720,60 960,40 1200,0 1440,20 L1440,0 L0,0 Z"
+        fill="#1568A7"></path>
+    </svg>
+  </div>
   <div class="footer-content">
     <div class="footer-brand">
       <h3>Aplicaciones Hidráulicas del Tajo</h3>
       <p>
-        Soluciones profesionales en hidráulica, riego y gestión eficiente del agua.
+        Soluciones profesionales en hidráulica, riego y gestión eficiente del
+        agua.
       </p>
     </div>
 
@@ -17,12 +26,27 @@
           📍 <span>Tienda física</span>
         </li>
         <li>
-          📞 <span>600 000 000</span>
+          📞 <a href="tel:+34687416029">687 41 60 29</a>
         </li>
         <li>
-          ✉️ <span>info@ahtajo.es</span>
+          ✉️ <a href="mailto:info@ahtajo.es">info@ahtajo.com</a>
         </li>
       </ul>
+    </div>
+    <div class="footer-map">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-4.288%2C39.982%2C-4.268%2C39.992&layer=mapnik&marker=39.987%2C-4.278"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      <a
+        href="https://www.openstreetmap.org/?mlat=39.987&mlon=-4.278#map=11/39.987/-4.278"
+        target="_blank"
+        rel="noopener"
+        class="map-link"
+      >
+        Ver mapa ampliado
+      </a>
     </div>
   </div>
 
@@ -30,91 +54,154 @@
     <p>© {new Date().getFullYear()} Aplicaciones Hidráulicas del Tajo</p>
   </div>
 </footer>
+<a
+  href="https://wa.me/34687416029"
+  class="whatsapp-button"
+  target="_blank"
+  rel="noopener"
+  aria-label="Contactar por WhatsApp"
+>
+  💬
+</a>
+
 
 <style>
-     footer {
-      background: linear-gradient(
-    135deg,
-    #1568A7 0%,
-    #0f3558 100%
-  );
-  color: white;
-  padding: 1.5rem 1.5rem;
-
-  }
   .site-footer {
-  background: linear-gradient(
-    135deg,
-    #1568A7 0%,
-    #0f3558 100%
-  );
-  color: #e5eef7;
-  margin-top: 4rem;
-}
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    color: #e5eef7;
+    margin-top: 0;
+  }
 
-.footer-content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem 2rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-}
+  .footer-wave {
+    width: 100%;
+    line-height: 0;
+  }
 
-.footer-brand h3 {
-  margin: 0 0 0.75rem;
-  font-size: 1.2rem;
-  color: white;
-}
+  .footer-wave svg {
+    width: 100%;
+    height: 70px;
+    display: block;
+  }
 
-.footer-brand p {
-  margin: 0;
-  max-width: 420px;
-  line-height: 1.5;
-}
-
-.footer-contact h4 {
-  margin-bottom: 0.75rem;
-  color: white;
-}
-
-.footer-contact ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-contact li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.15);
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #d1dbe6;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
+  .footer-wave path {
+    fill: #f5f7fa; /* mismo color que fondo de la web */
+  }
   .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.2rem;
+    color: white;
   }
 
   .footer-brand p {
-    margin: 0 auto;
+    margin: 0;
+    max-width: 420px;
+    line-height: 1.5;
+     color: white;
+     font-style: italic;
+   
+  }
+
+  .footer-contact h4 {
+    margin-bottom: 0.75rem;
+    color: white;
+  }
+
+  .footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .footer-contact li {
-    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #d1dbe6;
+  }
+  .footer-bottom p{
+       color: #d1dbe6;
+       font-weight: bold;
+
+  }
+  .footer-contact a {
+    color: #e5eef7;
+    text-decoration: none;
+  }
+
+  .footer-contact a:hover {
+    text-decoration: underline;
+  }
+.footer-map iframe {
+  width: 100%;
+  max-width: 320px;
+  height: 180px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
+.map-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #d1dbe6;
+  text-decoration: underline;
+}
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .footer-brand p {
+      margin: 0 auto;
+    }
+
+    .footer-contact li {
+      justify-content: center;
+    }
+  }
+  .whatsapp-button {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  background-color: #25d366;
+  color: white;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  z-index: 1000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
 
 </style>
-
