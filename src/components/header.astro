@@ -1,9 +1,10 @@
 ---
 import logo from "../assets/logo.svg";
+import Nav from "./Nav.astro";
 ---
 
 <header class="hero sticky-header">
-  <div class="hero-content animate-container">
+<div class="hero-content animate-container">
     <div class="logo animate-logo">
       <img
         id="logo"
@@ -20,9 +21,11 @@ import logo from "../assets/logo.svg";
         técnica del agua.
       </p>
     </div>
+    
+    <Nav />
   </div>
   
-  <div class="wave">
+<div class="wave">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
       <path
         d="M0,40 C240,80 480,0 720,20 960,40 1200,80 1440,60 L1440,120 L0,120 Z"
@@ -56,7 +59,12 @@ import logo from "../assets/logo.svg";
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 1rem;
 }
 
 .logo {
@@ -164,11 +172,12 @@ import logo from "../assets/logo.svg";
 /* ===== WAVE ===== */
 .wave {
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  pointer-events: none;
 }
 
 .wave svg {
@@ -178,7 +187,7 @@ import logo from "../assets/logo.svg";
 }
 
 .wave path {
-  fill: white;
+  fill: #f8fbff;
   opacity: 0.95;
 }
 
