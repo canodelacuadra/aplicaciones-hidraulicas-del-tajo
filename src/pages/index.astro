@@ -70,6 +70,9 @@ import recambiosData from "../data/recambios.json";
             <span class="categoria-icono">{categoria.icono}</span>
             <h5>{categoria.nombre}</h5>
             <p>{categoria.descripcion}</p>
+            <button class="cta-button" onclick="verMaquinaria('{categoria.id}')">
+              Ver maquinaria disponible
+            </button>
           </div>
         ))}
       </div>
@@ -102,7 +105,21 @@ import recambiosData from "../data/recambios.json";
 
     </div>
   </section>
-</BaseLayout>
+  </BaseLayout>
+
+<script>
+  function verMaquinaria(categoriaId) {
+    // Por ahora mostramos un mensaje, en el futuro podría redirigir a una página específica
+    const categoriaNombres = {
+      'construccion': 'Construcción',
+      'agricola': 'Agrícola', 
+      'jardin': 'Jardín',
+      'forestal': 'Forestal'
+    };
+    
+    alert(`Próximamente podrás ver toda nuestra maquinaria disponible para el sector de ${categoriaNombres[categoriaId]}`);
+  }
+</script>
 
 <style>
 
@@ -288,6 +305,8 @@ import recambiosData from "../data/recambios.json";
     text-align: center;
     border: 2px solid rgba(21, 104, 167, 0.1);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
   }
 
   .categoria-item:hover {
@@ -308,10 +327,33 @@ import recambiosData from "../data/recambios.json";
   }
 
   .categoria-item p {
-    margin: 0;
+    margin: 0 0 1rem 0;
     color: #666;
     font-size: 0.9rem;
     line-height: 1.4;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(21, 104, 167, 0.3);
+  }
+
+  .cta-button:active {
+    transform: translateY(0);
   }
 
   /* Responsive */
