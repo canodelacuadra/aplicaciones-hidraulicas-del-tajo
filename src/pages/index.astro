@@ -1,89 +1,388 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { servicios } from "../data/servicios.js";
+import tratamientoAguasData from "../data/tratamiento-aguas.json";
+import maquinariaData from "../data/maquinaria.json";
+import recambiosData from "../data/recambios.json";
 ---
 
 <BaseLayout title="Aplicaciones Hidráulicas del Tajo">
-  <h2>Nuestros Servicios</h2>
+  <!-- Áreas de Negocio -->
+  <section class="areas-negocio">
+    <h2>Nuestras Áreas de Negocio</h2>
+    
+    <!-- Tratamiento de Aguas -->
+    <div class="area-card">
+      <div class="area-image">
+        <img src="/images/tratamiento-aguas-hero.jpg" alt="Tratamiento de aguas industriales" loading="lazy" />
+      </div>
+      <div class="area-header">
+        <div class="area-icon svg-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2.25c-4.5 4.5-7.5 8-7.5 11.25A7.5 7.5 0 0012 21a7.5 7.5 0 007.5-7.5C19.5 10.25 16.5 6.75 12 2.25z"/>
+            <path d="M12 15.75a3 3 0 100-6 3 3 0 000 6z"/>
+          </svg>
+        </div>
+        <h3>{tratamientoAguasData.titulo}</h3>
+      </div>
+      <p>{tratamientoAguasData.descripcion}</p>
+      <div class="servicios-lista">
+        {tratamientoAguasData.servicios.map((servicio) => (
+          <div class="servicio-item">
+            <span class="servicio-icono">{servicio.icono}</span>
+            <div>
+              <h4>{servicio.nombre}</h4>
+              <p>{servicio.descripcion}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-  <section class="servicios">
-    {servicios.map((servicio) => (
-      <article class="servicio">
-        <div class="servicio-image">
-    <img
-      src={servicio.image}
-      alt={servicio.title}
-      loading="lazy"
-    />
-  </div>
-        <span class="icono" set:html={servicio.icon}>{servicio.icon}</span>
-        <h3>{servicio.title}</h3>
-        <p>{servicio.description}</p>
-      </article>
-    ))}
+    </div>
+
+    <!-- Maquinaria -->
+    <div class="area-card">
+      <div class="area-image">
+        <img src="/images/maquinaria-profesional.jpg" alt="Maquinaria profesional para construcción y agricultura" loading="lazy" />
+      </div>
+      <div class="area-header">
+        <div class="area-icon svg-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="9" width="18" height="12" rx="2"/>
+            <path d="M9 9V7a3 3 0 016 0v2"/>
+            <circle cx="12" cy="15" r="1"/>
+          </svg>
+        </div>
+        <h3>{maquinariaData.titulo}</h3>
+      </div>
+      <p>{maquinariaData.descripcion}</p>
+      <div class="servicios-grid">
+        {maquinariaData.servicios.map((servicio) => (
+          <div class="servicio-card">
+            <span class="servicio-icono">{servicio.icono}</span>
+            <h4>{servicio.nombre}</h4>
+            <p>{servicio.descripcion}</p>
+          </div>
+        ))}
+      </div>
+      <div class="categorias-grid">
+        {maquinariaData.categorias.map((categoria) => (
+          <div class="categoria-item">
+            <span class="categoria-icono">{categoria.icono}</span>
+            <h5>{categoria.nombre}</h5>
+            <p>{categoria.descripcion}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+
+    <!-- Recambios -->
+    <div class="area-card">
+      <div class="area-image">
+        <img src="/images/recambios-consumibles.jpg" alt="Recambios y consumibles para maquinaria" loading="lazy" />
+      </div>
+      <div class="area-header">
+        <div class="area-icon svg-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3>{recambiosData.titulo}</h3>
+      </div>
+      <p>{recambiosData.descripcion}</p>
+      <div class="categorias-grid">
+        {recambiosData.categorias.map((categoria) => (
+          <div class="categoria-item">
+            <span class="categoria-icono">{categoria.icono}</span>
+            <h5>{categoria.nombre}</h5>
+            <p>{categoria.descripcion}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
   </section>
 </BaseLayout>
 
 <style>
-  .servicios {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-    margin-top: 2.5rem;
-    animation: fadeUp 0.8s ease both;
+
+
+  /* Áreas de Negocio */
+  .areas-negocio {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
 
-  .servicio {
-    background: white;
-    padding: 1.75rem;
-    border-radius: 14px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .servicio:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
-  }
-
-  .icono {
+  .areas-negocio h2 {
+    text-align: center;
     font-size: 2rem;
-    display: inline-block;
-    margin-bottom: 0.75rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    color: #1568a7;
   }
 
-  h3 {
-    margin: 0.25rem 0 0.5rem;
+  .area-card {
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 3rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(21, 104, 167, 0.1);
+    overflow: hidden;
   }
 
-  @keyframes fadeUp {
+  .area-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .area-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .area-card:hover .area-image img {
+    transform: scale(1.05);
+  }
+
+
+
+  .area-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .area-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 2rem 2.5rem 0;
+  }
+
+  .area-icon {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .area-icon.svg-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .area-header h3 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #1568a7;
+  }
+
+  .area-card > p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    padding: 0 2.5rem;
+  }
+
+  /* Servicios Lista */
+  .servicios-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 2.5rem;
+  }
+
+  .servicio-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(21, 104, 167, 0.05);
+    border-radius: 12px;
+    transition: background 0.3s ease;
+  }
+
+  .servicio-item:hover {
+    background: rgba(21, 104, 167, 0.1);
+  }
+
+  .servicio-icono {
+    font-size: 2rem;
+    min-width: 50px;
+    text-align: center;
+  }
+
+  .servicio-item h4 {
+    margin: 0 0 0.5rem;
+    color: #1568a7;
+  }
+
+  .servicio-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  /* Servicios Grid */
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0 2.5rem;
+  }
+
+  .servicio-card {
+    background: rgba(21, 104, 167, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .servicio-card:hover {
+    transform: translateY(-2px);
+    background: rgba(21, 104, 167, 0.1);
+  }
+
+  .servicio-card .servicio-icono {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .servicio-card h4 {
+    margin: 0 0 0.5rem;
+    color: #1568a7;
+  }
+
+  .servicio-card p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+  }
+
+  /* Categorías Grid */
+  .categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2.5rem 2rem;
+  }
+
+  .categoria-item {
+    background: rgba(21, 104, 167, 0.03);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid rgba(21, 104, 167, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .categoria-item:hover {
+    background: rgba(21, 104, 167, 0.08);
+    border-color: rgba(21, 104, 167, 0.3);
+  }
+
+  .categoria-icono {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .categoria-item h5 {
+    margin: 0 0 0.5rem;
+    color: #1568a7;
+    font-size: 1.1rem;
+  }
+
+  .categoria-item p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+
+    .area-header {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .area-icon {
+      width: 70px;
+      height: 70px;
+      font-size: 2.5rem;
+    }
+
+    .area-icon svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .area-image {
+      height: 180px;
+    }
+
+    .servicios-grid,
+    .categorias-grid,
+    .servicios-lista {
+      padding: 0 1.5rem;
+    }
+
+
+
+    .area-card > p {
+      padding: 0 1.5rem;
+    }
+
+    .servicio-item {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  /* Animaciones */
+  @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  .servicio-image {
-  margin: -1.75rem -1.75rem 1rem;
-  overflow: hidden;
-  border-radius: 14px 14px 0 0;
-}
 
-.servicio-image img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
+  .area-card {
+    animation: fadeInUp 0.8s ease both;
+  }
 
-.servicio:hover .servicio-image img {
-  transform: scale(1.05);
-}
+  .area-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
 
+  .area-card:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  .area-card:nth-child(4) {
+    animation-delay: 0.6s;
+  }
 </style>
 
 

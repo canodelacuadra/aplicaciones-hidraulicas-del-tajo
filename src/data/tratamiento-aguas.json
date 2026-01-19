@@ -1,0 +1,44 @@
+{
+  "titulo": "Tratamiento de Aguas",
+  "subtitulo": "Soluciones integrales para tratamiento de aguas",
+  "descripcion": "Especialistas en tratamiento de aguas limpias y residuales para aplicaciones industriales, agrícolas y municipales",
+  "servicios": [
+    {
+      "id": "aguas-limpias",
+      "nombre": "Aguas Limpias",
+      "descripcion": "Potabilización, filtración y purificación de agua para consumo y uso industrial",
+      "caracteristicas": [
+        "Sistemas de potabilización",
+        "Filtración avanzada",
+        "Ósmosis inversa",
+        "Tratamiento UV",
+        "Desinfección química"
+      ],
+      "aplicaciones": ["Industria alimentaria", "Comunidades", "Hoteles", "Industria farmacéutica"],
+      "icono": "💧",
+      "imagen": "/images/tratamiento-aguas-limpias.jpg"
+    },
+    {
+      "id": "aguas-residuales",
+      "nombre": "Aguas Residuales",
+      "descripcion": "Depuración y tratamiento de aguas residuales industriales y municipales",
+      "caracteristicas": [
+        "Estaciones depuradoras",
+        "Tratamiento primario y secundario",
+        "Fangos activados",
+        "Filtración terciaria",
+        "Control de olores"
+      ],
+      "aplicaciones": ["Industria agroalimentaria", "Mataderos", "Industria textil", "Municipios"],
+      "icono": "🏭",
+      "imagen": "/images/tratamiento-aguas-residuales.jpg"
+    }
+  ],
+  "destacados": [
+    "Más de 15 años de experiencia",
+    "Soluciones a medida",
+    "Cumplimiento normativo",
+    "Servicio técnico especializado",
+    "Productos certificados"
+  ]
+}

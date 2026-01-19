@@ -1,0 +1,153 @@
+{
+  "titulo": "Maquinaria Profesional",
+  "subtitulo": "Alquiler, reparación y venta de maquinaria",
+  "descripcion": "Amplio catálogo de maquinaria para construcción, agricultura, jardinería y aplicaciones forestales",
+  "servicios": [
+    {
+      "id": "alquiler",
+      "nombre": "Alquiler",
+      "descripcion": "Maquinaria disponible para alquiler a corto y largo plazo",
+      "icono": "🔑",
+      "caracteristicas": ["Precios competitivos", "Mantenimiento incluido", "Asesoramiento técnico", "Entrega rápida"]
+    },
+    {
+      "id": "reparacion",
+      "nombre": "Reparación",
+      "descripcion": "Servicio técnico especializado para todo tipo de maquinaria",
+      "icono": "🔧",
+      "caracteristicas": ["Diagnóstico avanzado", "Repuestos originales", "Garantía de servicio", "Servicio móvil"]
+    },
+    {
+      "id": "venta",
+      "nombre": "Venta",
+      "descripcion": "Maquinaria nueva y de segunda mano certificada",
+      "icono": "🛒",
+      "caracteristicas": ["Financiación disponible", "Garantía extendida", "Formación incluida", "Postventa integral"]
+    }
+  ],
+  "categorias": [
+    {
+      "id": "construccion",
+      "nombre": "Construcción",
+      "descripcion": "Maquinaria pesada y ligera para obras y construcción",
+      "icono": "🏗️",
+      "tipos": [
+        {
+          "nombre": "Excavadoras",
+          "marcas": ["Caterpillar", "JCB", "Komatsu", "Volvo"],
+          "rangos": ["Mini (1-5T)", "Medianas (5-10T)", "Pesadas (>10T)"]
+        },
+        {
+          "nombre": "Grúas",
+          "marcas": ["Liebherr", "Potain", "Manitowoc"],
+          "rangos": ["Torre", "Móvil", "Camión"]
+        },
+        {
+          "nombre": "Bulldozers",
+          "marcas": ["Caterpillar", "Komatsu", "Case"],
+          "rangos": ["Oruga", "Neumáticos"]
+        },
+        {
+          "nombre": "Retroexcavadoras",
+          "marcas": ["JCB", "Case", "New Holland"],
+          "rangos": ["4x4", "Tracción trasera"]
+        }
+      ],
+      "imagen": "/images/maquinaria-construccion.jpg"
+    },
+    {
+      "id": "agricola",
+      "nombre": "Agrícola",
+      "descripcion": "Equipamiento moderno para agricultura y ganadería",
+      "icono": "🚜",
+      "tipos": [
+        {
+          "nombre": "Tractores",
+          "marcas": ["John Deere", "New Holland", "Massey Ferguson", "Fendt"],
+          "rangos": ["Pequeños (<80HP)", "Medianos (80-150HP)", "Grandes (>150HP)"]
+        },
+        {
+          "nombre": "Cosechadoras",
+          "marcas": ["John Deere", "New Holland", "Claas", "Fendt"],
+          "rangos": ["Cereales", "Forraje", "Fruta"]
+        },
+        {
+          "nombre": "Remolques",
+          "marcas": ["Fliegl", "Krampe", "Annaburger"],
+          "rangos": ["Carga lateral", "Volquete", "Tanque"]
+        },
+        {
+          "nombre": "Equipos de siembra",
+          "marcas": ["Lemken", "Horsch", "Väderstad"],
+          "rangos": ["Siembra directa", "Convencional", "Precisión"]
+        }
+      ],
+      "imagen": "/images/maquinaria-agricola.jpg"
+    },
+    {
+      "id": "jardin",
+      "nombre": "Jardín",
+      "descripcion": "Herramientas y maquinaria para jardinería profesional",
+      "icono": "🌱",
+      "tipos": [
+        {
+          "nombre": "Cortacesped",
+          "marcas": ["Honda", "Stihl", "Husqvarna", "MTD"],
+          "rangos": ["Manuales", "Gasolina", "Eléctricos", "Autopropulsados"]
+        },
+        {
+          "nombre": "Motocultores",
+          "marcas": ["Honda", "Yanmar", "Kohler"],
+          "rangos": ["Mini", "Medios", "Profesionales"]
+        },
+        {
+          "nombre": "Sopladoras/Aspiradoras",
+          "marcas": ["Stihl", "Echo", "Husqvarna"],
+          "rangos": ["Espalda", "Ruedas", "Eléctricas"]
+        },
+        {
+          "nombre": "Pulverizadoras",
+          "marcas": ["Solo", "Matabi", "Berthoud"],
+          "rangos": ["Espalda", "Arrastre", "Remolque"]
+        }
+      ],
+      "imagen": "/images/maquinaria-jardin.jpg"
+    },
+    {
+      "id": "forestal",
+      "nombre": "Forestal",
+      "descripcion": "Maquinaria especializada para trabajos forestales",
+      "icono": "🌲",
+      "tipos": [
+        {
+          "nombre": "Motosierras",
+          "marcas": ["Stihl", "Husqvarna", "Echo", "Makita"],
+          "rangos": ["Recreativas", "Semi-profesionales", "Profesionales"]
+        },
+        {
+          "nombre": "Astilladoras",
+          "marcas": ["Vermeer", "Bandit", "Chippo"],
+          "rangos": ["Manuales", "Remolque", "Estacionarias"]
+        },
+        {
+          "nombre": "Desbrozadoras",
+          "marcas": ["Stihl", "Husqvarna", "Echo"],
+          "rangos": ["Espalda", "Ruedas", "Bruto"]
+        },
+        {
+          "nombre": "Grapadoras forestales",
+          "marcas": ["Stihl", "Husqvarna", "Jonsered"],
+          "rangos": ["Manuales", "Neumáticas", "Eléctricas"]
+        }
+      ],
+      "imagen": "/images/maquinaria-forestal.jpg"
+    }
+  ],
+  "destacados": [
+    "Marcas líderes del mercado",
+    "Garantía oficial",
+    "Formación operativa",
+    "Servicio técnico 24/7",
+    "Financiación propia"
+  ]
+}

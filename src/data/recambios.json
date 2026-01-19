@@ -1,0 +1,194 @@
+{
+  "titulo": "Recambios y Consumibles",
+  "subtitulo": "Todo lo que necesitas para tu maquinaria",
+  "descripcion": "Amplio stock de recambios originales y consumibles de las mejores marcas para mantener tu equipo en perfecto estado",
+  "categorias": [
+    {
+      "id": "construccion",
+      "nombre": "Construcción",
+      "icono": "🏗️",
+      "descripcion": "Recambios para maquinaria de obra pública y construcción",
+      "productos": [
+        {
+          "categoria": "Filtración",
+          "items": [
+            {"nombre": "Filtros de aceite", "marcas": ["Mann", "Bosch", "Donaldson"]},
+            {"nombre": "Filtros de combustible", "marcas": ["Mann", "Bosch", "Donaldson"]},
+            {"nombre": "Filtros de aire", "marcas": ["Mann", "Bosch", "Donaldson"]},
+            {"nombre": "Filtros hidráulicos", "marcas": ["Mann", "Bosch", "Donaldson"]}
+          ]
+        },
+        {
+          "categoria": "Lubricantes",
+          "items": [
+            {"nombre": "Aceites motor", "marcas": ["Shell", "Mobil", "Total"]},
+            {"nombre": "Aceites hidráulicos", "marcas": ["Shell", "Mobil", "Total"]},
+            {"nombre": "Grasas", "marcas": ["Shell", "Mobil", "Klüber"]},
+            {"nombre": "Refrigerantes", "marcas": ["Shell", "Mobil", "Total"]}
+          ]
+        },
+        {
+          "categoria": "Neumáticos",
+          "items": [
+            {"nombre": "Neumáticos OR", "marcas": ["Michelin", "Bridgestone", "Goodyear"]},
+            {"nombre": "Neumáticos radiales", "marcas": ["Michelin", "Bridgestone", "Goodyear"]},
+            {"nombre": "Cadenas", "marcas": ["Berco", "ITM", "Vematrack"]},
+            {"nombre": "Rodillos", "marcas": ["Berco", "ITM", "Vematrack"]}
+          ]
+        },
+        {
+          "categoria": "Hidráulica",
+          "items": [
+            {"nombre": "Bombas hidráulicas", "marcas": ["Danfoss", "Bosch", "Kawasaki"]},
+            {"nombre": "Motores hidráulicos", "marcas": ["Danfoss", "Bosch", "Kawasaki"]},
+            {"nombre": "Válvulas", "marcas": ["Danfoss", "Bosch", "Parker"]},
+            {"nombre": "Mangueras", "marcas": ["Manuli", "Gates", "Parker"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agricola",
+      "nombre": "Agrícola",
+      "icono": "🚜",
+      "descripcion": "Recambios para tractores y maquinaria agrícola",
+      "productos": [
+        {
+          "categoria": "Motor y Transmisión",
+          "items": [
+            {"nombre": "Filtros motor", "marcas": ["Mann", "Bosch", "Donaldson"]},
+            {"nombre": "Correas de distribución", "marcas": ["Gates", "Dayco", "Continental"]},
+            {"nombre": "Embragues", "marcas": ["Luk", "Sachs", "Valeo"]},
+            {"nombre": "Kit de distribución", "marcas": ["Gates", "Dayco", "Continental"]}
+          ]
+        },
+        {
+          "categoria": "Sistema eléctrico",
+          "items": [
+            {"nombre": "Baterías", "marcas": ["Varta", "Bosch", "Exide"]},
+            {"nombre": "Alternadores", "marcas": ["Bosch", "Delco", "Mitsubishi"]},
+            {"nombre": "Motor de arranque", "marcas": ["Bosch", "Delco", "Mitsubishi"]},
+            {"nombre": "Bombillas", "marcas": ["Osram", "Philips", "Hella"]}
+          ]
+        },
+        {
+          "categoria": "Neumáticos",
+          "items": [
+            {"nombre": "Agricultura", "marcas": ["Michelin", "Trelleborg", "Bridgestone"]},
+            {"nombre": "Camino", "marcas": ["Michelin", "Continental", "Goodyear"]},
+            {"nombre": "Neumáticos radiales", "marcas": ["Michelin", "Trelleborg", "Bridgestone"]},
+            {"nombre": "Cámaras", "marcas": ["Michelin", "Continental", "Pirelli"]}
+          ]
+        },
+        {
+          "categoria": "Herramientas",
+          "items": [
+            {"nombre": "Arados", "marcas": ["Lemken", "Kuhn", "Horsch"]},
+            {"nombre": "Cuchillas", "marcas": ["WOLF", "Kverneland", "Väderstad"]},
+            {"nombre": "Discos", "marcas": ["Great Plains", "Horsch", "Kuhn"]},
+            {"nombre": "Rodillos", "marcas": ["Horsch", "Kuhn", "Väderstad"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jardin",
+      "nombre": "Jardín",
+      "icono": "🌱",
+      "descripcion": "Recambios para maquinaria de jardinería",
+      "productos": [
+        {
+          "categoria": "Motores",
+          "items": [
+            {"nombre": "Bujías", "marcas": ["NGK", "Bosch", "Denso"]},
+            {"nombre": "Filtros aire", "marcas": ["Mann", "Bosch", "Donaldson"]},
+            {"nombre": "Aceites 2T", "marcas": ["Shell", "Castrol", "Motul"]},
+            {"nombre": "Aceites 4T", "marcas": ["Shell", "Castrol", "Motul"]}
+          ]
+        },
+        {
+          "categoria": "Corte",
+          "items": [
+            {"nombre": "Cuchillas", "marcas": ["Oregon", "Stens", "Rotary"]},
+            {"nombre": "Cadenas", "marcas": ["Oregon", "Stihl", "Husqvarna"]},
+            {"nombre": "Discos", "marcas": ["Oregon", "Stens", "Rotary"]},
+            {"nombre": "Hilos", "marcas": ["Oregon", "Stihl", "Husqvarna"]}
+          ]
+        },
+        {
+          "categoria": "Eléctricos",
+          "items": [
+            {"nombre": "Baterías", "marcas": ["Varta", "Bosch", "Panasonic"]},
+            {"nombre": "Cargadores", "marcas": ["Bosch", "DeWalt", "Makita"]},
+            {"nombre": "Motores", "marcas": ["Bosch", "Makita", "DeWalt"]},
+            {"nombre": "Interruptores", "marcas": ["Bosch", "Hella", "Valeo"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forestal",
+      "nombre": "Forestal",
+      "icono": "🌲",
+      "descripcion": "Recambios para maquinaria forestal",
+      "productos": [
+        {
+          "categoria": "Corte",
+          "items": [
+            {"nombre": "Cadenas", "marcas": ["Oregon", "Stihl", "Husqvarna"]},
+            {"nombre": "Guías", "marcas": ["Oregon", "Stihl", "Husqvarna"]},
+            {"nombre": "Sierras", "marcas": ["Oregon", "Stens", "Carlton"]},
+            {"nombre": "Cuchillas", "marcas": ["Wurth", "Baumr-AG", "Stihl"]}
+          ]
+        },
+        {
+          "categoria": "Seguridad",
+          "items": [
+            {"nombre": "Frenos de cadena", "marcas": ["Oregon", "Stihl", "Husqvarna"]},
+            {"nombre": "Protectores", "marcas": ["Stihl", "Husqvarna", "Oregon"]},
+            {"nombre": "Guantes", "marcas": ["Stihl", "Husqvarna", "Oregon"]},
+            {"nombre": "Cascos", "marcas": ["Stihl", "Husqvarna", "3M"]}
+          ]
+        },
+        {
+          "categoria": "Mantenimiento",
+          "items": [
+            {"nombre": "Filtros", "marcas": ["Mann", "Bosch", "Donaldson"]},
+            {"nombre": "Aceites", "marcas": ["Shell", "Stihl", "Husqvarna"]},
+            {"nombre": "Bujías", "marcas": ["NGK", "Bosch", "Denso"]},
+            {"nombre": "Válvulas", "marcas": ["Tillotson", "Walbro", "Zama"]}
+          ]
+        }
+      ]
+    }
+  ],
+  "servicios": [
+    {
+      "nombre": "Diagnóstico rápido",
+      "descripcion": "Identificamos la pieza que necesitas al momento",
+      "icono": "🔍"
+    },
+    {
+      "nombre": "Stock permanente",
+      "descripcion": "Más de 5.000 referencias siempre disponibles",
+      "icono": "📦"
+    },
+    {
+      "nombre": "Entrega 24h",
+      "descripcion": "Recibe tu pedido al día siguiente en península",
+      "icono": "🚚"
+    },
+    {
+      "nombre": "Garantía oficial",
+      "descripcion": "Todos nuestros productos con garantía de fábrica",
+      "icono": "✅"
+    }
+  ],
+  "destacados": [
+    "Recambios originales",
+    "Compatibles de calidad",
+    "Asesoramiento técnico",
+    "Precios competitivos",
+    "Descuentos por volumen"
+  ]
+}
