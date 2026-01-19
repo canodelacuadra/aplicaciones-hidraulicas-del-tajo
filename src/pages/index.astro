@@ -1,68 +1,59 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ServiceCard from "../components/ServiceCard.jsx";
-
-
-const services = [
-  {
-    title: "Sistemas hidráulicos",
-    description: "Diseño, instalación y mantenimiento de sistemas hidráulicos industriales.",
-    image: "https://images.unsplash.com/photo-1605106715994-18d3fecffb98?q=80&w=1200&auto=format&fit=crop",
-    icon: `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-        fill="none" stroke="#1568A7" width="24">
-        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          d="M12 2.25c-4.5 4.5-7.5 8-7.5 11.25A7.5 7.5 0 0012 21a7.5 7.5 0 007.5-7.5C19.5 10.25 16.5 6.75 12 2.25z"/>
-      </svg>
-    `
-  },
-  {
-    title: "Riego automatizado",
-    description: "Soluciones eficientes para riego agrícola y zonas verdes.",
-    image: "/pivot.avif",
-    icon: `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-        fill="none" stroke="#1568A7" width="24">
-        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          d="M3 12h18M12 3v18"/>
-      </svg>
-    `
-  },
-  {
-    title: "Gestión y eficiencia del agua",
-    description: "Optimización del consumo de agua mediante soluciones técnicas sostenibles.",
-    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop",
-    icon: `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-        fill="none" stroke="#1568A7" width="24">
-        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          d="M20 12a8 8 0 11-16 0 8 8 0 0116 0z"/>
-      </svg>
-    `
-  }
-];
-
-
+import { servicios } from "../data/servicios.js";
 ---
 
 <BaseLayout title="Aplicaciones Hidráulicas del Tajo">
   <h2>Nuestros Servicios</h2>
 
-  <section class="services">
-    {services.map(service => (
-      <ServiceCard {...service} client:load />
+  <section class="servicios">
+    {servicios.map((servicio) => (
+      <article class="servicio">
+        <div class="servicio-image">
+    <img
+      src={servicio.image}
+      alt={servicio.title}
+      loading="lazy"
+    />
+  </div>
+        <span class="icono" set:html={servicio.icon}>{servicio.icon}</span>
+        <h3>{servicio.title}</h3>
+        <p>{servicio.description}</p>
+      </article>
     ))}
   </section>
 </BaseLayout>
 
 <style>
-
-  .services {
+  .servicios {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
     margin-top: 2.5rem;
     animation: fadeUp 0.8s ease both;
+  }
+
+  .servicio {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .servicio:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  .icono {
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    margin: 0.25rem 0 0.5rem;
   }
 
   @keyframes fadeUp {
@@ -75,5 +66,25 @@ const services = [
       transform: translateY(0);
     }
   }
+  .servicio-image {
+  margin: -1.75rem -1.75rem 1rem;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+}
+
+.servicio-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.servicio:hover .servicio-image img {
+  transform: scale(1.05);
+}
+
 </style>
+
+
 
