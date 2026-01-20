@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import tratamientoAguasData from "../data/tratamiento-aguas.json";
+import MaquinariaSection from "../components/MaquinariaSection.astro";
 import maquinariaData from "../data/maquinaria.json";
 import recambiosData from "../data/recambios.json";
 ---
@@ -39,7 +40,7 @@ import recambiosData from "../data/recambios.json";
 
     </div>
 
-    <!-- Maquinaria -->
+<!-- Maquinaria -->
     <div class="area-card">
       <div class="area-image">
         <img src="/images/maquinaria-profesional.jpg" alt="Maquinaria profesional para construcción y agricultura" loading="lazy" />
@@ -76,7 +77,6 @@ import recambiosData from "../data/recambios.json";
           </div>
         ))}
       </div>
-
     </div>
 
     <!-- Recambios -->
@@ -107,9 +107,8 @@ import recambiosData from "../data/recambios.json";
   </section>
   </BaseLayout>
 
-<script>
+<script is:inline>
   function verMaquinaria(categoriaId) {
-    // Por ahora mostramos un mensaje, en el futuro podría redirigir a una página específica
     const categoriaNombres = {
       'construccion': 'Construcción',
       'agricola': 'Agrícola', 
@@ -117,9 +116,12 @@ import recambiosData from "../data/recambios.json";
       'forestal': 'Forestal'
     };
     
-    alert(`Próximamente podrás ver toda nuestra maquinaria disponible para el sector de ${categoriaNombres[categoriaId]}`);
+    const nombre = categoriaNombres[categoriaId] || 'desconocido';
+    alert(`Próximamente podrás ver toda nuestra maquinaria disponible para el sector de ${nombre}`);
   }
 </script>
+
+
 
 <style>
 
