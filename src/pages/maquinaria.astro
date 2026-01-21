@@ -4,40 +4,19 @@ import maquinariaData from "../data/maquinaria.json";
 ---
 
 <BaseLayout title="Maquinaria Profesional - Aplicaciones Hidráulicas del Tajo">
-  <section class="maquinaria-hero">
-    <div class="hero-content">
-      <h1>{maquinariaData.titulo}</h1>
-      <p class="hero-subtitle">{maquinariaData.subtitulo}</p>
-      <p class="hero-description">{maquinariaData.descripcion}</p>
-    </div>
-  </section>
-
+ 
   <section class="servicios-principales">
     <div class="container">
       <h2>Nuestros Servicios</h2>
-      <div class="servicios-grid">
-        {maquinariaData.servicios.map((servicio) => (
-          <div class="servicio-card">
-            <div class="servicio-icono">{servicio.icono}</div>
-            <h3>{servicio.nombre}</h3>
-            <p>{servicio.descripcion}</p>
-            <div class="caracteristicas-lista">
-              {servicio.caracteristicas.map((caracteristica) => (
-                <div class="caracteristica-item">
-                  <span class="check-icon">✓</span>
-                  <span>{caracteristica}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+      <p class="servicios-compactos">
+        Ofrecemos <strong>alquiler</strong> de maquinaria a corto y largo plazo con mantenimiento incluido, <strong>reparación</strong> técnica especializada con diagnóstico avanzado y servicio móvil, y <strong>venta</strong> de maquinaria nueva y certificada con financiación disponible.
+      </p>
     </div>
   </section>
 
   <section class="categorias-maquinaria">
     <div class="container">
-      <h2>Categorías de Maquinaria</h2>
+      <h2>Tipos de Maquinaria</h2>
       <div class="categorias-grid">
         {maquinariaData.categorias.map((categoria) => (
           <div class="categoria-card">
@@ -198,64 +177,23 @@ import maquinariaData from "../data/maquinaria.json";
     color: #1568a7;
   }
 
-  .servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
-  .servicio-card {
-    background: white;
-    border-radius: 16px;
+  .servicios-compactos {
+    text-align: center;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
     padding: 2rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(21, 104, 167, 0.1);
   }
 
-  .servicio-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
-  }
-
-  .servicio-icono {
-    font-size: 3rem;
-    display: block;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .servicio-card h3 {
-    text-align: center;
-    margin: 0 0 1rem;
+  .servicios-compactos strong {
     color: #1568a7;
-    font-size: 1.5rem;
-  }
-
-  .servicio-card p {
-    text-align: center;
-    color: #555;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-  }
-
-  .caracteristicas-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .caracteristica-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #555;
-  }
-
-  .check-icon {
-    color: #28a745;
-    font-weight: bold;
-    font-size: 0.9rem;
+    font-weight: 600;
   }
 
   /* Categorías */
@@ -478,7 +416,6 @@ import maquinariaData from "../data/maquinaria.json";
 
   /* Responsive */
   @media (max-width: 768px) {
-    .servicios-grid,
     .categorias-grid {
       grid-template-columns: 1fr;
     }
