@@ -55,9 +55,9 @@ import recambiosData from "../data/recambios.json";
         </div>
         <h3>{maquinariaData.titulo}</h3>
       </div>
-      <p>{maquinariaData.descripcion}</p>
-      <p style="text-align: center; color: #666; font-size: 1.1rem; line-height: 1.6; padding: 1rem 2.5rem; background: rgba(21, 104, 167, 0.03); border-radius: 12px; margin: 0 0 2rem 0;">
-        Ofrecemos servicios de alquiler a corto y largo plazo, reparación técnica especializada y venta de maquinaria nueva y certificada con garantía oficial.
+ 
+      <p class="servicios-compactos">
+        Ofrecemos <strong>alquiler</strong> de maquinaria a corto y largo plazo con mantenimiento incluido, <strong>reparación</strong> técnica especializada con diagnóstico avanzado y servicio móvil, y <strong>venta</strong> de maquinaria nueva y certificada con financiación disponible.
       </p>
       <div class="categorias-grid">
         {maquinariaData.categorias.map((categoria) => (
@@ -99,6 +99,10 @@ import recambiosData from "../data/recambios.json";
 
     </div>
   </section>
+
+ 
+      
+ 
   </BaseLayout>
 
 <script is:inline>
@@ -210,6 +214,20 @@ import recambiosData from "../data/recambios.json";
   }
 
   /* Servicios Lista */
+  
+  .servicios-compactos {
+    text-align: center;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(21, 104, 167, 0.1);
+  }
   .servicios-lista {
     display: flex;
     flex-direction: column;
