@@ -1,153 +1,1165 @@
 {
-  "titulo": "Maquinaria Profesional",
-  "subtitulo": "Alquiler, reparación y venta de maquinaria",
-  "descripcion": "Amplio catálogo de maquinaria para construcción, agricultura, jardinería y aplicaciones forestales",
-  "servicios": [
-    {
-      "id": "alquiler",
-      "nombre": "Alquiler",
-      "descripcion": "Maquinaria disponible para alquiler a corto y largo plazo",
-      "icono": "🔑",
-      "caracteristicas": ["Precios competitivos", "Mantenimiento incluido", "Asesoramiento técnico", "Entrega rápida"]
-    },
-    {
-      "id": "reparacion",
-      "nombre": "Reparación",
-      "descripcion": "Servicio técnico especializado para todo tipo de maquinaria",
-      "icono": "🔧",
-      "caracteristicas": ["Diagnóstico avanzado", "Repuestos originales", "Garantía de servicio", "Servicio móvil"]
-    },
-    {
-      "id": "venta",
-      "nombre": "Venta",
-      "descripcion": "Maquinaria nueva y de segunda mano certificada",
-      "icono": "🛒",
-      "caracteristicas": ["Financiación disponible", "Garantía extendida", "Formación incluida", "Postventa integral"]
-    }
-  ],
   "categorias": [
     {
-      "id": "construccion",
-      "nombre": "Construcción",
-      "descripcion": "Maquinaria pesada y ligera para obras y construcción",
-      "icono": "🏗️",
-      "tipos": [
+      "id": "aire-comprimido",
+      "nombre": "AIRE COMPRIMIDO",
+      "descripcion": "Equipamiento de aire comprimido para obras y construcción",
+      "icono": "🌬️",
+      "maquinas": [
         {
-          "nombre": "Hormigoneras",
-          "marcas": ["Caterpillar", "JCB", "Komatsu", "Volvo"],
-          "rangos": ["Mini (1-5T)", "Medianas (5-10T)", "Pesadas (>10T)"]
+          "id": "ac-001",
+          "nombre": "COMPRESORES",
+          "ejemplares": [
+            {
+              "nombre": "Compresor de Tornillo Atlas Copco XAHS 186",
+              "marca": "Atlas Copco",
+              "caracteristicas": ["186 CFM", "5.2 m³/min", "7 bar", "Motor Diesel", "Silencioso"]
+            },
+            {
+              "nombre": "Compresor Portátil Kaeser M 50",
+              "marca": "Kaeser",
+              "caracteristicas": ["50 CFM", "1.4 m³/min", "8 bar", "Motor Eléctrico", "Compacto"]
+            }
+          ]
         },
         {
-          "nombre": "Rozadoras",
-          "marcas": ["Liebherr", "Potain", "Manitowoc"],
-          "rangos": ["Torre", "Móvil", "Camión"]
+          "id": "ac-002", 
+          "nombre": "MARTILLOS NEUMATICOS",
+          "ejemplares": [
+            {
+              "nombre": "Martillo Demoledor Chicago Pneumatic CP 1240",
+              "marca": "Chicago Pneumatic",
+              "caracteristicas": ["30 kg", "1.800 golpes/min", "Aire 6 bar", "Mango antivibración"]
+            },
+            {
+              "nombre": "Martillo Rompedores Ingersoll Rand K2",
+              "marca": "Ingersoll Rand",
+              "caracteristicas": ["20 kg", "1.500 golpes/min", "Aire 6 bar", "Alta durabilidad"]
+            }
+          ]
         },
         {
-          "nombre": "Pulidoras de Terrazo",
-          "marcas": ["Caterpillar", "Komatsu", "Case"],
-          "rangos": ["Oruga", "Neumáticos"]
+          "id": "ac-003",
+          "nombre": "CINCELADORES NEUMATICOS",
+          "ejemplares": [
+            {
+              "nombre": "Cincelador Neumático Sullair B87",
+              "marca": "Sullair",
+              "caracteristicas": ["18 kg", "1.400 golpes/min", "Precisión", "Control de vibración"]
+            }
+          ]
         },
         {
-          "nombre": "Pulidora Peldaños",
-          "marcas": ["JCB", "Case", "New Holland"],
-          "rangos": ["4x4", "Tracción trasera"]
+          "id": "ac-004",
+          "nombre": "VIBRADORES NEUMATICOS",
+          "ejemplares": [
+            {
+              "nombre": "Vibrador de Hormigón Wacker BVH 60",
+              "marca": "Wacker Neuson",
+              "caracteristicas": ["Diámetro 60mm", "12.000 vib/min", "Manguera 6m", "Alta eficiencia"]
+            }
+          ]
         }
       ],
-      "imagen": "/images/maquinaria-construccion.jpg"
+      "imagen": "/images/maquinaria-aire-comprimido.jpg"
     },
     {
-      "id": "agricola",
-      "nombre": "Agrícola",
-      "descripcion": "Equipamiento moderno para agricultura y ganadería",
-      "icono": "🚜",
-      "tipos": [
+      "id": "limpieza",
+      "nombre": "LIMPIEZA",
+      "descripcion": "Maquinaria profesional para limpieza y mantenimiento",
+      "icono": "🧹",
+      "maquinas": [
         {
-          "nombre": "Tractores",
-          "marcas": ["John Deere", "New Holland", "Massey Ferguson", "Fendt"],
-          "rangos": ["Pequeños (<80HP)", "Medianos (80-150HP)", "Grandes (>150HP)"]
+          "id": "lim-001",
+          "nombre": "BARREDORAS",
+          "ejemplares": [
+            {
+              "nombre": "Barredora Industrial CleanMaster 500",
+              "marca": "CleanTech",
+              "caracteristicas": ["500 mm ancho", "Motor eléctrico", "Autonomía 8h", "Alta capacidad"]
+            },
+            {
+              "nombre": "Barredora ProSweep 300",
+              "marca": "ProClean",
+              "caracteristicas": ["300 mm ancho", "Batería litio", "Plegable", "Peso ligero"]
+            }
+          ]
         },
         {
-          "nombre": "Cosechadoras",
-          "marcas": ["John Deere", "New Holland", "Claas", "Fendt"],
-          "rangos": ["Cereales", "Forraje", "Fruta"]
+          "id": "lim-002",
+          "nombre": "FREGADORAS",
+          "ejemplares": [
+            {
+              "nombre": "Fregadora Industrial AquaWash 750",
+              "marca": "HydroClean",
+              "caracteristicas": ["75 cm ancho", "Depósito 75L", "Secado integrado", "Alta presión"]
+            },
+            {
+              "nombre": "Fregadora Comercial FloorPro 400",
+              "marca": "FloorTech",
+              "caracteristicas": ["40 cm ancho", "Depósito 40L", "Cepillos giratorios", "Compacto"]
+            }
+          ]
         },
         {
-          "nombre": "Remolques",
-          "marcas": ["Fliegl", "Krampe", "Annaburger"],
-          "rangos": ["Carga lateral", "Volquete", "Tanque"]
+          "id": "lim-003",
+          "nombre": "HIDROLIMPIADORAS",
+          "ejemplares": [
+            {
+              "nombre": "Hidrolimpiadora PowerJet 3000",
+              "marca": "JetClean",
+              "caracteristicas": ["300 bar", "Flow 15 L/min", "Motor diesel", "Agua caliente"]
+            },
+            {
+              "nombre": "Hidrolimpiadora ProWash 1500",
+              "marca": "ProTech",
+              "caracteristicas": ["150 bar", "Flow 10 L/min", "Motor eléctrico", "Portátil"]
+            }
+          ]
         },
         {
-          "nombre": "Equipos de siembra",
-          "marcas": ["Lemken", "Horsch", "Väderstad"],
-          "rangos": ["Siembra directa", "Convencional", "Precisión"]
+          "id": "lim-004",
+          "nombre": "DESATASCADOR TUBERIAS",
+          "ejemplares": [
+            {
+              "nombre": "Desatascador PipeClear HD",
+              "marca": "DrainMaster",
+              "caracteristicas": ["Hasta 50m", "Alta presión", "Cable acero", "Motor potente"]
+            },
+            {
+              "nombre": "Desatascador TubeSnake 200",
+              "marca": "TubeTech",
+              "caracteristicas": ["Hasta 20m", "Presión media", "Cable flexible", "Ligero"]
+            }
+          ]
+        },
+        {
+          "id": "lim-005",
+          "nombre": "BOMBAS AGUAS LIMPIAS",
+          "ejemplares": [
+            {
+              "nombre": "Bomba AquaFlow 500",
+              "marca": "FlowMaster",
+              "caracteristicas": ["500 L/min", "Altura 25m", "Autocebante", "Motor eléctrico"]
+            },
+            {
+              "nombre": "Bomba CleanPump 300",
+              "marca": "AquaTech",
+              "caracteristicas": ["300 L/min", "Altura 15m", "Silenciosa", "Compacta"]
+            }
+          ]
+        },
+        {
+          "id": "lim-006",
+          "nombre": "BOMBAS AGUAS RESIDUALES",
+          "ejemplares": [
+            {
+              "nombre": "Bomba WastePro 800",
+              "marca": "WasteTech",
+              "caracteristicas": ["800 L/min", "Sólidos 50mm", "Motor diesel", "Alta durabilidad"]
+            },
+            {
+              "nombre": "Bomba SludgeMaster 400",
+              "marca": "SludgeTech",
+              "caracteristicas": ["400 L/min", "Sólidos 30mm", "Autocebante", "Fácil mantenimiento"]
+            }
+          ]
+        },
+        {
+          "id": "lim-007",
+          "nombre": "BOMBAS DRENAJE",
+          "ejemplares": [
+            {
+              "nombre": "Bomba DrainMax 600",
+              "marca": "DrainTech",
+              "caracteristicas": ["600 L/min", "Sumergible", "Nivel automático", "Motor robusto"]
+            },
+            {
+              "nombre": "Bomba AquaDrain 250",
+              "marca": "AquaMax",
+              "caracteristicas": ["250 L/min", "Portátil", "Batería respaldo", "Sensor nivel"]
+            }
+          ]
         }
       ],
-      "imagen": "/images/maquinaria-agricola.jpg"
+      "imagen": "/images/maquinaria-limpieza.jpg"
+    },
+    {
+      "id": "demolicion",
+      "nombre": "DEMOLICION",
+      "descripcion": "Equipamiento pesado para demolición y corte",
+      "icono": "🔨",
+      "maquinas": [
+        {
+          "id": "dem-001",
+          "nombre": "MARTILLOS ROMPEDORES",
+          "ejemplares": [
+            {
+              "nombre": "Martillo Rompedor BreakPro 9000",
+              "marca": "BreakTech",
+              "caracteristicas": ["45 kg", "1700 W", "30 J impacto", "Antivibración"]
+            },
+            {
+              "nombre": "Martillo Rompedor PowerMax 6000",
+              "marca": "PowerTools",
+              "caracteristicas": ["30 kg", "1200 W", "20 J impacto", "Ergonómico"]
+            }
+          ]
+        },
+        {
+          "id": "dem-002",
+          "nombre": "MARTILLOS DEMOLEDORES",
+          "ejemplares": [
+            {
+              "nombre": "Martillo Demoledor Demolition HD",
+              "marca": "DemoMaster",
+              "caracteristicas": ["35 kg", "1500 W", "25 J impacto", "Alta potencia"]
+            },
+            {
+              "nombre": "Martillo Demoledor WreckForce 4000",
+              "marca": "WreckTech",
+              "caracteristicas": ["25 kg", "1000 W", "15 J impacto", "Compacto"]
+            }
+          ]
+        },
+        {
+          "id": "dem-003",
+          "nombre": "MARTILLOS PERFORADORES",
+          "ejemplares": [
+            {
+              "nombre": "Martillo Perforador DrillMax Pro",
+              "marca": "DrillTech",
+              "caracteristicas": ["12 kg", "800 W", "26 mm broca", "Rotativo"]
+            },
+            {
+              "nombre": "Martillo Perforador RockDrill 2000",
+              "marca": "RockMaster",
+              "caracteristicas": ["8 kg", "600 W", "20 mm broca", "SDS Plus"]
+            }
+          ]
+        },
+        {
+          "id": "dem-004",
+          "nombre": "CORTADORAS DE GASOLINA",
+          "ejemplares": [
+            {
+              "nombre": "Cortadora Gasolina CutPro 500",
+              "marca": "CutTech",
+              "caracteristicas": ["500 mm disco", "Motor 2T", "Autonomía 3h", "Alta potencia"]
+            },
+            {
+              "nombre": "Cortadora Gasolina PowerCut 350",
+              "marca": "PowerCut",
+              "caracteristicas": ["350 mm disco", "Motor 4T", "Baja vibración", "Fácil arranque"]
+            }
+          ]
+        },
+        {
+          "id": "dem-005",
+          "nombre": "CORTADORAS DE HORMIGON",
+          "ejemplares": [
+            {
+              "nombre": "Cortadora Hormigón ConcreteCut Pro",
+              "marca": "ConcreteTech",
+              "caracteristicas": ["400 mm disco", "Alta precisión", "Refrigeración", "Durabilidad"]
+            },
+            {
+              "nombre": "Cortadora Hormigón SlabMaster 300",
+              "marca": "SlabTech",
+              "caracteristicas": ["300 mm disco", "Motor eléctrico", "Silenciosa", "Portátil"]
+            }
+          ]
+        },
+        {
+          "id": "dem-006",
+          "nombre": "FRESADORAS DE HORMIGON",
+          "ejemplares": [
+            {
+              "nombre": "Fresadora Hormigón FloorMill Pro",
+              "marca": "FloorTech",
+              "caracteristicas": ["300 mm ancho", "Motor diesel", "Alto rendimiento", "Sistema polvo"]
+            },
+            {
+              "nombre": "Fresadora Hormigón SurfaceMill 200",
+              "marca": "SurfaceTech",
+              "caracteristicas": ["200 mm ancho", "Motor eléctrico", "Compacto", "Precisión"]
+            }
+          ]
+        }
+      ],
+      "imagen": "/images/maquinaria-demolicion.jpg"
+    },
+    {
+      "id": "compactacion",
+      "nombre": "COMPACTACION",
+      "descripcion": "Maquinaria para compactación de suelos y materiales",
+      "icono": "🏋️",
+      "maquinas": [
+        {
+          "id": "comp-001",
+          "nombre": "PISON COMPACTADOR",
+          "ejemplares": [
+            {
+              "nombre": "Pison Compactador RamMax 150",
+              "marca": "RamTech",
+              "caracteristicas": ["150 kg", "Motor diesel", "Alta fuerza", "Facil manejo"]
+            },
+            {
+              "nombre": "Pison Compactador ProRam 100",
+              "marca": "ProCompact",
+              "caracteristicas": ["100 kg", "Motor gasolina", "Compacto", "Eficiente"]
+            }
+          ]
+        },
+        {
+          "id": "comp-002",
+          "nombre": "BANDEJA VIBRANTE",
+          "ejemplares": [
+            {
+              "nombre": "Bandeja Vibrante PlateComp 300",
+              "marca": "PlateTech",
+              "caracteristicas": ["300x300 mm", "Alta frecuencia", "Motor eléctrico", "Silenciosa"]
+            },
+            {
+              "nombre": "Bandeja Vibrante ViboPlate 200",
+              "marca": "ViboTech",
+              "caracteristicas": ["200x200 mm", "Potente", "Motor gasolina", "Ligera"]
+            }
+          ]
+        },
+        {
+          "id": "comp-003",
+          "nombre": "RODILLO COMPACTADOR",
+          "ejemplares": [
+            {
+              "nombre": "Rodillo Compactador RollMaster 800",
+              "marca": "RollTech",
+              "caracteristicas": ["800 mm ancho", "Motor diesel", "Vibratorio", "Alto rendimiento"]
+            },
+            {
+              "nombre": "Rodillo Compactador MiniRoll 500",
+              "marca": "MiniCompact",
+              "caracteristicas": ["500 mm ancho", "Motor eléctrico", "Operador caminando", "Maniobrable"]
+            }
+          ]
+        }
+      ],
+      "imagen": "/images/maquinaria-compactacion.jpg"
+    },
+    {
+      "id": "vibracion",
+      "nombre": "VIBRACION",
+      "descripcion": "Equipamiento para vibración de hormigón y construcción",
+      "icono": "📳",
+      "maquinas": [
+        {
+          "id": "vib-001",
+          "nombre": "VIBRADOR AGUJA",
+          "ejemplares": [
+            {
+              "nombre": "Vibrador Aguja NeedlePro 50",
+              "marca": "VibeTech",
+              "caracteristicas": ["50 mm cabeza", "Motor eléctrico", "Alta frecuencia", "Cable 5m"]
+            },
+            {
+              "nombre": "Vibrador Aguja ConcreteVibe 30",
+              "marca": "ConcreteTech",
+              "caracteristicas": ["30 mm cabeza", "Motor gasolina", "Portátil", "Potente"]
+            }
+          ]
+        },
+        {
+          "id": "vib-002",
+          "nombre": "CONVERTIDOR A.F.",
+          "ejemplares": [
+            {
+              "nombre": "Convertidor AF ConvertPro 5000",
+              "marca": "ConvertTech",
+              "caracteristicas": ["5000 W", "Alta frecuencia", "Robusto", "Alta eficiencia"]
+            },
+            {
+              "nombre": "Convertidor AF PowerConvert 3000",
+              "marca": "PowerConvert",
+              "caracteristicas": ["3000 W", "Compacto", "Ligero", "Fácil transporte"]
+            }
+          ]
+        },
+        {
+          "id": "vib-003",
+          "nombre": "AGUJA CONVERTIDOR A.F.",
+          "ejemplares": [
+            {
+              "nombre": "Aguja Convertidor NeedleConvert Pro",
+              "marca": "NeedleTech",
+              "caracteristicas": ["45 mm cabeza", "Compatible AF", "Alta potencia", "Durabilidad"]
+            },
+            {
+              "nombre": "Aguja Convertidor AF Compact 25",
+              "marca": "AFCompact",
+              "caracteristicas": ["25 mm cabeza", "Ligera", "Manejable", "Precisión"]
+            }
+          ]
+        },
+        {
+          "id": "vib-004",
+          "nombre": "REGLA VIBROEXTENDEDORA",
+          "ejemplares": [
+            {
+              "nombre": "Regla Vibroextendedora VibroRule 400",
+              "marca": "RuleTech",
+              "caracteristicas": ["4 metros", "Alta frecuencia", "Nivelación precisa", "Aluminio"]
+            },
+            {
+              "nombre": "Regla Vibroextendedora CompactRule 300",
+              "marca": "CompactRule",
+              "caracteristicas": ["3 metros", "Motor potente", "Manejo fácil", "Resultados uniformes"]
+            }
+          ]
+        }
+      ],
+      "imagen": "/images/maquinaria-vibracion.jpg"
+    },
+    {
+      "id": "elevacion",
+      "nombre": "ELEVACION",
+      "descripcion": "Plataformas y equipos para trabajo en altura",
+      "icono": "⬆️",
+      "maquinas": [
+        {
+          "id": "ele-001",
+          "nombre": "PLATAFORMA ELEVADORA",
+          "ejemplares": [
+            {
+              "nombre": "Plataforma Elevadora LiftPro 2000",
+              "marca": "LiftTech",
+              "caracteristicas": ["20 metros", "300 kg carga", "Motor eléctrico", "Seguridad total"]
+            },
+            {
+              "nombre": "Plataforma Elevadora CompactLift 1200",
+              "marca": "CompactLift",
+              "caracteristicas": ["12 metros", "200 kg carga", "Motor diesel", "Compacto"]
+            }
+          ]
+        },
+        {
+          "id": "ele-002",
+          "nombre": "PLATAFORMA ARTICULADA",
+          "ejemplares": [
+            {
+              "nombre": "Plataforma Articulada ArticPro 2500",
+              "marca": "ArticTech",
+              "caracteristicas": ["25 metros", "350 kg carga", "360° rotación", "Acceso difícil"]
+            },
+            {
+              "nombre": "Plataforma Articulada FlexLift 1800",
+              "marca": "FlexTech",
+              "caracteristicas": ["18 metros", "280 kg carga", "Radio amplio", "Maniobrable"]
+            }
+          ]
+        },
+        {
+          "id": "ele-003",
+          "nombre": "ELEVADOR PORTATIL 300KG",
+          "ejemplares": [
+            {
+              "nombre": "Elevador Portátil PortaLift 300",
+              "marca": "PortaTech",
+              "caracteristicas": ["300 kg carga", "Motor eléctrico", "Ruedas", "Fácil transporte"]
+            },
+            {
+              "nombre": "Elevador Portátil MiniLift 200",
+              "marca": "MiniLift",
+              "caracteristicas": ["200 kg carga", "Batería", "Plegable", "Compacto"]
+            }
+          ]
+        },
+        {
+          "id": "ele-004",
+          "nombre": "ESCALERA ALUMINIO",
+          "ejemplares": [
+            {
+              "nombre": "Escalera Aluminio AluStep Pro 8",
+              "marca": "AluTech",
+              "caracteristicas": ["8 escalones", "300 kg carga", "Antideslizante", "Certificada"]
+            },
+            {
+              "nombre": "Escalera Aluminio LightAlu 6",
+              "marca": "LightTech",
+              "caracteristicas": ["6 escalones", "250 kg carga", "Ligera", "Plegable"]
+            }
+          ]
+        },
+        {
+          "id": "ele-005",
+          "nombre": "CAMION PLUMA",
+          "ejemplares": [
+            {
+              "nombre": "Camión Pluma CranePro 5000",
+              "marca": "CraneTech",
+              "caracteristicas": ["5 toneladas", "Radio 25m", "Motor diesel", "Estabilizadores"]
+            },
+            {
+              "nombre": "Camión Pluma MiniCrane 3000",
+              "marca": "MiniCrane",
+              "caracteristicas": ["3 toneladas", "Radio 18m", "Compacto", "Ágil"]
+            }
+          ]
+        },
+        {
+          "id": "ele-006",
+          "nombre": "CAMION PLATAFORMA ARTICULADA",
+          "ejemplares": [
+            {
+              "nombre": "Camión Plataforma Articulada TruckPlatform 4000",
+              "marca": "TruckTech",
+              "caracteristicas": ["4 toneladas", "30 metros", "360°", "Alto rendimiento"]
+            },
+            {
+              "nombre": "Camión Plataforma Articulada MobileLift 2500",
+              "marca": "MobileTech",
+              "caracteristicas": ["2.5 toneladas", "22 metros", "Motor económico", "Maniobrable"]
+            }
+          ]
+        },
+        {
+          "id": "ele-007",
+          "nombre": "CARRETILLAS ELEVADORAS",
+          "ejemplares": [
+            {
+              "nombre": "Carretilla Elevadora ForkLift Pro 3000",
+              "marca": "ForkTech",
+              "caracteristicas": ["3000 kg carga", "Motor diesel", "Horquilla 3m", "Robusta"]
+            },
+            {
+              "nombre": "Carretilla Elevadora ElectricFork 2000",
+              "marca": "ElectricFork",
+              "caracteristicas": ["2000 kg carga", "Motor eléctrico", "Silenciosa", "Ecólogica"]
+            }
+          ]
+        },
+        {
+          "id": "ele-008",
+          "nombre": "MANIPULADORES TELESCOPICOS",
+          "ejemplares": [
+            {
+              "nombre": "Manipulador Telescópico TeleHandler 6000",
+              "marca": "TeleTech",
+              "caracteristicas": ["6000 kg carga", "Alcance 18m", "4x4", "Versátil"]
+            },
+            {
+              "nombre": "Manipulador Telescópico CompactTele 4000",
+              "marca": "CompactTech",
+              "caracteristicas": ["4000 kg carga", "Alcance 12m", "Compacto", "Eficiente"]
+            }
+          ]
+        }
+      ],
+      "imagen": "/images/maquinaria-elevacion.jpg"
+    },
+    {
+      "id": "energia",
+      "nombre": "ENERGIA",
+      "descripcion": "Generadores y equipos de energía temporal",
+      "icono": "⚡",
+      "maquinas": [
+        {
+          "id": "ene-001",
+          "nombre": "GRUPO ELECTROGENO",
+          "ejemplares": [
+            {
+              "nombre": "Grupo Electrógeno PowerGen 8000",
+              "marca": "PowerTech",
+              "caracteristicas": ["8000 W", "Motor diesel", "Silencioso", "Autonomía 12h"]
+            },
+            {
+              "nombre": "Grupo Electrógeno CompactGen 5000",
+              "marca": "CompactGen",
+              "caracteristicas": ["5000 W", "Motor gasolina", "Portátil", "Económico"]
+            }
+          ]
+        },
+        {
+          "id": "ene-002",
+          "nombre": "MOTOSOLDADORA",
+          "ejemplares": [
+            {
+              "nombre": "Motosoldadora WeldMax Pro 300",
+              "marca": "WeldTech",
+              "caracteristicas": ["300 A", "Motor diesel", "Alta potencia", "Duradera"]
+            },
+            {
+              "nombre": "Motosoldadora CompactWeld 200",
+              "marca": "CompactWeld",
+              "caracteristicas": ["200 A", "Motor gasolina", "Ligera", "Transportable"]
+            }
+          ]
+        },
+        {
+          "id": "ene-003",
+          "nombre": "CAÑON CALOR",
+          "ejemplares": [
+            {
+              "nombre": "Cañón Calor HeatPro 50000",
+              "marca": "HeatTech",
+              "caracteristicas": ["50000 BTU", "Motor diesel", "Alta eficiencia", "Seguridad"]
+            },
+            {
+              "nombre": "Cañón Calor PortableHeat 30000",
+              "marca": "PortableHeat",
+              "caracteristicas": ["30000 BTU", "Motor eléctrico", "Portátil", "Silencioso"]
+            }
+          ]
+        },
+        {
+          "id": "ene-004",
+          "nombre": "DESHUMIDIFICADOR",
+          "ejemplares": [
+            {
+              "nombre": "Deshumidificador DryMaster 70",
+              "marca": "DryTech",
+              "caracteristicas": ["70 L/día", "Alta capacidad", "Digital", "Fácil drenaje"]
+            },
+            {
+              "nombre": "Deshumidificador CompactDry 40",
+              "marca": "CompactDry",
+              "caracteristicas": ["40 L/día", "Portátil", "Silencioso", "Eficiente"]
+            }
+          ]
+        },
+        {
+          "id": "ene-005",
+          "nombre": "SOLDADURA INVERTER",
+          "ejemplares": [
+            {
+              "nombre": "Soldadura Inverter InvertPro 250",
+              "marca": "InvertTech",
+              "caracteristicas": ["250 A", "Inverter", "Digital", "Multifunción"]
+            },
+            {
+              "nombre": "Soldadura Inverter CompactInvert 180",
+              "marca": "CompactInvert",
+              "caracteristicas": ["180 A", "Portátil", "Fácil uso", "Económico"]
+            }
+          ]
+        }
+      ],
+      "imagen": "/images/maquinaria-energia.jpg"
     },
     {
       "id": "jardin",
-      "nombre": "Jardín",
-      "descripcion": "Herramientas y maquinaria para jardinería profesional",
+      "nombre": "JARDIN",
+      "descripcion": "Maquinaria profesional para jardinería y paisajismo",
       "icono": "🌱",
-      "tipos": [
+      "maquinas": [
         {
-          "nombre": "Cortacesped",
-          "marcas": ["Honda", "Stihl", "Husqvarna", "MTD"],
-          "rangos": ["Manuales", "Gasolina", "Eléctricos", "Autopropulsados"]
+          "id": "jar-001",
+          "nombre": "CORTACESPED",
+          "ejemplares": [
+            {
+              "nombre": "Cortacésped LawnPro 55",
+              "marca": "LawnTech",
+              "caracteristicas": ["55 cm ancho", "Motor gasolina", "Autopropulsado", "7 alturas"]
+            },
+            {
+              "nombre": "Cortacésped GreenCut 45",
+              "marca": "GreenTech",
+              "caracteristicas": ["45 cm ancho", "Motor eléctrico", "Batería", "Silencioso"]
+            }
+          ]
         },
         {
-          "nombre": "Motocultores",
-          "marcas": ["Honda", "Yanmar", "Kohler"],
-          "rangos": ["Mini", "Medios", "Profesionales"]
+          "id": "jar-002",
+          "nombre": "CORTASETOS",
+          "ejemplares": [
+            {
+              "nombre": "Cortasetos HedgePro 75",
+              "marca": "HedgeTech",
+              "caracteristicas": ["75 cm largo", "Motor gasolina", "Doble hoja", "Alta potencia"]
+            },
+            {
+              "nombre": "Cortasetos CompactHedge 60",
+              "marca": "CompactHedge",
+              "caracteristicas": ["60 cm largo", "Motor eléctrico", "Ligero", "Manejable"]
+            }
+          ]
         },
         {
-          "nombre": "Sopladoras/Aspiradoras",
-          "marcas": ["Stihl", "Echo", "Husqvarna"],
-          "rangos": ["Espalda", "Ruedas", "Eléctricas"]
+          "id": "jar-003",
+          "nombre": "CORTASETOS ALTURA",
+          "ejemplares": [
+            {
+              "nombre": "Cortasetos Altura ReachPro 500",
+              "marca": "ReachTech",
+              "caracteristicas": ["5 metros alcance", "Motor gasolina", "Telescópico", "Articulado"]
+            },
+            {
+              "nombre": "Cortasetos Altura ExtendCut 400",
+              "marca": "ExtendTech",
+              "caracteristicas": ["4 metros alcance", "Motor eléctrico", "Ligero", "Fácil almacenaje"]
+            }
+          ]
         },
         {
-          "nombre": "Pulverizadoras",
-          "marcas": ["Solo", "Matabi", "Berthoud"],
-          "rangos": ["Espalda", "Arrastre", "Remolque"]
+          "id": "jar-004",
+          "nombre": "ESCARIFICADOR CESPED",
+          "ejemplares": [
+            {
+              "nombre": "Escarificador Césped ScarifyPro 50",
+              "marca": "ScarifyTech",
+              "caracteristicas": ["50 cm ancho", "Motor gasolina", "Profundidad ajustable", "Cuchillas acero"]
+            },
+            {
+              "nombre": "Escarificador Césped GreenScarify 40",
+              "marca": "GreenTech",
+              "caracteristicas": ["40 cm ancho", "Motor eléctrico", "Compacto", "Eficiente"]
+            }
+          ]
+        },
+        {
+          "id": "jar-005",
+          "nombre": "MOTOAZADAS",
+          "ejemplares": [
+            {
+              "nombre": "Motoazada TillPro 85",
+              "marca": "TillTech",
+              "caracteristicas": ["85 cm ancho", "Motor diesel", "Alta potencia", "Marchas reversa"]
+            },
+            {
+              "nombre": "Motoazada CompactTill 65",
+              "marca": "CompactTech",
+              "caracteristicas": ["65 cm ancho", "Motor gasolina", "Manejable", "Ligera"]
+            }
+          ]
+        },
+        {
+          "id": "jar-006",
+          "nombre": "ZANJADORA",
+          "ejemplares": [
+            {
+              "nombre": "Zanjadora TrenchPro 150",
+              "marca": "TrenchTech",
+              "caracteristicas": ["150 mm ancho", "60 cm profundidad", "Motor diesel", "Alto rendimiento"]
+            },
+            {
+              "nombre": "Zanjadora CompactTrench 100",
+              "marca": "CompactTrench",
+              "caracteristicas": ["100 mm ancho", "40 cm profundidad", "Motor gasolina", "Portátil"]
+            }
+          ]
+        },
+        {
+          "id": "jar-007",
+          "nombre": "SOPLADORES",
+          "ejemplares": [
+            {
+              "nombre": "Soplador BlowPro 300",
+              "marca": "BlowTech",
+              "caracteristicas": ["300 km/h", "Motor gasolina", "Alta velocidad", "Silencioso"]
+            },
+            {
+              "nombre": "Soplador CompactBlow 200",
+              "marca": "CompactBlow",
+              "caracteristicas": ["200 km/h", "Motor eléctrico", "Ligero", "Batería"]
+            }
+          ]
+        },
+        {
+          "id": "jar-008",
+          "nombre": "MOTOPULVERIZADORES",
+          "ejemplares": [
+            {
+              "nombre": "Motopulverizador SprayPro 20",
+              "marca": "SprayTech",
+              "caracteristicas": ["20 litros", "Motor gasolina", "Alta presión", "Lanza ajustable"]
+            },
+            {
+              "nombre": "Motopulverizador CompactSpray 15",
+              "marca": "CompactSpray",
+              "caracteristicas": ["15 litros", "Motor eléctrico", "Portátil", "Precisión"]
+            }
+          ]
         }
       ],
       "imagen": "/images/maquinaria-jardin.jpg"
     },
     {
       "id": "forestal",
-      "nombre": "Forestal",
-      "descripcion": "Maquinaria especializada para trabajos forestales",
+      "nombre": "FORESTAL",
+      "descripcion": "Equipamiento especializado para trabajos forestales",
       "icono": "🌲",
-      "tipos": [
+      "maquinas": [
         {
-          "nombre": "Motosierras",
-          "marcas": ["Stihl", "Husqvarna", "Echo", "Makita"],
-          "rangos": ["Recreativas", "Semi-profesionales", "Profesionales"]
+          "id": "for-001",
+          "nombre": "MOTOSIERRAS",
+          "ejemplares": [
+            {
+              "nombre": "Motosierra TreePro 45",
+              "marca": "TreeTech",
+              "caracteristicas": ["45 cm barra", "Motor gasolina", "Alta potencia", "Anti-vibración"]
+            },
+            {
+              "nombre": "Motosierra CompactTree 35",
+              "marca": "CompactTree",
+              "caracteristicas": ["35 cm barra", "Motor eléctrico", "Ligera", "Manejable"]
+            }
+          ]
         },
         {
-          "nombre": "Astilladoras",
-          "marcas": ["Vermeer", "Bandit", "Chippo"],
-          "rangos": ["Manuales", "Remolque", "Estacionarias"]
+          "id": "for-002",
+          "nombre": "PODADORAS",
+          "ejemplares": [
+            {
+              "nombre": "Podadora PrunePro 25",
+              "marca": "PruneTech",
+              "caracteristicas": ["25 cm corte", "Motor gasolina", "Precisión", "Durabilidad"]
+            },
+            {
+              "nombre": "Podadora CompactPrune 20",
+              "marca": "CompactPrune",
+              "caracteristicas": ["20 cm corte", "Motor eléctrico", "Ligera", "Fácil manejo"]
+            }
+          ]
         },
         {
-          "nombre": "Desbrozadoras",
-          "marcas": ["Stihl", "Husqvarna", "Echo"],
-          "rangos": ["Espalda", "Ruedas", "Bruto"]
+          "id": "for-003",
+          "nombre": "PODADORAS ALTURA",
+          "ejemplares": [
+            {
+              "nombre": "Podadora Altura ReachTree 400",
+              "marca": "ReachTech",
+              "caracteristicas": ["4 metros alcance", "Motor gasolina", "Telescópico", "Articulado"]
+            },
+            {
+              "nombre": "Podadora Altura ExtendTree 300",
+              "marca": "ExtendTech",
+              "caracteristicas": ["3 metros alcance", "Motor eléctrico", "Portátil", "Ligera"]
+            }
+          ]
         },
         {
-          "nombre": "Grapadoras forestales",
-          "marcas": ["Stihl", "Husqvarna", "Jonsered"],
-          "rangos": ["Manuales", "Neumáticas", "Eléctricas"]
+          "id": "for-004",
+          "nombre": "DESBROZADORAS",
+          "ejemplares": [
+            {
+              "nombre": "Desbrozadora ClearPro 55",
+              "marca": "ClearTech",
+              "caracteristicas": ["55 cm disco", "Motor gasolina", "Alta potencia", "Fija altura"]
+            },
+            {
+              "nombre": "Desbrozadora CompactClear 45",
+              "marca": "CompactClear",
+              "caracteristicas": ["45 cm disco", "Motor eléctrico", "Ligera", "Manejable"]
+            }
+          ]
+        },
+        {
+          "id": "for-005",
+          "nombre": "AHOYADOR",
+          "ejemplares": [
+            {
+              "nombre": "Ahoyador HolePro 30",
+              "marca": "HoleTech",
+              "caracteristicas": ["30 cm diámetro", "60 cm profundidad", "Motor gasolina", "Alta eficiencia"]
+            },
+            {
+              "nombre": "Ahoyador CompactHole 25",
+              "marca": "CompactHole",
+              "caracteristicas": ["25 cm diámetro", "50 cm profundidad", "Motor eléctrico", "Portátil"]
+            }
+          ]
+        },
+        {
+          "id": "for-006",
+          "nombre": "DESTOCONADOR",
+          "ejemplares": [
+            {
+              "nombre": "Destoconador StumpPro 50",
+              "marca": "StumpTech",
+              "caracteristicas": ["50 cm profundidad", "Motor diesel", "Alta potencia", "Durabilidad"]
+            },
+            {
+              "nombre": "Destoconador CompactStump 40",
+              "marca": "CompactStump",
+              "caracteristicas": ["40 cm profundidad", "Motor gasolina", "Portátil", "Eficiente"]
+            }
+          ]
+        },
+        {
+          "id": "for-007",
+          "nombre": "CARRETILLA ORUGAS",
+          "ejemplares": [
+            {
+              "nombre": "Carretilla Orugas TrackPro 800",
+              "marca": "TrackTech",
+              "caracteristicas": ["800 kg carga", "Orugas", "Motor diesel", "Alto rendimiento"]
+            },
+            {
+              "nombre": "Carretilla Orugas CompactTrack 600",
+              "marca": "CompactTrack",
+              "caracteristicas": ["600 kg carga", "Orugas", "Motor gasolina", "Maniobrable"]
+            }
+          ]
+        },
+        {
+          "id": "for-008",
+          "nombre": "VAREADORES",
+          "ejemplares": [
+            {
+              "nombre": "Vareador PollPro 150",
+              "marca": "PollTech",
+              "caracteristicas": ["150 cm ancho", "Motor gasolina", "Alta velocidad", "Fácil manejo"]
+            },
+            {
+              "nombre": "Vareador CompactPoll 120",
+              "marca": "CompactPoll",
+              "caracteristicas": ["120 cm ancho", "Motor eléctrico", "Ligero", "Portátil"]
+            }
+          ]
+        },
+        {
+          "id": "for-009",
+          "nombre": "BIOTRITURADORAS",
+          "ejemplares": [
+            {
+              "nombre": "Biotrituradora ChipPro 100",
+              "marca": "ChipTech",
+              "caracteristicas": ["100 mm ramas", "Motor diesel", "Alta capacidad", "Reduce volumen"]
+            },
+            {
+              "nombre": "Biotrituradora CompactChip 80",
+              "marca": "CompactChip",
+              "caracteristicas": ["80 mm ramas", "Motor eléctrico", "Portátil", "Silencioso"]
+            }
+          ]
         }
       ],
       "imagen": "/images/maquinaria-forestal.jpg"
+    },
+    {
+      "id": "construccion",
+      "nombre": "CONSTRUCCION",
+      "descripcion": "Maquinaria específica para obras y construcción",
+      "icono": "🏗️",
+      "maquinas": [
+        {
+          "id": "cons-001",
+          "nombre": "HORMIGONERAS",
+          "ejemplares": [
+            {
+              "nombre": "Hormigonera MixPro 250",
+              "marca": "MixTech",
+              "caracteristicas": ["250 litros", "Motor eléctrico", "Volteo 360°", "Robusta"]
+            },
+            {
+              "nombre": "Hormigonera CompactMix 150",
+              "marca": "CompactMix",
+              "caracteristicas": ["150 litros", "Motor gasolina", "Portátil", "Duradera"]
+            }
+          ]
+        },
+        {
+          "id": "cons-002",
+          "nombre": "ROZADORAS",
+          "ejemplares": [
+            {
+              "nombre": "Rozadora BrushPro 100",
+              "marca": "BrushTech",
+              "caracteristicas": ["100 cm ancho", "Motor diesel", "Alta potencia", "Ajustable"]
+            },
+            {
+              "nombre": "Rozadora CompactBrush 80",
+              "marca": "CompactBrush",
+              "caracteristicas": ["80 cm ancho", "Motor eléctrico", "Ligera", "Manejable"]
+            }
+          ]
+        },
+        {
+          "id": "cons-003",
+          "nombre": "PULIDORAS DE TERRAZO",
+          "ejemplares": [
+            {
+              "nombre": "Pulidora Terrazo ShinePro 400",
+              "marca": "ShineTech",
+              "caracteristicas": ["400 mm disco", "Motor potente", "Alta velocidad", "Brillo perfecto"]
+            },
+            {
+              "nombre": "Pulidora Terrazo CompactShine 300",
+              "marca": "CompactShine",
+              "caracteristicas": ["300 mm disco", "Motor eléctrico", "Portátil", "Eficiente"]
+            }
+          ]
+        },
+        {
+          "id": "cons-004",
+          "nombre": "PULIDORA PELDAÑOS",
+          "ejemplares": [
+            {
+              "nombre": "Pulidora Peldaños StepShine 250",
+              "marca": "StepTech",
+              "caracteristicas": ["250 mm disco", "Angular", "Motor potente", "Precisión"]
+            },
+            {
+              "nombre": "Pulidora Peldaños CompactStep 200",
+              "marca": "CompactStep",
+              "caracteristicas": ["200 mm disco", "Ligera", "Motor eléctrico", "Manejable"]
+            }
+          ]
+        },
+        {
+          "id": "cons-005",
+          "nombre": "RADIALES",
+          "ejemplares": [
+            {
+              "nombre": "Radial SawPro 400",
+              "marca": "SawTech",
+              "caracteristicas": ["400 mm disco", "Motor potente", "Precisión corte", "Seguridad"]
+            },
+            {
+              "nombre": "Radial CompactSaw 300",
+              "marca": "CompactSaw",
+              "caracteristicas": ["300 mm disco", "Compacto", "Motor eléctrico", "Fácil ajuste"]
+            }
+          ]
+        },
+        {
+          "id": "cons-006",
+          "nombre": "TALADROS",
+          "ejemplares": [
+            {
+              "nombre": "Taladro DrillPro 1000",
+              "marca": "DrillTech",
+              "caracteristicas": ["1000 W", "Percusión", "Variable velocidad", "Robusto"]
+            },
+            {
+              "nombre": "Taladro CompactDrill 750",
+              "marca": "CompactDrill",
+              "caracteristicas": ["750 W", "Ligero", "Ergonómico", "Batería opcional"]
+            }
+          ]
+        },
+        {
+          "id": "cons-007",
+          "nombre": "TRONZADORA AGUA",
+          "ejemplares": [
+            {
+              "nombre": "Tronzadora Agua WetCut Pro 500",
+              "marca": "WetCut",
+              "caracteristicas": ["500 mm disco", "Agua refrigeración", "Motor potente", "Sin polvo"]
+            },
+            {
+              "nombre": "Tronzadora Agua CompactWet 400",
+              "marca": "CompactWet",
+              "caracteristicas": ["400 mm disco", "Compacta", "Agua sistema", "Portátil"]
+            }
+          ]
+        },
+        {
+          "id": "cons-008",
+          "nombre": "TRONZADORA MADERA",
+          "ejemplares": [
+            {
+              "nombre": "Tronzadora Madera WoodCut Pro 600",
+              "marca": "WoodCut",
+              "caracteristicas": ["600 mm disco", "Potente", "Precisión", "Alto rendimiento"]
+            },
+            {
+              "nombre": "Tronzadora Madera CompactWood 450",
+              "marca": "CompactWood",
+              "caracteristicas": ["450 mm disco", "Ligera", "Manejable", "Eficiente"]
+            }
+          ]
+        },
+        {
+          "id": "cons-009",
+          "nombre": "CORTADOR AZULEJOS",
+          "ejemplares": [
+            {
+              "nombre": "Cortador Azulejos TilePro 1000",
+              "marca": "TileTech",
+              "caracteristicas": ["1000 mm corte", "Precisión", "Rotación diamante", "Cortes limpios"]
+            },
+            {
+              "nombre": "Cortador Azulejos CompactTile 750",
+              "marca": "CompactTile",
+              "caracteristicas": ["750 mm corte", "Portátil", "Fácil uso", "Resultados profesionales"]
+            }
+          ]
+        }
+      ],
+      "imagen": "/images/maquinaria-construccion.jpg"
+    },
+    {
+      "id": "deseescombro",
+      "nombre": "DESESCOMBRO",
+      "descripcion": "Equipamiento para transporte y gestión de escombros",
+      "icono": "🚛",
+      "maquinas": [
+        {
+          "id": "des-001",
+          "nombre": "DUMPER",
+          "ejemplares": [
+            {
+              "nombre": "Dumper LoadPro 2000",
+              "marca": "LoadTech",
+              "caracteristicas": ["2000 kg carga", "Motor diesel", "Tracción 4x4", "Volcado automático"]
+            },
+            {
+              "nombre": "Dumper CompactLoad 1500",
+              "marca": "CompactLoad",
+              "caracteristicas": ["1500 kg carga", "Motor gasolina", "Compacto", "Maniobrable"]
+            }
+          ]
+        },
+        {
+          "id": "des-002",
+          "nombre": "BAJANTES DE ESCOMBRO",
+          "ejemplares": [
+            {
+              "nombre": "Bajante Escombro ChutePro 500",
+              "marca": "ChuteTech",
+              "caracteristicas": ["5 metros", "Telescópico", "Material acero", "Fácil montaje"]
+            },
+            {
+              "nombre": "Bajante Escombro CompactChute 300",
+              "marca": "CompactChute",
+              "caracteristicas": ["3 metros", "Ligero", "Aluminio", "Portátil"]
+            }
+          ]
+        },
+        {
+          "id": "des-003",
+          "nombre": "MINICARGADORA",
+          "ejemplares": [
+            {
+              "nombre": "Minicargadora LoaderPro 800",
+              "marca": "LoaderTech",
+              "caracteristicas": ["800 kg carga", "Motor diesel", "Cuchilla ajustable", "Versátil"]
+            },
+            {
+              "nombre": "Minicargadora CompactLoader 600",
+              "marca": "CompactLoader",
+              "caracteristicas": ["600 kg carga", "Motor eléctrico", "Operador caminando", "Compacta"]
+            }
+          ]
+        },
+        {
+          "id": "des-004",
+          "nombre": "MINIEXCAVADORA",
+          "ejemplares": [
+            {
+              "nombre": "Miniexcavadora DigPro 1500",
+              "marca": "DigTech",
+              "caracteristicas": ["1500 kg", "Motor diesel", "Alcance 3.5m", "Estabilizadores"]
+            },
+            {
+              "nombre": "Miniexcavadora CompactDig 1000",
+              "marca": "CompactDig",
+              "caracteristicas": ["1000 kg", "Motor gasolina", "Compacta", "Fácil transporte"]
+            }
+          ]
+        }
+      ],
+      "imagen": "/images/maquinaria-deseescombro.jpg"
     }
-  ],
-  "destacados": [
-    "Marcas líderes del mercado",
-    "Garantía oficial",
-    "Formación operativa",
-    "Servicio técnico 24/7",
-    "Financiación propia"
   ]
 }

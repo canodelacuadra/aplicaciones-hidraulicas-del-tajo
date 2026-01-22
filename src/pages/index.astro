@@ -53,7 +53,7 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
             <circle cx="12" cy="15" r="1"/>
           </svg>
         </div>
-        <h3>{maquinariaData.titulo}</h3>
+        <h3>Maquinaria Profesional</h3>
       </div>
  
       <p class="servicios-compactos">
@@ -108,14 +108,21 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 <script is:inline>
   function verMaquinaria(categoriaId) {
     const categoriaNombres = {
-      'construccion': 'Construcción',
-      'agricola': 'Agrícola', 
+      'aire-comprimido': 'Aire Comprimido',
+      'limpieza': 'Limpieza',
+      'demolicion': 'Demolición',
+      'compactacion': 'Compactación',
+      'vibracion': 'Vibración',
+      'elevacion': 'Elevación',
+      'energia': 'Energía',
       'jardin': 'Jardín',
-      'forestal': 'Forestal'
+      'forestal': 'Forestal',
+      'construccion': 'Construcción',
+      'deseescombro': 'Desescombro'
     };
     
     const nombre = categoriaNombres[categoriaId] || 'desconocido';
-    alert(`Próximamente podrás ver toda nuestra maquinaria disponible para el sector de ${nombre}`);
+    alert(`Explorando nuestra maquinaria para el sector de ${nombre}. Disponemos de múltiples modelos y marcas con características técnicas específicas.`);
   }
 </script>
 

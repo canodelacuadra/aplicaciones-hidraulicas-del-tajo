@@ -4,7 +4,7 @@ import maquinariaData from "../data/maquinaria.json";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 ---
 
-<BaseLayout title={`Maquinaria Profesional - ${empresaData.empresa.nombre}`} description="Maquinaria profesional para construcción, agricultura, jardinería y forestal. Alquiler, venta y reparación especializada.">
+<BaseLayout title={`Maquinaria Profesional - ${empresaData.empresa.nombre}`} description="Maquinaria profesional para construcción, agricultura,riego, jardinería y forestal. Alquiler, venta y reparación especializada.">
  
   <section class="servicios-principales">
     <div class="container">
@@ -31,42 +31,73 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
             </div>
             <p>{categoria.descripcion}</p>
             
-            <div class="tipos-maquinaria">
-               {categoria.tipos.map((tipo) => (
-              //{categoria.tipos.slice(0, 2).map((tipo) => (
-                <div class="tipo-item">
-                  <h4>{tipo.nombre}</h4>
-                  <div class="marcas">
-                    {tipo.marcas.slice(0, 3).map((marca) => (
-                      <span class="marca-tag">{marca}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+             <div class="maquinas-lista">
+               {categoria.maquinas.slice(0, 3).map((maquina) => (
+                 <div class="maquina-item">
+                   <h4>{maquina.nombre}</h4>
+                   <div class="ejemplares-info">
+                     <span class="ejemplares-count">{maquina.ejemplares.length} modelos disponibles</span>
+                     <div class="marcas-disponibles">
+                       {maquina.ejemplares.slice(0, 2).map((ejemplar) => (
+                         <span class="marca-tag">{ejemplar.marca}</span>
+                       ))}
+                     </div>
+                   </div>
+                   <div class="ejemplares-lista">
+                     {maquina.ejemplares.slice(0, 2).map((ejemplar) => (
+                       <div class="ejemplar-card">
+                         <div class="ejemplar-header">
+                           <span class="ejemplar-nombre">{ejemplar.nombre}</span>
+                           <span class="ejemplar-marca">{ejemplar.marca}</span>
+                         </div>
+                         <div class="ejemplar-caracteristicas">
+                           {ejemplar.caracteristicas.map((caracteristica) => (
+                             <span class="caracteristica-tag">{caracteristica}</span>
+                           ))}
+                         </div>
+                       </div>
+                     ))}
+                   </div>
+                 </div>
+               ))}
+             </div>
             
-            <button class="ver-mas-btn" onclick="verCategoria('{categoria.id}')">
+          {/*   <button class="ver-mas-btn" onclick="verCategoria('{categoria.id}')">
               Ver más detalles
-            </button>
+            </button> */}
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="destacados-section">
-    <div class="container">
-      <h2>¿Por qué elegirnos?</h2>
-      <div class="destacados-grid">
-        {maquinariaData.destacados.map((destacado, index) => (
-          <div class="destacado-item" style={`animation-delay: ${index * 0.1}s`}>
-            <span class="destacado-icon">⭐</span>
-            <span>{destacado}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+   {/* <section class="destacados-section">
+     <div class="container">
+       <h2>¿Por qué elegirnos?</h2>
+       <div class="destacados-grid">
+         <div class="destacado-item" style="animation-delay: 0.1s">
+           <span class="destacado-icon">⭐</span>
+           <span>Marcas líderes del mercado</span>
+         </div>
+         <div class="destacado-item" style="animation-delay: 0.2s">
+           <span class="destacado-icon">⭐</span>
+           <span>Garantía oficial</span>
+         </div>
+         <div class="destacado-item" style="animation-delay: 0.3s">
+           <span class="destacado-icon">⭐</span>
+           <span>Formación operativa</span>
+         </div>
+         <div class="destacado-item" style="animation-delay: 0.4s">
+           <span class="destacado-icon">⭐</span>
+           <span>Servicio técnico 24/7</span>
+         </div>
+         <div class="destacado-item" style="animation-delay: 0.5s">
+           <span class="destacado-icon">⭐</span>
+           <span>Financiación propia</span>
+         </div>
+       </div>
+     </div> */}
+   </section>
 
   <section class="contacto-section">
     <div class="container">
@@ -101,17 +132,24 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 </BaseLayout>
 
 <script is:inline>
-  function verCategoria(categoriaId) {
-    const categoriaNombres = {
-      'construccion': 'Construcción',
-      'agricola': 'Agrícola', 
-      'jardin': 'Jardín',
-      'forestal': 'Forestal'
-    };
-    
-    const nombre = categoriaNombres[categoriaId] || 'desconocido';
-    alert(`Explorando toda nuestra maquinaria para el sector de ${nombre}. Próximamente podrás ver los modelos disponibles con sus características y precios.`);
-  }
+   function verCategoria(categoriaId) {
+     const categoriaNombres = {
+       'aire-comprimido': 'Aire Comprimido',
+       'limpieza': 'Limpieza',
+       'demolicion': 'Demolición',
+       'compactacion': 'Compactación',
+       'vibracion': 'Vibración',
+       'elevacion': 'Elevación',
+       'energia': 'Energía',
+       'jardin': 'Jardín',
+       'forestal': 'Forestal',
+       'construccion': 'Construcción',
+       'deseescombro': 'Desescombro'
+     };
+     
+     const nombre = categoriaNombres[categoriaId] || 'desconocido';
+     alert(`Explorando toda nuestra maquinaria para el sector de ${nombre}. Disponemos de múltiples modelos y marcas con características técnicas específicas.`);
+   }
 </script>
 
 <style>
@@ -287,18 +325,101 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
     font-size: 1rem;
   }
 
-  .marcas {
+  .maquinas-lista {
+    margin-bottom: 1.5rem;
+  }
+
+  .maquina-item {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: rgba(21, 104, 167, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #1568a7;
+  }
+
+  .maquina-item h4 {
+    margin: 0 0 0.5rem;
+    color: #333;
+    font-size: 1rem;
+  }
+
+  .ejemplares-info {
     display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ejemplares-count {
+    color: #1568a7;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .marcas-disponibles {
+    display: flex;
+    gap: 0.5rem;
     flex-wrap: wrap;
-    gap: 0.3rem;
   }
 
   .marca-tag {
     background: rgba(21, 104, 167, 0.1);
     color: #1568a7;
-    padding: 0.2rem 0.5rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .ejemplares-lista {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ejemplar-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(21, 104, 167, 0.2);
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+
+  .ejemplar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .ejemplar-nombre {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.85rem;
+    flex: 1;
+  }
+
+  .ejemplar-marca {
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .ejemplar-caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .caracteristica-tag {
+    background: rgba(21, 104, 167, 0.05);
+    color: #666;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(21, 104, 167, 0.1);
   }
 
   .ver-mas-btn {
@@ -453,6 +574,20 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 
     .contacto-btn {
       justify-content: center;
+    }
+
+    .ejemplar-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+
+    .marcas-disponibles {
+      flex-direction: column;
+    }
+
+    .ejemplar-caracteristicas {
+      flex-direction: column;
     }
   }
 
