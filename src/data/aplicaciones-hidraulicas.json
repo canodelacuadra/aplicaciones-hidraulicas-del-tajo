@@ -1,0 +1,12 @@
+{
+    "nombre": "Aplicaciones Hidráulicas del Tajo",
+    "web":"https://www.aphdtajo.com",
+    "objeto": "Empresa dedicada al tratamiento de aguas y residuales",
+    "logotipo":"/images/logo.svg",
+    "servicios": [
+        "Alquiler de Maquinaria",
+        "Reparación de Maquinaria",
+        "Venta de Maquinaria",
+        "Venta de consumibles de construcción, jardín, Agrícola, Forestal"
+    ]
+}

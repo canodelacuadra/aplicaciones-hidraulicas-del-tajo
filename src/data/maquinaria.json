@@ -33,22 +33,22 @@
       "icono": "🏗️",
       "tipos": [
         {
-          "nombre": "Excavadoras",
+          "nombre": "Hormigoneras",
           "marcas": ["Caterpillar", "JCB", "Komatsu", "Volvo"],
           "rangos": ["Mini (1-5T)", "Medianas (5-10T)", "Pesadas (>10T)"]
         },
         {
-          "nombre": "Grúas",
+          "nombre": "Rozadoras",
           "marcas": ["Liebherr", "Potain", "Manitowoc"],
           "rangos": ["Torre", "Móvil", "Camión"]
         },
         {
-          "nombre": "Bulldozers",
+          "nombre": "Pulidoras de Terrazo",
           "marcas": ["Caterpillar", "Komatsu", "Case"],
           "rangos": ["Oruga", "Neumáticos"]
         },
         {
-          "nombre": "Retroexcavadoras",
+          "nombre": "Pulidora Peldaños",
           "marcas": ["JCB", "Case", "New Holland"],
           "rangos": ["4x4", "Tracción trasera"]
         }

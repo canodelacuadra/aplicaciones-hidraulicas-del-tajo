@@ -20,14 +20,19 @@ import maquinariaData from "../data/maquinaria.json";
       <div class="categorias-grid">
         {maquinariaData.categorias.map((categoria) => (
           <div class="categoria-card">
+            <div class="categoria-imagen">
+               <img src={categoria.imagen} alt={categoria.nombre}>
+                </div>
             <div class="categoria-header">
               <div class="categoria-icono">{categoria.icono}</div>
+              
               <h3>{categoria.nombre}</h3>
             </div>
             <p>{categoria.descripcion}</p>
             
             <div class="tipos-maquinaria">
-              {categoria.tipos.slice(0, 2).map((tipo) => (
+               {categoria.tipos.map((tipo) => (
+              //{categoria.tipos.slice(0, 2).map((tipo) => (
                 <div class="tipo-item">
                   <h4>{tipo.nombre}</h4>
                   <div class="marcas">
@@ -69,7 +74,7 @@ import maquinariaData from "../data/maquinaria.json";
           <h2>¿Necesitas asesoramiento?</h2>
           <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la maquinaria perfecta para tus necesidades.</p>
           <div class="contacto-buttons">
-            <a href="tel:+34687416029" class="contacto-btn primary">
+            <a href="tel:+34672942881" class="contacto-btn primary">
               <span>📞</span> Llamar ahora
             </a>
             <a href="mailto:info@ahtajo.com" class="contacto-btn secondary">
@@ -222,6 +227,20 @@ import maquinariaData from "../data/maquinaria.json";
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(21, 104, 167, 0.1);
   }
+      .categoria-imagen {
+    flex:1;
+      
+  height: 200px;
+  overflow: hidden;
+  
+  }
+   .categoria-imagen img{
+   
+      width: 100%;
+  height: 100%;
+  object-fit: cover;        /* recorta */
+  object-position: center 30%; /* mueve en Y */
+  }
 
   .categoria-card:hover {
     transform: translateY(-4px);
@@ -235,9 +254,11 @@ import maquinariaData from "../data/maquinaria.json";
     margin-bottom: 1rem;
   }
 
+
   .categoria-icono {
     font-size: 2.5rem;
   }
+
 
   .categoria-header h3 {
     margin: 0;
