@@ -1,5 +1,6 @@
 ---
 import FooterSocial from './FooterSocial.astro';
+import LocationMap from './LocationMap.tsx';
 ---
 
 <footer class="site-footer">
@@ -50,8 +51,10 @@ import FooterSocial from './FooterSocial.astro';
         <img src="/images/tienda-fachada.webp" alt="Fachada de la tienda Aplicaciones Hidráulicas del Tajo" />
       </div>
       <div class="footer-map">
-        <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-4.269875586032868%2C39.97872533107526%2C-4.267193377017976%2C39.980131163255066&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?#map=19/39.979428/-4.268534&amp;layers=N">Ver el mapa más grande</a></small>
-      
+        <LocationMap client:load />
+        <a href="https://www.openstreetmap.org/?#map=19/39.979428/-4.268534&layers=N" class="map-link" target="_blank" rel="noopener noreferrer">
+          Ver el mapa más grande
+        </a>
       </div>
     </div>
   </div>
@@ -176,12 +179,26 @@ import FooterSocial from './FooterSocial.astro';
   margin-bottom: 1.5rem;
 }
 
-.footer-map iframe {
-  width: 100%;
-  height: 280px;
-  border: none;
+.footer-map {
+  position: relative;
+}
+
+.footer-map :global(.leaflet-container) {
   border-radius: 8px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.footer-map :global(.custom-tooltip) {
+  background: #1568a7 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  color: white !important;
+  font-weight: bold !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+}
+
+.footer-map :global(.custom-tooltip::before) {
+  border-top-color: #1568a7 !important;
 }
 
 .map-link {
@@ -190,6 +207,10 @@ import FooterSocial from './FooterSocial.astro';
   font-size: 0.85rem;
   color: #d1dbe6;
   text-decoration: underline;
+}
+
+.map-link:hover {
+  color: #ffffff;
 }
 
   /* Responsive */
@@ -213,7 +234,7 @@ import FooterSocial from './FooterSocial.astro';
       height: 200px;
     }
 
-    .footer-map iframe {
+    .footer-map :global(.leaflet-container) {
       height: 220px;
     }
   }
