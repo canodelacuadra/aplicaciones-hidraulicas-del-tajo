@@ -6,70 +6,47 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 
 <BaseLayout title={`Maquinaria Profesional - ${empresaData.empresa.nombre}`} description="Maquinaria profesional para construcción, agricultura,riego, jardinería y forestal. Alquiler, venta y reparación especializada.">
  
-  <section class="servicios-principales">
+ <!--  <section class="servicios-principales">
     <div class="container">
       <h2>Nuestros Servicios</h2>
       <p class="servicios-compactos">
         Ofrecemos <strong>alquiler</strong> de maquinaria a corto y largo plazo con mantenimiento incluido, <strong>reparación</strong> técnica especializada con diagnóstico avanzado y servicio móvil, y <strong>venta</strong> de maquinaria nueva y certificada con financiación disponible.
       </p>
     </div>
-  </section>
+  </section> -->
 
-  <section class="categorias-maquinaria">
-    <div class="container">
-      <h2>Tipos de Maquinaria</h2>
-      <div class="categorias-grid">
-        {maquinariaData.categorias.map((categoria) => (
-          <div class="categoria-card">
-            <div class="categoria-imagen">
-               <img src={categoria.imagen} alt={categoria.nombre}>
-                </div>
-            <div class="categoria-header">
-              <div class="categoria-icono">{categoria.icono}</div>
-              
-              <h3>{categoria.nombre}</h3>
-            </div>
-            <p>{categoria.descripcion}</p>
-            
-             <div class="maquinas-lista">
-               {categoria.maquinas.slice(0, 3).map((maquina) => (
-                 <div class="maquina-item">
-                   <h4>{maquina.nombre}</h4>
-                   <div class="ejemplares-info">
-                     <span class="ejemplares-count">{maquina.ejemplares.length} modelos disponibles</span>
-                     <div class="marcas-disponibles">
-                       {maquina.ejemplares.slice(0, 2).map((ejemplar) => (
-                         <span class="marca-tag">{ejemplar.marca}</span>
-                       ))}
-                     </div>
-                   </div>
-                   <div class="ejemplares-lista">
-                     {maquina.ejemplares.slice(0, 2).map((ejemplar) => (
-                       <div class="ejemplar-card">
-                         <div class="ejemplar-header">
-                           <span class="ejemplar-nombre">{ejemplar.nombre}</span>
-                           <span class="ejemplar-marca">{ejemplar.marca}</span>
-                         </div>
-                         <div class="ejemplar-caracteristicas">
-                           {ejemplar.caracteristicas.map((caracteristica) => (
-                             <span class="caracteristica-tag">{caracteristica}</span>
-                           ))}
-                         </div>
-                       </div>
-                     ))}
-                   </div>
-                 </div>
-               ))}
+   <section class="categorias-maquinaria">
+     <div class="container">
+       <h2>Familias de máquinas</h2>
+       <div class="categorias-grid">
+         {maquinariaData.categorias.map((categoria) => (
+           <div class="categoria-card">
+             <div class="categoria-imagen">
+                <img src={categoria.imagen} alt={categoria.nombre}>
              </div>
-            
-          {/*   <button class="ver-mas-btn" onclick="verCategoria('{categoria.id}')">
-              Ver más detalles
-            </button> */}
+             <div class="categoria-header">
+               <div class="categoria-icono">{categoria.icono}</div>
+               <h3>{categoria.nombre}</h3>
+             </div>
+             <p>{categoria.descripcion}</p>
+             
+             <div class="categoria-info">
+               <p class="maquinas-count">
+                 {categoria.maquinas.length} tipos de máquina • {categoria.maquinas.reduce((total, maquina) => total + maquina.ejemplares.length, 0)} modelos disponibles
+               </p>
+             </div>
+              
+              <div class="categoria-actions">
+                <a href={`/maquinaria/${categoria.id}/`} class="ver-categoria-btn">
+                  <span>Ver todas las máquinas</span>
+                  <span class="arrow">→</span>
+                </a>
+              </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
+         ))}
+       </div>
+     </div>
+   </section>
 
    {/* <section class="destacados-section">
      <div class="container">
@@ -311,133 +288,55 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
     margin-bottom: 1.5rem;
   }
 
-  .tipos-maquinaria {
-    margin-bottom: 1.5rem;
-  }
-
-  .tipo-item {
+  /* Category Info */
+  .categoria-info {
     margin-bottom: 1rem;
-  }
-
-  .tipo-item h4 {
-    margin: 0 0 0.5rem;
-    color: #333;
-    font-size: 1rem;
-  }
-
-  .maquinas-lista {
-    margin-bottom: 1.5rem;
-  }
-
-  .maquina-item {
-    margin-bottom: 1rem;
-    padding: 0.75rem;
+    padding: 1rem;
     background: rgba(21, 104, 167, 0.05);
     border-radius: 8px;
-    border-left: 3px solid #1568a7;
-  }
-
-  .maquina-item h4 {
-    margin: 0 0 0.5rem;
-    color: #333;
-    font-size: 1rem;
-  }
-
-  .ejemplares-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .ejemplares-count {
-    color: #1568a7;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  .marcas-disponibles {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .marca-tag {
-    background: rgba(21, 104, 167, 0.1);
-    color: #1568a7;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 500;
-  }
-
-  .ejemplares-lista {
-    margin-top: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .ejemplar-card {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(21, 104, 167, 0.2);
-    border-radius: 6px;
-    padding: 0.5rem;
-  }
-
-  .ejemplar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
-
-  .ejemplar-nombre {
-    font-weight: 600;
-    color: #333;
-    font-size: 0.85rem;
-    flex: 1;
-  }
-
-  .ejemplar-marca {
-    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
-    color: white;
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-
-  .ejemplar-caracteristicas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-  }
-
-  .caracteristica-tag {
-    background: rgba(21, 104, 167, 0.05);
-    color: #666;
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.75rem;
     border: 1px solid rgba(21, 104, 167, 0.1);
   }
 
-  .ver-mas-btn {
+  .categoria-info .maquinas-count {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #1568a7;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* Category Actions */
+  .categoria-actions {
+    margin-top: 1rem;
+  }
+
+  .ver-categoria-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
     background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
     color: white;
-    border: none;
+    text-decoration: none;
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 500;
-    cursor: pointer;
     transition: all 0.3s ease;
   }
 
-  .ver-mas-btn:hover {
+  .ver-categoria-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(21, 104, 167, 0.3);
+    box-shadow: 0 6px 16px rgba(21, 104, 167, 0.25);
+  }
+
+  .ver-categoria-btn .arrow {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .ver-categoria-btn:hover .arrow {
+    transform: translateX(4px);
   }
 
   /* Destacados */
