@@ -1,6 +1,7 @@
 ---
 import FooterSocial from './FooterSocial.astro';
 import LocationMap from './LocationMap.tsx';
+import empresaData from '../data/aplicaciones-hidraulicas.json';
 ---
 
 <footer class="site-footer">
@@ -14,10 +15,9 @@ import LocationMap from './LocationMap.tsx';
   <div class="footer-content">
     <div class="footer-left">
       <div class="footer-brand">
-        <h3>Aplicaciones Hidráulicas del Tajo</h3>
+        <h3>{empresaData.empresa.nombre}</h3>
         <p>
-          Soluciones profesionales en hidráulica, riego y gestión eficiente del
-          agua.
+          {empresaData.empresa.descripcionCorta}
         </p>
       </div>
 
@@ -25,22 +25,22 @@ import LocationMap from './LocationMap.tsx';
         <h4>Contacto</h4>
         <ul>
           <li>
-            📍 <span>Calle Dali 1, 45500 Torrijos, Toledo</span>
+            📍 <span>{empresaData.contacto.direccion}</span>
           </li>
           <li>
-            📞 <a href="tel:+34687416029">628023032</a>
+            📞 <a href={`tel:${empresaData.contacto.telefonoHref}`}>{empresaData.contacto.telefono}</a>
           </li>
           <li>
-            ✉️ <a href="mailto:ahdtajo@gmail.com">ahdtajo@gmail.com</a>
+            ✉️ <a href={`mailto:${empresaData.contacto.email}`}>{empresaData.contacto.email}</a>
           </li>
         </ul>
         <div class="footer-hours">
           <h5>Horario</h5>
-          <p><strong>Invierno:</strong><br>
-          Lunes a Viernes: 9:00-13:00 y 16:00-20:00</p>
-          <p><strong>Verano:</strong><br>
-          Lunes a Sábado: 9:00-13:00<br>
-          Lunes a Viernes: 16:30-20:00</p>
+          <p><strong>{empresaData.horario.invierno.nombre}:</strong><br>
+          {empresaData.horario.invierno.dias}: {empresaData.horario.invierno.manana} y {empresaData.horario.invierno.tarde}</p>
+          <p><strong>{empresaData.horario.verano.nombre}:</strong><br>
+          {empresaData.horario.verano.dias}: {empresaData.horario.verano.manana}<br>
+          {empresaData.horario.verano.tarde}</p>
         </div>
         <FooterSocial />
       </div>
@@ -48,11 +48,11 @@ import LocationMap from './LocationMap.tsx';
     
     <div class="footer-right">
       <div class="footer-image">
-        <img src="/images/tienda-fachada.webp" alt="Fachada de la tienda Aplicaciones Hidráulicas del Tajo" />
+        <img src={empresaData.empresa.fachadaImagen} alt={`Fachada de la tienda ${empresaData.empresa.nombre}`} />
       </div>
       <div class="footer-map">
-        <LocationMap client:load />
-        <a href="https://www.openstreetmap.org/?#map=19/39.979428/-4.268534&layers=N" class="map-link" target="_blank" rel="noopener noreferrer">
+        <LocationMap client:load empresaData={empresaData} />
+        <a href={`https://www.openstreetmap.org/?#map=19/${empresaData.contacto.coordenadas.latitud}/${empresaData.contacto.coordenadas.longitud}&layers=N`} class="map-link" target="_blank" rel="noopener noreferrer">
           Ver el mapa más grande
         </a>
       </div>
@@ -60,7 +60,7 @@ import LocationMap from './LocationMap.tsx';
   </div>
 
   <div class="footer-bottom">
-    <p>© {new Date().getFullYear()} Aplicaciones Hidráulicas del Tajo</p>
+    <p>© {new Date().getFullYear()} {empresaData.empresa.nombre}</p>
   </div>
 </footer>
 

@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import tratamientoAguasData from "../data/tratamiento-aguas.json";
-
 import maquinariaData from "../data/maquinaria.json";
 import recambiosData from "../data/recambios.json";
+import empresaData from "../data/aplicaciones-hidraulicas.json";
 ---
 
-<BaseLayout title="Aplicaciones Hidráulicas del Tajo">
+<BaseLayout title={empresaData.seo.tituloBase} description={empresaData.seo.descripcionBase}>
   <!-- Áreas de Negocio -->
   <section class="areas-negocio">
     <h2>Nuestras Áreas de Negocio</h2>

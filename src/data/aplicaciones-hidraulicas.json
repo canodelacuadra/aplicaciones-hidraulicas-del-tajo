@@ -1,12 +1,45 @@
 {
+  "empresa": {
     "nombre": "Aplicaciones Hidráulicas del Tajo",
-    "web":"https://www.aphdtajo.com",
+    "web": "https://www.ahdtajo.com",
+    "descripcionCorta": "Soluciones profesionales en hidráulica, riego y gestión eficiente del agua",
+    "descripcionLarga": "Especialistas en soluciones hidráulicas, riego eficiente y gestión técnica del agua",
     "objeto": "Empresa dedicada al tratamiento de aguas y residuales",
-    "logotipo":"/images/logo.svg",
-    "servicios": [
-        "Alquiler de Maquinaria",
-        "Reparación de Maquinaria",
-        "Venta de Maquinaria",
-        "Venta de consumibles de construcción, jardín, Agrícola, Forestal"
-    ]
+    "logotipo": "/images/logo.svg",
+    "fachadaImagen": "/images/tienda-fachada.webp"
+  },
+  "contacto": {
+    "direccion": "Calle Dalí 1, 45500 Torrijos, Toledo",
+    "telefono": "687416029",
+    "telefonoHref": "+34687416029",
+    "email": "ahdtajo@gmail.com",
+    "coordenadas": {
+      "latitud": 39.979428,
+      "longitud": -4.268534
+    }
+  },
+  "horario": {
+    "invierno": {
+      "nombre": "Invierno",
+      "dias": "Lunes a Viernes",
+      "manana": "9:00-13:00",
+      "tarde": "16:00-20:00"
+    },
+    "verano": {
+      "nombre": "Verano",
+      "dias": "Lunes a Sábado",
+      "manana": "9:00-13:00",
+      "tarde": "Lunes a Viernes: 16:30-20:00"
+    }
+  },
+  "servicios": [
+    "Alquiler de Maquinaria",
+    "Reparación de Maquinaria",
+    "Venta de Maquinaria",
+    "Venta de consumibles de construcción, riego, depuradoras, piscinas, jardín, Agrícola, Forestal"
+  ],
+  "seo": {
+    "tituloBase": "Aplicaciones Hidráulicas del Tajo",
+    "descripcionBase": "Soluciones profesionales en hidráulica, riego y gestión eficiente del agua en Torrijos, Toledo"
+  }
 }

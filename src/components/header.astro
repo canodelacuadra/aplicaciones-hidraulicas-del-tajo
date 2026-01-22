@@ -1,6 +1,7 @@
 ---
 import logo from "../assets/logo.svg";
 import Nav from "./Nav.astro";
+import empresaData from "../data/aplicaciones-hidraulicas.json";
 ---
 
 <header class="hero sticky-header">
@@ -9,16 +10,15 @@ import Nav from "./Nav.astro";
       <img
         id="logo"
         src={logo.src}
-        alt="Aplicaciones Hidráulicas del Tajo"
+        alt={empresaData.empresa.nombre}
         fetchpriority="high"
       />
     </a>
 
     <div class="hero-text animate-text">
-      <h1>Aplicaciones Hidráulicas del Tajo</h1>
+      <h1>{empresaData.empresa.nombre}</h1>
       <p>
-        Especialistas en soluciones hidráulicas, riego eficiente y gestión
-        técnica del agua.
+        {empresaData.empresa.descripcionLarga}
       </p>
     </div>
     

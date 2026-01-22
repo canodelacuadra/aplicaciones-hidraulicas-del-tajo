@@ -1,15 +1,29 @@
 ---
 import Header from "../components/header.astro";
 import Footer from "../components/Footer.astro";
-const { title } = Astro.props;
+import empresaData from "../data/aplicaciones-hidraulicas.json";
+
+const { title, description } = Astro.props;
+
+const pageTitle = title || empresaData.seo.tituloBase;
+const pageDescription = description || empresaData.seo.descripcionBase;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Meta tags para SEO -->
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={empresaData.empresa.web} />
+    <meta property="og:site_name" content={empresaData.empresa.nombre} />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

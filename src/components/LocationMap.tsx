@@ -2,18 +2,36 @@ import React, { useEffect, useRef, useState } from 'react';
 
 // Importación dinámica para evitar SSR issues
 const loadLeaflet = async () => {
-  const [leaflet, css] = await Promise.all([
-    import('leaflet'),
-    import('leaflet/dist/leaflet.css')
-  ]);
+  const leaflet = await import('leaflet');
+  // Import CSS dinámicamente
+  if (typeof document !== 'undefined') {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(link);
+  }
   return leaflet.default;
 };
 
 interface MapProps {
   className?: string;
+  empresaData?: {
+    empresa: {
+      nombre: string;
+    };
+    contacto: {
+      direccion: string;
+      telefono: string;
+      telefonoHref: string;
+      coordenadas: {
+        latitud: number;
+        longitud: number;
+      };
+    };
+  };
 }
 
-const LocationMap: React.FC<MapProps> = ({ className }) => {
+const LocationMap: React.FC<MapProps> = ({ className, empresaData }) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
   const [isClient, setIsClient] = useState(false);
@@ -28,9 +46,12 @@ const LocationMap: React.FC<MapProps> = ({ className }) => {
     const initializeMap = async () => {
       const L = await loadLeaflet();
 
-      // Coordenadas de Aplicaciones Hidráulicas del Tajo
-      const latitude = 39.979428;
-      const longitude = -4.268534;
+      // Coordenadas desde el JSON de la empresa
+      const latitude = empresaData?.contacto.coordenadas.latitud ?? 39.979428;
+      const longitude = empresaData?.contacto.coordenadas.longitud ?? -4.268534;
+      const nombreEmpresa = empresaData?.empresa.nombre ?? "Aplicaciones Hidráulicas del Tajo";
+      const direccion = empresaData?.contacto.direccion ?? "Calle Dalí 1, 45500 Torrijos, Toledo";
+      const telefonoHref = empresaData?.contacto.telefonoHref ?? "+34687416029";
 
       // Configuración del icono del marcador
       const customIcon = L.divIcon({
@@ -91,12 +112,12 @@ const LocationMap: React.FC<MapProps> = ({ className }) => {
               min-width: 200px;
             ">
               <h4 style="margin: 0 0 8px 0; color: #1568a7; font-size: 14px;">
-                Aplicaciones Hidráulicas del Tajo
+                ${nombreEmpresa}
               </h4>
               <p style="margin: 0 0 8px 0; font-size: 12px; color: #333;">
-                Calle Dalí 1, 45500 Torrijos, Toledo
+                ${direccion}
               </p>
-              <a href="tel:+34687416029" style="
+              <a href="tel:${telefonoHref}" style="
                 display: inline-block;
                 background: #1568a7;
                 color: white;
@@ -139,7 +160,9 @@ const LocationMap: React.FC<MapProps> = ({ className }) => {
         mapInstanceRef.current = null;
       }
     };
-  }, [isClient]);
+  }, [isClient, empresaData]);
+
+  const nombreEmpresa = empresaData?.empresa.nombre ?? "Aplicaciones Hidráulicas del Tajo";
 
   if (!isClient) {
     return (
@@ -154,7 +177,7 @@ const LocationMap: React.FC<MapProps> = ({ className }) => {
           alignItems: 'center',
           justifyContent: 'center'
         }}
-        aria-label="Mapa con ubicación de Aplicaciones Hidráulicas del Tajo"
+        aria-label={`Mapa con ubicación de ${nombreEmpresa}`}
       >
         Cargando mapa...
       </div>
@@ -171,7 +194,7 @@ const LocationMap: React.FC<MapProps> = ({ className }) => {
         borderRadius: '8px',
         overflow: 'hidden'
       }}
-      aria-label="Mapa con ubicación de Aplicaciones Hidráulicas del Tajo"
+      aria-label={`Mapa con ubicación de ${nombreEmpresa}`}
       role="application"
     />
   );
