@@ -42,9 +42,9 @@ const empresaConAspectos = empresaData as any & {
           </div>
           
           <div class="pillar-footer">
-            <button class="pillar-cta">
+            <a href={`/${aspecto.nombre.toLowerCase()}`} class="pillar-cta">
               Explorar {aspecto.nombre}
-            </button>
+            </a>
           </div>
         </div>
       ))}
