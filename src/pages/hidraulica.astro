@@ -8,29 +8,6 @@ const aspectoHidraulica = (empresaData as any).aspectos.find((a: any) => a.nombr
 
 <BaseLayout title={`Soluciones Hidráulicas - ${empresaData.empresa.nombre}`} description={`Soluciones integrales en hidráulica: riego agrícola, redes industriales y municipales. Instalaciones profesionales en Torrijos, Toledo.`}>
   
-  <!-- Hero Section -->
-  <section class="hidraulica-hero">
-    <div class="hero-content">
-      <div class="hero-icon">💧</div>
-      <h1>Soluciones Hidráulicas</h1>
-      <p>Instalaciones profesionales para riego agrícola, redes industriales y sistemas municipales de agua</p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">3</span>
-          <span class="stat-label">Tipos de Soluciones</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Garantía Calidad</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">24/7</span>
-          <span class="stat-label">Soporte Técnico</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Services Section -->
   <section class="services-section">
     <div class="container">
@@ -126,82 +103,7 @@ const aspectoHidraulica = (empresaData as any).aspectos.find((a: any) => a.nombr
 </BaseLayout>
 
 <style>
-  /* Hero Section */
-  .hidraulica-hero {
-    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
-    color: white;
-    padding: 6rem 1.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
 
-  .hidraulica-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><path d="M12 2.25c-4.5 4.5-7.5 8-7.5 11.25A7.5 7.5 0 0012 21a7.5 7.5 0 007.5-7.5C19.5 10.25 16.5 6.75 12 2.25z"/><path d="M12 15.75a3 3 0 100-6 3 3 0 000 6z"/></g></g></svg>') repeat;
-    opacity: 0.3;
-  }
-
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-icon {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .hidraulica-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin: 0 0 1.5rem;
-    font-weight: 700;
-    color: white;
-  }
-
-  .hidraulica-hero p {
-    font-size: 1.3rem;
-    line-height: 1.6;
-    margin: 0 0 3rem;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
-  }
-
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .stat {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .stat-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.5rem;
-  }
-
-  .stat-label {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-  }
 
   /* Services Section */
   .services-section {
@@ -421,11 +323,6 @@ const aspectoHidraulica = (empresaData as any).aspectos.find((a: any) => a.nombr
 
   /* Responsive */
   @media (max-width: 768px) {
-    .hero-stats {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
     .services-grid {
       grid-template-columns: 1fr;
     }

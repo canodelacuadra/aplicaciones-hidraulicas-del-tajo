@@ -8,29 +8,6 @@ const aspectoFotovoltaica = (empresaData as any).aspectos.find((a: any) => a.nom
 
 <BaseLayout title={`Soluciones Fotovoltaicas - ${empresaData.empresa.nombre}`} description={`Instalaciones fotovoltaicas residenciales e industriales. Bombeo solar y soluciones energéticas en Torrijos, Toledo.`}>
   
-  <!-- Hero Section -->
-  <section class="fotovoltaica-hero">
-    <div class="hero-content">
-      <div class="hero-icon">☀️</div>
-      <h1>Soluciones Fotovoltaicas</h1>
-      <p>Instalaciones profesionales de energía solar para residencias, industrias y sistemas de bombeo solar</p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">3</span>
-          <span class="stat-label">Tipos de Instalaciones</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Energía Limpia</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">24/7</span>
-          <span class="stat-label">Soporte Técnico</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Services Section -->
   <section class="services-section">
     <div class="container">
@@ -126,15 +103,7 @@ const aspectoFotovoltaica = (empresaData as any).aspectos.find((a: any) => a.nom
 </BaseLayout>
 
 <style>
-  /* Hero Section */
-  .fotovoltaica-hero {
-    background: linear-gradient(135deg, #ffa500 0%, #ff6b00 100%);
-    color: white;
-    padding: 6rem 1.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
+
 
   .fotovoltaica-hero::before {
     content: '';
@@ -421,11 +390,6 @@ const aspectoFotovoltaica = (empresaData as any).aspectos.find((a: any) => a.nom
 
   /* Responsive */
   @media (max-width: 768px) {
-    .hero-stats {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
     .services-grid {
       grid-template-columns: 1fr;
     }
