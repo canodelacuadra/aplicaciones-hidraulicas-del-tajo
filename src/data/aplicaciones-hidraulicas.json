@@ -2,9 +2,9 @@
   "empresa": {
     "nombre": "Aplicaciones Hidráulicas del Tajo",
     "web": "https://www.ahdtajo.com",
-    "descripcionCorta": "Soluciones profesionales en hidráulica, riego y gestión eficiente del agua",
-    "descripcionLarga": "Especialistas en soluciones hidráulicas, riego eficiente y gestión técnica del agua, además de venta, alquiler y reparación de maquinaria, y venta de consumibles en primeras maracas",
-    "objeto": "Empresa dedicada al tratamiento de aguas y residuales",
+    "descripcionCorta": "Soluciones profesionales en hidráulica, fotovoltaica y maquinaria",
+    "descripcionLarga": "Especialistas en soluciones hidráulicas, riego eficiente y gestión técnica del agua, soluciones fotovoltaicas, además de venta, alquiler y reparación de maquinaria, y venta de consumibles en primeras maracas",
+    "objeto": "Empresa dedicada a la instalación hidráulica y fotovolaica y al alquiler reparación y venta de maquinaria ",
     "logotipo": "/images/logo.svg",
     "fachadaImagen": "/images/tienda-fachada.webp"
   },
@@ -32,31 +32,35 @@
       "tarde": "Lunes a Viernes: 16:30-20:00"
     }
   },
-  "servicios": [
+  "Aspectos ": [
     {
-      " Proyectos e Instalaciones": [
-        "Jardinería",
-        "Fotovoltaica",
-        "Industria",
-        "Agrícola",
-        "Obras Públicas"
+      " Hidráulica": [
+        "Riego Agrícola",
+        "Redes hidráulicas en industrias",
+        "Redes municipales de agua potable y residual"
       ]
     },
     {
-      "maquinaria": [
-        "Alquiler de Maquinaria",
-        "Reparación de Maquinaria",
-        "Venta de Maquinaria"
+      "Fotovoltaica": [
+        "Bombeo solar",
+        "Instalaciones Residenciales",
+        "Instalaciones industriales"
       ]
     },
     {
-      "venta de consumibles": [
-        "construcción", "riego", "depuradoras", "piscinas", "jardín", "Agrícola", "Forestal"
+      "Maquinaria": [
+        "construcción",
+        "agrícola",
+        "jardinería",
+        "forestal"
       ]
     }
   ],
+  "servicios": [
+    "Proyecto llave en mano", "Proyectos e instalaciones", "Mantenimiento", "Reparación", "Venta de consumibles"
+  ],
   "seo": {
     "tituloBase": "Aplicaciones Hidráulicas del Tajo",
-    "descripcionBase": "Soluciones profesionales en hidráulica, riego y gestión eficiente del agua, además  en Torrijos, Toledo"
+    "descripcionBase": "Soluciones profesionales en Hidráulica, Fotvoltaica y Maquinaria  en Torrijos, Toledo"
   }
 }
