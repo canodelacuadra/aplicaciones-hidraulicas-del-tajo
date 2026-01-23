@@ -2,11 +2,26 @@
   command = "npm run build"
   publish = "dist"
 
-# Temporarily disable redirects to test core functionality
-# [[redirects]]
-#   from = "/hidraulica/"
-#   to = "/hidraulica/index.html"
-#   status = 200
+# Static file fallback redirects for cleaner URLs
+[[redirects]]
+  from = "/hidraulica"
+  to = "/hidraulica/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/fotovoltaica"
+  to = "/fotovoltaica/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/maquinaria"
+  to = "/maquinaria/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/maquinaria/*"
+  to = "/maquinaria/:splat/index.html"
+  status = 200
 
 [[headers]]
   for = "/*"
