@@ -1,0 +1,30 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/hidraulica"
+  to = "/hidraulica/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/fotovoltaica"
+  to = "/fotovoltaica/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/maquinaria"
+  to = "/maquinaria/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/maquinaria/*"
+  to = "/maquinaria/:splat/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
