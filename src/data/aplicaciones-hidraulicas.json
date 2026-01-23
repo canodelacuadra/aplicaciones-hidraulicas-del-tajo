@@ -32,32 +32,67 @@
       "tarde": "Lunes a Viernes: 16:30-20:00"
     }
   },
-  "Aspectos ": [
+  "aspectos": [
     {
-      " Hidráulica": [
+      "nombre": "Hidráulica",
+      "icono": "💧",
+      "servicios": [
         "Riego Agrícola",
         "Redes hidráulicas en industrias",
         "Redes municipales de agua potable y residual"
       ]
     },
     {
-      "Fotovoltaica": [
+      "nombre": "Fotovoltaica", 
+      "icono": "☀️",
+      "servicios": [
         "Bombeo solar",
         "Instalaciones Residenciales",
         "Instalaciones industriales"
       ]
     },
     {
-      "Maquinaria": [
+      "nombre": "Maquinaria",
+      "icono": "🏗️", 
+      "servicios": [
         "construcción",
-        "agrícola",
+        "agrícola", 
         "jardinería",
         "forestal"
       ]
     }
   ],
   "servicios": [
-    "Proyecto llave en mano", "Proyectos e instalaciones", "Mantenimiento", "Reparación", "Venta de consumibles"
+    {
+      "nombre": "Proyecto llave en mano",
+      "icono": "🔑",
+      "descripcion": "Soluciones completas desde el estudio inicial hasta la entrega final del proyecto.",
+      "caracteristicas": ["Diseño personalizado", "Gestión integral", "Garantía incluida"]
+    },
+    {
+      "nombre": "Proyectos e instalaciones", 
+      "icono": "⚙️",
+      "descripcion": "Diseño, planificación y ejecución de instalaciones hidráulicas y fotovoltaicas.",
+      "caracteristicas": ["Ingeniería", "Certificación", "Cumplimiento normativo"]
+    },
+    {
+      "nombre": "Mantenimiento",
+      "icono": "🔧", 
+      "descripcion": "Programas de mantenimiento preventivo y correctivo para garantizar el funcionamiento óptimo.",
+      "caracteristicas": ["Contratos anual", "24/7 disponible", "Preventivo"]
+    },
+    {
+      "nombre": "Reparación",
+      "icono": "🛠️",
+      "descripcion": "Servicio técnico especializado para reparar cualquier tipo de maquinaria e instalación.",
+      "caracteristicas": ["Diagnóstico rápido", "Servicio móvil", "Respuesta inmediata"]
+    },
+    {
+      "nombre": "Venta de consumibles",
+      "icono": "📦",
+      "descripcion": "Amplio stock de piezas, recambios y consumibles de primeras marcas.",
+      "caracteristicas": ["Stock disponible", "Marcas líderes", "Entrega 24h"]
+    }
   ],
   "seo": {
     "tituloBase": "Aplicaciones Hidráulicas del Tajo",

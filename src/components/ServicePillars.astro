@@ -1,0 +1,328 @@
+---
+import empresaData from "../data/aplicaciones-hidraulicas.json";
+
+interface Aspecto {
+  nombre: string;
+  icono: string;
+  servicios: string[];
+}
+
+// Type assertion for the data with new structure
+const empresaConAspectos = empresaData as any & {
+  aspectos: Aspecto[];
+};
+---
+
+<section class="service-pillars">
+  <div class="container">
+    <div class="pillars-header">
+      <h2>Nuestras Soluciones Integrales</h2>
+      <p>Tres pilares fundamentales para ofrecer soluciones completas a tus proyectos</p>
+    </div>
+    
+    <div class="pillars-grid">
+      {empresaConAspectos.aspectos.map((aspecto: Aspecto, index: number) => (
+        <div class="pillar-card" style={`animation-delay: ${index * 0.2}s`}>
+          <div class="pillar-header">
+            <div class="pillar-icon-wrapper">
+              <div class="pillar-icon">{aspecto.icono}</div>
+            </div>
+            <h3>{aspecto.nombre}</h3>
+          </div>
+          
+          <div class="pillar-content">
+            <ul class="services-list">
+              {aspecto.servicios.map((servicio: string) => (
+                <li class="service-item">
+                  <span class="service-bullet">✓</span>
+                  <span>{servicio}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div class="pillar-footer">
+            <button class="pillar-cta">
+              Explorar {aspecto.nombre}
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="pillars-bottom-info">
+      <div class="info-item">
+        <span class="info-number">3</span>
+        <span class="info-label">Áreas especializadas</span>
+      </div>
+      <div class="info-item">
+        <span class="info-number">{empresaConAspectos.servicios.length}</span>
+        <span class="info-label">Servicios integrales</span>
+      </div>
+      <div class="info-item">
+        <span class="info-number">15+</span>
+        <span class="info-label">Años de experiencia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-pillars {
+    padding: 5rem 0;
+    background: white;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .pillars-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .pillars-header h2 {
+    font-size: 2.5rem;
+    color: #1568a7;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .pillars-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .pillar-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 24px rgba(21, 104, 167, 0.1);
+    border: 1px solid rgba(21, 104, 167, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #1568a7 0%, #0f3558 100%);
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(21, 104, 167, 0.15);
+    border-color: rgba(21, 104, 167, 0.3);
+  }
+
+  .pillar-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .pillar-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pillar-icon {
+    font-size: 2.5rem;
+    color: white;
+  }
+
+  .pillar-icon-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+  }
+
+  .pillar-header h3 {
+    font-size: 1.5rem;
+    color: #1568a7;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .pillar-content {
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+
+  .services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .service-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(21, 104, 167, 0.1);
+    color: #555;
+  }
+
+  .service-item:last-child {
+    border-bottom: none;
+  }
+
+  .service-bullet {
+    color: #1568a7;
+    font-weight: 700;
+    font-size: 1rem;
+    min-width: 20px;
+  }
+
+  .pillar-footer {
+    margin-top: auto;
+  }
+
+  .pillar-cta {
+    width: 100%;
+    padding: 0.875rem;
+    background: transparent;
+    color: #1568a7;
+    border: 2px solid #1568a7;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+  }
+
+  .pillar-cta:hover {
+    background: #1568a7;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(21, 104, 167, 0.3);
+  }
+
+  .pillars-bottom-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
+    background: rgba(21, 104, 167, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(21, 104, 167, 0.1);
+  }
+
+  .info-item {
+    text-align: center;
+  }
+
+  .info-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1568a7;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-label {
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  /* Responsive */
+  @media (max-width: 968px) {
+    .pillars-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .pillars-bottom-info {
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .info-item {
+      flex: 1;
+      min-width: 150px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pillar-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .pillars-header h2 {
+      font-size: 2rem;
+    }
+
+    .info-number {
+      font-size: 2rem;
+    }
+
+    .pillars-bottom-info {
+      gap: 1.5rem;
+    }
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .pillar-card,
+    .pillar-icon-wrapper::after,
+    .pillar-card:hover,
+    .pillar-cta:hover {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>

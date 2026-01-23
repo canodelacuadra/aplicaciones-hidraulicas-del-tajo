@@ -1,0 +1,377 @@
+---
+import empresaData from "../data/aplicaciones-hidraulicas.json";
+---
+
+<section id="contacto" class="contact-cta-section">
+  <div class="container">
+    <div class="contact-content">
+      <div class="contact-info">
+        <h2>¿Necesitas Asesoramiento?</h2>
+        <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la solución perfecta para tus proyectos.</p>
+        
+        <div class="contact-options">
+          <div class="contact-option">
+            <div class="option-icon">📞</div>
+            <div class="option-content">
+              <h3>Contacto Directo</h3>
+              <p>Asesoramiento inmediato por teléfono</p>
+              <a href={`tel:${empresaData.contacto.telefonoHref}`} class="contact-btn primary">
+                {empresaData.contacto.telefono}
+              </a>
+            </div>
+          </div>
+          
+          <div class="contact-option">
+            <div class="option-icon">📧</div>
+            <div class="option-content">
+              <h3>Consulta por Email</h3>
+              <p>Envíanos tus requisitos y te respondemos en menos de 24h</p>
+              <a href={`mailto:${empresaData.contacto.email}`} class="contact-btn secondary">
+                {empresaData.contacto.email}
+              </a>
+            </div>
+          </div>
+          
+          <div class="contact-option">
+            <div class="option-icon">📍</div>
+            <div class="option-content">
+              <h3>Visita Nuestra Tienda</h3>
+              <p>Conoce nuestros productos y recibe asesoramiento personal</p>
+              <a href="#mapa" class="contact-btn tertiary">
+                {empresaData.contacto.direccion}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="schedule-info">
+        <h3>Horario de Atención</h3>
+        
+        <div class="schedule-cards">
+          <div class="schedule-card active">
+            <div class="schedule-header">
+              <span class="schedule-icon">❄️</span>
+              <h4>{empresaData.horario.invierno.nombre}</h4>
+            </div>
+            <div class="schedule-details">
+              <p><strong>Días:</strong> {empresaData.horario.invierno.dias}</p>
+              <p><strong>Mañana:</strong> {empresaData.horario.invierno.manana}</p>
+              <p><strong>Tarde:</strong> {empresaData.horario.invierno.tarde}</p>
+            </div>
+          </div>
+          
+          <div class="schedule-card">
+            <div class="schedule-header">
+              <span class="schedule-icon">☀️</span>
+              <h4>{empresaData.horario.verano.nombre}</h4>
+            </div>
+            <div class="schedule-details">
+              <p><strong>Días:</strong> {empresaData.horario.verano.dias}</p>
+              <p><strong>Mañana:</strong> {empresaData.horario.verano.manana}</p>
+              <p><strong>Tarde:</strong> {empresaData.horario.verano.tarde}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="emergency-notice">
+          <span class="emergency-icon">🚨</span>
+          <p><strong>Emergencias:</strong> Servicio técnico disponible 24/7 para clientes con contrato de mantenimiento</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="quick-services">
+      <h3>¿Qué servicio necesitas?</h3>
+      <div class="service-buttons">
+        <button class="service-btn">Proyecto Llave en Mano</button>
+        <button class="service-btn">Reparación Maquinaria</button>
+        <button class="service-btn">Instalación Fotovoltaica</button>
+        <button class="service-btn">Consultoría Hidráulica</button>
+        <button class="service-btn">Compra Consumibles</button>
+        <button class="service-btn">Alquiler Equipos</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.03"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>') repeat;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .contact-info > p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    max-width: 600px;
+  }
+
+  .contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .contact-option:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .option-icon {
+    font-size: 2.5rem;
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .option-content h3 {
+    margin: 0 0 0.5rem;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .option-content p {
+    margin: 0 0 1rem;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .contact-btn.primary {
+    background: white;
+    color: #1568a7;
+  }
+
+  .contact-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  }
+
+  .contact-btn.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .contact-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .contact-btn.tertiary {
+    background: transparent;
+    color: #a8d0ff;
+    border: 1px solid rgba(168, 208, 255, 0.5);
+  }
+
+  .contact-btn.tertiary:hover {
+    background: rgba(168, 208, 255, 0.2);
+    border-color: #a8d0ff;
+  }
+
+  .schedule-info h3 {
+    margin: 0 0 2rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .schedule-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .schedule-card {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .schedule-card.active {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .schedule-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .schedule-icon {
+    font-size: 1.5rem;
+  }
+
+  .schedule-header h4 {
+    margin: 0;
+    color: white;
+    font-weight: 600;
+  }
+
+  .schedule-details p {
+    margin: 0.25rem 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+
+  .emergency-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(255, 87, 34, 0.2);
+    border: 1px solid rgba(255, 87, 34, 0.4);
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+
+  .emergency-icon {
+    font-size: 1.2rem;
+  }
+
+  .quick-services {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .quick-services h3 {
+    text-align: center;
+    margin: 0 0 2rem;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .service-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .service-btn {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+  }
+
+  .service-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-info h2 {
+      font-size: 2rem;
+    }
+
+    .contact-option {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .service-buttons {
+      grid-template-columns: 1fr;
+    }
+
+    .quick-services {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  if (typeof window !== "undefined") {
+    window.addEventListener("DOMContentLoaded", () => {
+      // Service buttons click handler
+      const serviceButtons = document.querySelectorAll(".service-btn");
+      serviceButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          const service = button.textContent;
+          // Create a simple alert for now - could be replaced with a modal
+          alert(`Gracias por tu interés en: ${service}\n\nPor favor, contáctanos directamente para más información:\n📞 687 416 029\n📧 ahdtajo@gmail.com`);
+        });
+      });
+    });
+  }
+</script>

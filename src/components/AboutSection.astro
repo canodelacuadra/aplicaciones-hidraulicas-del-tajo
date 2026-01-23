@@ -1,0 +1,279 @@
+---
+import empresaData from "../data/aplicaciones-hidraulicas.json";
+---
+
+<section class="about-section">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Visita Nuestra Tienda en Torrijos</h2>
+        <p>
+          En <strong>Aplicaciones Hidráulicas del Tajo</strong> combinamos la experiencia técnica 
+          con un amplio stock físico para ofrecerte soluciones inmediatas.
+        </p>
+        
+        <div class="store-highlights">
+          <div class="highlight-item">
+            <span class="highlight-icon">🏪</span>
+            <div>
+              <h3>Showroom y Almacén</h3>
+              <p>Visítanos en Calle Dalí 1 y descubre nuestro catálogo completo</p>
+            </div>
+          </div>
+          
+          <div class="highlight-item">
+            <span class="highlight-icon">🔧</span>
+            <div>
+              <h3>Stock Inmediato</h3>
+              <p>Consumibles y maquinaria disponibles para alquiler y compra</p>
+            </div>
+          </div>
+          
+          <div class="highlight-item">
+            <span class="highlight-icon">📞</span>
+            <div>
+              <h3>Asesoramiento Personal</h3>
+              <p>Expertos en tienda para ayudarte a encontrar lo que necesitas</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="store-cta">
+          <a href="#contacto" class="store-cta-btn primary">
+            <span>📍</span> Visitar Tienda
+          </a>
+          <a href="tel:+34687416029" class="store-cta-btn secondary">
+            <span>📱</span> Llamar Ahora
+          </a>
+        </div>
+      </div>
+      
+      <div class="about-image">
+        <img 
+          src={empresaData.empresa.fachadaImagen} 
+          alt="Fachada de Aplicaciones Hidráulicas del Tajo"
+          loading="lazy"
+        />
+        <div class="image-overlay">
+          <div class="overlay-text">
+            <strong>Abierto</strong>
+            <span>Lun-Vie: 9:00-13:00 / 16:00-20:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8fbff 0%, #e8f4fc 100%);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-text h2 {
+    font-size: 2.5rem;
+    color: #1568a7;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 2.5rem;
+  }
+
+  .store-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .highlight-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .highlight-icon {
+    font-size: 2.5rem;
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .highlight-item h3 {
+    margin: 0 0 0.5rem;
+    color: #1568a7;
+    font-size: 1.1rem;
+  }
+
+  .highlight-item p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .store-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .store-cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+
+  .store-cta-btn.primary {
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    color: white;
+  }
+
+  .store-cta-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(21, 104, 167, 0.3);
+  }
+
+  .store-cta-btn.secondary {
+    background: white;
+    color: #1568a7;
+    border: 2px solid #1568a7;
+  }
+
+  .store-cta-btn.secondary:hover {
+    background: #1568a7;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .about-image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 2rem;
+  }
+
+  .overlay-text {
+    color: white;
+    text-align: center;
+  }
+
+  .overlay-text strong {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .overlay-text span {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+    }
+
+    .highlight-item {
+      padding: 1rem;
+    }
+
+    .highlight-icon {
+      font-size: 2rem;
+      min-width: 50px;
+    }
+
+    .store-cta {
+      flex-direction: column;
+    }
+
+    .store-cta-btn {
+      justify-content: center;
+      width: 100%;
+    }
+
+    .about-image img {
+      height: 300px;
+    }
+  }
+
+  /* Animaciones */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .highlight-item {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .highlight-item:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .highlight-item:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+</style>
