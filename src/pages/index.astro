@@ -8,59 +8,6 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 ---
 
 <BaseLayout title={empresaData.empresa.nombre} description={empresaData.empresa.descripcionLarga}>
-  
-  <!-- Hero Section Rediseñado -->
-   
-  <section class="hero-home">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">Soluciones Integrales en Hidráulica, Fotovoltaica y Maquinaria</h1>
-        <p class="hero-subtitle">Proyectos llave en mano, instalaciones profesionales y mantenimiento especializado para tus proyectos</p>
-        
-        <div class="hero-actions">
-          <a href="#contacto" class="hero-cta primary">
-            <span class="cta-icon">🔑</span>
-            Proyecto Llave en Mano
-          </a>
-          <a href="#sobre-nosotros" class="hero-cta secondary">
-            <span class="cta-icon">🏪</span>
-            Visita Nuestra Tienda
-          </a>
-        </div>
-      </div>
-      
-      <div class="hero-visual">
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-number">3</span>
-            <span class="stat-label">Áreas Especializadas</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">5</span>
-            <span class="stat-label">Servicios Integrales</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">15+</span>
-            <span class="stat-label">Años de Experiencia</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="hero-wave">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,40 C240,80 480,0 720,20 960,40 1200,80 1440,60 L1440,120 L0,120 Z" fill="#f8fbff">
-          <animate
-            attributeName="d"
-            dur="6s"
-            repeatCount="indefinite"
-            values="M0,40 C240,80 480,0 720,20 960,40 1200,80 1440,60 L1440,120 L0,120 Z;M0,60 C240,20 480,80 720,40 960,0 1200,40 1440,20 L1440,120 L0,120 Z;M0,40 C240,80 480,0 720,20 960,40 1200,80 1440,60 L1440,120 L0,120 Z"
-          />
-        </path>
-      </svg>
-    </div>
-  </section>
-
   <!-- Sección Sobre Nosotros (enfocada en tienda física) -->
   <AboutSection id="sobre-nosotros" />
   
@@ -76,17 +23,7 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 </BaseLayout>
 
 <style>
-  /* Hero Section */
-  .hero-home {
-    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
-    color: white;
-    padding: 5rem 1.5rem;
-    position: relative;
-    overflow: hidden;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-  }
+
 
   .hero-content {
     max-width: 1200px;
@@ -250,66 +187,15 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
     z-index: 1;
   }
 
-  /* Responsive */
-  @media (max-width: 968px) {
-    .hero-content {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      text-align: center;
-    }
-
-    .hero-actions {
-      justify-content: center;
-    }
-
-    .hero-visual {
-      order: -1;
-    }
-
-    .hero-stats {
-      grid-template-columns: repeat(3, 1fr);
-      min-width: auto;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-  }
-
+  /* Responsive - sin hero */
   @media (max-width: 768px) {
-    .hero-home {
-      padding: 3rem 1rem;
-      min-height: auto;
-    }
-
-    .hero-title {
-      font-size: clamp(2rem, 6vw, 2.5rem);
-    }
-
-    .hero-subtitle {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero-actions {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .hero-cta {
-      width: 100%;
-      max-width: 300px;
-      justify-content: center;
-      padding: 1rem 1.5rem;
-    }
-
-    .hero-stats {
+    .about-content {
       grid-template-columns: 1fr;
-      padding: 1.5rem;
-      min-width: auto;
+      gap: 2rem;
     }
 
-    .stat-number {
-      font-size: 2.5rem;
+    .service-buttons {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -357,14 +243,14 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
   if (typeof window !== "undefined") {
     window.addEventListener("DOMContentLoaded", () => {
       // Smooth scroll para los enlaces internos
-      document.querySelectorAll('a[href^="#"]').forEach((anchor: HTMLAnchorElement) => {
+      document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', (e: Event) => {
           e.preventDefault();
           const targetId = anchor.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
+          const targetElement = targetId ? document.querySelector(targetId) : null;
           
           if (targetElement) {
-            const offsetTop = targetElement.offsetTop - 80; // Offset for sticky header
+            const offsetTop = (targetElement as HTMLElement).offsetTop - 80; // Offset for sticky header
             window.scrollTo({
               top: offsetTop,
               behavior: 'smooth'
