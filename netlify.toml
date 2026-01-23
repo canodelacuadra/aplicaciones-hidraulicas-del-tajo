@@ -7,16 +7,19 @@
   from = "/hidraulica"
   to = "/hidraulica/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/fotovoltaica"
   to = "/fotovoltaica/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/maquinaria"
   to = "/maquinaria/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/maquinaria/*"
