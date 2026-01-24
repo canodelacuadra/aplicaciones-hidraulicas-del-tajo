@@ -1,0 +1,542 @@
+---
+export interface Props {
+  maquina?: {
+    id: string;
+    nombre: string;
+    categoriaId?: string;
+    subcategoriaId?: string;
+  };
+  isOpen?: boolean;
+}
+
+const { maquina, isOpen = false } = Astro.props;
+
+const telefono = '+34672942881';
+const email = 'info@ahtajo.com';
+---
+
+<!-- Modal Overlay -->
+<div 
+  id="consulta-modal" 
+  class={`modal-overlay ${isOpen ? 'open' : ''}`}
+  onclick="closeConsultaModal(event)"
+>
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3 class="modal-title">
+        Consulta sobre {maquina?.nombre || 'maquinaria'}
+      </h3>
+      <button 
+        class="modal-close" 
+        onclick="closeConsultaModal()"
+        aria-label="Cerrar modal"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="consulta-info">
+        <p class="consulta-texto">
+          Estás consultando sobre: <strong>{maquina?.nombre || 'maquinaria'}</strong>
+        </p>
+        
+        {maquina?.categoriaId && (
+          <p class="consulta-detalles">
+            Categoría: <span class="detalle-valor">{maquina.categoriaId}</span>
+          </p>
+        )}
+        
+        {maquina?.subcategoriaId && (
+          <p class="consulta-detalles">
+            Subcategoría: <span class="detalle-valor">{maquina.subcategoriaId}</span>
+          </p>
+        )}
+      </div>
+
+      <div class="consulta-metodos">
+        <h4>Contacta con nosotros:</h4>
+        
+        <div class="contacto-opciones">
+          <a 
+            href={`tel:${telefono}`} 
+            class="contacto-btn telefono"
+            onclick="closeConsultaModal()"
+          >
+            <div class="contacto-icono">📞</div>
+            <div class="contacto-info">
+              <div class="contacto-titulo">Llamar ahora</div>
+              <div class="contacto-valor">{telefono}</div>
+            </div>
+          </a>
+
+          <a 
+            href={`mailto:${email}?subject=${encodeURIComponent(`Consulta sobre ${maquina?.nombre || 'maquinaria'}`)}&body=${encodeURIComponent(`Estoy interesado en: ${maquina?.nombre || 'maquinaria'}
+
+Categoría: ${maquina?.categoriaId || 'No especificada'}
+Subcategoría: ${maquina?.subcategoriaId || 'No especificada'}
+
+Por favor, contáctenme con más información.`)}`} 
+            class="contacto-btn email"
+            onclick="closeConsultaModal()"
+          >
+            <div class="contacto-icono">✉️</div>
+            <div class="contacto-info">
+              <div class="contacto-titulo">Enviar email</div>
+              <div class="contacto-valor">{email}</div>
+            </div>
+          </a>
+
+          <button 
+            class="contacto-btn whatsapp" 
+            onclick="contactarWhatsApp()"
+          >
+            <div class="contacto-icono">💬</div>
+            <div class="contacto-info">
+              <div class="contacto-titulo">WhatsApp</div>
+              <div class="contacto-valor">Respuesta rápida</div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="consulta-formulario">
+        <h4>O envía tus datos y te contactamos:</h4>
+        <form class="consulta-form" onsubmit="enviarConsulta(event)">
+          <div class="form-grupo">
+            <label for="consulta-nombre">Nombre *</label>
+            <input 
+              type="text" 
+              id="consulta-nombre" 
+              name="nombre"
+              required
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-grupo">
+            <label for="consulta-telefono">Teléfono *</label>
+            <input 
+              type="tel" 
+              id="consulta-telefono" 
+              name="telefono"
+              required
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-grupo">
+            <label for="consulta-email">Email</label>
+            <input 
+              type="email" 
+              id="consulta-email" 
+              name="email"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-grupo">
+            <label for="consulta-mensaje">Mensaje</label>
+            <textarea 
+              id="consulta-mensaje" 
+              name="mensaje"
+              rows="3"
+              class="form-textarea"
+              placeholder={`Cuéntanos qué necesitas sobre ${maquina?.nombre || 'esta maquinaria'}...`}
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="maquina" value={maquina?.nombre || ''} />
+          <input type="hidden" name="categoria" value={maquina?.categoriaId || ''} />
+          <input type="hidden" name="subcategoria" value={maquina?.subcategoriaId || ''} />
+
+          <button type="submit" class="form-submit">
+            Solicitar información
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openConsultaModal(maquinaId, maquinaNombre) {
+    const modal = document.getElementById('consulta-modal');
+    const titleElement = modal.querySelector('.modal-title');
+    const textoElement = modal.querySelector('.consulta-texto');
+    const hiddenInput = modal.querySelector('input[name="maquina"]');
+    
+    if (titleElement && maquinaNombre) {
+      titleElement.textContent = `Consulta sobre ${maquinaNombre}`;
+    }
+    if (textoElement && maquinaNombre) {
+      textoElement.innerHTML = `Estás consultando sobre: <strong>${maquinaNombre}</strong>`;
+    }
+    if (hiddenInput && maquinaNombre) {
+      hiddenInput.value = maquinaNombre;
+    }
+    
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeConsultaModal(event) {
+    if (event && event.target !== event.currentTarget) return;
+    
+    const modal = document.getElementById('consulta-modal');
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    
+    // Limpiar formulario
+    const form = modal.querySelector('.consulta-form');
+    if (form) form.reset();
+  }
+
+  function contactarWhatsApp() {
+    const telefono = '+34672942881';
+    const maquina = document.querySelector('input[name="maquina"]')?.value || 'maquinaria';
+    const mensaje = encodeURIComponent(`Hola! Estoy interesado en: ${maquina}. ¿Podrían darme más información?`);
+    
+    window.open(`https://wa.me/${telefono.replace(/[+\s-]/g, '')}?text=${mensaje}`, '_blank');
+    closeConsultaModal();
+  }
+
+  function enviarConsulta(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Aquí podrías conectar con un backend o servicio de email
+    // Por ahora, mostramos una confirmación y enviamos por email
+    const emailSubject = encodeURIComponent(`Consulta web: ${data.maquina || 'Maquinaria'}`);
+    const emailBody = encodeURIComponent(`
+Nueva solicitud de consulta:
+
+Nombre: ${data.nombre}
+Teléfono: ${data.telefono}
+Email: ${data.email}
+Maquina: ${data.maquina}
+Categoría: ${data.categoria}
+Subcategoría: ${data.subcategoria}
+Mensaje: ${data.mensaje}
+
+---
+Fecha: ${new Date().toLocaleString('es-ES')}
+    `);
+    
+    window.location.href = `mailto:info@ahtajo.com?subject=${emailSubject}&body=${emailBody}`;
+    closeConsultaModal();
+    
+    // Mostrar mensaje de confirmación
+    alert('¡Gracias por tu consulta! Te contactaremos lo antes posible.');
+  }
+
+  // Cerrar con teclado ESC
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeConsultaModal();
+    }
+  });
+
+  // Hacer funciones disponibles globalmente
+  window.openConsultaModal = openConsultaModal;
+  window.closeConsultaModal = closeConsultaModal;
+  window.contactarWhatsApp = contactarWhatsApp;
+  window.enviarConsulta = enviarConsulta;
+</script>
+
+<style>
+  /* Overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 1rem;
+  }
+
+  .modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Content */
+  .modal-content {
+    background: white;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-overlay.open .modal-content {
+    transform: scale(1) translateY(0);
+  }
+
+  /* Header */
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(21, 104, 167, 0.1);
+  }
+
+  .modal-title {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1568a7;
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .modal-close:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #333;
+  }
+
+  /* Body */
+  .modal-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .consulta-info {
+    background: rgba(21, 104, 167, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(21, 104, 167, 0.1);
+  }
+
+  .consulta-texto {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .consulta-detalles {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .detalle-valor {
+    color: #1568a7;
+    font-weight: 500;
+  }
+
+  /* Contact Options */
+  .consulta-metodos h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  .contacto-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .contacto-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(21, 104, 167, 0.2);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .contacto-btn:hover {
+    background: rgba(21, 104, 167, 0.05);
+    border-color: #1568a7;
+    transform: translateY(-2px);
+  }
+
+  .contacto-btn.telefono {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border-color: #28a745;
+  }
+
+  .contacto-btn.email {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    border-color: #007bff;
+  }
+
+  .contacto-btn.whatsapp {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: white;
+    border-color: #25d366;
+  }
+
+  .contacto-icono {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+  }
+
+  .contacto-info {
+    flex: 1;
+  }
+
+  .contacto-titulo {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .contacto-valor {
+    font-size: 0.8rem;
+    opacity: 0.9;
+  }
+
+  /* Form */
+  .consulta-formulario h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  .consulta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .form-grupo label {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: #1568a7;
+    box-shadow: 0 0 0 2px rgba(21, 104, 167, 0.1);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    font-family: inherit;
+  }
+
+  .form-submit {
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(21, 104, 167, 0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .modal-content {
+      margin: 1rem;
+      max-height: 95vh;
+    }
+
+    .modal-header,
+    .modal-body {
+      padding: 1rem;
+    }
+
+    .contacto-btn {
+      padding: 0.8rem;
+    }
+
+    .contacto-icono {
+      width: 35px;
+      height: 35px;
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .modal-overlay {
+      padding: 0.5rem;
+    }
+
+    .modal-header {
+      padding: 1rem;
+    }
+
+    .modal-title {
+      font-size: 1.1rem;
+    }
+
+    .modal-close {
+      width: 35px;
+      height: 35px;
+      font-size: 1.5rem;
+    }
+
+    .modal-body {
+      padding: 1rem;
+      gap: 1.5rem;
+    }
+  }
+</style>

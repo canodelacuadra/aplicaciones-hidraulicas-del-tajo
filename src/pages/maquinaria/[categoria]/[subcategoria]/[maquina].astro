@@ -1,0 +1,948 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import maquinariaData from "../../../../data/maquinaria.json";
+import empresaData from "../../../../data/aplicaciones-hidraulicas.json";
+import ConsultaModal from "../../../../components/ConsultaModal.astro";
+
+// Generar rutas estáticas para todas las máquinas
+export async function getStaticPaths() {
+  const paths = [];
+  
+  for (const categoria of maquinariaData.categorias) {
+    for (const subcategoria of categoria.subcategorias || []) {
+      for (const maquinaId of subcategoria.maquinas || []) {
+        const maquina = maquinariaData.maquinas.find(m => m.id === maquinaId);
+        if (maquina) {
+          paths.push({
+            params: { 
+              categoria: categoria.slug || categoria.id,
+              subcategoria: subcategoria.slug || subcategoria.id,
+              maquina: maquina.slug || maquina.id
+            },
+            props: {
+              maquinaData: maquina,
+              categoriaData: categoria,
+              subcategoriaData: subcategoria,
+              categoriaSlug: categoria.slug || categoria.id,
+              subcategoriaSlug: subcategoria.slug || subcategoria.id,
+              maquinaSlug: maquina.slug || maquina.id
+            }
+          });
+        }
+      }
+    }
+  }
+  
+  return paths;
+}
+
+const { 
+  maquinaData, 
+  categoriaData, 
+  subcategoriaData,
+  categoriaSlug,
+  subcategoriaSlug,
+  maquinaSlug
+} = Astro.props;
+
+if (!maquinaData || !categoriaData || !subcategoriaData) {
+  return Astro.redirect("/maquinaria");
+}
+
+// Obtener imágenes adicionales si existen
+const getImagenesAdicionales = () => {
+  // Aquí podrías implementar lógica para buscar más imágenes de la misma máquina
+  // Por ahora, devolvemos un array con la imagen principal
+  return maquinaData.imagen ? [maquinaData.imagen] : [];
+};
+
+// Obtener máquinas relacionadas
+const getMaquinasRelacionadas = () => {
+  return maquinariaData.maquinas
+    .filter(m => 
+      m.categoriaId === categoriaData.id && 
+      m.subcategoriaId === subcategoriaData.id && 
+      m.id !== maquinaData.id
+    )
+    .slice(0, 6);
+};
+
+// Función helper para obtener imágenes con múltiples fallbacks
+const getMaquinaImagen = (maquina: any, fallbackPath: string | null = null) => {
+  // 1. Try machine-specific image
+  if (maquina && maquina.imagen) {
+    return `/src/assets/fotos-maquinas/${maquina.imagen}`;
+  }
+  
+  // 2. Try provided fallback path (try multiple extensions)
+  if (fallbackPath) {
+    const basePath = fallbackPath.replace(/\.[^/.]+$/, ""); // Remove extension
+    return `${basePath}.jpg`; // Try JPG first
+  }
+  
+  // 3. Final fallback - default SVG
+  return `/src/assets/fotos-maquinas/maquina-default.svg`;
+};
+
+// Construir ruta de imagen (mantener para compatibilidad)
+const getImagePath = (imagen: string) => {
+  return `/assets/fotos-maquinas/${imagen}`;
+};
+
+// Formatear especificaciones
+const formatEspecificaciones = (especificaciones: Record<string, any>) => {
+  return Object.entries(especificaciones).map(([key, value]) => ({
+    label: key.charAt(0).toUpperCase() + key.slice(1),
+    value: value
+  }));
+};
+---
+
+<BaseLayout 
+  title={`${maquinaData.nombre} - ${subcategoriaData.nombre} - ${categoriaData.nombre}`} 
+  description={maquinaData.meta?.description || `${maquinaData.nombre} en ${subcategoriaData.nombre}. Especialistas en ${maquinaData.nombre.toLowerCase()} en Torrijos, Toledo. Alquiler, venta y reparación.`}
+>
+
+  <!-- Breadcrumb -->
+  <section class="breadcrumb-section">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a>
+        <span class="separator">›</span>
+        <a href="/maquinaria">Maquinaria</a>
+        <span class="separator">›</span>
+        <a href={`/maquinaria/${categoriaSlug}`}>{categoriaData.nombre}</a>
+        <span class="separator">›</span>
+        <a href={`/maquinaria/${categoriaSlug}/${subcategoriaSlug}`}>{subcategoriaData.nombre}</a>
+        <span class="separator">›</span>
+        <span class="current">{maquinaData.nombre}</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Ficha de Máquina -->
+  <section class="ficha-maquina">
+    <div class="container">
+      <div class="ficha-layout">
+        <!-- Galería de Imágenes -->
+        <div class="galeria-container">
+          <div class="imagen-principal">
+            {maquinaData.imagen ? (
+              <img 
+                src={getImagePath(maquinaData.imagen)} 
+                alt={maquinaData.alt || maquinaData.nombre}
+                loading="eager"
+                class="maquina-imagen-grande"
+              />
+            ) : (
+              <img 
+                src={getMaquinaImagen(null)} 
+                alt={maquinaData.nombre}
+                loading="eager"
+                class="maquina-imagen-grande"
+              />
+            )}
+            
+            {/* Badges de servicios */}
+            <div class="servicios-badges">
+              {maquinaData.servicios?.alquiler && (
+                <span class="servicio-badge alquiler">Alquiler</span>
+              )}
+              {maquinaData.servicios?.venta && (
+                <span class="servicio-badge venta">Venta</span>
+              )}
+              {maquinaData.servicios?.reparacion && (
+                <span class="servicio-badge reparacion">Reparación</span>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <!-- Información Principal -->
+        <div class="info-container">
+          <div class="maquina-header">
+            <h1>{maquinaData.nombre}</h1>
+            <div class="maquina-categorias">
+              <span class="categoria-tag">{categoriaData.nombre}</span>
+              <span class="subcategoria-tag">{subcategoriaData.nombre}</span>
+            </div>
+          </div>
+
+          <div class="maquina-descripcion">
+            <p>{maquinaData.descripcion}</p>
+          </div>
+
+          {/* Especificaciones */}
+          {maquinaData.especificaciones && Object.keys(maquinaData.especificaciones).length > 0 && (
+            <div class="especificaciones-container">
+              <h3>Especificaciones Técnicas</h3>
+              <div class="especificaciones-grid">
+                {formatEspecificaciones(maquinaData.especificaciones).map((spec) => (
+                  <div class="especificacion-item">
+                    <span class="especificacion-label">{spec.label}:</span>
+                    <span class="especificacion-value">{spec.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Acciones */}
+          <div class="acciones-container">
+            <h3>Servicios Disponibles</h3>
+            <div class="servicios-grid">
+              {maquinaData.servicios?.alquiler && (
+                <div class="servicio-item">
+                  <div class="servicio-icono">🔧</div>
+                  <div class="servicio-info">
+                    <h4>Alquiler</h4>
+                    <p>Alquiler flexible con mantenimiento incluido</p>
+                  </div>
+                </div>
+              )}
+              {maquinaData.servicios?.venta && (
+                <div class="servicio-item">
+                  <div class="servicio-icono">🛒</div>
+                  <div class="servicio-info">
+                    <h4>Venta</h4>
+                    <p>Venta con financiación y garantía</p>
+                  </div>
+                </div>
+              )}
+              {maquinaData.servicios?.reparacion && (
+                <div class="servicio-item">
+                  <div class="servicio-icono">⚙️</div>
+                  <div class="servicio-info">
+                    <h4>Reparación</h4>
+                    <p>Reparación técnica especializada</p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div class="contacto-buttons">
+              <button 
+                class="btn-consulta principal"
+                onclick={`openConsultaModal('${maquinaData.id}', '${maquinaData.nombre}')`}
+              >
+                Solicitar información
+              </button>
+              <a href="tel:+34672942881" class="btn-llamada">
+                <span>📞</span> Llamar ahora
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Máquinas Relacionadas -->
+  {(() => {
+    const relacionadas = getMaquinasRelacionadas();
+    if (relacionadas.length > 0) {
+      return (
+        <section class="relacionadas-section">
+          <div class="container">
+            <h2>Máquinas Similares en {subcategoriaData.nombre}</h2>
+            <div class="relacionadas-grid">
+              {relacionadas.map((maquinaRel) => (
+                <div class="maquina-relacionada-card" onclick={`window.location.href='/maquinaria/${categoriaSlug}/${subcategoriaSlug}/${maquinaRel.slug || maquinaRel.id}'`}>
+                  <div class="relacionada-imagen">
+                    <img 
+                      src={getMaquinaImagen(maquinaRel)} 
+                      alt={maquinaRel.nombre} 
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="relacionada-info">
+                    <h4>{maquinaRel.nombre}</h4>
+                    <div class="relacionada-badges">
+                      {maquinaRel.servicios?.alquiler && <span class="badge-small">Alquiler</span>}
+                      {maquinaRel.servicios?.venta && <span class="badge-small">Venta</span>}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+  })()}
+
+  <!-- Servicios de Categoría -->
+  <section class="servicios-categoria-section">
+    <div class="container">
+      <h2>Servicios para {categoriaData.nombre}</h2>
+      <div class="servicios-categoria-grid">
+        <div class="servicio-categoria-card">
+          <div class="servicio-icono-grande">🔧</div>
+          <h3>Alquiler Flexible</h3>
+          <p>Alquiler a corto y largo plazo con mantenimiento incluido. Precios competitivos para proyectos de cualquier tamaño.</p>
+        </div>
+        <div class="servicio-categoria-card">
+          <div class="servicio-icono-grande">⚙️</div>
+          <h3>Reparación Especializada</h3>
+          <p>Reparación técnica especializada con diagnóstico avanzado y servicio móvil. Atendemos todas las marcas del mercado.</p>
+        </div>
+        <div class="servicio-categoria-card">
+          <div class="servicio-icono-grande">🛒</div>
+          <h3>Venta Asesorada</h3>
+          <p>Venta de maquinaria nueva y certificada con financiación disponible. Asesoramiento técnico completo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contacto-maquina">
+    <div class="container">
+      <div class="contacto-content">
+        <div class="contacto-info">
+          <h2>¿Necesitas más información sobre {maquinaData.nombre}?</h2>
+          <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la solución perfecta para tus necesidades.</p>
+          <div class="contacto-buttons-large">
+            <a href="tel:+34672942881" class="contacto-btn primary">
+              <span>📞</span> Llamar ahora
+            </a>
+            <a href={`mailto:info@ahtajo.com?subject=Consulta%20${encodeURIComponent(maquinaData.nombre)}`} class="contacto-btn secondary">
+              <span>✉️</span> Enviar email
+            </a>
+            <button 
+              class="contacto-btn whatsapp"
+              onclick="window.open('https://wa.me/34672942881?text=' + encodeURIComponent('Hola! Estoy interesado en: {maquinaData.nombre}'), '_blank')"
+            >
+              <span>💬</span> WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back Navigation -->
+  <section class="back-section">
+    <div class="container">
+      <a href={`/maquinaria/${categoriaSlug}/${subcategoriaSlug}`} class="back-btn">
+        <span>←</span> Volver a {subcategoriaData.nombre}
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<ConsultaModal />
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb-section {
+    padding: 1rem 0;
+    background: #f8fbff;
+    border-bottom: 1px solid rgba(21, 104, 167, 0.1);
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: #1568a7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #0f3558;
+  }
+
+  .separator {
+    color: #999;
+  }
+
+  .current {
+    color: #333;
+    font-weight: 600;
+  }
+
+  /* Ficha Principal */
+  .ficha-maquina {
+    padding: 4rem 0;
+  }
+
+  .ficha-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Galería */
+  .galeria-container {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .imagen-principal {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(21, 104, 167, 0.1);
+  }
+
+  .maquina-imagen-grande {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
+
+  .imagen-principal:hover .maquina-imagen-grande {
+    transform: scale(1.02);
+  }
+
+  .imagen-placeholder {
+    width: 100%;
+    height: 400px;
+    background: #f8fbff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+  }
+
+  .imagen-placeholder span {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .imagen-placeholder p {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .servicios-badges {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .servicio-badge {
+    background: rgba(21, 104, 167, 0.9);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+
+  .servicio-badge.alquiler {
+    background: rgba(34, 139, 34, 0.9);
+  }
+
+  .servicio-badge.venta {
+    background: rgba(220, 53, 69, 0.9);
+  }
+
+  .servicio-badge.reparacion {
+    background: rgba(255, 193, 7, 0.9);
+    color: #333;
+  }
+
+  /* Información */
+  .maquina-header h1 {
+    margin: 0 0 1rem 0;
+    color: #1568a7;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .maquina-categorias {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .categoria-tag {
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .subcategoria-tag {
+    background: rgba(21, 104, 167, 0.1);
+    color: #1568a7;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(21, 104, 167, 0.2);
+  }
+
+  .maquina-descripcion {
+    margin-bottom: 2rem;
+  }
+
+  .maquina-descripcion p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  /* Especificaciones */
+  .especificaciones-container {
+    margin-bottom: 2rem;
+  }
+
+  .especificaciones-container h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+    font-size: 1.3rem;
+  }
+
+  .especificaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .especificacion-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    background: #f8fbff;
+    border-radius: 8px;
+    border: 1px solid rgba(21, 104, 167, 0.1);
+  }
+
+  .especificacion-label {
+    font-weight: 500;
+    color: #666;
+  }
+
+  .especificacion-value {
+    font-weight: 600;
+    color: #333;
+  }
+
+  /* Acciones */
+  .acciones-container h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+    font-size: 1.3rem;
+  }
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .servicio-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(21, 104, 167, 0.03);
+    border: 1px solid rgba(21, 104, 167, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .servicio-item:hover {
+    background: rgba(21, 104, 167, 0.06);
+    border-color: rgba(21, 104, 167, 0.2);
+  }
+
+  .servicio-icono {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(21, 104, 167, 0.1);
+    border-radius: 8px;
+  }
+
+  .servicio-info h4 {
+    margin: 0 0 0.2rem 0;
+    color: #1568a7;
+    font-size: 1rem;
+  }
+
+  .servicio-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .contacto-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-consulta {
+    flex: 1;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+  }
+
+  .btn-consulta.principal {
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    color: white;
+  }
+
+  .btn-consulta.principal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(21, 104, 167, 0.3);
+  }
+
+  .btn-llamada {
+    padding: 1rem 2rem;
+    background: rgba(34, 139, 34, 0.1);
+    color: #28a745;
+    border: 2px solid #28a745;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 200px;
+    justify-content: center;
+  }
+
+  .btn-llamada:hover {
+    background: #28a745;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* Relacionadas */
+  .relacionadas-section {
+    padding: 4rem 0;
+    background: #f8fbff;
+  }
+
+  .relacionadas-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #1568a7;
+  }
+
+  .relacionadas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .maquina-relacionada-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(21, 104, 167, 0.1);
+  }
+
+  .maquina-relacionada-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .relacionada-imagen {
+    height: 150px;
+    overflow: hidden;
+  }
+
+  .relacionada-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
+
+  .maquina-relacionada-card:hover .relacionada-imagen img {
+    transform: scale(1.05);
+  }
+
+  .imagen-placeholder-small {
+    width: 100%;
+    height: 150px;
+    background: #f8fbff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 2rem;
+  }
+
+  .relacionada-info {
+    padding: 1rem;
+  }
+
+  .relacionada-info h4 {
+    margin: 0 0 0.5rem 0;
+    color: #1568a7;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .relacionada-badges {
+    display: flex;
+    gap: 0.3rem;
+  }
+
+  .badge-small {
+    background: rgba(21, 104, 167, 0.1);
+    color: #1568a7;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  /* Servicios Categoría */
+  .servicios-categoria-section {
+    padding: 4rem 0;
+  }
+
+  .servicios-categoria-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #1568a7;
+  }
+
+  .servicios-categoria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .servicio-categoria-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(21, 104, 167, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .servicio-categoria-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .servicio-icono-grande {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .servicio-categoria-card h3 {
+    margin: 0 0 1rem 0;
+    color: #1568a7;
+    font-size: 1.2rem;
+  }
+
+  .servicio-categoria-card p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Contacto */
+  .contacto-maquina {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    color: white;
+  }
+
+  .contacto-maquina h2 {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+  }
+
+  .contacto-maquina p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: #e5eef7;
+  }
+
+  .contacto-buttons-large {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .contacto-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    justify-content: center;
+  }
+
+  .contacto-btn.primary {
+    background: white;
+    color: #1568a7;
+  }
+
+  .contacto-btn.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .contacto-btn.whatsapp {
+    background: #25d366;
+    color: white;
+    border: none;
+  }
+
+  .contacto-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Back */
+  .back-section {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    color: #666;
+    text-decoration: none;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .back-btn:hover {
+    color: #1568a7;
+    border-color: #1568a7;
+    background: rgba(21, 104, 167, 0.05);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .ficha-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .galeria-container {
+      position: relative;
+      top: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumb {
+      font-size: 0.8rem;
+    }
+
+    .maquina-header h1 {
+      font-size: 1.8rem;
+    }
+
+    .maquina-categorias {
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .especificaciones-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .servicios-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contacto-buttons,
+    .contacto-buttons-large {
+      flex-direction: column;
+    }
+
+    .btn-consulta,
+    .btn-llamada,
+    .contacto-btn {
+      min-width: auto;
+      justify-content: center;
+    }
+
+    .relacionadas-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .servicios-categoria-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .maquina-imagen-grande,
+    .imagen-placeholder {
+      height: 250px;
+    }
+
+    .imagen-placeholder span {
+      font-size: 3rem;
+    }
+
+    .contacto-buttons-large {
+      gap: 0.5rem;
+    }
+
+    .contacto-btn {
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>

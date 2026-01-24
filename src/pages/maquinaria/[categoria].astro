@@ -2,45 +2,65 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import maquinariaData from "../../data/maquinaria.json";
 import empresaData from "../../data/aplicaciones-hidraulicas.json";
-
-interface Maquina {
-  id: string;
-  nombre: string;
-  imagen?: string;
-  ejemplares: Array<{
-    nombre: string;
-    marca: string;
-    caracteristicas: string[];
-  }>;
-}
-
-interface Categoria {
-  id: string;
-  nombre: string;
-  descripcion: string;
-  icono: string;
-  imagen: string;
-  maquinas: Maquina[];
-}
+import MaquinaCard from "../../components/MaquinaCard.astro";
+import FiltroMaquinaria from "../../components/FiltroMaquinaria.astro";
+import ConsultaModal from "../../components/ConsultaModal.astro";
 
 export async function getStaticPaths() {
   return maquinariaData.categorias.map((categoria) => ({
-    params: { categoria: categoria.id },
-    props: { categoriaData: categoria },
+    params: { categoria: categoria.slug || categoria.id },
+    props: { 
+      categoriaData: categoria,
+      categoriaSlug: categoria.slug || categoria.id
+    },
   }));
 }
 
-const { categoriaData } = Astro.props;
+const { categoriaData, categoriaSlug } = Astro.props;
 
 if (!categoriaData) {
   return Astro.redirect("/maquinaria");
 }
 
+// Obtener máquinas de esta categoría
+const todasLasMaquinas = maquinariaData.maquinas || [];
+const maquinasCategoria = todasLasMaquinas.filter(m => m.categoriaId === categoriaData.id);
+
+// Obtener subcategorías de esta categoría
+const subcategorias = categoriaData.subcategorias || [];
+
+// Función para obtener imagen de categoría
+const getCategoriaImagen = () => {
+  const primeraMaquina = maquinasCategoria[0];
+  if (primeraMaquina?.imagen) {
+    return `/src/assets/fotos-maquinas/${primeraMaquina.imagen}`;
+  }
+  return `/images/categorias/${categoriaData.id}.jpg`;
+};
+
+// Función para contar máquinas por subcategoría
+const getMaquinasCountPorSubcategoria = (subcategoriaId: string) => {
+  return todasLasMaquinas.filter(m => 
+    m.categoriaId === categoriaData.id && m.subcategoriaId === subcategoriaId
+  ).length;
+};
+
+// Función para obtener imagen de subcategoría
+const getSubcategoriaImagen = (subcategoriaId: string) => {
+  const primeraMaquina = todasLasMaquinas.find(m => 
+    m.subcategoriaId === subcategoriaId
+  );
+  if (primeraMaquina?.imagen) {
+    return `/src/assets/fotos-maquinas/${primeraMaquina.imagen}`;
+  }
+  return `/images/subcategorias/${subcategoriaId}.jpg`;
+};
+
 ---
 
 <BaseLayout 
   title={`${categoriaData.nombre} - Maquinaria Profesional - ${empresaData.empresa.nombre}`} 
-  description={`Catálogo completo de maquinaria ${categoriaData.nombre.toLowerCase()}. Alquiler, venta y reparación especializada.`}
+  description={categoriaData.meta?.description || `Catálogo completo de maquinaria ${categoriaData.nombre.toLowerCase()}. Alquiler, venta y reparación especializada.`}
   pageType="categoria"
   categoriaData={categoriaData}
 >
@@ -58,91 +78,73 @@ if (!categoriaData) {
     </div>
   </section>
 
-  <!-- Machines Catalog -->
-  <section class="catalogo-maquinas">
+  <!-- Subcategorías -->
+  <section class="subcategorias-maquinaria">
     <div class="container">
-      <h2>Catálogo Completo de {categoriaData.nombre}</h2>
-      
-      <div class="maquinas-grid">
-        {categoriaData.maquinas.map((maquina, index) => (
-          <div class="maquina-card" style={`animation-delay: ${index * 0.1}s`}>
-            {maquina.imagen && (
-              <div class="maquina-imagen">
-                <img src={maquina.imagen} alt={`Maquinaria ${maquina.nombre}`} loading="lazy" />
+      <h2>Subcategorías de {categoriaData.nombre}</h2>
+      <div class="categorias-grid">
+        {subcategorias.map((subcategoria) => {
+          const maquinasCount = getMaquinasCountPorSubcategoria(subcategoria.id);
+          const imagenSrc = getSubcategoriaImagen(subcategoria.id);
+          
+          return (
+            <div class="categoria-card">
+              <div class="categoria-imagen">
+                <img src={imagenSrc} alt={subcategoria.nombre} loading="lazy" />
+                <div class="categoria-overlay">
+                  <span class="maquinas-count">{maquinasCount} máquinas</span>
+                </div>
               </div>
-            )}
-            <div class="maquina-header">
-              <h3>{maquina.nombre}</h3>
-              <span class="ejemplares-count">{maquina.ejemplares.length} modelos disponibles</span>
-            </div>
-            
-            <div class="ejemplares-container">
-              <h4>Modelos Disponibles</h4>
-              <div class="ejemplares-grid">
-                {maquina.ejemplares.map((ejemplar) => (
-                  <div class="ejemplar-card">
-                    <div class="ejemplar-header">
-                      <span class="ejemplar-nombre">{ejemplar.nombre}</span>
-                      <span class="ejemplar-marca">{ejemplar.marca}</span>
-                    </div>
-                    <div class="ejemplar-caracteristicas">
-                      {ejemplar.caracteristicas.map((caracteristica) => (
-                        <span class="caracteristica-tag">{caracteristica}</span>
-                      ))}
-                    </div>
-                    <div class="ejemplar-actions">
-                      <button class="consulta-btn" onclick={`mostrarConsulta('${ejemplar.nombre}', '${ejemplar.marca}')`}>
-                        Consultar información
-                      </button>
-                    </div>
-                  </div>
-                ))}
+              <div class="categoria-header">
+                <h3>{subcategoria.nombre}</h3>
+              </div>
+              <p>{subcategoria.descripcion}</p>
+              
+              <div class="categoria-actions">
+                {subcategoria.tieneMaquinas ? (
+                  <a href={`/maquinaria/${categoriaSlug}/${subcategoria.slug}`} class="ver-categoria-btn">
+                    <span>Ver todas</span>
+                    <span class="arrow">→</span>
+                  </a>
+                ) : (
+                  <button class="ver-categoria-btn solicitar" onclick={`openConsultaModal('', '${subcategoria.nombre}')`}>
+                    <span>Solicitar información</span>
+                    <span class="arrow">→</span>
+                  </button>
+                )}
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   </section>
 
-  <!-- Category Services -->
-  <section class="servicios-categoria">
-    <div class="container">
-      <h2>Servicios para {categoriaData.nombre}</h2>
-      <div class="servicios-grid">
-        <div class="servicio-card">
-          <div class="servicio-icono">🔧</div>
-          <h3>Alquiler Flexible</h3>
-          <p>Alquiler a corto y largo plazo con mantenimiento incluido. Precios competitivos para proyectos de cualquier tamaño.</p>
-        </div>
-        <div class="servicio-card">
-          <div class="servicio-icono">⚙️</div>
-          <h3>Reparación Especializada</h3>
-          <p>Reparación técnica especializada con diagnóstico avanzado y servicio móvil. Atendemos todas las marcas del mercado.</p>
-        </div>
-        <div class="servicio-card">
-          <div class="servicio-icono">🛒</div>
-          <h3>Venta Asesorada</h3>
-          <p>Venta de maquinaria nueva y certificada con financiación disponible. Asesoramiento técnico completo.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contacto-categoria">
+  <section class="contacto-section">
     <div class="container">
       <div class="contacto-content">
         <div class="contacto-info">
-          <h2>¿Necesitas asesoramiento sobre {categoriaData.nombre}?</h2>
-          <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la solución perfecta para tus necesidades.</p>
+          <h2>¿Necesitas asesoramiento?</h2>
+          <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la maquinaria perfecta para tus necesidades.</p>
           <div class="contacto-buttons">
             <a href="tel:+34672942881" class="contacto-btn primary">
               <span>📞</span> Llamar ahora
             </a>
-            <a href={`mailto:info@ahtajo.com?subject=Consulta%20Maquinaria%20${encodeURIComponent(categoriaData.nombre)}`} class="contacto-btn secondary">
+            <a href="mailto:info@ahtajo.com" class="contacto-btn secondary">
               <span>✉️</span> Enviar email
             </a>
+          </div>
+        </div>
+        <div class="horario-info">
+          <h3>Horario de atención</h3>
+          <div class="horario-item">
+            <strong>Invierno:</strong><br>
+            Lunes a Viernes: 9:00-13:00 y 16:00-20:00
+          </div>
+          <div class="horario-item">
+            <strong>Verano:</strong><br>
+            Lunes a Sábado: 9:00-13:00<br>
+            Lunes a Viernes: 16:30-20:00
           </div>
         </div>
       </div>
@@ -159,18 +161,7 @@ if (!categoriaData) {
   </section>
 </BaseLayout>
 
-<script is:inline>
-  function mostrarConsulta(nombreEjemplar, marca) {
-    const telefono = '+34672942881';
-    const email = 'info@ahtajo.com';
-    const subject = `Consulta sobre ${nombreEjemplar} - ${marca}`;
-    
-    if (confirm(`¿Deseas consultar información sobre ${nombreEjemplar} (${marca})?\n\nPuedes:\n• Llamar al ${telefono}\n• Enviar email a ${email}`)) {
-      // Aquí podrías abrir un modal de contacto o redirigir
-      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
-    }
-  }
-</script>
+<ConsultaModal />
 
 <style>
   .container {
@@ -179,7 +170,7 @@ if (!categoriaData) {
     padding: 0 1.5rem;
   }
 
-  /* Breadcrumb - más compacto */
+  /* Breadcrumb */
   .breadcrumb-section {
     padding: 1rem 0;
     background: #f8fbff;
@@ -213,48 +204,47 @@ if (!categoriaData) {
     font-weight: 600;
   }
 
-  /* Machines Catalog */
-  .catalogo-maquinas {
+  /* Categorías */
+  .subcategorias-maquinaria {
     padding: 4rem 0;
   }
 
-  .catalogo-maquinas h2 {
+  .subcategorias-maquinaria h2 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 3rem;
     color: #1568a7;
   }
 
-  .maquinas-grid {
+  .categorias-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
   }
 
-  .maquina-card {
+  .categoria-card {
     background: white;
     border-radius: 16px;
-    padding: 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(21, 104, 167, 0.1);
-    opacity: 0;
-    animation: fadeInUp 0.6s ease forwards;
     overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(21, 104, 167, 0.1);
+    display: flex;
+    flex-direction: column;
   }
 
-  .maquina-card:hover {
+  .categoria-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
   }
 
-  .maquina-imagen {
-    width: 100%;
+  .categoria-imagen {
+    position: relative;
     height: 200px;
     overflow: hidden;
-    position: relative;
   }
 
-  .maquina-imagen img {
+  .categoria-imagen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -262,181 +252,99 @@ if (!categoriaData) {
     transition: transform 0.3s ease;
   }
 
-  .maquina-card:hover .maquina-imagen img {
+  .categoria-card:hover .categoria-imagen img {
     transform: scale(1.05);
   }
 
-  .maquina-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
-    border-bottom: 2px solid rgba(21, 104, 167, 0.1);
+  .categoria-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
   }
 
-  .maquina-header h3 {
+  .categoria-header {
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  }
+
+  .categoria-header h3 {
     margin: 0;
     color: #1568a7;
     font-size: 1.3rem;
     font-weight: 600;
   }
 
-  .ejemplares-count {
-    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
+  .categoria-card p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0.5rem 1.5rem 1.5rem 1.5rem;
   }
 
-  .ejemplares-container {
-    margin-bottom: 1.5rem;
+  .categoria-actions {
+    margin-top: auto;
     padding: 0 1.5rem 1.5rem 1.5rem;
   }
 
-  .ejemplares-container h4 {
-    margin: 0 0 1rem;
-    color: #333;
-    font-size: 1.1rem;
-  }
-
-  .ejemplares-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-  }
-
-  .ejemplar-card {
-    background: rgba(21, 104, 167, 0.03);
-    border: 1px solid rgba(21, 104, 167, 0.15);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-  }
-
-  .ejemplar-card:hover {
-    background: rgba(21, 104, 167, 0.06);
-    border-color: rgba(21, 104, 167, 0.3);
-    transform: translateY(-2px);
-  }
-
-  .ejemplar-header {
+  .ver-categoria-btn {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-  }
-
-  .ejemplar-nombre {
-    font-weight: 600;
-    color: #333;
-    font-size: 0.95rem;
-    flex: 1;
-    line-height: 1.4;
-  }
-
-  .ejemplar-marca {
-    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
-    color: white;
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-
-  .ejemplar-caracteristicas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
-  }
-
-  .caracteristica-tag {
-    background: rgba(21, 104, 167, 0.08);
-    color: #555;
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    border: 1px solid rgba(21, 104, 167, 0.15);
-  }
-
-  .consulta-btn {
     width: 100%;
-    padding: 0.6rem;
+    padding: 0.75rem 1rem;
     background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
     color: white;
-    border: none;
+    text-decoration: none;
     border-radius: 8px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    cursor: pointer;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
   }
 
-  .consulta-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(21, 104, 167, 0.3);
+  .ver-categoria-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(21, 104, 167, 0.25);
   }
 
-  /* Category Services */
-  .servicios-categoria {
-    padding: 4rem 0;
-    background: #f8fbff;
-  }
-
-  .servicios-categoria h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 3rem;
+  .ver-categoria-btn.solicitar {
+    background: rgba(21, 104, 167, 0.1);
     color: #1568a7;
+    border: 1px solid rgba(21, 104, 167, 0.3);
   }
 
-  .servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  .ver-categoria-btn.solicitar:hover {
+    background: rgba(21, 104, 167, 0.15);
+    border-color: #1568a7;
+    box-shadow: 0 4px 12px rgba(21, 104, 167, 0.2);
   }
 
-  .servicio-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(21, 104, 167, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .ver-categoria-btn .arrow {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
   }
 
-  .servicio-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  .ver-categoria-btn:hover .arrow {
+    transform: translateX(4px);
   }
 
-  .servicio-icono {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .servicio-card h3 {
-    margin: 0 0 1rem;
-    color: #1568a7;
-    font-size: 1.2rem;
-  }
-
-  .servicio-card p {
-    color: #666;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  /* Contact Section */
-  .contacto-categoria {
+  /* Contacto */
+  .contacto-section {
     padding: 4rem 0;
     background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
     color: white;
+  }
+
+  .contacto-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
   }
 
   .contacto-info h2 {
@@ -483,6 +391,18 @@ if (!categoriaData) {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
+  .horario-info h3 {
+    margin: 0 0 1rem;
+    color: white;
+  }
+
+  .horario-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+
   /* Back Section */
   .back-section {
     padding: 2rem 0;
@@ -507,41 +427,15 @@ if (!categoriaData) {
     background: rgba(21, 104, 167, 0.05);
   }
 
-  /* Animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   /* Responsive */
   @media (max-width: 768px) {
-    .categoria-hero .container {
+    .categorias-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contacto-content {
       grid-template-columns: 1fr;
       gap: 2rem;
-    }
-
-    .quick-stats {
-      justify-content: space-around;
-    }
-
-    .maquina-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-
-    .ejemplares-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .servicios-grid {
-      grid-template-columns: 1fr;
     }
 
     .contacto-buttons {
@@ -550,12 +444,6 @@ if (!categoriaData) {
 
     .contacto-btn {
       justify-content: center;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    .categoria-hero .container {
-      grid-template-columns: 1fr;
     }
   }
 </style>
