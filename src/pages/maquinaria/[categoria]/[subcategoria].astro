@@ -1,0 +1,414 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import maquinariaData from "../../../data/maquinaria.json";
+import empresaData from "../../../data/aplicaciones-hidraulicas.json";
+import ConsultaModal from "../../../components/ConsultaModal.astro";
+
+// Función para generar rutas estáticas
+export async function getStaticPaths() {
+  const paths = [];
+  
+  for (const categoria of maquinariaData.categorias) {
+    for (const subcategoria of categoria.subcategorias || []) {
+      if (subcategoria.tieneMaquinas) {
+        paths.push({
+          params: { 
+            categoria: categoria.slug || categoria.id,
+            subcategoria: subcategoria.slug || subcategoria.id
+          },
+          props: {
+            categoriaData: categoria,
+            subcategoriaData: subcategoria,
+            categoriaSlug: categoria.slug || categoria.id,
+            subcategoriaSlug: subcategoria.slug || subcategoria.id
+          }
+        });
+      }
+    }
+  }
+  
+  return paths;
+}
+
+const { 
+  categoriaData, 
+  subcategoriaData, 
+  categoriaSlug, 
+  subcategoriaSlug 
+} = Astro.props;
+
+if (!categoriaData || !subcategoriaData) {
+  return Astro.redirect("/maquinaria");
+}
+
+// Obtener todas las máquinas y subcategorías
+const todasLasMaquinas = maquinariaData.maquinas || [];
+const todasLasSubcategorias = categoriaData.subcategorias || [];
+
+// Obtener todas las subcategorías para análisis
+const todasLasSubcategoriasDisponibles = maquinariaData.categorias.flatMap(cat => cat.subcategorias || []);
+
+// Función para obtener imagen de subcategoría con fallback
+const getSubcategoriaImagen = (subcategoria: any) => {
+  // Buscar primera máquina con imagen en esta subcategoría
+  const maquinasConImagen = todasLasMaquinas.filter((m: any) => 
+    m.subcategoriaId === subcategoria.id && m.imagen
+  );
+  
+  if (maquinasConImagen.length > 0) {
+    return `/src/assets/fotos-maquinas/${maquinasConImagen[0].imagen}`;
+  }
+  
+  // Fallback a imagen default
+  return "/src/assets/fotos-maquinas/maquina-default.svg";
+};
+
+// Función para obtener máquinas por subcategoría
+const getMaquinasPorSubcategoria = (subcategoriaId: string) => {
+  return todasLasMaquinas.filter((m: any) => m.subcategoriaId === subcategoriaId);
+};
+
+// Función para obtener servicios disponibles por subcategoría
+const getServiciosPorSubcategoria = (subcategoriaId: string) => {
+  const maquinasSubcategoria = todasLasMaquinas.filter((m: any) => m.subcategoriaId === subcategoriaId);
+  const servicios = new Set();
+  
+  maquinasSubcategoria.forEach((maquina: any) => {
+    if (maquina.servicios?.alquiler) servicios.add('alquiler');
+    if (maquina.servicios?.venta) servicios.add('venta');
+    if (maquina.servicios?.reparacion) servicios.add('reparacion');
+  });
+  
+  return Array.from(servicios);
+};
+---
+
+<BaseLayout 
+  title={`${subcategoriaData.nombre} - ${categoriaData.nombre} - Maquinaria Profesional`} 
+  description={subcategoriaData.meta?.description || `${subcategoriaData.nombre} en ${categoriaData.nombre.toLowerCase()}. Alquiler, venta y reparación especializada en Torrijos, Toledo.`}
+>
+
+  <!-- Subcategorías de la Categoría -->
+  <section class="subcategorias-main">
+    <div class="container">
+      <h2>Subcategorías de {categoriaData.nombre}</h2>
+      <div class="subcategorias-grid">
+        {todasLasSubcategorias.map((subcategoria) => {
+          const maquinasCount = getMaquinasPorSubcategoria(subcategoria.id).length;
+          const imagenSrc = getSubcategoriaImagen(subcategoria);
+          const serviciosSubcategoria = getServiciosPorSubcategoria(subcategoria.id);
+          
+          return (
+            <div class="subcategoria-card">
+              <div class="subcategoria-imagen">
+                <img src={imagenSrc} alt={subcategoria.nombre} loading="lazy" />
+                <div class="subcategoria-overlay">
+                  <span class="maquinas-count">{maquinasCount} máquinas</span>
+                </div>
+                <div class="subcategoria-servicios-badges">
+                  {serviciosSubcategoria.map(servicio => (
+                    <span class={`subcategoria-servicio-badge ${servicio}`}>
+                      {servicio === 'alquiler' && 'Alquiler'}
+                      {servicio === 'venta' && 'Venta'}
+                      {servicio === 'reparacion' && 'Reparación'}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div class="subcategoria-header">
+                <h3>{subcategoria.nombre}</h3>
+              </div>
+              <p>{subcategoria.descripcion}</p>
+              
+              <div class="subcategoria-actions">
+                <a href={`/maquinaria/${categoriaSlug}/${subcategoria.slug || subcategoria.id}`} class="ver-subcategoria-btn">
+                  <span>Ver máquinas</span>
+                  <span class="arrow">→</span>
+                </a>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contacto-subcategoria">
+    <div class="container">
+      <div class="contacto-content">
+        <div class="contacto-info">
+          <h2>¿Necesitas asesoramiento sobre {subcategoriaData.nombre}?</h2>
+          <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la solución perfecta para tus necesidades en {subcategoriaData.nombre.toLowerCase()}.</p>
+          <div class="contacto-buttons">
+            <a href="tel:+34672942881" class="contacto-btn primary">
+              <span>📞</span> Llamar ahora
+            </a>
+            <a href={`mailto:info@ahtajo.com?subject=Consulta%20${encodeURIComponent(subcategoriaData.nombre)}`} class="contacto-btn secondary">
+              <span>✉️</span> Enviar email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back Navigation -->
+  <section class="back-section">
+    <div class="container">
+      <a href={`/maquinaria/${categoriaSlug}`} class="back-btn">
+        <span>←</span> Volver a {categoriaData.nombre}
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<ConsultaModal />
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Subcategorías Principales */
+  .subcategorias-main {
+    padding: 4rem 0;
+  }
+
+  .subcategorias-main h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #1568a7;
+  }
+
+  .subcategorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .subcategoria-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(21, 104, 167, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subcategoria-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  .subcategoria-imagen {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .subcategoria-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
+
+  .subcategoria-card:hover .subcategoria-imagen img {
+    transform: scale(1.05);
+  }
+
+  .subcategoria-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  /* Badges de Servicios en Subcategorías */
+  .subcategoria-servicios-badges {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .subcategoria-servicio-badge {
+    background: rgba(21, 104, 167, 0.9);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .subcategoria-servicio-badge.alquiler {
+    background: rgba(34, 139, 34, 0.9);
+  }
+
+  .subcategoria-servicio-badge.venta {
+    background: rgba(220, 53, 69, 0.9);
+  }
+
+  .subcategoria-servicio-badge.reparacion {
+    background: rgba(255, 193, 7, 0.9);
+    color: #333;
+  }
+
+  .subcategoria-header {
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  }
+
+  .subcategoria-header h3 {
+    margin: 0;
+    color: #1568a7;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .subcategoria-card p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0.5rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .subcategoria-actions {
+    margin-top: auto;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  .ver-subcategoria-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .ver-subcategoria-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(21, 104, 167, 0.25);
+  }
+
+  .ver-subcategoria-btn .arrow {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .ver-subcategoria-btn:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* Contacto */
+  .contacto-subcategoria {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    color: white;
+  }
+
+  .contacto-subcategoria h2 {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+  }
+
+  .contacto-subcategoria p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: #e5eef7;
+  }
+
+  .contacto-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .contacto-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .contacto-btn.primary {
+    background: white;
+    color: #1568a7;
+  }
+
+  .contacto-btn.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .contacto-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Back */
+  .back-section {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    color: #666;
+    text-decoration: none;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .back-btn:hover {
+    color: #1568a7;
+    border-color: #1568a7;
+    background: rgba(21, 104, 167, 0.05);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .subcategorias-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contacto-buttons {
+      flex-direction: column;
+    }
+
+    .contacto-btn {
+      justify-content: center;
+    }
+  }
+</style>
