@@ -31,12 +31,7 @@ const { maquina, subcategoria, categoria, viewMode = 'grid', showDetails = true 
 // Construir la ruta de la imagen
 const getImagePath = () => {
   if (maquina.imagen) {
-    // Check if image exists in the numbered files from public/images/retemplatemaquinariayfamiliasdemaquinariashechos/
-    const imageNumber = maquina.id;
-    if (imageNumber) {
-      return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${imageNumber}-${maquina.imagen}`;
-    }
-    return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${maquina.imagen}`;
+    return `/images/${maquina.imagen}`;
   }
   return null;
 };

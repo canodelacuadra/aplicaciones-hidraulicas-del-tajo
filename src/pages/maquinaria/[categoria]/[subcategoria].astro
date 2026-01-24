@@ -57,12 +57,7 @@ const getSubcategoriaImagen = (subcategoria: any) => {
   
   if (maquinasConImagen.length > 0) {
     const maquina = maquinasConImagen[0];
-    // Check if image exists in the numbered files from public/images/retemplatemaquinariayfamiliasdemaquinariashechos/
-    const imageNumber = maquina.id;
-    if (imageNumber) {
-      return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${imageNumber}-${maquina.imagen}`;
-    }
-    return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${maquina.imagen}`;
+    return `/images/${maquina.imagen}`;
   }
   
   // Fallback a imagen default

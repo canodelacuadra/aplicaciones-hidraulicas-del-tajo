@@ -71,12 +71,7 @@ const getMaquinasRelacionadas = () => {
 const getMaquinaImagen = (maquina: any, fallbackPath: string | null = null) => {
   // 1. Try machine-specific image from public/images
   if (maquina && maquina.imagen) {
-    // Check if image exists in the numbered files from public/images/retemplatemaquinariayfamiliasdemaquinariashechos/
-    const imageNumber = maquina.id;
-    if (imageNumber) {
-      return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${imageNumber}-${maquina.imagen}`;
-    }
-    return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${maquina.imagen}`;
+    return `/images/${maquina.imagen}`;
   }
   
   // 2. Final fallback - default SVG
@@ -85,7 +80,7 @@ const getMaquinaImagen = (maquina: any, fallbackPath: string | null = null) => {
 
 // Construir ruta de imagen (versión síncrona para compatibilidad)
 const getImagePath = (imagen: string) => {
-  return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${imagen}`;
+  return `/images/${imagen}`;
 };
 
 // Formatear especificaciones

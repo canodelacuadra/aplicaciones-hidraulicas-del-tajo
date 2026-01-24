@@ -12,12 +12,7 @@ const todasLasCategorias = maquinariaData.categorias || [];
 const getCategoriaImagen = (categoriaId: string) => {
   const categoria = todasLasMaquinas.find(m => m.categoriaId === categoriaId);
   if (categoria?.imagen) {
-    // Check if image exists in the numbered files from public/images/retemplatemaquinariayfamiliasdemaquinariashechos/
-    const imageNumber = categoria.id;
-    if (imageNumber) {
-      return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${imageNumber}-${categoria.imagen}`;
-    }
-    return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${categoria.imagen}`;
+    return `/images/${categoria.imagen}`;
   }
   return `/images/categorias/${categoriaId}.jpg`;
 };

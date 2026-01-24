@@ -1,5 +1,5 @@
 ---
-import logo from "../assets/logo.svg";
+// Logo se carga directamente desde /images/
 import Nav from "./Nav.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 
@@ -37,7 +37,7 @@ const isCategoriaPage = pageType === "categoria";
         <a href="/" class="logo animate-logo">
           <img
             id="logo"
-            src={logo.src}
+            src="/images/logo.svg"
             alt={empresaData.empresa.nombre}
             fetchpriority="high"
           />
