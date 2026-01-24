@@ -33,7 +33,12 @@ const subcategorias = categoriaData.subcategorias || [];
 const getCategoriaImagen = () => {
   const primeraMaquina = maquinasCategoria[0];
   if (primeraMaquina?.imagen) {
-    return `/src/assets/fotos-maquinas/${primeraMaquina.imagen}`;
+    // Check if image exists in the numbered files from public/images/retemplatemaquinariayfamiliasdemaquinariashechos/
+    const imageNumber = primeraMaquina.id;
+    if (imageNumber) {
+      return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${imageNumber}-${primeraMaquina.imagen}`;
+    }
+    return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${primeraMaquina.imagen}`;
   }
   return `/images/categorias/${categoriaData.id}.jpg`;
 };
@@ -51,7 +56,12 @@ const getSubcategoriaImagen = (subcategoriaId: string) => {
     m.subcategoriaId === subcategoriaId
   );
   if (primeraMaquina?.imagen) {
-    return `/src/assets/fotos-maquinas/${primeraMaquina.imagen}`;
+    // Check if image exists in the numbered files from public/images/retemplatemaquinariayfamiliasdemaquinariashechos/
+    const imageNumber = primeraMaquina.id;
+    if (imageNumber) {
+      return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${imageNumber}-${primeraMaquina.imagen}`;
+    }
+    return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${primeraMaquina.imagen}`;
   }
   return `/images/subcategorias/${subcategoriaId}.jpg`;
 };

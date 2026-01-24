@@ -67,26 +67,25 @@ const getMaquinasRelacionadas = () => {
     .slice(0, 6);
 };
 
-// Función helper para obtener imágenes con múltiples fallbacks
+// Función helper para obtener imágenes usando public/
 const getMaquinaImagen = (maquina: any, fallbackPath: string | null = null) => {
-  // 1. Try machine-specific image
+  // 1. Try machine-specific image from public/images
   if (maquina && maquina.imagen) {
-    return `/src/assets/fotos-maquinas/${maquina.imagen}`;
+    // Check if image exists in the numbered files from public/images/retemplatemaquinariayfamiliasdemaquinariashechos/
+    const imageNumber = maquina.id;
+    if (imageNumber) {
+      return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${imageNumber}-${maquina.imagen}`;
+    }
+    return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${maquina.imagen}`;
   }
   
-  // 2. Try provided fallback path (try multiple extensions)
-  if (fallbackPath) {
-    const basePath = fallbackPath.replace(/\.[^/.]+$/, ""); // Remove extension
-    return `${basePath}.jpg`; // Try JPG first
-  }
-  
-  // 3. Final fallback - default SVG
-  return `/src/assets/fotos-maquinas/maquina-default.svg`;
+  // 2. Final fallback - default SVG
+  return '/images/maquina-default.svg';
 };
 
-// Construir ruta de imagen (mantener para compatibilidad)
+// Construir ruta de imagen (versión síncrona para compatibilidad)
 const getImagePath = (imagen: string) => {
-  return `/assets/fotos-maquinas/${imagen}`;
+  return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${imagen}`;
 };
 
 // Formatear especificaciones

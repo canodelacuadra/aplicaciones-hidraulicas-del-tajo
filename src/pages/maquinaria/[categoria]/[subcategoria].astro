@@ -56,11 +56,17 @@ const getSubcategoriaImagen = (subcategoria: any) => {
   );
   
   if (maquinasConImagen.length > 0) {
-    return `/src/assets/fotos-maquinas/${maquinasConImagen[0].imagen}`;
+    const maquina = maquinasConImagen[0];
+    // Check if image exists in the numbered files from public/images/retemplatemaquinariayfamiliasdemaquinariashechos/
+    const imageNumber = maquina.id;
+    if (imageNumber) {
+      return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${imageNumber}-${maquina.imagen}`;
+    }
+    return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${maquina.imagen}`;
   }
   
   // Fallback a imagen default
-  return "/src/assets/fotos-maquinas/maquina-default.svg";
+  return "/images/maquina-default.svg";
 };
 
 // Función para obtener máquinas por subcategoría

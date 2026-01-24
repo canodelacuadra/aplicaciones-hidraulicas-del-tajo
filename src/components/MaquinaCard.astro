@@ -6,6 +6,7 @@ export interface Props {
     imagen?: string;
     categoriaId: string;
     subcategoriaId: string;
+    slug?: string;
     servicios?: {
       alquiler?: boolean;
       reparacion?: boolean;
@@ -30,7 +31,12 @@ const { maquina, subcategoria, categoria, viewMode = 'grid', showDetails = true 
 // Construir la ruta de la imagen
 const getImagePath = () => {
   if (maquina.imagen) {
-    return `/src/assets/fotos-maquinas/${maquina.imagen}`;
+    // Check if image exists in the numbered files from public/images/retemplatemaquinariayfamiliasdemaquinariashechos/
+    const imageNumber = maquina.id;
+    if (imageNumber) {
+      return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${imageNumber}-${maquina.imagen}`;
+    }
+    return `/images/retemplatemaquinariayfamiliasdemaquinariashechos/${maquina.imagen}`;
   }
   return null;
 };
