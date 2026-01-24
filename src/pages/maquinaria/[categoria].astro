@@ -5,6 +5,7 @@ import empresaData from "../../data/aplicaciones-hidraulicas.json";
 import MaquinaCard from "../../components/MaquinaCard.astro";
 import FiltroMaquinaria from "../../components/FiltroMaquinaria.astro";
 import ConsultaModal from "../../components/ConsultaModal.astro";
+import CategoryHero from "../../components/CategoryHero.astro";
 
 export async function getStaticPaths() {
   return maquinariaData.categorias.map((categoria) => ({
@@ -61,9 +62,12 @@ const getSubcategoriaImagen = (subcategoriaId: string) => {
 <BaseLayout 
   title={`${categoriaData.nombre} - Maquinaria Profesional - ${empresaData.empresa.nombre}`} 
   description={categoriaData.meta?.description || `Catálogo completo de maquinaria ${categoriaData.nombre.toLowerCase()}. Alquiler, venta y reparación especializada.`}
-  pageType="categoria"
-  categoriaData={categoriaData}
+  pageTitle={categoriaData.nombre}
+  pageDescription={categoriaData.descripcion}
 >
+  
+  <!-- Hero específico de categoría (contenido rico) -->
+  <CategoryHero categoriaData={categoriaData} />
   
   <!-- Breadcrumb Navigation -->
   <section class="breadcrumb-section">

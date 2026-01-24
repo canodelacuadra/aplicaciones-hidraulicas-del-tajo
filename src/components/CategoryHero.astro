@@ -1,0 +1,166 @@
+---
+// Componente para el hero específico de categorías (contenido rico)
+// Se usa después del header unificado en páginas de categoría
+
+const { categoriaData } = Astro.props;
+
+if (!categoriaData) {
+  return null;
+}
+
+// Calcular estadísticas
+const totalTiposMaquina = categoriaData?.maquinas?.length || 0;
+const totalModelos = categoriaData?.maquinas 
+  ? categoriaData.maquinas.reduce((total: number, maquina: any) => total + (maquina.ejemplares?.length || 0), 0) 
+  : 0;
+---
+
+<section class="category-hero">
+  <div class="category-hero-content">
+    <div class="category-header-hero">
+      <div class="category-icono-hero">{categoriaData?.icono}</div>
+      <h2>{categoriaData?.nombre}</h2>
+    </div>
+    <p class="category-descripcion-hero">{categoriaData?.descripcion}</p>
+    
+    <div class="quick-stats">
+      <div class="stat-item">
+        <span class="stat-number">{totalTiposMaquina}</span>
+        <span class="stat-label">Tipos de máquina</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{totalModelos}</span>
+        <span class="stat-label">Modelos disponibles</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.category-hero {
+  background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+  color: white;
+  padding: 2rem 1.5rem 1rem;
+  position: relative;
+}
+
+.category-hero-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+.category-header-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.category-icono-hero {
+  font-size: 3rem;
+  animation: floatLogo 6s ease-in-out infinite;
+}
+
+.category-header-hero h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.category-descripcion-hero {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0 0 2rem;
+  color: #e5eef7;
+  max-width: 600px;
+  font-style: normal;
+}
+
+.quick-stats {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #a8d0ff;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #e5eef7;
+}
+
+/* Animaciones */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .category-header-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .category-icono-hero {
+    font-size: 2.5rem;
+  }
+
+  .quick-stats {
+    gap: 1rem;
+  }
+
+  .stat-item {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .category-hero-content,
+  .category-icono-hero {
+    animation: none !important;
+  }
+}
+</style>

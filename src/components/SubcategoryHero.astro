@@ -1,0 +1,283 @@
+---
+// Componente para el hero específico de subcategorías (contenido rico)
+// Similar a CategoryHero pero adaptado para subcategorías
+
+const { categoriaData, subcategoriaData, todasLasMaquinas } = Astro.props;
+
+if (!subcategoriaData || !categoriaData) {
+  return null;
+}
+
+// Calcular estadísticas específicas de la subcategoría
+const maquinasSubcategoria = todasLasMaquinas?.filter(m => m.subcategoriaId === subcategoriaData.id) || [];
+const totalMaquinas = maquinasSubcategoria.length;
+
+// Calcular servicios disponibles en esta subcategoría
+const serviciosDisponibles = new Set();
+maquinasSubcategoria.forEach(maquina => {
+  if (maquina.servicios?.alquiler) serviciosDisponibles.add('alquiler');
+  if (maquina.servicios?.venta) serviciosDisponibles.add('venta');
+  if (maquina.servicios?.reparacion) serviciosDisponibles.add('reparacion');
+});
+
+// Total de servicios disponibles
+const totalServicios = serviciosDisponibles.size;
+
+// Obtener imagen de la subcategoría
+const getSubcategoriaImagen = () => {
+  const primeraMaquinaConImagen = maquinasSubcategoria.find(m => m.imagen);
+  if (primeraMaquinaConImagen?.imagen) {
+    return `/images/${primeraMaquinaConImagen.imagen}`;
+  }
+  return `/images/subcategorias/${subcategoriaData.id}.jpg`;
+};
+
+const imagenSrc = getSubcategoriaImagen();
+---
+
+<section class="subcategory-hero" style={`background-image: linear-gradient(rgba(21, 104, 167, 0.85), rgba(15, 53, 88, 0.9)), url('${imagenSrc}')`}>
+  <div class="subcategory-hero-content">
+    <div class="subcategory-header-hero">
+      <div class="subcategory-icono-hero">⚙️</div>
+      <h2>{subcategoriaData.nombre}</h2>
+    </div>
+    <p class="subcategory-descripcion-hero">{subcategoriaData.descripcion}</p>
+    
+    <div class="quick-stats">
+      <div class="stat-item">
+        <span class="stat-number">{totalMaquinas}</span>
+        <span class="stat-label">Máquinas disponibles</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{totalServicios}</span>
+        <span class="stat-label">Tipos de servicio</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{categoriaData.nombre}</span>
+        <span class="stat-label">Familia</span>
+      </div>
+    </div>
+
+    <div class="servicios-badge">
+      {Array.from(serviciosDisponibles).map(servicio => (
+        <span class={`servicio-tag ${servicio}`}>
+          {servicio === 'alquiler' && '🔧 Alquiler'}
+          {servicio === 'venta' && '💰 Venta'}
+          {servicio === 'reparacion' && '🔨 Reparación'}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.subcategory-hero {
+  background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+  color: white;
+  padding: 3rem 1.5rem 2rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+}
+
+.subcategory-hero-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+.subcategory-header-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.subcategory-icono-hero {
+  font-size: 2.5rem;
+  animation: floatLogo 6s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.subcategory-header-hero h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subcategory-descripcion-hero {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 2rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 600px;
+  font-style: normal;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.2rem 1rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a8d0ff;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.servicios-badge {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.servicio-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.servicio-tag:hover {
+  transform: translateY(-1px);
+}
+
+.servicio-tag.alquiler {
+  background: rgba(34, 139, 34, 0.8);
+  color: white;
+}
+
+.servicio-tag.venta {
+  background: rgba(220, 53, 69, 0.8);
+  color: white;
+}
+
+.servicio-tag.reparacion {
+  background: rgba(255, 193, 7, 0.8);
+  color: #333;
+}
+
+/* Animaciones */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .subcategory-hero {
+    padding: 2rem 1rem 1.5rem;
+    min-height: 220px;
+  }
+
+  .subcategory-header-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .subcategory-icono-hero {
+    font-size: 2rem;
+  }
+
+  .subcategory-header-hero h2 {
+    font-size: clamp(1.5rem, 6vw, 1.8rem);
+  }
+
+  .subcategory-descripcion-hero {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .quick-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-item {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.6rem;
+  }
+
+  .servicios-badge {
+    gap: 0.5rem;
+  }
+
+  .servicio-tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .subcategory-hero-content,
+  .subcategory-icono-hero,
+  .servicio-tag,
+  .stat-item {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+</style>

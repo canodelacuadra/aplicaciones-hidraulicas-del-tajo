@@ -6,7 +6,12 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 const aspectoHidraulica = (empresaData as any).aspectos.find((a: any) => a.nombre === "Hidráulica");
 ---
 
-<BaseLayout title={`Soluciones Hidráulicas - ${empresaData.empresa.nombre}`} description={`Soluciones integrales en hidráulica: riego agrícola, redes industriales y municipales. Instalaciones profesionales en Torrijos, Toledo.`}>
+<BaseLayout 
+  title={`Soluciones Hidráulicas - ${empresaData.empresa.nombre}`} 
+  description={`Soluciones integrales en hidráulica: riego agrícola, redes industriales y municipales. Instalaciones profesionales en Torrijos, Toledo.`}
+  pageTitle="Soluciones Hidráulicas"
+  pageDescription="Instalaciones profesionales para riego agrícola, redes industriales y municipales. Ingeniería hidráulica especializada."
+>
   
   <!-- Services Section -->
   <section class="services-section">

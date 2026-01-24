@@ -3,23 +3,23 @@ import Header from "../components/header.astro";
 import Footer from "../components/Footer.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 
-const { title, description, pageType, categoriaData } = Astro.props;
+const { title, description, pageTitle, pageDescription: pageDesc } = Astro.props;
 
-const pageTitle = title || empresaData.seo.tituloBase;
-const pageDescription = description || empresaData.seo.descripcionBase;
+const metaTitle = title || empresaData.seo.tituloBase;
+const metaDescription = description || empresaData.seo.descripcionBase;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
+    <title>{metaTitle}</title>
+    <meta name="description" content={metaDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Meta tags para SEO -->
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={pageDescription} />
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={empresaData.empresa.web} />
     <meta property="og:site_name" content={empresaData.empresa.nombre} />
@@ -32,7 +32,7 @@ const pageDescription = description || empresaData.seo.descripcionBase;
     />
   </head>
   <body>
-    <Header pageType={pageType} categoriaData={categoriaData} />
+    <Header pageTitle={pageTitle} pageDescription={pageDesc} />
 
     <main>
       <slot />

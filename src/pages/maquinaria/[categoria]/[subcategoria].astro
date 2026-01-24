@@ -3,6 +3,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import maquinariaData from "../../../data/maquinaria.json";
 import empresaData from "../../../data/aplicaciones-hidraulicas.json";
 import ConsultaModal from "../../../components/ConsultaModal.astro";
+import SubcategoryHero from "../../../components/SubcategoryHero.astro";
 
 // Función para generar rutas estáticas
 export async function getStaticPaths() {
@@ -87,7 +88,31 @@ const getServiciosPorSubcategoria = (subcategoriaId: string) => {
 <BaseLayout 
   title={`${subcategoriaData.nombre} - ${categoriaData.nombre} - Maquinaria Profesional`} 
   description={subcategoriaData.meta?.description || `${subcategoriaData.nombre} en ${categoriaData.nombre.toLowerCase()}. Alquiler, venta y reparación especializada en Torrijos, Toledo.`}
+  pageTitle={subcategoriaData.nombre}
+  pageDescription={subcategoriaData.descripcion}
 >
+  
+  <!-- Hero específico de subcategoría (contenido rico) -->
+  <SubcategoryHero 
+    categoriaData={categoriaData} 
+    subcategoriaData={subcategoriaData} 
+    todasLasMaquinas={todasLasMaquinas}
+  />
+
+  <!-- Breadcrumb Navigation -->
+  <section class="breadcrumb-section">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a>
+        <span class="separator">›</span>
+        <a href="/maquinaria">Maquinaria</a>
+        <span class="separator">›</span>
+        <a href={`/maquinaria/${categoriaSlug}`}>{categoriaData.nombre}</a>
+        <span class="separator">›</span>
+        <span class="current">{subcategoriaData.nombre}</span>
+      </nav>
+    </div>
+  </section>
 
   <!-- Máquinas de la Subcategoría -->
   <section class="maquinas-main">
@@ -185,6 +210,41 @@ const getServiciosPorSubcategoria = (subcategoriaId: string) => {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb-section {
+    padding: 1rem 0;
+    background: #f8fbff;
+    border-bottom: 1px solid rgba(21, 104, 167, 0.1);
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: #1568a7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #0f3558;
+  }
+
+  .separator {
+    color: #999;
+  }
+
+  .current {
+    color: #333;
+    font-weight: 600;
   }
 
   /* Máquinas Principales */

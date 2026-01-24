@@ -6,7 +6,12 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 const aspectoFotovoltaica = (empresaData as any).aspectos.find((a: any) => a.nombre === "Fotovoltaica");
 ---
 
-<BaseLayout title={`Soluciones Fotovoltaicas - ${empresaData.empresa.nombre}`} description={`Instalaciones fotovoltaicas residenciales e industriales. Bombeo solar y soluciones energéticas en Torrijos, Toledo.`}>
+<BaseLayout 
+  title={`Soluciones Fotovoltaicas - ${empresaData.empresa.nombre}`} 
+  description={`Instalaciones fotovoltaicas residenciales e industriales. Bombeo solar y soluciones energéticas en Torrijos, Toledo.`}
+  pageTitle="Soluciones Fotovoltaicas"
+  pageDescription="Instalaciones solares para autoconsumo, bombeo solar y soluciones energéticas residenciales e industriales."
+>
   
   <!-- Services Section -->
   <section class="services-section">

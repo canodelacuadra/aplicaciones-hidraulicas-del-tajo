@@ -3,54 +3,27 @@
 import Nav from "./Nav.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 
-const { pageType, categoriaData } = Astro.props;
-const isCategoriaPage = pageType === "categoria";
+const { pageTitle, pageDescription } = Astro.props;
 ---
 
 <header class="hero sticky-header">
   <div class="hero-content animate-container">
-    {isCategoriaPage ? (
-      // Hero específico para página de categoría
-      <div class="categoria-hero-content">
-        <div class="categoria-header-hero">
-          <div class="categoria-icono-hero">{categoriaData?.icono}</div>
-          <h1>{categoriaData?.nombre}</h1>
-        </div>
-        <p class="categoria-descripcion-hero">{categoriaData?.descripcion}</p>
-        
-        <div class="quick-stats">
-          <div class="stat-item">
-            <span class="stat-number">{categoriaData?.maquinas?.length || 0}</span>
-            <span class="stat-label">Tipos de máquina</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">
-              {categoriaData?.maquinas ? categoriaData.maquinas.reduce((total: number, maquina: any) => total + (maquina.ejemplares?.length || 0), 0) : 0}
-            </span>
-            <span class="stat-label">Modelos disponibles</span>
-          </div>
-        </div>
-      </div>
-    ) : (
-      // Hero normal para otras páginas
-      <>
-        <a href="/" class="logo animate-logo">
-          <img
-            id="logo"
-            src="/images/logo.svg"
-            alt={empresaData.empresa.nombre}
-            fetchpriority="high"
-          />
-        </a>
+    <a href="/" class="logo animate-logo">
+      <img
+        id="logo"
+        src="/images/logo.svg"
+        alt={empresaData.empresa.nombre}
+        fetchpriority="high"
+      />
+    </a>
 
-        <div class="hero-text animate-text">
-          <h1>{empresaData.empresa.nombre}</h1>
-          <p>
-            {empresaData.empresa.descripcionLarga}
-          </p>
-        </div>
-      </>
-    )}
+    <div class="hero-text animate-text">
+      <h1>{empresaData.empresa.nombre}</h1>
+      {pageTitle && (
+        <h2 class="dynamic-title">{pageTitle}</h2>
+      )}
+      <p>{pageDescription || empresaData.empresa.descripcionLarga}</p>
+    </div>
     
     <Nav />
   </div>
@@ -119,18 +92,34 @@ const isCategoriaPage = pageType === "categoria";
 
 .hero-text h1 {
   margin: 0;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
   line-height: 1.2;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.02em;
+  color: white;
+}
+
+.hero-text .dynamic-title {
+  margin: 0.5rem 0 0.75rem;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0.95;
 }
 
 .hero-text p {
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   max-width: 620px;
   color: #e5eef7;
   font-size: 1.05rem;
   font-style: oblique;
+}
+
+/* Cuando no hay título dinámico, ajustar espaciado */
+.hero-text h1:only-child {
+  margin-bottom: 0.75rem;
 }
 
 /* Responsive */
@@ -174,80 +163,7 @@ const isCategoriaPage = pageType === "categoria";
   100% { transform: translateY(0); }
 }
 
-/* ===== CATEGORIA HERO STYLES ===== */
-.categoria-hero-content {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-  animation: fadeSlideIn 0.8s ease-out forwards;
-}
 
-.categoria-header-hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.categoria-icono-hero {
-  font-size: 3rem;
-  animation: floatLogo 6s ease-in-out infinite;
-}
-
-.categoria-header-hero h1 {
-  margin: 0;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 600;
-  color: white;
-  letter-spacing: -0.02em;
-}
-
-.categoria-descripcion-hero {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin: 0 0 2rem;
-  color: #e5eef7;
-  max-width: 600px;
-  font-style: normal;
-}
-
-.quick-stats {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.stat-item {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.stat-item:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.stat-number {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #a8d0ff;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: #e5eef7;
-}
 
 /* ===== HEADER STICKY ===== */
 .sticky-header {
