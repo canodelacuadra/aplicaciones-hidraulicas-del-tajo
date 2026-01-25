@@ -21,14 +21,18 @@ const empresaConAspectos = empresaData as any & {
     </div>
     
     <div class="pillars-grid">
-      {empresaConAspectos.aspectos.map((aspecto: Aspecto, index: number) => (
-        <div class="pillar-card" style={`animation-delay: ${index * 0.2}s`}>
-          <div class="pillar-header">
-            <div class="pillar-icon-wrapper">
-              <div class="pillar-icon">{aspecto.icono}</div>
+      {empresaConAspectos.aspectos.map((aspecto: Aspecto, index: number) => {
+        // Asignar clase específica según el nombre del pilar
+        const pillarClass = aspecto.nombre.toLowerCase().replace('á', 'a').replace('í', 'i').replace('ó', 'o').replace('ú', 'u').replace('ñ', 'n');
+        
+        return (
+          <div class={`pillar-card ${pillarClass}`} style={`animation-delay: ${index * 0.2}s`}>
+            <div class="pillar-header">
+              <div class="pillar-icon-wrapper">
+                <div class="pillar-icon">{aspecto.icono}</div>
+              </div>
+              <h3>{aspecto.nombre}</h3>
             </div>
-            <h3>{aspecto.nombre}</h3>
-          </div>
           
           <div class="pillar-content">
             <ul class="services-list">
@@ -47,7 +51,8 @@ const empresaConAspectos = empresaData as any & {
             </a>
           </div>
         </div>
-      ))}
+        );
+      })}
     </div>
     
    <!--  <div class="pillars-bottom-info">
@@ -313,6 +318,85 @@ const empresaConAspectos = empresaData as any & {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Colores específicos por pilar */
+  .pillar-card.hidraulica::before {
+    background: linear-gradient(90deg, var(--hidraulica) 0%, #16a34a 100%);
+  }
+  
+  .pillar-card.hidraulica:hover {
+    border-color: rgba(34, 197, 94, 0.3);
+  }
+  
+  .pillar-card.hidraulica .service-bullet {
+    color: var(--hidraulica);
+  }
+  
+  .pillar-card.hidraulica .service-item {
+    border-color: rgba(34, 197, 94, 0.1);
+  }
+  
+  .pillar-card.hidraulica .pillar-cta {
+    border-color: var(--hidraulica);
+    color: var(--hidraulica);
+  }
+  
+  .pillar-card.hidraulica .pillar-cta:hover {
+    background: var(--hidraulica);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  }
+
+  .pillar-card.fotovoltaica::before {
+    background: linear-gradient(90deg, var(--fotovoltaica) 0%, #ea580c 100%);
+  }
+  
+  .pillar-card.fotovoltaica:hover {
+    border-color: rgba(251, 146, 60, 0.3);
+  }
+  
+  .pillar-card.fotovoltaica .service-bullet {
+    color: var(--fotovoltaica);
+  }
+  
+  .pillar-card.fotovoltaica .service-item {
+    border-color: rgba(251, 146, 60, 0.1);
+  }
+  
+  .pillar-card.fotovoltaica .pillar-cta {
+    border-color: var(--fotovoltaica);
+    color: var(--fotovoltaica);
+  }
+  
+  .pillar-card.fotovoltaica .pillar-cta:hover {
+    background: var(--fotovoltaica);
+    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.3);
+  }
+
+  .pillar-card.maquinaria::before {
+    background: linear-gradient(90deg, var(--maquinaria) 0%, #475569 100%);
+  }
+  
+  .pillar-card.maquinaria:hover {
+    border-color: rgba(100, 116, 139, 0.3);
+  }
+  
+  .pillar-card.maquinaria .service-bullet {
+    color: var(--maquinaria);
+  }
+  
+  .pillar-card.maquinaria .service-item {
+    border-color: rgba(100, 116, 139, 0.1);
+  }
+  
+  .pillar-card.maquinaria .pillar-cta {
+    border-color: var(--maquinaria);
+    color: var(--maquinaria);
+  }
+  
+  .pillar-card.maquinaria .pillar-cta:hover {
+    background: var(--maquinaria);
+    box-shadow: 0 4px 12px rgba(100, 116, 139, 0.3);
   }
 
   /* Accessibility */
