@@ -93,11 +93,11 @@ const getServiciosPorSubcategoria = (subcategoriaId: string) => {
 >
   
   <!-- Hero específico de subcategoría (contenido rico) -->
-  <SubcategoryHero 
+ <!--  <SubcategoryHero 
     categoriaData={categoriaData} 
     subcategoriaData={subcategoriaData} 
     todasLasMaquinas={todasLasMaquinas}
-  />
+  /> -->
 
   <!-- Breadcrumb Navigation -->
   <section class="breadcrumb-section">
@@ -184,7 +184,7 @@ const getServiciosPorSubcategoria = (subcategoriaId: string) => {
             <a href="tel:+34672942881" class="contacto-btn primary">
               <span>📞</span> Llamar ahora
             </a>
-            <a href={`mailto:info@ahtajo.com?subject=Consulta%20${encodeURIComponent(subcategoriaData.nombre)}`} class="contacto-btn secondary">
+            <a href={`mailto:ahdtajo@gmail.com?subject=Consulta%20${encodeURIComponent(subcategoriaData.nombre)}`} class="contacto-btn secondary">
               <span>✉️</span> Enviar email
             </a>
           </div>
@@ -276,13 +276,13 @@ const getServiciosPorSubcategoria = (subcategoriaId: string) => {
   .maquinas-grid-2 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 256px));
     justify-content: center;
-    max-width: 544px; /* 2 * 256px + 32px gap */
+    max-width: 672px; /* 2 * 320px + 32px gap */
     margin: 0 auto;
   }
 
   /* Para 1 máquina - ancho máximo de 256px */
   .maquinas-grid-1 {
-    grid-template-columns: 256px;
+    grid-template-columns: 320px;
     justify-content: center;
   }
 
