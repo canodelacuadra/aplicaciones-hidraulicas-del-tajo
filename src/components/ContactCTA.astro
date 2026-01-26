@@ -4,8 +4,9 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 
 <section id="contacto" class="contact-cta-section">
   <div class="container">
-    <div class="contact-content">
+<div class="contact-content">
       <div class="contact-info">
+      
         <h2>¿Necesitas Asesoramiento?</h2>
         <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la solución perfecta para tus proyectos.</p>
         
@@ -98,8 +99,17 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 <style>
   .contact-cta-section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    background: 
+      linear-gradient(135deg, #1568a7 0%, #0f3558 100%),
+      url(/images/ahdt-logo.png) no-repeat top right;
+    background-size: cover, 120px;
     color: white;
+    position: relative;
+  }
+
+  .contact-logo {
+    display: none; /* Ocultar logo visible, solo usar como watermark */
+  
     position: relative;
     overflow: hidden;
   }
@@ -301,7 +311,7 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 
   .quick-services h3 {
     text-align: center;
-    margin: 0 0 2rem;
+    margin: 0 2rem;
     color: white;
     font-size: 1.8rem;
     font-weight: 600;

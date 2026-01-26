@@ -15,7 +15,15 @@ const empresaConAspectos = empresaData as any & {
 
 <section class="service-pillars">
   <div class="container">
-    <div class="pillars-header">
+<div class="pillars-header">
+      <div class="pillars-logo">
+        <img 
+          src={empresaData.empresa.logotipo} 
+          alt={`Logo ${empresaData.empresa.nombre}`}
+          width="45"
+          height="auto"
+        />
+      </div>
       <h2>Nuestras Soluciones Integrales</h2>
       <p>Tres pilares fundamentales para ofrecer soluciones completas a tus proyectos</p>
     </div>
@@ -87,6 +95,21 @@ const empresaConAspectos = empresaData as any & {
   .pillars-header {
     text-align: center;
     margin-bottom: 4rem;
+    position: relative;
+  }
+
+  .pillars-logo {
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  .pillars-logo img {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+  .pillars-header:hover .pillars-logo {
+    opacity: 0.8;
   }
 
   .pillars-header h2 {

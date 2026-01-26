@@ -14,7 +14,15 @@ import empresaData from '../data/aplicaciones-hidraulicas.json';
   </div>
   <div class="footer-content">
     <div class="footer-left">
-      <div class="footer-brand">
+<div class="footer-brand">
+        <div class="footer-logo">
+          <img 
+            src={empresaData.empresa.logotipo} 
+            alt={`Logo ${empresaData.empresa.nombre}`}
+            width="100"
+            height="auto"
+          />
+        </div>
         <h3>{empresaData.empresa.nombre}</h3>
         <p>
           {empresaData.empresa.descripcionCorta}
@@ -94,6 +102,23 @@ import empresaData from '../data/aplicaciones-hidraulicas.json';
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+  }
+
+  .footer-logo {
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+
+  .footer-logo img {
+    width: 90px;
+    height: auto;
+    display: block;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+
+  .footer-logo img:hover {
+    opacity: 1;
   }
 
   .footer-brand h3 {
