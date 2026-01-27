@@ -5,12 +5,24 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 <section class="about-section">
   <div class="container">
     <div class="about-content">
-      <div class="about-text">
+<div class="about-text">
         <h2>Visita Nuestra Tienda en Torrijos</h2>
-        <p>
-          En <strong>Aplicaciones Hidráulicas del Tajo</strong> combinamos la experiencia técnica 
-          con un amplio stock físico para ofrecerte soluciones inmediatas.
-        </p>
+        
+        <!-- CTA Hero prominente -->
+        <div class="store-cta-hero">
+          <div class="cta-content">
+            <h3>📍 Tu Solución Hidráulica te Espera</h3>
+            <p>Stock inmediato y expertos en tienda</p>
+            <div class="cta-buttons">
+              <a href="#contacto" class="store-cta-btn primary">
+                <span>📍</span> Visitar Tienda
+              </a>
+              <a href="tel:+34687416029" class="store-cta-btn secondary">
+                <span>📱</span> Llamar Ahora
+              </a>
+            </div>
+          </div>
+        </div>
         
         <div class="store-highlights">
           <div class="highlight-item">
@@ -74,9 +86,15 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
 </section>
 
 <style>
-  .about-section {
-    padding: 5rem 0;
+.about-section {
+    padding: 1.25rem 0;
     background: linear-gradient(135deg, #f8fbff 0%, #e8f4fc 100%);
+  }
+
+  @media (max-width: 768px) {
+    .about-section {
+      padding: 0.5rem 0;
+    }
   }
 
   .container {
@@ -99,18 +117,48 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
     font-weight: 600;
   }
 
-  .about-text p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 2.5rem;
+.store-cta-hero {
+    background: linear-gradient(135deg, #1568a7 0%, #0f3558 100%);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(21, 104, 167, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulseCTA 2s ease-in-out infinite;
   }
 
-  .store-highlights {
+  .store-cta-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(21, 104, 167, 0.3);
+  }
+
+  .cta-content h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+  }
+
+  .cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+    font-style: italic;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+.store-highlights {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .highlight-item {
@@ -244,41 +292,97 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
     opacity: 0.9;
   }
 
-  /* Responsive */
+/* Responsive */
   @media (max-width: 768px) {
     .about-content {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .about-text h2 {
-      font-size: 2rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .store-cta-hero {
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-content h3 {
+      font-size: 1.2rem;
+    }
+
+    .cta-content p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-buttons {
+      gap: 0.75rem;
+    }
+
+    .store-highlights {
+      gap: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .highlight-item {
-      padding: 1rem;
+      padding: 0.75rem;
     }
 
     .highlight-icon {
-      font-size: 2rem;
-      min-width: 50px;
+      font-size: 1.5rem;
+      min-width: 40px;
+    }
+
+    .highlight-item h3 {
+      font-size: 1rem;
+    }
+
+    .highlight-item p {
+      font-size: 0.85rem;
     }
 
     .store-cta {
       flex-direction: column;
+      gap: 0.75rem;
     }
 
     .store-cta-btn {
       justify-content: center;
       width: 100%;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
     }
 
     .about-image img {
-      height: 300px;
+      height: 200px;
+    }
+
+    .image-overlay {
+      padding: 1rem;
+    }
+
+    .overlay-text strong {
+      font-size: 1rem;
+    }
+
+    .overlay-text span {
+      font-size: 0.8rem;
     }
   }
 
-  /* Animaciones */
+/* Animaciones */
+  @keyframes pulseCTA {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -298,7 +402,20 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
     animation-delay: 0.1s;
   }
 
-  .highlight-item:nth-child(3) {
+.highlight-item:nth-child(3) {
     animation-delay: 0.2s;
+  }
+
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .store-cta-hero {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    .highlight-item {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 </style>
