@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
+import ScrollIndicator from "../components/ScrollIndicator.astro";
 
 // Get hidraulica aspect data
 const aspectoHidraulica = (empresaData as any).aspectos.find((a: any) => a.nombre === "Hidráulica");
@@ -56,10 +57,17 @@ las personas… y el entorno que nos da vida.`
         ))}
       </div>
     </div>
-  </section>
-
+</section>
+  
+  <!-- Scroll Indicator para guiar a características técnicas -->
+  <ScrollIndicator 
+    text="Explora características técnicas" 
+    variant="default"
+    scrollTo="#caracteristicas-tecnicas" 
+  />
+  
   <!-- Technical Features Section -->
-  <section class="technical-section">
+  <section id="caracteristicas-tecnicas" class="technical-section">
     <div class="container">
       <h2>Características Técnicas</h2>
       <div class="technical-grid">
@@ -90,8 +98,15 @@ las personas… y el entorno que nos da vida.`
     </div>
   </section>
 
+<!-- Scroll Indicator para guiar a CTA final -->
+  <ScrollIndicator 
+    text="Contacta con nosotros" 
+    variant="minimal"
+    scrollTo="#contacto-hidraulica" 
+  />
+
   <!-- CTA Section -->
-  <section class="cta-section">
+  <section id="contacto-hidraulica" class="cta-section">
     <div class="container">
       <div class="cta-content">
         <h2>¿Necesitas Soluciones Hidráulicas?</h2>

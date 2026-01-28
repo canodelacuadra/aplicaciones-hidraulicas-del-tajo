@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
+import ScrollIndicator from "../components/ScrollIndicator.astro";
 
 // Get fotovoltaica aspect data
 const aspectoFotovoltaica = (empresaData as any).aspectos.find((a: any) => a.nombre === "Fotovoltaica");
@@ -53,10 +54,17 @@ const aspectoFotovoltaica = (empresaData as any).aspectos.find((a: any) => a.nom
         ))}
       </div>
     </div>
-  </section>
-
+</section>
+  
+  <!-- Scroll Indicator para guiar a beneficios -->
+  <ScrollIndicator 
+    text="Descubre los beneficios" 
+    variant="default"
+    scrollTo="#beneficios-solar" 
+  />
+  
   <!-- Benefits Section -->
-  <section class="benefits-section">
+  <section id="beneficios-solar" class="benefits-section">
     <div class="container">
       <h2>Beneficios de la Energía Solar</h2>
       <div class="benefits-grid">

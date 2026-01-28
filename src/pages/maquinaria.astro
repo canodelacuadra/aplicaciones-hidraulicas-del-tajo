@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import maquinariaData from "../data/maquinaria.json";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 import ConsultaModal from "../components/ConsultaModal.astro";
+import ScrollIndicator from "../components/ScrollIndicator.astro";
 
 // Preparar datos para los componentes
 const todasLasMaquinas = maquinariaData.maquinas || [];
@@ -89,13 +90,16 @@ const getServiciosPorCategoria = (categoriaId: string) => {
         })}
       </div>
     </div>
-  </section>
+</section>
+  
+  <!-- Scroll Indicator para guiar a sección de contacto -->
+  <ScrollIndicator 
+    text="¿Necesitas asesoramiento?" 
+    variant="minimal"
+    scrollTo="#contacto-maquinaria" 
+  />
 
-
-
-
-
-  <section class="contacto-section">
+  <section id="contacto-maquinaria" class="contacto-section">
     <div class="container">
       <div class="contacto-content">
         <div class="contacto-info">

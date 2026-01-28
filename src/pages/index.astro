@@ -4,6 +4,7 @@ import AboutSection from "../components/AboutSection.astro";
 import ServicePillars from "../components/ServicePillars.astro";
 import ServicesGrid from "../components/ServicesGrid.astro";
 import ContactCTA from "../components/ContactCTA.astro";
+import ScrollIndicator from "../components/ScrollIndicator.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 ---
 
@@ -11,8 +12,15 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
   <!-- Sección Sobre Nosotros (enfocada en tienda física) -->
   <AboutSection id="sobre-nosotros" />
   
+  <!-- Scroll Indicator para guiar hacia servicios -->
+  <ScrollIndicator 
+    text="Descubre nuestros servicios" 
+    variant="prominent"
+    scrollTo="#servicios-principales" 
+  />
+  
   <!-- Tres Pilares de Servicios -->
-  <ServicePillars />
+  <ServicePillars id="servicios-principales" />
   
   <!-- Servicios Integrales -->
   <ServicesGrid />
