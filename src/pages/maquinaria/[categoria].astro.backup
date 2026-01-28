@@ -165,7 +165,7 @@ if (!categoriaData) {
 <script is:inline>
   function mostrarConsulta(nombreEjemplar, marca) {
     const telefono = '+34672942881';
-    const email = 'info@ahtajo.com';
+    const email = 'ahdtajo@gmail.com';
     const subject = `Consulta sobre ${nombreEjemplar} - ${marca}`;
     
     if (confirm(`¿Deseas consultar información sobre ${nombreEjemplar} (${marca})?\n\nPuedes:\n• Llamar al ${telefono}\n• Enviar email a ${email}`)) {

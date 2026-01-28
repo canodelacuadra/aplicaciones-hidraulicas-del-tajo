@@ -12,7 +12,7 @@ export interface Props {
 const { maquina, isOpen = false } = Astro.props;
 
 const telefono = '+34672942881';
-const email = 'info@ahtajo.com';
+const email = 'ahdtajo@gmail.com';
 ---
 
 <!-- Modal Overlay -->
@@ -225,7 +225,7 @@ Mensaje: ${data.mensaje}
 Fecha: ${new Date().toLocaleString('es-ES')}
     `);
     
-    window.location.href = `mailto:info@ahtajo.com?subject=${emailSubject}&body=${emailBody}`;
+    window.location.href = `mailto:ahdtajo@gmail.com?subject=${emailSubject}&body=${emailBody}`;
     closeConsultaModal();
     
     // Mostrar mensaje de confirmación

@@ -139,7 +139,7 @@ if (!categoriaData) {
             <a href="tel:+34672942881" class="contacto-btn primary">
               <span>📞</span> Llamar ahora
             </a>
-            <a href={`mailto:info@ahtajo.com?subject=Consulta%20Maquinaria%20${encodeURIComponent(categoriaData.nombre)}`} class="contacto-btn secondary">
+            <a href={`mailto:ahdtajo@gmail.com?subject=Consulta%20Maquinaria%20${encodeURIComponent(categoriaData.nombre)}`} class="contacto-btn secondary">
               <span>✉️</span> Enviar email
             </a>
           </div>
