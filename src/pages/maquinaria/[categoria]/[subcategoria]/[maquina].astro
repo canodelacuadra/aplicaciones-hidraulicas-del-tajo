@@ -95,6 +95,8 @@ const formatEspecificaciones = (especificaciones: Record<string, any>) => {
 <BaseLayout 
   title={`${maquinaData.nombre} - ${subcategoriaData.nombre} - ${categoriaData.nombre}`} 
   description={maquinaData.meta?.description || `${maquinaData.nombre} en ${subcategoriaData.nombre}. Especialistas en ${maquinaData.nombre.toLowerCase()} en Torrijos, Toledo. Alquiler, venta y reparación.`}
+  ogImage={getMaquinaImagen(maquinaData)}
+  ogImageAlt={maquinaData.alt || `${maquinaData.nombre} - ${empresaData.empresa.nombre}`}
 >
 
   <!-- Breadcrumb -->

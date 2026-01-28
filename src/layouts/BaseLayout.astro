@@ -3,10 +3,37 @@ import Header from "../components/header.astro";
 import Footer from "../components/Footer.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 
-const { title, description, pageTitle, pageDescription: pageDesc } = Astro.props;
+const { title, description, pageTitle, pageDescription: pageDesc, ogImage, ogImageAlt } = Astro.props;
 
 const metaTitle = title || empresaData.seo.tituloBase;
 const metaDescription = description || empresaData.seo.descripcionBase;
+
+// Sistema de fallback inteligente para imágenes OG
+const getOGImage = () => {
+  if (ogImage) return `${empresaData.empresa.web}${ogImage}`;
+  
+  // Lógica por tipo de página basada en URL
+  const path = Astro.url.pathname;
+  if (path === '/') return `${empresaData.empresa.web}${empresaData.empresa.fachadaImagen}`;
+  if (path.includes('/hidraulica')) return `${empresaData.empresa.web}${empresaData.empresa.logotipo}`;
+  if (path.includes('/maquinaria')) return `${empresaData.empresa.web}/images/maquinaria-profesional.jpg`;
+  if (path.includes('/fotovoltaica')) return `${empresaData.empresa.web}/images/tratamiento-aguas-hero.jpg`;
+  
+  // Fallback general - logo corporativo
+  return `${empresaData.empresa.web}${empresaData.empresa.logotipo}`;
+};
+
+const getOGImageAlt = () => {
+  if (ogImageAlt) return ogImageAlt;
+  
+  const path = Astro.url.pathname;
+  if (path === '/') return `Tienda de ${empresaData.empresa.nombre} en Torrijos, Toledo`;
+  if (path.includes('/hidraulica')) return `Soluciones hidráulicas profesionales de ${empresaData.empresa.nombre}`;
+  if (path.includes('/maquinaria')) return `Maquinaria profesional para alquiler, venta y reparación de ${empresaData.empresa.nombre}`;
+  if (path.includes('/fotovoltaica')) return `Soluciones fotovoltaicas profesionales de ${empresaData.empresa.nombre}`;
+  
+  return `Logotipo de ${empresaData.empresa.nombre} - Soluciones profesionales en Torrijos, Toledo`;
+};
 ---
 
 <!doctype html>
@@ -17,12 +44,28 @@ const metaDescription = description || empresaData.seo.descripcionBase;
     <meta name="description" content={metaDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Meta tags para SEO -->
+<!-- Meta tags para SEO -->
     <meta property="og:title" content={metaTitle} />
     <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={empresaData.empresa.web} />
     <meta property="og:site_name" content={empresaData.empresa.nombre} />
+    <meta property="og:image" content={getOGImage()} />
+    <meta property="og:image:alt" content={getOGImageAlt()} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_ES" />
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={metaTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={getOGImage()} />
+    <meta name="twitter:image:alt" content={getOGImageAlt()} />
+    
+    <!-- Additional meta tags for social sharing -->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={empresaData.empresa.web + Astro.url.pathname} />
     <link rel="shortcut icon" href="ahdt-logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
