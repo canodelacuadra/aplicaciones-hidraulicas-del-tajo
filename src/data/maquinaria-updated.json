@@ -1,0 +1,3709 @@
+{
+  "configuracion": {
+    "empresa": "Maquinaria Hidráulicas del Tajo",
+    "ubicacion": "Torrijos, Toledo - Madrid",
+    "dominio": "maquinaria-hidraulicas-del-tajo.es"
+  },
+  "categorias": [
+    {
+      "id": "aire-comprimido",
+      "nombre": "AIRE COMPRIMIDO",
+      "slug": "aire-comprimido",
+      "descripcion": "Alquiler, reparación y venta de maquinaria de aire comprimido en Torrijos, Toledo - Madrid",
+      "meta": {
+        "title": "AIRE COMPRIMIDO | Alquiler, Reparación, Venta | Torrijos, Toledo",
+        "description": "Especialistas en aire comprimido en Torrijos, Toledo. Alquiler, reparación y venta de maquinaria profesional para obras y construcción."
+      },
+      "subcategorias": [
+        {
+          "id": "compresores",
+          "nombre": "COMPRESORES",
+          "slug": "compresores",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en compresores en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "COMPRESORES | AIRE COMPRIMIDO | Torrijos, Toledo",
+            "description": "Especialistas en compresores en Torrijos, Toledo. Alquiler, reparación y venta de compresores profesionales."
+          },
+          "maquinas": [
+            "compresor-aire-diesel",
+            "compresor-aire-portatil"
+          ]
+        },
+        {
+          "id": "martillos-neumaticos",
+          "nombre": "MARTILLOS NEUMATICOS",
+          "slug": "martillos-neumaticos",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en martillos neumaticos en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "MARTILLOS NEUMATICOS | AIRE COMPRIMIDO | Torrijos, Toledo",
+            "description": "Especialistas en martillos neumaticos en Torrijos, Toledo. Alquiler, reparación y venta de martillos neumaticos profesionales."
+          },
+          "maquinas": [
+            "martillo-neumatico-10kg",
+            "martillo-neumatico-25kg",
+            "martillo-neumatico-5kg"
+          ]
+        },
+        {
+          "id": "cinceladores-neumaticos",
+          "nombre": "CINCELADORES NEUMATICOS",
+          "slug": "cinceladores-neumaticos",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en cinceladores neumaticos en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CINCELADORES NEUMATICOS | AIRE COMPRIMIDO | Torrijos, Toledo",
+            "description": "Especialistas en cinceladores neumaticos en Torrijos, Toledo. Alquiler, reparación y venta de cinceladores neumaticos profesionales."
+          },
+          "maquinas": [
+            "2-martillo-neumatico-cincelador-25kg"
+          ]
+        },
+        {
+          "id": "vibradores-neumaticos",
+          "nombre": "VIBRADORES NEUMATICOS",
+          "slug": "vibradores-neumaticos",
+          "tieneMaquinas": false,
+          "descripcion": "Especialistas en vibradores neumaticos en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "VIBRADORES NEUMATICOS | AIRE COMPRIMIDO | Torrijos, Toledo",
+            "description": "Especialistas en vibradores neumaticos en Torrijos, Toledo. Alquiler, reparación y venta de vibradores neumaticos profesionales."
+          },
+          "maquinas": []
+        }
+      ]
+    },
+    {
+      "id": "limpieza",
+      "nombre": "LIMPIEZA",
+      "slug": "limpieza",
+      "descripcion": "Alquiler, reparación y venta de maquinaria de limpieza en Torrijos, Toledo - Madrid",
+      "meta": {
+        "title": "LIMPIEZA | Alquiler, Reparación, Venta | Torrijos, Toledo",
+        "description": "Especialistas en limpieza en Torrijos, Toledo. Alquiler, reparación y venta de maquinaria profesional para obras y construcción."
+      },
+      "subcategorias": [
+        {
+          "id": "barredoras",
+          "nombre": "BARREDORAS",
+          "slug": "barredoras",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en barredoras en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "BARREDORAS | LIMPIEZA | Torrijos, Toledo",
+            "description": "Especialistas en barredoras en Torrijos, Toledo. Alquiler, reparación y venta de barredoras profesionales."
+          },
+          "maquinas": [
+            "barredora-autopropulsada"
+          ]
+        },
+        {
+          "id": "fregadoras",
+          "nombre": "FREGADORAS",
+          "slug": "fregadoras",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en fregadoras en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "FREGADORAS | LIMPIEZA | Torrijos, Toledo",
+            "description": "Especialistas en fregadoras en Torrijos, Toledo. Alquiler, reparación y venta de fregadoras profesionales."
+          },
+          "maquinas": [
+            "fregadora-autopropulsada"
+          ]
+        },
+        {
+          "id": "hidrolimpiadoras",
+          "nombre": "HIDROLIMPIADORAS",
+          "slug": "hidrolimpiadoras",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en hidrolimpiadoras en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "HIDROLIMPIADORAS | LIMPIEZA | Torrijos, Toledo",
+            "description": "Especialistas en hidrolimpiadoras en Torrijos, Toledo. Alquiler, reparación y venta de hidrolimpiadoras profesionales."
+          },
+          "maquinas": [
+            "hidrolimpiadora-gasolina-250bar",
+            "hidrolimpiadora-monofasica-180bar"
+          ]
+        },
+        {
+          "id": "desatascador-tuberias",
+          "nombre": "DESATASCADOR TUBERIAS",
+          "slug": "desatascador-tuberias",
+          "tieneMaquinas": false,
+          "descripcion": "Especialistas en desatascador tuberias en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "DESATASCADOR TUBERIAS | LIMPIEZA | Torrijos, Toledo",
+            "description": "Especialistas en desatascador tuberias en Torrijos, Toledo. Alquiler, reparación y venta de desatascador tuberias profesionales."
+          },
+          "maquinas": []
+        },
+        {
+          "id": "bombas-aguas-limpias",
+          "nombre": "BOMBAS AGUAS LIMPIAS",
+          "slug": "bombas-aguas-limpias",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en bombas aguas limpias en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "BOMBAS AGUAS LIMPIAS | LIMPIEZA | Torrijos, Toledo",
+            "description": "Especialistas en bombas aguas limpias en Torrijos, Toledo. Alquiler, reparación y venta de bombas aguas limpias profesionales."
+          },
+          "maquinas": [
+            "bomba-aguas-limpias"
+          ]
+        },
+        {
+          "id": "bombas-aguas-residuales",
+          "nombre": "BOMBAS AGUAS RESIDUALES",
+          "slug": "bombas-aguas-residuales",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en bombas aguas residuales en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "BOMBAS AGUAS RESIDUALES | LIMPIEZA | Torrijos, Toledo",
+            "description": "Especialistas en bombas aguas residuales en Torrijos, Toledo. Alquiler, reparación y venta de bombas aguas residuales profesionales."
+          },
+          "maquinas": [
+            "bomba-sumergible-aguas-sucias"
+          ]
+        },
+        {
+          "id": "bombas-drenaje",
+          "nombre": "BOMBAS DRENAJE",
+          "slug": "bombas-drenaje",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en bombas drenaje en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "BOMBAS DRENAJE | LIMPIEZA | Torrijos, Toledo",
+            "description": "Especialistas en bombas drenaje en Torrijos, Toledo. Alquiler, reparación y venta de bombas drenaje profesionales."
+          },
+          "maquinas": [
+            "motobomba-aguas-sucias"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "demolicion",
+      "nombre": "DEMOLICION",
+      "slug": "demolicion",
+      "descripcion": "Alquiler, reparación y venta de maquinaria de demolicion en Torrijos, Toledo - Madrid",
+      "meta": {
+        "title": "DEMOLICION | Alquiler, Reparación, Venta | Torrijos, Toledo",
+        "description": "Especialistas en demolicion en Torrijos, Toledo. Alquiler, reparación y venta de maquinaria profesional para obras y construcción."
+      },
+      "subcategorias": [
+        {
+          "id": "martillos-rompedores",
+          "nombre": "MARTILLOS ROMPEDORES",
+          "slug": "martillos-rompedores",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en martillos rompedores en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "MARTILLOS ROMPEDORES | DEMOLICION | Torrijos, Toledo",
+            "description": "Especialistas en martillos rompedores en Torrijos, Toledo. Alquiler, reparación y venta de martillos rompedores profesionales."
+          },
+          "maquinas": [
+            "martillo-rompedor-8kg"
+          ]
+        },
+        {
+          "id": "martillos-demoledores",
+          "nombre": "MARTILLOS DEMOLEDORES",
+          "slug": "martillos-demoledores",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en martillos demoledores en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "MARTILLOS DEMOLEDORES | DEMOLICION | Torrijos, Toledo",
+            "description": "Especialistas en martillos demoledores en Torrijos, Toledo. Alquiler, reparación y venta de martillos demoledores profesionales."
+          },
+          "maquinas": [
+            "martillo-demoledor-16-kg"
+          ]
+        },
+        {
+          "id": "martillos-perforadores",
+          "nombre": "MARTILLOS PERFORADORES",
+          "slug": "martillos-perforadores",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en martillos perforadores en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "MARTILLOS PERFORADORES | DEMOLICION | Torrijos, Toledo",
+            "description": "Especialistas en martillos perforadores en Torrijos, Toledo. Alquiler, reparación y venta de martillos perforadores profesionales."
+          },
+          "maquinas": [
+            "martillo-rotativo-10kg",
+            "martillo-rotativo-3kg"
+          ]
+        },
+        {
+          "id": "cortadoras-de-gasolina",
+          "nombre": "CORTADORAS DE GASOLINA",
+          "slug": "cortadoras-de-gasolina",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en cortadoras de gasolina en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CORTADORAS DE GASOLINA | DEMOLICION | Torrijos, Toledo",
+            "description": "Especialistas en cortadoras de gasolina en Torrijos, Toledo. Alquiler, reparación y venta de cortadoras de gasolina profesionales."
+          },
+          "maquinas": [
+            "cortadora-gasolina"
+          ]
+        },
+        {
+          "id": "cortadoras-de-hormigon",
+          "nombre": "CORTADORAS DE HORMIGON",
+          "slug": "cortadoras-de-hormigon",
+          "tieneMaquinas": false,
+          "descripcion": "Especialistas en cortadoras de hormigon en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CORTADORAS DE HORMIGON | DEMOLICION | Torrijos, Toledo",
+            "description": "Especialistas en cortadoras de hormigon en Torrijos, Toledo. Alquiler, reparación y venta de cortadoras de hormigon profesionales."
+          },
+          "maquinas": []
+        },
+        {
+          "id": "fresadoras-de-hormigon",
+          "nombre": "FRESADORAS DE HORMIGON",
+          "slug": "fresadoras-de-hormigon",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en fresadoras de hormigon en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "FRESADORAS DE HORMIGON | DEMOLICION | Torrijos, Toledo",
+            "description": "Especialistas en fresadoras de hormigon en Torrijos, Toledo. Alquiler, reparación y venta de fresadoras de hormigon profesionales."
+          },
+          "maquinas": [
+            "cortadora-de-juntas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compactacion",
+      "nombre": "COMPACTACION",
+      "slug": "compactacion",
+      "descripcion": "Alquiler, reparación y venta de maquinaria de compactacion en Torrijos, Toledo - Madrid",
+      "meta": {
+        "title": "COMPACTACION | Alquiler, Reparación, Venta | Torrijos, Toledo",
+        "description": "Especialistas en compactacion en Torrijos, Toledo. Alquiler, reparación y venta de maquinaria profesional para obras y construcción."
+      },
+      "subcategorias": [
+        {
+          "id": "pison-compactador",
+          "nombre": "PISON COMPACTADOR",
+          "slug": "pison-compactador",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en pison compactador en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "PISON COMPACTADOR | COMPACTACION | Torrijos, Toledo",
+            "description": "Especialistas en pison compactador en Torrijos, Toledo. Alquiler, reparación y venta de pison compactador profesionales."
+          },
+          "maquinas": [
+            "pison-compactador"
+          ]
+        },
+        {
+          "id": "bandeja-vibrante",
+          "nombre": "BANDEJA VIBRANTE",
+          "slug": "bandeja-vibrante",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en bandeja vibrante en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "BANDEJA VIBRANTE | COMPACTACION | Torrijos, Toledo",
+            "description": "Especialistas en bandeja vibrante en Torrijos, Toledo. Alquiler, reparación y venta de bandeja vibrante profesionales."
+          },
+          "maquinas": [
+            "bandeja-vibrante-compactadora"
+          ]
+        },
+        {
+          "id": "rodillo-compactador",
+          "nombre": "RODILLO COMPACTADOR",
+          "slug": "rodillo-compactador",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en rodillo compactador en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "RODILLO COMPACTADOR | COMPACTACION | Torrijos, Toledo",
+            "description": "Especialistas en rodillo compactador en Torrijos, Toledo. Alquiler, reparación y venta de rodillo compactador profesionales."
+          },
+          "maquinas": [
+            "rodillo-lanza-750kg",
+            "rodillo-cesped-artificial"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vibracion",
+      "nombre": "VIBRACION",
+      "slug": "vibracion",
+      "descripcion": "Alquiler, reparación y venta de maquinaria de vibracion en Torrijos, Toledo - Madrid",
+      "meta": {
+        "title": "VIBRACION | Alquiler, Reparación, Venta | Torrijos, Toledo",
+        "description": "Especialistas en vibracion en Torrijos, Toledo. Alquiler, reparación y venta de maquinaria profesional para obras y construcción."
+      },
+      "subcategorias": [
+        {
+          "id": "vibrador-aguja",
+          "nombre": "VIBRADOR AGUJA",
+          "slug": "vibrador-aguja",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en vibrador aguja en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "VIBRADOR AGUJA | VIBRACION | Torrijos, Toledo",
+            "description": "Especialistas en vibrador aguja en Torrijos, Toledo. Alquiler, reparación y venta de vibrador aguja profesionales."
+          },
+          "maquinas": [
+            "vibrador-hormigon"
+          ]
+        },
+        {
+          "id": "convertidor-af",
+          "nombre": "CONVERTIDOR A.F.",
+          "slug": "convertidor-af",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en convertidor a.f. en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CONVERTIDOR A.F. | VIBRACION | Torrijos, Toledo",
+            "description": "Especialistas en convertidor a.f. en Torrijos, Toledo. Alquiler, reparación y venta de convertidor a.f. profesionales."
+          },
+          "maquinas": [
+            "convertidor-af"
+          ]
+        },
+        {
+          "id": "aguja-convertidor-af",
+          "nombre": "AGUJA CONVERTIDOR A.F.",
+          "slug": "aguja-convertidor-af",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en aguja convertidor a.f. en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "AGUJA CONVERTIDOR A.F. | VIBRACION | Torrijos, Toledo",
+            "description": "Especialistas en aguja convertidor a.f. en Torrijos, Toledo. Alquiler, reparación y venta de aguja convertidor a.f. profesionales."
+          },
+          "maquinas": [
+            "aguja-alta-frecuencia"
+          ]
+        },
+        {
+          "id": "regla-vibroextendedora",
+          "nombre": "REGLA VIBROEXTENDEDORA",
+          "slug": "regla-vibroextendedora",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en regla vibroextendedora en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "REGLA VIBROEXTENDEDORA | VIBRACION | Torrijos, Toledo",
+            "description": "Especialistas en regla vibroextendedora en Torrijos, Toledo. Alquiler, reparación y venta de regla vibroextendedora profesionales."
+          },
+          "maquinas": [
+            "regla-vibroextendedora"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elevacion",
+      "nombre": "ELEVACION",
+      "slug": "elevacion",
+      "descripcion": "Alquiler, reparación y venta de maquinaria de elevacion en Torrijos, Toledo - Madrid",
+      "meta": {
+        "title": "ELEVACION | Alquiler, Reparación, Venta | Torrijos, Toledo",
+        "description": "Especialistas en elevacion en Torrijos, Toledo. Alquiler, reparación y venta de maquinaria profesional para obras y construcción."
+      },
+      "subcategorias": [
+        {
+          "id": "plataforma-elevadora",
+          "nombre": "PLATAFORMA ELEVADORA",
+          "slug": "plataforma-elevadora",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en plataforma elevadora en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "PLATAFORMA ELEVADORA | ELEVACION | Torrijos, Toledo",
+            "description": "Especialistas en plataforma elevadora en Torrijos, Toledo. Alquiler, reparación y venta de plataforma elevadora profesionales."
+          },
+          "maquinas": [
+            "plataforma-tijera-electrica",
+            "plataforma-tijera-diesel"
+          ]
+        },
+        {
+          "id": "plataforma-articulada",
+          "nombre": "PLATAFORMA ARTICULADA",
+          "slug": "plataforma-articulada",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en plataforma articulada en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "PLATAFORMA ARTICULADA | ELEVACION | Torrijos, Toledo",
+            "description": "Especialistas en plataforma articulada en Torrijos, Toledo. Alquiler, reparación y venta de plataforma articulada profesionales."
+          },
+          "maquinas": [
+            "plataforma-articulada-18-mt-d",
+            "plataforma-articulada-electrica"
+          ]
+        },
+        {
+          "id": "elevador-portatil-300kg",
+          "nombre": "ELEVADOR PORTATIL 300KG",
+          "slug": "elevador-portatil-300kg",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en elevador portatil 300kg en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "ELEVADOR PORTATIL 300KG | ELEVACION | Torrijos, Toledo",
+            "description": "Especialistas en elevador portatil 300kg en Torrijos, Toledo. Alquiler, reparación y venta de elevador portatil 300kg profesionales."
+          },
+          "maquinas": [
+            "maquinillo-elevador-300kg"
+          ]
+        },
+        {
+          "id": "escalera-aluminio",
+          "nombre": "ESCALERA ALUMINIO",
+          "slug": "escalera-aluminio",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en escalera aluminio en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "ESCALERA ALUMINIO | ELEVACION | Torrijos, Toledo",
+            "description": "Especialistas en escalera aluminio en Torrijos, Toledo. Alquiler, reparación y venta de escalera aluminio profesionales."
+          },
+          "maquinas": [
+            "escalera-telescopica"
+          ]
+        },
+        {
+          "id": "camion-pluma",
+          "nombre": "CAMION PLUMA",
+          "slug": "camion-pluma",
+          "tieneMaquinas": false,
+          "descripcion": "Especialistas en camion pluma en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CAMION PLUMA | ELEVACION | Torrijos, Toledo",
+            "description": "Especialistas en camion pluma en Torrijos, Toledo. Alquiler, reparación y venta de camion pluma profesionales."
+          },
+          "maquinas": []
+        },
+        {
+          "id": "camion-plataforma-articulada",
+          "nombre": "CAMION PLATAFORMA ARTICULADA",
+          "slug": "camion-plataforma-articulada",
+          "tieneMaquinas": false,
+          "descripcion": "Especialistas en camion plataforma articulada en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CAMION PLATAFORMA ARTICULADA | ELEVACION | Torrijos, Toledo",
+            "description": "Especialistas en camion plataforma articulada en Torrijos, Toledo. Alquiler, reparación y venta de camion plataforma articulada profesionales."
+          },
+          "maquinas": []
+        },
+        {
+          "id": "carretillas-elevadoras",
+          "nombre": "CARRETILLAS ELEVADORAS",
+          "slug": "carretillas-elevadoras",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en carretillas elevadoras en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CARRETILLAS ELEVADORAS | ELEVACION | Torrijos, Toledo",
+            "description": "Especialistas en carretillas elevadoras en Torrijos, Toledo. Alquiler, reparación y venta de carretillas elevadoras profesionales."
+          },
+          "maquinas": [
+            "carretilla-elevadora-4x4"
+          ]
+        },
+        {
+          "id": "manipuladores-telescopicos",
+          "nombre": "MANIPULADORES TELESCOPICOS",
+          "slug": "manipuladores-telescopicos",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en manipuladores telescopicos en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "MANIPULADORES TELESCOPICOS | ELEVACION | Torrijos, Toledo",
+            "description": "Especialistas en manipuladores telescopicos en Torrijos, Toledo. Alquiler, reparación y venta de manipuladores telescopicos profesionales."
+          },
+          "maquinas": [
+            "manipulador-telescopico"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "energia",
+      "nombre": "ENERGIA",
+      "slug": "energia",
+      "descripcion": "Alquiler, reparación y venta de maquinaria de energia en Torrijos, Toledo - Madrid",
+      "meta": {
+        "title": "ENERGIA | Alquiler, Reparación, Venta | Torrijos, Toledo",
+        "description": "Especialistas en energia en Torrijos, Toledo. Alquiler, reparación y venta de maquinaria profesional para obras y construcción."
+      },
+      "subcategorias": [
+        {
+          "id": "grupo-electrogeno",
+          "nombre": "GRUPO ELECTROGENO",
+          "slug": "grupo-electrogeno",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en grupo electrogeno en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "GRUPO ELECTROGENO | ENERGIA | Torrijos, Toledo",
+            "description": "Especialistas en grupo electrogeno en Torrijos, Toledo. Alquiler, reparación y venta de grupo electrogeno profesionales."
+          },
+          "maquinas": [
+            "grupo-electrogeno-100-kva",
+            "grupo-electrogeno-40-kva",
+            "grupo-electrogeno-25-kva",
+            "grupo-electrogeno-gasolina-6-kva",
+            "grupo-electrogeno-3000w"
+          ]
+        },
+        {
+          "id": "motosoldadora",
+          "nombre": "MOTOSOLDADORA",
+          "slug": "motosoldadora",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en motosoldadora en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "MOTOSOLDADORA | ENERGIA | Torrijos, Toledo",
+            "description": "Especialistas en motosoldadora en Torrijos, Toledo. Alquiler, reparación y venta de motosoldadora profesionales."
+          },
+          "maquinas": [
+            "motosoldadora-gasolina"
+          ]
+        },
+        {
+          "id": "caon-calor",
+          "nombre": "CAÑON CALOR",
+          "slug": "caon-calor",
+          "tieneMaquinas": false,
+          "descripcion": "Especialistas en cañon calor en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CAÑON CALOR | ENERGIA | Torrijos, Toledo",
+            "description": "Especialistas en cañon calor en Torrijos, Toledo. Alquiler, reparación y venta de cañon calor profesionales."
+          },
+          "maquinas": []
+        },
+        {
+          "id": "deshumidificador",
+          "nombre": "DESHUMIDIFICADOR",
+          "slug": "deshumidificador",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en deshumidificador en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "DESHUMIDIFICADOR | ENERGIA | Torrijos, Toledo",
+            "description": "Especialistas en deshumidificador en Torrijos, Toledo. Alquiler, reparación y venta de deshumidificador profesionales."
+          },
+          "maquinas": [
+            "deshumidificador"
+          ]
+        },
+        {
+          "id": "soldadura-inverter",
+          "nombre": "SOLDADURA INVERTER",
+          "slug": "soldadura-inverter",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en soldadura inverter en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "SOLDADURA INVERTER | ENERGIA | Torrijos, Toledo",
+            "description": "Especialistas en soldadura inverter en Torrijos, Toledo. Alquiler, reparación y venta de soldadura inverter profesionales."
+          },
+          "maquinas": [
+            "soldadora-inverter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jardin",
+      "nombre": "JARDIN",
+      "slug": "jardin",
+      "descripcion": "Alquiler, reparación y venta de maquinaria de jardin en Torrijos, Toledo - Madrid",
+      "meta": {
+        "title": "JARDIN | Alquiler, Reparación, Venta | Torrijos, Toledo",
+        "description": "Especialistas en jardin en Torrijos, Toledo. Alquiler, reparación y venta de maquinaria profesional para obras y construcción."
+      },
+      "subcategorias": [
+        {
+          "id": "cortacesped",
+          "nombre": "CORTACESPED",
+          "slug": "cortacesped",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en cortacesped en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CORTACESPED | JARDIN | Torrijos, Toledo",
+            "description": "Especialistas en cortacesped en Torrijos, Toledo. Alquiler, reparación y venta de cortacesped profesionales."
+          },
+          "maquinas": [
+            "cortacesped-autopropulsado",
+            "cortacesped-manual"
+          ]
+        },
+        {
+          "id": "cortasetos",
+          "nombre": "CORTASETOS",
+          "slug": "cortasetos",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en cortasetos en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CORTASETOS | JARDIN | Torrijos, Toledo",
+            "description": "Especialistas en cortasetos en Torrijos, Toledo. Alquiler, reparación y venta de cortasetos profesionales."
+          },
+          "maquinas": [
+            "cortasetos-doble-corte"
+          ]
+        },
+        {
+          "id": "cortasetos-altura",
+          "nombre": "CORTASETOS ALTURA",
+          "slug": "cortasetos-altura",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en cortasetos altura en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CORTASETOS ALTURA | JARDIN | Torrijos, Toledo",
+            "description": "Especialistas en cortasetos altura en Torrijos, Toledo. Alquiler, reparación y venta de cortasetos altura profesionales."
+          },
+          "maquinas": [
+            "cortasetos-altura"
+          ]
+        },
+        {
+          "id": "escarificador-cesped",
+          "nombre": "ESCARIFICADOR CESPED",
+          "slug": "escarificador-cesped",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en escarificador cesped en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "ESCARIFICADOR CESPED | JARDIN | Torrijos, Toledo",
+            "description": "Especialistas en escarificador cesped en Torrijos, Toledo. Alquiler, reparación y venta de escarificador cesped profesionales."
+          },
+          "maquinas": [
+            "escarificador-gasolina"
+          ]
+        },
+        {
+          "id": "motoazadas",
+          "nombre": "MOTOAZADAS",
+          "slug": "motoazadas",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en motoazadas en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "MOTOAZADAS | JARDIN | Torrijos, Toledo",
+            "description": "Especialistas en motoazadas en Torrijos, Toledo. Alquiler, reparación y venta de motoazadas profesionales."
+          },
+          "maquinas": [
+            "motoazada"
+          ]
+        },
+        {
+          "id": "zanjadora",
+          "nombre": "ZANJADORA",
+          "slug": "zanjadora",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en zanjadora en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "ZANJADORA | JARDIN | Torrijos, Toledo",
+            "description": "Especialistas en zanjadora en Torrijos, Toledo. Alquiler, reparación y venta de zanjadora profesionales."
+          },
+          "maquinas": [
+            "zanjadora-gasolina"
+          ]
+        },
+        {
+          "id": "sopladores",
+          "nombre": "SOPLADORES",
+          "slug": "sopladores",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en sopladores en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "SOPLADORES | JARDIN | Torrijos, Toledo",
+            "description": "Especialistas en sopladores en Torrijos, Toledo. Alquiler, reparación y venta de sopladores profesionales."
+          },
+          "maquinas": [
+            "soplador-mochila",
+            "soplador-mano"
+          ]
+        },
+        {
+          "id": "motopulverizadores",
+          "nombre": "MOTOPULVERIZADORES",
+          "slug": "motopulverizadores",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en motopulverizadores en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "MOTOPULVERIZADORES | JARDIN | Torrijos, Toledo",
+            "description": "Especialistas en motopulverizadores en Torrijos, Toledo. Alquiler, reparación y venta de motopulverizadores profesionales."
+          },
+          "maquinas": [
+            "motopulverizador-mochila",
+            "carretilla-pulverizacion",
+            "carretilla-pulverizacion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forestal",
+      "nombre": "FORESTAL",
+      "slug": "forestal",
+      "descripcion": "Alquiler, reparación y venta de maquinaria de forestal en Torrijos, Toledo - Madrid",
+      "meta": {
+        "title": "FORESTAL | Alquiler, Reparación, Venta | Torrijos, Toledo",
+        "description": "Especialistas en forestal en Torrijos, Toledo. Alquiler, reparación y venta de maquinaria profesional para obras y construcción."
+      },
+      "subcategorias": [
+        {
+          "id": "motosierras",
+          "nombre": "MOTOSIERRAS",
+          "slug": "motosierras",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en motosierras en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "MOTOSIERRAS | FORESTAL | Torrijos, Toledo",
+            "description": "Especialistas en motosierras en Torrijos, Toledo. Alquiler, reparación y venta de motosierras profesionales."
+          },
+          "maquinas": [
+            "motosierra-40-cm",
+            "motosierra-de-poda"
+          ]
+        },
+        {
+          "id": "podadoras",
+          "nombre": "PODADORAS",
+          "slug": "podadoras",
+          "tieneMaquinas": false,
+          "descripcion": "Especialistas en podadoras en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "PODADORAS | FORESTAL | Torrijos, Toledo",
+            "description": "Especialistas en podadoras en Torrijos, Toledo. Alquiler, reparación y venta de podadoras profesionales."
+          },
+          "maquinas": []
+        },
+        {
+          "id": "podadoras-altura",
+          "nombre": "PODADORAS ALTURA",
+          "slug": "podadoras-altura",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en podadoras altura en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "PODADORAS ALTURA | FORESTAL | Torrijos, Toledo",
+            "description": "Especialistas en podadoras altura en Torrijos, Toledo. Alquiler, reparación y venta de podadoras altura profesionales."
+          },
+          "maquinas": [
+            "podador-altura"
+          ]
+        },
+        {
+          "id": "desbrozadoras",
+          "nombre": "DESBROZADORAS",
+          "slug": "desbrozadoras",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en desbrozadoras en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "DESBROZADORAS | FORESTAL | Torrijos, Toledo",
+            "description": "Especialistas en desbrozadoras en Torrijos, Toledo. Alquiler, reparación y venta de desbrozadoras profesionales."
+          },
+          "maquinas": [
+            "desbrozadora-gasolina-para-quad",
+            "desbrozadora-2t"
+          ]
+        },
+        {
+          "id": "ahoyador",
+          "nombre": "AHOYADOR",
+          "slug": "ahoyador",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en ahoyador en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "AHOYADOR | FORESTAL | Torrijos, Toledo",
+            "description": "Especialistas en ahoyador en Torrijos, Toledo. Alquiler, reparación y venta de ahoyador profesionales."
+          },
+          "maquinas": [
+            "ahoyador"
+          ]
+        },
+        {
+          "id": "destoconador",
+          "nombre": "DESTOCONADOR",
+          "slug": "destoconador",
+          "tieneMaquinas": false,
+          "descripcion": "Especialistas en destoconador en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "DESTOCONADOR | FORESTAL | Torrijos, Toledo",
+            "description": "Especialistas en destoconador en Torrijos, Toledo. Alquiler, reparación y venta de destoconador profesionales."
+          },
+          "maquinas": []
+        },
+        {
+          "id": "carretilla-orugas",
+          "nombre": "CARRETILLA ORUGAS",
+          "slug": "carretilla-orugas",
+          "tieneMaquinas": false,
+          "descripcion": "Especialistas en carretilla orugas en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CARRETILLA ORUGAS | FORESTAL | Torrijos, Toledo",
+            "description": "Especialistas en carretilla orugas en Torrijos, Toledo. Alquiler, reparación y venta de carretilla orugas profesionales."
+          },
+          "maquinas": []
+        },
+        {
+          "id": "vareadores",
+          "nombre": "VAREADORES",
+          "slug": "vareadores",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en vareadores en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "VAREADORES | FORESTAL | Torrijos, Toledo",
+            "description": "Especialistas en vareadores en Torrijos, Toledo. Alquiler, reparación y venta de vareadores profesionales."
+          },
+          "maquinas": [
+            "vareador"
+          ]
+        },
+        {
+          "id": "biotrituradoras",
+          "nombre": "BIOTRITURADORAS",
+          "slug": "biotrituradoras",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en biotrituradoras en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "BIOTRITURADORAS | FORESTAL | Torrijos, Toledo",
+            "description": "Especialistas en biotrituradoras en Torrijos, Toledo. Alquiler, reparación y venta de biotrituradoras profesionales."
+          },
+          "maquinas": [
+            "biotrituradora-gasolina"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "construccion",
+      "nombre": "CONSTRUCCION",
+      "slug": "construccion",
+      "descripcion": "Alquiler, reparación y venta de maquinaria de construccion en Torrijos, Toledo - Madrid",
+      "meta": {
+        "title": "CONSTRUCCION | Alquiler, Reparación, Venta | Torrijos, Toledo",
+        "description": "Especialistas en construccion en Torrijos, Toledo. Alquiler, reparación y venta de maquinaria profesional para obras y construcción."
+      },
+      "subcategorias": [
+        {
+          "id": "hormigoneras",
+          "nombre": "HORMIGONERAS",
+          "slug": "hormigoneras",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en hormigoneras en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "HORMIGONERAS | CONSTRUCCION | Torrijos, Toledo",
+            "description": "Especialistas en hormigoneras en Torrijos, Toledo. Alquiler, reparación y venta de hormigoneras profesionales."
+          },
+          "maquinas": [
+            "hormigonera-200-lts",
+            "hormigonera-desmontable-silenciosa-140lt"
+          ]
+        },
+        {
+          "id": "rozadoras",
+          "nombre": "ROZADORAS",
+          "slug": "rozadoras",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en rozadoras en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "ROZADORAS | CONSTRUCCION | Torrijos, Toledo",
+            "description": "Especialistas en rozadoras en Torrijos, Toledo. Alquiler, reparación y venta de rozadoras profesionales."
+          },
+          "maquinas": [
+            "rozadora-de-discos",
+            "rozadora-fresa"
+          ]
+        },
+        {
+          "id": "pulidoras-de-terrazo",
+          "nombre": "PULIDORAS DE TERRAZO",
+          "slug": "pulidoras-de-terrazo",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en pulidoras de terrazo en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "PULIDORAS DE TERRAZO | CONSTRUCCION | Torrijos, Toledo",
+            "description": "Especialistas en pulidoras de terrazo en Torrijos, Toledo. Alquiler, reparación y venta de pulidoras de terrazo profesionales."
+          },
+          "maquinas": [
+            "pulidora-terrazo"
+          ]
+        },
+        {
+          "id": "pulidora-peldaos",
+          "nombre": "PULIDORA PELDAÑOS",
+          "slug": "pulidora-peldaos",
+          "tieneMaquinas": false,
+          "descripcion": "Especialistas en pulidora peldaños en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "PULIDORA PELDAÑOS | CONSTRUCCION | Torrijos, Toledo",
+            "description": "Especialistas en pulidora peldaños en Torrijos, Toledo. Alquiler, reparación y venta de pulidora peldaños profesionales."
+          },
+          "maquinas": []
+        },
+        {
+          "id": "radiales",
+          "nombre": "RADIALES",
+          "slug": "radiales",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en radiales en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "RADIALES | CONSTRUCCION | Torrijos, Toledo",
+            "description": "Especialistas en radiales en Torrijos, Toledo. Alquiler, reparación y venta de radiales profesionales."
+          },
+          "maquinas": [
+            "radial-230"
+          ]
+        },
+        {
+          "id": "taladros",
+          "nombre": "TALADROS",
+          "slug": "taladros",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en taladros en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "TALADROS | CONSTRUCCION | Torrijos, Toledo",
+            "description": "Especialistas en taladros en Torrijos, Toledo. Alquiler, reparación y venta de taladros profesionales."
+          },
+          "maquinas": [
+            "lijadora-pared"
+          ]
+        },
+        {
+          "id": "tronzadora-agua",
+          "nombre": "TRONZADORA AGUA",
+          "slug": "tronzadora-agua",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en tronzadora agua en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "TRONZADORA AGUA | CONSTRUCCION | Torrijos, Toledo",
+            "description": "Especialistas en tronzadora agua en Torrijos, Toledo. Alquiler, reparación y venta de tronzadora agua profesionales."
+          },
+          "maquinas": [
+            "tronzadora-agua"
+          ]
+        },
+        {
+          "id": "tronzadora-madera",
+          "nombre": "TRONZADORA MADERA",
+          "slug": "tronzadora-madera",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en tronzadora madera en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "TRONZADORA MADERA | CONSTRUCCION | Torrijos, Toledo",
+            "description": "Especialistas en tronzadora madera en Torrijos, Toledo. Alquiler, reparación y venta de tronzadora madera profesionales."
+          },
+          "maquinas": [
+            "mesa-corte-madera"
+          ]
+        },
+        {
+          "id": "cortador-azulejos",
+          "nombre": "CORTADOR AZULEJOS",
+          "slug": "cortador-azulejos",
+          "tieneMaquinas": false,
+          "descripcion": "Especialistas en cortador azulejos en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "CORTADOR AZULEJOS | CONSTRUCCION | Torrijos, Toledo",
+            "description": "Especialistas en cortador azulejos en Torrijos, Toledo. Alquiler, reparación y venta de cortador azulejos profesionales."
+          },
+          "maquinas": []
+        }
+      ]
+    },
+    {
+      "id": "desescombro",
+      "nombre": "DESESCOMBRO",
+      "slug": "desescombro",
+      "descripcion": "Alquiler, reparación y venta de maquinaria de desescombro en Torrijos, Toledo - Madrid",
+      "meta": {
+        "title": "DESESCOMBRO | Alquiler, Reparación, Venta | Torrijos, Toledo",
+        "description": "Especialistas en desescombro en Torrijos, Toledo. Alquiler, reparación y venta de maquinaria profesional para obras y construcción."
+      },
+      "subcategorias": [
+        {
+          "id": "dumper",
+          "nombre": "DUMPER",
+          "slug": "dumper",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en dumper en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "DUMPER | DESESCOMBRO | Torrijos, Toledo",
+            "description": "Especialistas en dumper en Torrijos, Toledo. Alquiler, reparación y venta de dumper profesionales."
+          },
+          "maquinas": [
+            "transpalet-manual-2500kg",
+            "carretilla-almacen",
+            "minidumper-gasolina",
+            "dumper-descarga-frontal",
+            "carro-chino-125lts"
+          ]
+        },
+        {
+          "id": "bajantes-de-escombro",
+          "nombre": "BAJANTES DE ESCOMBRO",
+          "slug": "bajantes-de-escombro",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en bajantes de escombro en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "BAJANTES DE ESCOMBRO | DESESCOMBRO | Torrijos, Toledo",
+            "description": "Especialistas en bajantes de escombro en Torrijos, Toledo. Alquiler, reparación y venta de bajantes de escombro profesionales."
+          },
+          "maquinas": [
+            "bajante-escombros"
+          ]
+        },
+        {
+          "id": "minicargadora",
+          "nombre": "MINICARGADORA",
+          "slug": "minicargadora",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en minicargadora en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "MINICARGADORA | DESESCOMBRO | Torrijos, Toledo",
+            "description": "Especialistas en minicargadora en Torrijos, Toledo. Alquiler, reparación y venta de minicargadora profesionales."
+          },
+          "maquinas": [
+            "minicargadora-diesel"
+          ]
+        },
+        {
+          "id": "miniexcavadora",
+          "nombre": "MINIEXCAVADORA",
+          "slug": "miniexcavadora",
+          "tieneMaquinas": true,
+          "descripcion": "Especialistas en miniexcavadora en Torrijos, Toledo - Madrid",
+          "meta": {
+            "title": "MINIEXCAVADORA | DESESCOMBRO | Torrijos, Toledo",
+            "description": "Especialistas en miniexcavadora en Torrijos, Toledo. Alquiler, reparación y venta de miniexcavadora profesionales."
+          },
+          "maquinas": [
+            "miniexcavadora"
+          ]
+        }
+      ]
+    }
+  ],
+  "maquinas": [
+    {
+      "id": "compresor-aire-diesel",
+      "slug": "compresor-aire-diesel",
+      "nombre": "Compresor Aire Diesel",
+      "subcategoriaId": "compresores",
+      "categoriaId": "aire-comprimido",
+      "imagen": "aire-comprimido/compresores/compresor-aire-diesel.jpg",
+      "alt": "Compresor Aire Diesel - COMPRESORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Compresor Aire Diesel profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Compresor Aire Diesel diesel | COMPRESORES | Torrijos, Toledo",
+        "description": "Alquiler de compresor aire diesel en Torrijos, Toledo. Diesel. Especialistas en compresores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "compresor",
+          "aire",
+          "diesel",
+          "aire comprimido",
+          "compresores",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "motor": "diesel"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "compresor-aire-portatil",
+      "slug": "compresor-aire-portatil",
+      "nombre": "Compresor Aire Portatil",
+      "subcategoriaId": "compresores",
+      "categoriaId": "aire-comprimido",
+      "imagen": "aire-comprimido/compresores/compresor-aire-portatil.jpg",
+      "alt": "Compresor Aire Portatil - COMPRESORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Compresor Aire Portatil profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Compresor Aire Portatil portátil | COMPRESORES | Torrijos, Toledo",
+        "description": "Alquiler de compresor aire portatil en Torrijos, Toledo. Portátil. Especialistas en compresores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "compresor",
+          "aire",
+          "portatil",
+          "aire comprimido",
+          "compresores",
+          "portátil",
+          "torrijos"
+        ]
+      },
+      "especificaciones": {
+        "tipo": "portátil"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "pison-compactador",
+      "slug": "pison-compactador",
+      "nombre": "Pison Compactador",
+      "subcategoriaId": "pison-compactador",
+      "categoriaId": "compactacion",
+      "imagen": "compactacion/pison-compactador/pison-compactador.jpg",
+      "alt": "Pison Compactador - PISON COMPACTADOR. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Pison Compactador profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Pison Compactador | PISON COMPACTADOR | Torrijos, Toledo",
+        "description": "Alquiler de pison compactador en Torrijos, Toledo. Especialistas en pison compactador para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "pison",
+          "compactador",
+          "compactacion",
+          "pison compactador",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "bandeja-vibrante-compactadora",
+      "slug": "bandeja-vibrante-compactadora",
+      "nombre": "Bandeja Vibrante Compactadora",
+      "subcategoriaId": "bandeja-vibrante",
+      "categoriaId": "compactacion",
+      "imagen": "compactacion/bandeja-vibrante/bandeja-vibrante-compactadora.jpg",
+      "alt": "Bandeja Vibrante Compactadora - BANDEJA VIBRANTE. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Bandeja Vibrante Compactadora profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Bandeja Vibrante Compactadora | BANDEJA VIBRANTE | Torrijos, Toledo",
+        "description": "Alquiler de bandeja vibrante compactadora en Torrijos, Toledo. Especialistas en bandeja vibrante para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "bandeja",
+          "vibrante",
+          "compactadora",
+          "compactacion",
+          "bandeja vibrante",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "convertidor-af",
+      "slug": "convertidor-af",
+      "nombre": "Convertidor Af",
+      "subcategoriaId": "convertidor-af",
+      "categoriaId": "vibracion",
+      "imagen": "vibracion/convertidor-af/convertidor-af.jpg",
+      "alt": "Convertidor Af para alquiler en Torrijos, Toledo",
+      "descripcion": "Convertidor Af profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "",
+        "description": "",
+        "keywords": []
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "aguja-alta-frecuencia",
+      "slug": "aguja-alta-frecuencia",
+      "nombre": "Aguja Alta Frecuencia",
+      "subcategoriaId": "aguja-convertidor-af",
+      "categoriaId": "vibracion",
+      "imagen": "vibracion/aguja-convertidor-af/aguja-alta-frecuencia.jpg",
+      "alt": "Aguja Alta Frecuencia para alquiler en Torrijos, Toledo",
+      "descripcion": "Aguja Alta Frecuencia profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "",
+        "description": "",
+        "keywords": []
+      },
+      "especificaciones": {
+        "frecuencia": "alta"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "vibrador-hormigon",
+      "slug": "vibrador-hormigon",
+      "nombre": "Vibrador Hormigon",
+      "subcategoriaId": "vibrador-aguja",
+      "categoriaId": "vibracion",
+      "imagen": "vibracion/vibrador-aguja/vibrador-hormigon.jpg",
+      "alt": "Vibrador Hormigon - VIBRADOR AGUJA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Vibrador Hormigon profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Vibrador Hormigon | VIBRADOR AGUJA | Torrijos, Toledo",
+        "description": "Alquiler de vibrador hormigon en Torrijos, Toledo. Especialistas en vibrador aguja para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "vibrador",
+          "hormigon",
+          "vibracion",
+          "vibrador aguja",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "regla-vibroextendedora",
+      "slug": "regla-vibroextendedora",
+      "nombre": "Regla Vibroextendedora",
+      "subcategoriaId": "regla-vibroextendedora",
+      "categoriaId": "vibracion",
+      "imagen": "vibracion/regla-vibroextendedora/regla-vibroextendedora.jpg",
+      "alt": "Regla Vibroextendedora - REGLA VIBROEXTENDEDORA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Regla Vibroextendedora profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Regla Vibroextendedora | REGLA VIBROEXTENDEDORA | Torrijos, Toledo",
+        "description": "Alquiler de regla vibroextendedora en Torrijos, Toledo. Especialistas en regla vibroextendedora para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "regla",
+          "vibroextendedora",
+          "vibracion",
+          "regla vibroextendedora",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "canon-calor-infrarrojos",
+      "slug": "canon-calor-infrarrojos",
+      "nombre": "Canon Calor Infrarrojos",
+      "subcategoriaId": "canon-calor",
+      "categoriaId": "energia",
+      "imagen": "energia/canon-calor/canon-calor-infrarrojos.jpg",
+      "alt": "Canon Calor Infrarrojos para alquiler en Torrijos, Toledo",
+      "descripcion": "Canon Calor Infrarrojos profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "",
+        "description": "",
+        "keywords": []
+      },
+      "especificaciones": {
+        "tecnologia": "infrarrojos"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "canon-secador",
+      "slug": "canon-secador",
+      "nombre": "Canon Secador",
+      "subcategoriaId": "canon-calor",
+      "categoriaId": "energia",
+      "imagen": "energia/canon-calor/canon-secador.jpg",
+      "alt": "Canon Secador para alquiler en Torrijos, Toledo",
+      "descripcion": "Canon Secador profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "",
+        "description": "",
+        "keywords": []
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "martillo-demoledor-16-kg",
+      "slug": "martillo-demoledor-16-kg",
+      "nombre": "Martillo Demoledor 16 Kg",
+      "subcategoriaId": "martillos-demoledores",
+      "categoriaId": "demolicion",
+      "imagen": "demolicion/martillos-demoledores/martillo-demoledor-16-kg.jpg",
+      "alt": "Martillo Demoledor 16 Kg - MARTILLOS DEMOLEDORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Martillo Demoledor 16 Kg profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Martillo Demoledor 16 Kg | MARTILLOS DEMOLEDORES | Torrijos, Toledo",
+        "description": "Alquiler de martillo demoledor 16 kg en Torrijos, Toledo. Especialistas en martillos demoledores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "martillo",
+          "demoledor",
+          "16",
+          "kg",
+          "demolicion",
+          "martillos demoledores",
+          "torrijos"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "martillo-rompedor-8kg",
+      "slug": "martillo-rompedor-8kg",
+      "nombre": "Martillo Rompedor 8kg",
+      "subcategoriaId": "martillos-rompedores",
+      "categoriaId": "demolicion",
+      "imagen": "demolicion/martillos-rompedores/martillo-rompedor-8kg.jpg",
+      "alt": "Martillo Rompedor 8kg - MARTILLOS ROMPEDORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Martillo Rompedor 8kg profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Martillo Rompedor 8kg 8kg | MARTILLOS ROMPEDORES | Torrijos, Toledo",
+        "description": "Alquiler de martillo rompedor 8kg en Torrijos, Toledo. 8kg. Especialistas en martillos rompedores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "martillo",
+          "rompedor",
+          "8kg",
+          "demolicion",
+          "martillos rompedores",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "peso": "8kg"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "martillo-rotativo-10kg",
+      "slug": "martillo-rotativo-10kg",
+      "nombre": "Martillo Rotativo 10kg",
+      "subcategoriaId": "martillos-perforadores",
+      "categoriaId": "demolicion",
+      "imagen": "demolicion/martillos-perforadores/martillo-rotativo-10kg.jpg",
+      "alt": "Martillo Rotativo 10kg - MARTILLOS PERFORADORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Martillo Rotativo 10kg profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Martillo Rotativo 10kg 10kg | MARTILLOS PERFORADORES | Torrijos, Toledo",
+        "description": "Alquiler de martillo rotativo 10kg en Torrijos, Toledo. 10kg. Especialistas en martillos perforadores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "martillo",
+          "rotativo",
+          "10kg",
+          "demolicion",
+          "martillos perforadores",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "peso": "10kg"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "martillo-rotativo-3kg",
+      "slug": "martillo-rotativo-3kg",
+      "nombre": "Martillo Rotativo 3kg",
+      "subcategoriaId": "martillos-perforadores",
+      "categoriaId": "demolicion",
+      "imagen": "demolicion/martillos-perforadores/martillo-rotativo-3kg.jpg",
+      "alt": "Martillo Rotativo 3kg - MARTILLOS PERFORADORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Martillo Rotativo 3kg profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Martillo Rotativo 3kg 3kg | MARTILLOS PERFORADORES | Torrijos, Toledo",
+        "description": "Alquiler de martillo rotativo 3kg en Torrijos, Toledo. 3kg. Especialistas en martillos perforadores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "martillo",
+          "rotativo",
+          "3kg",
+          "demolicion",
+          "martillos perforadores",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "peso": "3kg"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "martillo-neumatico-10kg",
+      "slug": "martillo-neumatico-10kg",
+      "nombre": "Martillo Neumatico 10kg",
+      "subcategoriaId": "martillos-neumaticos",
+      "categoriaId": "aire-comprimido",
+      "imagen": "aire-comprimido/martillos-neumaticos/martillo-neumatico-10kg.jpg",
+      "alt": "Martillo Neumatico 10kg - MARTILLOS NEUMATICOS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Martillo Neumatico 10kg profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Martillo Neumatico 10kg 10kg | MARTILLOS NEUMATICOS | Torrijos, Toledo",
+        "description": "Alquiler de martillo neumatico 10kg en Torrijos, Toledo. 10kg. Especialistas en martillos neumaticos para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "martillo",
+          "neumatico",
+          "10kg",
+          "aire comprimido",
+          "martillos neumaticos",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "peso": "10kg"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "martillo-neumatico-25kg",
+      "slug": "martillo-neumatico-25kg",
+      "nombre": "Martillo Neumatico 25kg",
+      "subcategoriaId": "martillos-neumaticos",
+      "categoriaId": "aire-comprimido",
+      "imagen": "aire-comprimido/martillos-neumaticos/martillo-neumatico-25kg.jpg",
+      "alt": "Martillo Neumatico 25kg - MARTILLOS NEUMATICOS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Martillo Neumatico 25kg profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Martillo Neumatico 25kg 25kg | MARTILLOS NEUMATICOS | Torrijos, Toledo",
+        "description": "Alquiler de martillo neumatico 25kg en Torrijos, Toledo. 25kg. Especialistas en martillos neumaticos para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "martillo",
+          "neumatico",
+          "25kg",
+          "aire comprimido",
+          "martillos neumaticos",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "peso": "25kg"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "2-martillo-neumatico-cincelador-25kg",
+      "slug": "2-martillo-neumatico-cincelador-25kg",
+      "nombre": "2 Martillo Neumatico Cincelador 2.5kg",
+      "subcategoriaId": "cinceladores-neumaticos",
+      "categoriaId": "aire-comprimido",
+      "imagen": "aire-comprimido/cinceladores-neumaticos/2-martillo-neumatico-cincelador-2.5kg.jpg",
+      "alt": "2 Martillo Neumatico Cincelador 2.5kg para alquiler en Torrijos, Toledo",
+      "descripcion": "2 Martillo Neumatico Cincelador 2.5kg profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "",
+        "description": "",
+        "keywords": []
+      },
+      "especificaciones": {
+        "peso": "5kg"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "martillo-neumatico-5kg",
+      "slug": "martillo-neumatico-5kg",
+      "nombre": "Martillo Neumatico 5kg",
+      "subcategoriaId": "martillos-neumaticos",
+      "categoriaId": "aire-comprimido",
+      "imagen": "aire-comprimido/martillos-neumaticos/martillo-neumatico-5kg.jpg",
+      "alt": "Martillo Neumatico 5kg - MARTILLOS NEUMATICOS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Martillo Neumatico 5kg profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Martillo Neumatico 5kg 5kg | MARTILLOS NEUMATICOS | Torrijos, Toledo",
+        "description": "Alquiler de martillo neumatico 5kg en Torrijos, Toledo. 5kg. Especialistas en martillos neumaticos para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "martillo",
+          "neumatico",
+          "5kg",
+          "aire comprimido",
+          "martillos neumaticos",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "peso": "5kg"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "hidrolimpiadora-gasolina-250bar",
+      "slug": "hidrolimpiadora-gasolina-250bar",
+      "nombre": "Hidrolimpiadora Gasolina 250bar",
+      "subcategoriaId": "hidrolimpiadoras",
+      "categoriaId": "limpieza",
+      "imagen": "limpieza/hidrolimpiadoras/hidrolimpiadora-gasolina-250bar.jpg",
+      "alt": "Hidrolimpiadora Gasolina 250bar - HIDROLIMPIADORAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Hidrolimpiadora Gasolina 250bar profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Hidrolimpiadora Gasolina 250bar 250bar | HIDROLIMPIADORAS | Torrijos, Toledo",
+        "description": "Alquiler de hidrolimpiadora gasolina 250bar en Torrijos, Toledo. 250bar, gasolina. Especialistas en hidrolimpiadoras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "hidrolimpiadora",
+          "gasolina",
+          "250bar",
+          "limpieza",
+          "hidrolimpiadoras",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "presion": "250bar",
+        "motor": "gasolina"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "hidrolimpiadora-monofasica-180bar",
+      "slug": "hidrolimpiadora-monofasica-180bar",
+      "nombre": "Hidrolimpiadora Monofasica 180bar",
+      "subcategoriaId": "hidrolimpiadoras",
+      "categoriaId": "limpieza",
+      "imagen": "limpieza/hidrolimpiadoras/hidrolimpiadora-monofasica-180bar.jpg",
+      "alt": "Hidrolimpiadora Monofasica 180bar - HIDROLIMPIADORAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Hidrolimpiadora Monofasica 180bar profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Hidrolimpiadora Monofasica 180bar 180bar | HIDROLIMPIADORAS | Torrijos, Toledo",
+        "description": "Alquiler de hidrolimpiadora monofasica 180bar en Torrijos, Toledo. 180bar, electrico. Especialistas en hidrolimpiadoras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "hidrolimpiadora",
+          "monofasica",
+          "180bar",
+          "limpieza",
+          "hidrolimpiadoras",
+          "electrico",
+          "torrijos"
+        ]
+      },
+      "especificaciones": {
+        "presion": "180bar",
+        "motor": "electrico"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "barredora-autopropulsada",
+      "slug": "barredora-autopropulsada",
+      "nombre": "Barredora Autopropulsada",
+      "subcategoriaId": "barredoras",
+      "categoriaId": "limpieza",
+      "imagen": "limpieza/barredoras/barredora-autopropulsada.jpg",
+      "alt": "Barredora Autopropulsada - BARREDORAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Barredora Autopropulsada profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Barredora Autopropulsada | BARREDORAS | Torrijos, Toledo",
+        "description": "Alquiler de barredora autopropulsada en Torrijos, Toledo. Especialistas en barredoras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "barredora",
+          "autopropulsada",
+          "limpieza",
+          "barredoras",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "fregadora-autopropulsada",
+      "slug": "fregadora-autopropulsada",
+      "nombre": "Fregadora Autopropulsada",
+      "subcategoriaId": "fregadoras",
+      "categoriaId": "limpieza",
+      "imagen": "limpieza/fregadoras/fregadora-autopropulsada.jpg",
+      "alt": "Fregadora Autopropulsada - FREGADORAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Fregadora Autopropulsada profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Fregadora Autopropulsada | FREGADORAS | Torrijos, Toledo",
+        "description": "Alquiler de fregadora autopropulsada en Torrijos, Toledo. Especialistas en fregadoras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "fregadora",
+          "autopropulsada",
+          "limpieza",
+          "fregadoras",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "motobomba-aguas-sucias",
+      "slug": "motobomba-aguas-sucias",
+      "nombre": "Motobomba Aguas Sucias",
+      "subcategoriaId": "bombas-drenaje",
+      "categoriaId": "limpieza",
+      "imagen": "limpieza/bombas-drenaje/motobomba-aguas-sucias.jpg",
+      "alt": "Motobomba Aguas Sucias - BOMBAS DRENAJE. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Motobomba Aguas Sucias profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Motobomba Aguas Sucias | BOMBAS DRENAJE | Torrijos, Toledo",
+        "description": "Alquiler de motobomba aguas sucias en Torrijos, Toledo. Especialistas en bombas drenaje para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "motobomba",
+          "aguas",
+          "sucias",
+          "limpieza",
+          "bombas drenaje",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "bomba-sumergible-aguas-sucias",
+      "slug": "bomba-sumergible-aguas-sucias",
+      "nombre": "Bomba Sumergible Aguas Sucias",
+      "subcategoriaId": "bombas-aguas-residuales",
+      "categoriaId": "limpieza",
+      "imagen": "limpieza/bombas-aguas-residuales/bomba-sumergible-aguas-sucias.jpg",
+      "alt": "Bomba Sumergible Aguas Sucias - BOMBAS AGUAS RESIDUALES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Bomba Sumergible Aguas Sucias profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Bomba Sumergible Aguas Sucias | BOMBAS AGUAS RESIDUALES | Torrijos, Toledo",
+        "description": "Alquiler de bomba sumergible aguas sucias en Torrijos, Toledo. Especialistas en bombas aguas residuales para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "bomba",
+          "sumergible",
+          "aguas",
+          "sucias",
+          "limpieza",
+          "bombas aguas residuales",
+          "torrijos"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "bomba-aguas-limpias",
+      "slug": "bomba-aguas-limpias",
+      "nombre": "Bomba Aguas Limpias",
+      "subcategoriaId": "bombas-aguas-limpias",
+      "categoriaId": "limpieza",
+      "imagen": "limpieza/bombas-aguas-limpias/bomba-aguas-limpias.jpg",
+      "alt": "Bomba Aguas Limpias - BOMBAS AGUAS LIMPIAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Bomba Aguas Limpias profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Bomba Aguas Limpias | BOMBAS AGUAS LIMPIAS | Torrijos, Toledo",
+        "description": "Alquiler de bomba aguas limpias en Torrijos, Toledo. Especialistas en bombas aguas limpias para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "bomba",
+          "aguas",
+          "limpias",
+          "limpieza",
+          "bombas aguas limpias",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "cortadora-de-juntas",
+      "slug": "cortadora-de-juntas",
+      "nombre": "Cortadora De Juntas",
+      "subcategoriaId": "fresadoras-de-hormigon",
+      "categoriaId": "demolicion",
+      "imagen": "demolicion/fresadoras-de-hormigon/cortadora-de-juntas.jpg",
+      "alt": "Cortadora De Juntas - FRESADORAS DE HORMIGON. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Cortadora De Juntas profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Cortadora De Juntas | FRESADORAS DE HORMIGON | Torrijos, Toledo",
+        "description": "Alquiler de cortadora de juntas en Torrijos, Toledo. Especialistas en fresadoras de hormigon para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "cortadora",
+          "de",
+          "juntas",
+          "demolicion",
+          "fresadoras de hormigon",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "rozadora-de-discos",
+      "slug": "rozadora-de-discos",
+      "nombre": "Rozadora De Discos",
+      "subcategoriaId": "rozadoras",
+      "categoriaId": "construccion",
+      "imagen": "construccion/rozadoras/rozadora-de-discos.jpg",
+      "alt": "Rozadora De Discos - ROZADORAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Rozadora De Discos profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Rozadora De Discos | ROZADORAS | Torrijos, Toledo",
+        "description": "Alquiler de rozadora de discos en Torrijos, Toledo. Especialistas en rozadoras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "rozadora",
+          "de",
+          "discos",
+          "construccion",
+          "rozadoras",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "rozadora-fresa",
+      "slug": "rozadora-fresa",
+      "nombre": "Rozadora Fresa",
+      "subcategoriaId": "rozadoras",
+      "categoriaId": "construccion",
+      "imagen": "construccion/rozadoras/rozadora-fresa.jpg",
+      "alt": "Rozadora Fresa - ROZADORAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Rozadora Fresa profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Rozadora Fresa | ROZADORAS | Torrijos, Toledo",
+        "description": "Alquiler de rozadora fresa en Torrijos, Toledo. Especialistas en rozadoras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "rozadora",
+          "fresa",
+          "construccion",
+          "rozadoras",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "hormigonera-200-lts",
+      "slug": "hormigonera-200-lts",
+      "nombre": "Hormigonera 200 Lts",
+      "subcategoriaId": "hormigoneras",
+      "categoriaId": "construccion",
+      "imagen": "construccion/hormigoneras/hormigonera-200-lts.jpg",
+      "alt": "Hormigonera 200 Lts - HORMIGONERAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Hormigonera 200 Lts profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Hormigonera 200 Lts | HORMIGONERAS | Torrijos, Toledo",
+        "description": "Alquiler de hormigonera 200 lts en Torrijos, Toledo. Especialistas en hormigoneras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "hormigonera",
+          "200",
+          "lts",
+          "construccion",
+          "hormigoneras",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "hormigonera-desmontable-silenciosa-140lt",
+      "slug": "hormigonera-desmontable-silenciosa-140lt",
+      "nombre": "Hormigonera Desmontable Silenciosa 140lt",
+      "subcategoriaId": "hormigoneras",
+      "categoriaId": "construccion",
+      "imagen": "construccion/hormigoneras/hormigonera-desmontable-silenciosa-140lt.jpg",
+      "alt": "Hormigonera Desmontable Silenciosa 140lt - HORMIGONERAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Hormigonera Desmontable Silenciosa 140lt profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Hormigonera Desmontable Silenciosa 140lt 140L | HORMIGONERAS | Torrijos, Toledo",
+        "description": "Alquiler de hormigonera desmontable silenciosa 140lt en Torrijos, Toledo. 140L. Especialistas en hormigoneras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "hormigonera",
+          "desmontable",
+          "silenciosa",
+          "140lt",
+          "construccion",
+          "hormigoneras",
+          "140l"
+        ]
+      },
+      "especificaciones": {
+        "capacidad": "140L"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "lijadora-pared",
+      "slug": "lijadora-pared",
+      "nombre": "Lijadora Pared",
+      "subcategoriaId": "taladros",
+      "categoriaId": "construccion",
+      "imagen": "construccion/taladros/lijadora-pared.jpg",
+      "alt": "Lijadora Pared - TALADROS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Lijadora Pared profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Lijadora Pared | TALADROS | Torrijos, Toledo",
+        "description": "Alquiler de lijadora pared en Torrijos, Toledo. Especialistas en taladros para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "lijadora",
+          "pared",
+          "construccion",
+          "taladros",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "mesa-corte-madera",
+      "slug": "mesa-corte-madera",
+      "nombre": "Mesa Corte Madera",
+      "subcategoriaId": "tronzadora-madera",
+      "categoriaId": "construccion",
+      "imagen": "construccion/tronzadora-madera/mesa-corte-madera.jpg",
+      "alt": "Mesa Corte Madera - TRONZADORA MADERA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Mesa Corte Madera profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Mesa Corte Madera | TRONZADORA MADERA | Torrijos, Toledo",
+        "description": "Alquiler de mesa corte madera en Torrijos, Toledo. Especialistas en tronzadora madera para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "mesa",
+          "corte",
+          "madera",
+          "construccion",
+          "tronzadora madera",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "tronzadora-agua",
+      "slug": "tronzadora-agua",
+      "nombre": "Tronzadora Agua",
+      "subcategoriaId": "tronzadora-agua",
+      "categoriaId": "construccion",
+      "imagen": "construccion/tronzadora-agua/tronzadora-agua.jpg",
+      "alt": "Tronzadora Agua - TRONZADORA AGUA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Tronzadora Agua profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Tronzadora Agua | TRONZADORA AGUA | Torrijos, Toledo",
+        "description": "Alquiler de tronzadora agua en Torrijos, Toledo. Especialistas en tronzadora agua para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "tronzadora",
+          "agua",
+          "construccion",
+          "tronzadora agua",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "cortadora-gasolina",
+      "slug": "cortadora-gasolina",
+      "nombre": "Cortadora Gasolina",
+      "subcategoriaId": "cortadoras-de-gasolina",
+      "categoriaId": "demolicion",
+      "imagen": "demolicion/cortadoras-de-gasolina/cortadora-gasolina.jpg",
+      "alt": "Cortadora Gasolina - CORTADORAS DE GASOLINA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Cortadora Gasolina profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Cortadora Gasolina gasolina | CORTADORAS DE GASOLINA | Torrijos, Toledo",
+        "description": "Alquiler de cortadora gasolina en Torrijos, Toledo. Gasolina. Especialistas en cortadoras de gasolina para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "cortadora",
+          "gasolina",
+          "demolicion",
+          "cortadoras de gasolina",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {
+        "motor": "gasolina"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "transpalet-manual-2500kg",
+      "slug": "transpalet-manual-2500kg",
+      "nombre": "Transpalet Manual 2500kg",
+      "subcategoriaId": "dumper",
+      "categoriaId": "desescombro",
+      "imagen": "desescombro/dumper/transpalet-manual-2500kg.jpg",
+      "alt": "Transpalet Manual 2500kg - DUMPER. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Transpalet Manual 2500kg profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Transpalet Manual 2500kg 2500kg | DUMPER | Torrijos, Toledo",
+        "description": "Alquiler de transpalet manual 2500kg en Torrijos, Toledo. 2500kg. Especialistas en dumper para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "transpalet",
+          "manual",
+          "2500kg",
+          "desescombro",
+          "dumper",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "peso": "2500kg"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "carretilla-almacen",
+      "slug": "carretilla-almacen",
+      "nombre": "Carretilla Almacen",
+      "subcategoriaId": "dumper",
+      "categoriaId": "desescombro",
+      "imagen": "desescombro/dumper/carretilla-almacen.jpg",
+      "alt": "Carretilla Almacen - DUMPER. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Carretilla Almacen profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Carretilla Almacen | DUMPER | Torrijos, Toledo",
+        "description": "Alquiler de carretilla almacen en Torrijos, Toledo. Especialistas en dumper para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "carretilla",
+          "almacen",
+          "desescombro",
+          "dumper",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "minidumper-gasolina",
+      "slug": "minidumper-gasolina",
+      "nombre": "Minidumper Gasolina",
+      "subcategoriaId": "dumper",
+      "categoriaId": "desescombro",
+      "imagen": "desescombro/dumper/minidumper-gasolina.jpg",
+      "alt": "Minidumper Gasolina - DUMPER. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Minidumper Gasolina profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Minidumper Gasolina gasolina | DUMPER | Torrijos, Toledo",
+        "description": "Alquiler de minidumper gasolina en Torrijos, Toledo. Gasolina. Especialistas en dumper para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "minidumper",
+          "gasolina",
+          "desescombro",
+          "dumper",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {
+        "motor": "gasolina"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "dumper-descarga-frontal",
+      "slug": "dumper-descarga-frontal",
+      "nombre": "Dumper Descarga Frontal",
+      "subcategoriaId": "dumper",
+      "categoriaId": "desescombro",
+      "imagen": "desescombro/dumper/dumper-descarga-frontal.jpg",
+      "alt": "Dumper Descarga Frontal - DUMPER. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Dumper Descarga Frontal profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Dumper Descarga Frontal | DUMPER | Torrijos, Toledo",
+        "description": "Alquiler de dumper descarga frontal en Torrijos, Toledo. Especialistas en dumper para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "dumper",
+          "descarga",
+          "frontal",
+          "desescombro",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "maquinillo-elevador-300kg",
+      "slug": "maquinillo-elevador-300kg",
+      "nombre": "Maquinillo Elevador 300kg",
+      "subcategoriaId": "elevador-portatil-300kg",
+      "categoriaId": "elevacion",
+      "imagen": "elevacion/elevador-portatil-300kg/maquinillo-elevador-300kg.jpg",
+      "alt": "Maquinillo Elevador 300kg - ELEVADOR PORTATIL 300KG. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Maquinillo Elevador 300kg profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Maquinillo Elevador 300kg 300kg | ELEVADOR PORTATIL 300KG | Torrijos, Toledo",
+        "description": "Alquiler de maquinillo elevador 300kg en Torrijos, Toledo. 300kg. Especialistas en elevador portatil 300kg para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "maquinillo",
+          "elevador",
+          "300kg",
+          "elevacion",
+          "elevador portatil 300kg",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "peso": "300kg"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "carro-chino-125lts",
+      "slug": "carro-chino-125lts",
+      "nombre": "Carro Chino 125lts",
+      "subcategoriaId": "dumper",
+      "categoriaId": "desescombro",
+      "imagen": "desescombro/dumper/carro-chino-125lts.jpg",
+      "alt": "Carro Chino 125lts - DUMPER. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Carro Chino 125lts profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Carro Chino 125lts 125L | DUMPER | Torrijos, Toledo",
+        "description": "Alquiler de carro chino 125lts en Torrijos, Toledo. 125L. Especialistas en dumper para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "carro",
+          "chino",
+          "125lts",
+          "desescombro",
+          "dumper",
+          "125l",
+          "torrijos"
+        ]
+      },
+      "especificaciones": {
+        "capacidad": "125L"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "plataforma-articulada-18-mt-d",
+      "slug": "plataforma-articulada-18-mt-d",
+      "nombre": "Plataforma Articulada 18 Mt D",
+      "subcategoriaId": "plataforma-articulada",
+      "categoriaId": "elevacion",
+      "imagen": "elevacion/plataforma-articulada/plataforma-articulada-18-mt-d.jpg",
+      "alt": "Plataforma Articulada 18 Mt D - PLATAFORMA ARTICULADA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Plataforma Articulada 18 Mt D profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Plataforma Articulada 18 Mt D | PLATAFORMA ARTICULADA | Torrijos, Toledo",
+        "description": "Alquiler de plataforma articulada 18 mt d en Torrijos, Toledo. Especialistas en plataforma articulada para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "plataforma",
+          "articulada",
+          "18",
+          "mt",
+          "d",
+          "elevacion",
+          "plataforma articulada"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "plataforma-articulada-electrica",
+      "slug": "plataforma-articulada-electrica",
+      "nombre": "Plataforma Articulada Electrica",
+      "subcategoriaId": "plataforma-articulada",
+      "categoriaId": "elevacion",
+      "imagen": "elevacion/plataforma-articulada/plataforma-articulada-electrica.jpg",
+      "alt": "Plataforma Articulada Electrica - PLATAFORMA ARTICULADA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Plataforma Articulada Electrica profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Plataforma Articulada Electrica electrico | PLATAFORMA ARTICULADA | Torrijos, Toledo",
+        "description": "Alquiler de plataforma articulada electrica en Torrijos, Toledo. Electrico. Especialistas en plataforma articulada para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "plataforma",
+          "articulada",
+          "electrica",
+          "elevacion",
+          "plataforma articulada",
+          "electrico",
+          "torrijos"
+        ]
+      },
+      "especificaciones": {
+        "motor": "electrico"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "plataforma-tijera-electrica",
+      "slug": "plataforma-tijera-electrica",
+      "nombre": "Plataforma Tijera Electrica",
+      "subcategoriaId": "plataforma-elevadora",
+      "categoriaId": "elevacion",
+      "imagen": "elevacion/plataforma-elevadora/plataforma-tijera-electrica.jpg",
+      "alt": "Plataforma Tijera Electrica - PLATAFORMA ELEVADORA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Plataforma Tijera Electrica profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Plataforma Tijera Electrica electrico | PLATAFORMA ELEVADORA | Torrijos, Toledo",
+        "description": "Alquiler de plataforma tijera electrica en Torrijos, Toledo. Electrico. Especialistas en plataforma elevadora para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "plataforma",
+          "tijera",
+          "electrica",
+          "elevacion",
+          "plataforma elevadora",
+          "electrico",
+          "torrijos"
+        ]
+      },
+      "especificaciones": {
+        "motor": "electrico"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "plataforma-tijera-diesel",
+      "slug": "plataforma-tijera-diesel",
+      "nombre": "Plataforma Tijera Diesel",
+      "subcategoriaId": "plataforma-elevadora",
+      "categoriaId": "elevacion",
+      "imagen": "elevacion/plataforma-elevadora/plataforma-tijera-diesel.jpg",
+      "alt": "Plataforma Tijera Diesel - PLATAFORMA ELEVADORA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Plataforma Tijera Diesel profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Plataforma Tijera Diesel diesel | PLATAFORMA ELEVADORA | Torrijos, Toledo",
+        "description": "Alquiler de plataforma tijera diesel en Torrijos, Toledo. Diesel. Especialistas en plataforma elevadora para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "plataforma",
+          "tijera",
+          "diesel",
+          "elevacion",
+          "plataforma elevadora",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "motor": "diesel"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "carretilla-elevadora-4x4",
+      "slug": "carretilla-elevadora-4x4",
+      "nombre": "Carretilla Elevadora 4x4",
+      "subcategoriaId": "carretillas-elevadoras",
+      "categoriaId": "elevacion",
+      "imagen": "elevacion/carretillas-elevadoras/carretilla-elevadora-4x4.jpg",
+      "alt": "Carretilla Elevadora 4x4 - CARRETILLAS ELEVADORAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Carretilla Elevadora 4x4 profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Carretilla Elevadora 4x4 4x4 | CARRETILLAS ELEVADORAS | Torrijos, Toledo",
+        "description": "Alquiler de carretilla elevadora 4x4 en Torrijos, Toledo. 4x4. Especialistas en carretillas elevadoras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "carretilla",
+          "elevadora",
+          "4x4",
+          "elevacion",
+          "carretillas elevadoras",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "traccion": "4x4"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "grupo-electrogeno-100-kva",
+      "slug": "grupo-electrogeno-100-kva",
+      "nombre": "Grupo Electrogeno 100 Kva",
+      "subcategoriaId": "grupo-electrogeno",
+      "categoriaId": "energia",
+      "imagen": "energia/grupo-electrogeno/grupo-electrogeno-100-kva.jpg",
+      "alt": "Grupo Electrogeno 100 Kva - GRUPO ELECTROGENO. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Grupo Electrogeno 100 Kva profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Grupo Electrogeno 100 Kva | GRUPO ELECTROGENO | Torrijos, Toledo",
+        "description": "Alquiler de grupo electrogeno 100 kva en Torrijos, Toledo. Especialistas en grupo electrogeno para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "grupo",
+          "electrogeno",
+          "100",
+          "kva",
+          "energia",
+          "grupo electrogeno",
+          "torrijos"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "grupo-electrogeno-40-kva",
+      "slug": "grupo-electrogeno-40-kva",
+      "nombre": "Grupo Electrogeno 40 Kva",
+      "subcategoriaId": "grupo-electrogeno",
+      "categoriaId": "energia",
+      "imagen": "energia/grupo-electrogeno/grupo-electrogeno-40-kva.jpg",
+      "alt": "Grupo Electrogeno 40 Kva - GRUPO ELECTROGENO. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Grupo Electrogeno 40 Kva profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Grupo Electrogeno 40 Kva | GRUPO ELECTROGENO | Torrijos, Toledo",
+        "description": "Alquiler de grupo electrogeno 40 kva en Torrijos, Toledo. Especialistas en grupo electrogeno para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "grupo",
+          "electrogeno",
+          "40",
+          "kva",
+          "energia",
+          "grupo electrogeno",
+          "torrijos"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "grupo-electrogeno-25-kva",
+      "slug": "grupo-electrogeno-25-kva",
+      "nombre": "Grupo Electrogeno 25 Kva",
+      "subcategoriaId": "grupo-electrogeno",
+      "categoriaId": "energia",
+      "imagen": "energia/grupo-electrogeno/grupo-electrogeno-25-kva.jpg",
+      "alt": "Grupo Electrogeno 25 Kva - GRUPO ELECTROGENO. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Grupo Electrogeno 25 Kva profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Grupo Electrogeno 25 Kva | GRUPO ELECTROGENO | Torrijos, Toledo",
+        "description": "Alquiler de grupo electrogeno 25 kva en Torrijos, Toledo. Especialistas en grupo electrogeno para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "grupo",
+          "electrogeno",
+          "25",
+          "kva",
+          "energia",
+          "grupo electrogeno",
+          "torrijos"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "grupo-electrogeno-gasolina-6-kva",
+      "slug": "grupo-electrogeno-gasolina-6-kva",
+      "nombre": "Grupo Electrogeno Gasolina 6 Kva",
+      "subcategoriaId": "grupo-electrogeno",
+      "categoriaId": "energia",
+      "imagen": "energia/grupo-electrogeno/grupo-electrogeno-gasolina-6-kva.jpg",
+      "alt": "Grupo Electrogeno Gasolina 6 Kva - GRUPO ELECTROGENO. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Grupo Electrogeno Gasolina 6 Kva profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Grupo Electrogeno Gasolina 6 Kva gasolina | GRUPO ELECTROGENO | Torrijos, Toledo",
+        "description": "Alquiler de grupo electrogeno gasolina 6 kva en Torrijos, Toledo. Gasolina. Especialistas en grupo electrogeno para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "grupo",
+          "electrogeno",
+          "gasolina",
+          "6",
+          "kva",
+          "energia",
+          "grupo electrogeno"
+        ]
+      },
+      "especificaciones": {
+        "motor": "gasolina"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "grupo-electrogeno-3000w",
+      "slug": "grupo-electrogeno-3000w",
+      "nombre": "Grupo Electrogeno 3000w",
+      "subcategoriaId": "grupo-electrogeno",
+      "categoriaId": "energia",
+      "imagen": "energia/grupo-electrogeno/grupo-electrogeno-3000w.jpg",
+      "alt": "Grupo Electrogeno 3000w - GRUPO ELECTROGENO. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Grupo Electrogeno 3000w profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Grupo Electrogeno 3000w 3000W | GRUPO ELECTROGENO | Torrijos, Toledo",
+        "description": "Alquiler de grupo electrogeno 3000w en Torrijos, Toledo. 3000W. Especialistas en grupo electrogeno para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "grupo",
+          "electrogeno",
+          "3000w",
+          "energia",
+          "grupo electrogeno",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "potencia": "3000W"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "zanjadora-gasolina",
+      "slug": "zanjadora-gasolina",
+      "nombre": "Zanjadora Gasolina",
+      "subcategoriaId": "zanjadora",
+      "categoriaId": "jardin",
+      "imagen": "jardin/zanjadora/zanjadora-gasolina.jpg",
+      "alt": "Zanjadora Gasolina - ZANJADORA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Zanjadora Gasolina profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Zanjadora Gasolina gasolina | ZANJADORA | Torrijos, Toledo",
+        "description": "Alquiler de zanjadora gasolina en Torrijos, Toledo. Gasolina. Especialistas en zanjadora para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "zanjadora",
+          "gasolina",
+          "jardin",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {
+        "motor": "gasolina"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "desbrozadora-gasolina-para-quad",
+      "slug": "desbrozadora-gasolina-para-quad",
+      "nombre": "Desbrozadora Gasolina Para Quad",
+      "subcategoriaId": "desbrozadoras",
+      "categoriaId": "forestal",
+      "imagen": "forestal/desbrozadoras/desbrozadora-gasolina-para-quad.jpg",
+      "alt": "Desbrozadora Gasolina Para Quad - DESBROZADORAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Desbrozadora Gasolina Para Quad profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Desbrozadora Gasolina Para Quad gasolina | DESBROZADORAS | Torrijos, Toledo",
+        "description": "Alquiler de desbrozadora gasolina para quad en Torrijos, Toledo. Gasolina. Especialistas en desbrozadoras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "desbrozadora",
+          "gasolina",
+          "para",
+          "quad",
+          "forestal",
+          "desbrozadoras",
+          "torrijos"
+        ]
+      },
+      "especificaciones": {
+        "motor": "gasolina"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "desbrozadora-2t",
+      "slug": "desbrozadora-2t",
+      "nombre": "Desbrozadora 2t",
+      "subcategoriaId": "desbrozadoras",
+      "categoriaId": "forestal",
+      "imagen": "forestal/desbrozadoras/desbrozadora-2t.jpg",
+      "alt": "Desbrozadora 2t - DESBROZADORAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Desbrozadora 2t profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Desbrozadora 2t | DESBROZADORAS | Torrijos, Toledo",
+        "description": "Alquiler de desbrozadora 2t en Torrijos, Toledo. Especialistas en desbrozadoras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "desbrozadora",
+          "2t",
+          "forestal",
+          "desbrozadoras",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "motoazada",
+      "slug": "motoazada",
+      "nombre": "Motoazada",
+      "subcategoriaId": "motoazadas",
+      "categoriaId": "jardin",
+      "imagen": "jardin/motoazadas/motoazada.jpg",
+      "alt": "Motoazada - MOTOAZADAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Motoazada profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Motoazada | MOTOAZADAS | Torrijos, Toledo",
+        "description": "Alquiler de motoazada en Torrijos, Toledo. Especialistas en motoazadas para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "motoazada",
+          "jardin",
+          "motoazadas",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "motosierra-40-cm",
+      "slug": "motosierra-40-cm",
+      "nombre": "Motosierra 40 Cm",
+      "subcategoriaId": "motosierras",
+      "categoriaId": "forestal",
+      "imagen": "forestal/motosierras/motosierra-40-cm.jpg",
+      "alt": "Motosierra 40 Cm - MOTOSIERRAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Motosierra 40 Cm profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Motosierra 40 Cm | MOTOSIERRAS | Torrijos, Toledo",
+        "description": "Alquiler de motosierra 40 cm en Torrijos, Toledo. Especialistas en motosierras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "motosierra",
+          "40",
+          "cm",
+          "forestal",
+          "motosierras",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "motosierra-de-poda",
+      "slug": "motosierra-de-poda",
+      "nombre": "Motosierra De Poda",
+      "subcategoriaId": "motosierras",
+      "categoriaId": "forestal",
+      "imagen": "forestal/motosierras/motosierra-de-poda.jpg",
+      "alt": "Motosierra De Poda - MOTOSIERRAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Motosierra De Poda profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Motosierra De Poda | MOTOSIERRAS | Torrijos, Toledo",
+        "description": "Alquiler de motosierra de poda en Torrijos, Toledo. Especialistas en motosierras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "motosierra",
+          "de",
+          "poda",
+          "forestal",
+          "motosierras",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "podador-altura",
+      "slug": "podador-altura",
+      "nombre": "Podador Altura",
+      "subcategoriaId": "podadoras-altura",
+      "categoriaId": "forestal",
+      "imagen": "forestal/podadoras-altura/podador-altura.jpg",
+      "alt": "Podador Altura - PODADORAS ALTURA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Podador Altura profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Podador Altura | PODADORAS ALTURA | Torrijos, Toledo",
+        "description": "Alquiler de podador altura en Torrijos, Toledo. Especialistas en podadoras altura para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "podador",
+          "altura",
+          "forestal",
+          "podadoras altura",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "cortasetos-altura",
+      "slug": "cortasetos-altura",
+      "nombre": "Cortasetos Altura",
+      "subcategoriaId": "cortasetos-altura",
+      "categoriaId": "jardin",
+      "imagen": "jardin/cortasetos-altura/cortasetos-altura.jpg",
+      "alt": "Cortasetos Altura - CORTASETOS ALTURA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Cortasetos Altura profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Cortasetos Altura | CORTASETOS ALTURA | Torrijos, Toledo",
+        "description": "Alquiler de cortasetos altura en Torrijos, Toledo. Especialistas en cortasetos altura para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "cortasetos",
+          "altura",
+          "jardin",
+          "cortasetos altura",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "cortasetos-doble-corte",
+      "slug": "cortasetos-doble-corte",
+      "nombre": "Cortasetos Doble Corte",
+      "subcategoriaId": "cortasetos",
+      "categoriaId": "jardin",
+      "imagen": "jardin/cortasetos/cortasetos-doble-corte.jpg",
+      "alt": "Cortasetos Doble Corte - CORTASETOS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Cortasetos Doble Corte profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Cortasetos Doble Corte doble | CORTASETOS | Torrijos, Toledo",
+        "description": "Alquiler de cortasetos doble corte en Torrijos, Toledo. Doble. Especialistas en cortasetos para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "cortasetos",
+          "doble",
+          "corte",
+          "jardin",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {
+        "corte": "doble"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "cortacesped-autopropulsado",
+      "slug": "cortacesped-autopropulsado",
+      "nombre": "Cortacesped Autopropulsado",
+      "subcategoriaId": "cortacesped",
+      "categoriaId": "jardin",
+      "imagen": "jardin/cortacesped/cortacesped-autopropulsado.jpg",
+      "alt": "Cortacesped Autopropulsado - CORTACESPED. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Cortacesped Autopropulsado profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Cortacesped Autopropulsado autopropulsado | CORTACESPED | Torrijos, Toledo",
+        "description": "Alquiler de cortacesped autopropulsado en Torrijos, Toledo. Autopropulsado. Especialistas en cortacesped para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "cortacesped",
+          "autopropulsado",
+          "jardin",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {
+        "tipo": "autopropulsado"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "cortacesped-manual",
+      "slug": "cortacesped-manual",
+      "nombre": "Cortacesped Manual",
+      "subcategoriaId": "cortacesped",
+      "categoriaId": "jardin",
+      "imagen": "jardin/cortacesped/cortacesped-manual.jpg",
+      "alt": "Cortacesped Manual - CORTACESPED. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Cortacesped Manual profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Cortacesped Manual | CORTACESPED | Torrijos, Toledo",
+        "description": "Alquiler de cortacesped manual en Torrijos, Toledo. Especialistas en cortacesped para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "cortacesped",
+          "manual",
+          "jardin",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "ahoyador",
+      "slug": "ahoyador",
+      "nombre": "Ahoyador",
+      "subcategoriaId": "ahoyador",
+      "categoriaId": "forestal",
+      "imagen": "forestal/ahoyador/ahoyador.jpg",
+      "alt": "Ahoyador - AHOYADOR. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Ahoyador profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Ahoyador | AHOYADOR | Torrijos, Toledo",
+        "description": "Alquiler de ahoyador en Torrijos, Toledo. Especialistas en ahoyador para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "ahoyador",
+          "forestal",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "escarificador-gasolina",
+      "slug": "escarificador-gasolina",
+      "nombre": "Escarificador Gasolina",
+      "subcategoriaId": "escarificador-cesped",
+      "categoriaId": "jardin",
+      "imagen": "jardin/escarificador-cesped/escarificador-gasolina.jpg",
+      "alt": "Escarificador Gasolina - ESCARIFICADOR CESPED. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Escarificador Gasolina profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Escarificador Gasolina gasolina | ESCARIFICADOR CESPED | Torrijos, Toledo",
+        "description": "Alquiler de escarificador gasolina en Torrijos, Toledo. Gasolina. Especialistas en escarificador cesped para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "escarificador",
+          "gasolina",
+          "jardin",
+          "escarificador cesped",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {
+        "motor": "gasolina"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "rodillo-lanza-750kg",
+      "slug": "rodillo-lanza-750kg",
+      "nombre": "Rodillo Lanza 750kg",
+      "subcategoriaId": "rodillo-compactador",
+      "categoriaId": "compactacion",
+      "imagen": "compactacion/rodillo-compactador/rodillo-lanza-750kg.jpg",
+      "alt": "Rodillo Lanza 750kg - RODILLO COMPACTADOR. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Rodillo Lanza 750kg profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Rodillo Lanza 750kg 750kg | RODILLO COMPACTADOR | Torrijos, Toledo",
+        "description": "Alquiler de rodillo lanza 750kg en Torrijos, Toledo. 750kg. Especialistas en rodillo compactador para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "rodillo",
+          "lanza",
+          "750kg",
+          "compactacion",
+          "rodillo compactador",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {
+        "peso": "750kg"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "motosoldadora-gasolina",
+      "slug": "motosoldadora-gasolina",
+      "nombre": "Motosoldadora Gasolina",
+      "subcategoriaId": "motosoldadora",
+      "categoriaId": "energia",
+      "imagen": "energia/motosoldadora/motosoldadora-gasolina.jpg",
+      "alt": "Motosoldadora Gasolina - MOTOSOLDADORA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Motosoldadora Gasolina profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Motosoldadora Gasolina gasolina | MOTOSOLDADORA | Torrijos, Toledo",
+        "description": "Alquiler de motosoldadora gasolina en Torrijos, Toledo. Gasolina. Especialistas en motosoldadora para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "motosoldadora",
+          "gasolina",
+          "energia",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {
+        "motor": "gasolina"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "soldadora-inverter",
+      "slug": "soldadora-inverter",
+      "nombre": "Soldadora Inverter",
+      "subcategoriaId": "soldadura-inverter",
+      "categoriaId": "energia",
+      "imagen": "energia/soldadura-inverter/soldadora-inverter.jpg",
+      "alt": "Soldadora Inverter - SOLDADURA INVERTER. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Soldadora Inverter profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Soldadora Inverter | SOLDADURA INVERTER | Torrijos, Toledo",
+        "description": "Alquiler de soldadora inverter en Torrijos, Toledo. Especialistas en soldadura inverter para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "soldadora",
+          "inverter",
+          "energia",
+          "soldadura inverter",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "deshumidificador",
+      "slug": "deshumidificador",
+      "nombre": "Deshumidificador",
+      "subcategoriaId": "deshumidificador",
+      "categoriaId": "energia",
+      "imagen": "energia/deshumidificador/deshumidificador.jpg",
+      "alt": "Deshumidificador - DESHUMIDIFICADOR. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Deshumidificador profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Deshumidificador | DESHUMIDIFICADOR | Torrijos, Toledo",
+        "description": "Alquiler de deshumidificador en Torrijos, Toledo. Especialistas en deshumidificador para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "deshumidificador",
+          "energia",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "pulidora-terrazo",
+      "slug": "pulidora-terrazo",
+      "nombre": "Pulidora Terrazo",
+      "subcategoriaId": "pulidoras-de-terrazo",
+      "categoriaId": "construccion",
+      "imagen": "construccion/pulidoras-de-terrazo/pulidora-terrazo.jpg",
+      "alt": "Pulidora Terrazo - PULIDORAS DE TERRAZO. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Pulidora Terrazo profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Pulidora Terrazo | PULIDORAS DE TERRAZO | Torrijos, Toledo",
+        "description": "Alquiler de pulidora terrazo en Torrijos, Toledo. Especialistas en pulidoras de terrazo para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "pulidora",
+          "terrazo",
+          "construccion",
+          "pulidoras de terrazo",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "vareador",
+      "slug": "vareador",
+      "nombre": "Vareador",
+      "subcategoriaId": "vareadores",
+      "categoriaId": "forestal",
+      "imagen": "forestal/vareadores/vareador.jpg",
+      "alt": "Vareador - VAREADORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Vareador profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Vareador | VAREADORES | Torrijos, Toledo",
+        "description": "Alquiler de vareador en Torrijos, Toledo. Especialistas en vareadores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "vareador",
+          "forestal",
+          "vareadores",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "soplador-mochila",
+      "slug": "soplador-mochila",
+      "nombre": "Soplador Mochila",
+      "subcategoriaId": "sopladores",
+      "categoriaId": "jardin",
+      "imagen": "jardin/sopladores/soplador-mochila.jpg",
+      "alt": "Soplador Mochila - SOPLADORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Soplador Mochila profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Soplador Mochila | SOPLADORES | Torrijos, Toledo",
+        "description": "Alquiler de soplador mochila en Torrijos, Toledo. Especialistas en sopladores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "soplador",
+          "mochila",
+          "jardin",
+          "sopladores",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "soplador-mano",
+      "slug": "soplador-mano",
+      "nombre": "Soplador Mano",
+      "subcategoriaId": "sopladores",
+      "categoriaId": "jardin",
+      "imagen": "jardin/sopladores/soplador-mano.jpg",
+      "alt": "Soplador Mano - SOPLADORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Soplador Mano profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Soplador Mano | SOPLADORES | Torrijos, Toledo",
+        "description": "Alquiler de soplador mano en Torrijos, Toledo. Especialistas en sopladores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "soplador",
+          "mano",
+          "jardin",
+          "sopladores",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "motopulverizador-mochila",
+      "slug": "motopulverizador-mochila",
+      "nombre": "Motopulverizador Mochila",
+      "subcategoriaId": "motopulverizadores",
+      "categoriaId": "jardin",
+      "imagen": "jardin/motopulverizadores/motopulverizador-mochila.jpg",
+      "alt": "Motopulverizador Mochila - MOTOPULVERIZADORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Motopulverizador Mochila profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Motopulverizador Mochila | MOTOPULVERIZADORES | Torrijos, Toledo",
+        "description": "Alquiler de motopulverizador mochila en Torrijos, Toledo. Especialistas en motopulverizadores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "motopulverizador",
+          "mochila",
+          "jardin",
+          "motopulverizadores",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "carretilla-pulverizacion",
+      "slug": "carretilla-pulverizacion",
+      "nombre": "Carretilla Pulverizacion",
+      "subcategoriaId": "motopulverizadores",
+      "categoriaId": "jardin",
+      "imagen": "jardin/motopulverizadores/carretilla-pulverizacion-1.jpg",
+      "alt": "Carretilla Pulverizacion - MOTOPULVERIZADORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Carretilla Pulverizacion profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Carretilla Pulverizacion | MOTOPULVERIZADORES | Torrijos, Toledo",
+        "description": "Alquiler de carretilla pulverizacion en Torrijos, Toledo. Especialistas en motopulverizadores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "carretilla",
+          "pulverizacion",
+          "jardin",
+          "motopulverizadores",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "carretilla-pulverizacion",
+      "slug": "carretilla-pulverizacion",
+      "nombre": "Carretilla Pulverizacion",
+      "subcategoriaId": "motopulverizadores",
+      "categoriaId": "jardin",
+      "imagen": "jardin/motopulverizadores/carretilla-pulverizacion-2.jpg",
+      "alt": "Carretilla Pulverizacion - MOTOPULVERIZADORES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Carretilla Pulverizacion profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Carretilla Pulverizacion | MOTOPULVERIZADORES | Torrijos, Toledo",
+        "description": "Alquiler de carretilla pulverizacion en Torrijos, Toledo. Especialistas en motopulverizadores para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "carretilla",
+          "pulverizacion",
+          "jardin",
+          "motopulverizadores",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "biotrituradora-gasolina",
+      "slug": "biotrituradora-gasolina",
+      "nombre": "Biotrituradora Gasolina",
+      "subcategoriaId": "biotrituradoras",
+      "categoriaId": "forestal",
+      "imagen": "forestal/biotrituradoras/biotrituradora-gasolina.jpg",
+      "alt": "Biotrituradora Gasolina - BIOTRITURADORAS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Biotrituradora Gasolina profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Biotrituradora Gasolina gasolina | BIOTRITURADORAS | Torrijos, Toledo",
+        "description": "Alquiler de biotrituradora gasolina en Torrijos, Toledo. Gasolina. Especialistas en biotrituradoras para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "biotrituradora",
+          "gasolina",
+          "forestal",
+          "biotrituradoras",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {
+        "motor": "gasolina"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "minicargadora-diesel",
+      "slug": "minicargadora-diesel",
+      "nombre": "Minicargadora Diesel",
+      "subcategoriaId": "minicargadora",
+      "categoriaId": "desescombro",
+      "imagen": "desescombro/minicargadora/minicargadora-diesel.jpg",
+      "alt": "Minicargadora Diesel - MINICARGADORA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Minicargadora Diesel profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Minicargadora Diesel diesel | MINICARGADORA | Torrijos, Toledo",
+        "description": "Alquiler de minicargadora diesel en Torrijos, Toledo. Diesel. Especialistas en minicargadora para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "minicargadora",
+          "diesel",
+          "desescombro",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {
+        "motor": "diesel"
+      },
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "miniexcavadora",
+      "slug": "miniexcavadora",
+      "nombre": "Miniexcavadora",
+      "subcategoriaId": "miniexcavadora",
+      "categoriaId": "desescombro",
+      "imagen": "desescombro/miniexcavadora/miniexcavadora.jpg",
+      "alt": "Miniexcavadora - MINIEXCAVADORA. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Miniexcavadora profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Miniexcavadora | MINIEXCAVADORA | Torrijos, Toledo",
+        "description": "Alquiler de miniexcavadora en Torrijos, Toledo. Especialistas en miniexcavadora para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "miniexcavadora",
+          "desescombro",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "escalera-telescopica",
+      "slug": "escalera-telescopica",
+      "nombre": "Escalera Telescopica",
+      "subcategoriaId": "escalera-aluminio",
+      "categoriaId": "elevacion",
+      "imagen": "elevacion/escalera-aluminio/escalera-telescopica.jpg",
+      "alt": "Escalera Telescopica - ESCALERA ALUMINIO. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Escalera Telescopica profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Escalera Telescopica | ESCALERA ALUMINIO | Torrijos, Toledo",
+        "description": "Alquiler de escalera telescopica en Torrijos, Toledo. Especialistas en escalera aluminio para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "escalera",
+          "telescopica",
+          "elevacion",
+          "escalera aluminio",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "radial-230",
+      "slug": "radial-230",
+      "nombre": "Radial 230",
+      "subcategoriaId": "radiales",
+      "categoriaId": "construccion",
+      "imagen": "construccion/radiales/radial-230.jpg",
+      "alt": "Radial 230 - RADIALES. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Radial 230 profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Radial 230 | RADIALES | Torrijos, Toledo",
+        "description": "Alquiler de radial 230 en Torrijos, Toledo. Especialistas en radiales para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "radial",
+          "230",
+          "construccion",
+          "radiales",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "rodillo-cesped-artificial",
+      "slug": "rodillo-cesped-artificial",
+      "nombre": "Rodillo Cesped Artificial",
+      "subcategoriaId": "rodillo-compactador",
+      "categoriaId": "compactacion",
+      "imagen": "compactacion/rodillo-compactador/rodillo-cesped-artificial.jpg",
+      "alt": "Rodillo Cesped Artificial - RODILLO COMPACTADOR. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Rodillo Cesped Artificial profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Rodillo Cesped Artificial | RODILLO COMPACTADOR | Torrijos, Toledo",
+        "description": "Alquiler de rodillo cesped artificial en Torrijos, Toledo. Especialistas en rodillo compactador para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "rodillo",
+          "cesped",
+          "artificial",
+          "compactacion",
+          "rodillo compactador",
+          "torrijos",
+          "toledo"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "manipulador-telescopico",
+      "slug": "manipulador-telescopico",
+      "nombre": "Manipulador Telescopico",
+      "subcategoriaId": "manipuladores-telescopicos",
+      "categoriaId": "elevacion",
+      "imagen": "elevacion/manipuladores-telescopicos/manipulador-telescopico.jpg",
+      "alt": "Manipulador Telescopico - MANIPULADORES TELESCOPICOS. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Manipulador Telescopico profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Manipulador Telescopico | MANIPULADORES TELESCOPICOS | Torrijos, Toledo",
+        "description": "Alquiler de manipulador telescopico en Torrijos, Toledo. Especialistas en manipuladores telescopicos para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "manipulador",
+          "telescopico",
+          "elevacion",
+          "manipuladores telescopicos",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    },
+    {
+      "id": "bajante-escombros",
+      "slug": "bajante-escombros",
+      "nombre": "Bajante Escombros",
+      "subcategoriaId": "bajantes-de-escombro",
+      "categoriaId": "desescombro",
+      "imagen": "desescombro/bajantes-de-escombro/bajante-escombros.jpg",
+      "alt": "Bajante Escombros - BAJANTES DE ESCOMBRO. Alquiler en Torrijos, Toledo.",
+      "descripcion": "Bajante Escombros profesional para obras y construcción en Torrijos, Toledo.",
+      "meta": {
+        "title": "Bajante Escombros | BAJANTES DE ESCOMBRO | Torrijos, Toledo",
+        "description": "Alquiler de bajante escombros en Torrijos, Toledo. Especialistas en bajantes de escombro para profesionales. También ofrecemos reparación y venta.",
+        "keywords": [
+          "alquiler",
+          "reparacion",
+          "venta",
+          "bajante",
+          "escombros",
+          "desescombro",
+          "bajantes de escombro",
+          "torrijos",
+          "toledo",
+          "madrid"
+        ]
+      },
+      "especificaciones": {},
+      "servicios": {
+        "alquiler": true,
+        "reparacion": true,
+        "venta": true
+      }
+    }
+  ]
+}
