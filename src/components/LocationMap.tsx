@@ -51,7 +51,7 @@ const LocationMap: React.FC<MapProps> = ({ className, empresaData }) => {
       const longitude = empresaData?.contacto.coordenadas.longitud ?? -4.268534;
       const nombreEmpresa = empresaData?.empresa.nombre ?? "Aplicaciones Hidráulicas del Tajo";
       const direccion = empresaData?.contacto.direccion ?? "Calle Dalí 1, 45500 Torrijos, Toledo";
-      const telefonoHref = empresaData?.contacto.telefonoHref ?? "+34672942881";
+      const telefonoHref = empresaData?.contacto.telefonoHref ?? "+34613396432";
 
       // Configuración del icono del marcador
       const customIcon = L.divIcon({

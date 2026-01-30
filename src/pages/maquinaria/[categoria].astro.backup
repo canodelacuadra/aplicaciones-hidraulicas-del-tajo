@@ -140,7 +140,7 @@ if (!categoriaData) {
           <h2>¿Necesitas asesoramiento sobre {categoriaData.nombre}?</h2>
           <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la solución perfecta para tus necesidades.</p>
           <div class="contacto-buttons">
-            <a href="tel:+34672942881" class="contacto-btn primary">
+            <a href="tel:+34613396432" class="contacto-btn primary">
               <span>📞</span> Llamar ahora
             </a>
             <a href="mailto:info@ahtajo.com?subject=Consulta%20Maquinaria%20{encodeURIComponent(categoriaData.nombre)}" class="contacto-btn secondary">
@@ -164,7 +164,7 @@ if (!categoriaData) {
 
 <script is:inline>
   function mostrarConsulta(nombreEjemplar, marca) {
-    const telefono = '+34672942881';
+    const telefono = '+34613396432';
     const email = 'ahdtajo@gmail.com';
     const subject = `Consulta sobre ${nombreEjemplar} - ${marca}`;
     
