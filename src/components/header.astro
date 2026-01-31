@@ -3,11 +3,8 @@
 import Nav from "./Nav.astro";
 import MaquinaryCarousel from "./MaquinaryCarousel.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
-import carouselData from "../data/maquinaria-carousel.json";
 
 const { pageTitle, pageDescription } = Astro.props;
-
-const isMaquinariaPage = pageTitle?.toLowerCase().includes("maquinaria") || false;
 ---
 
 <header class="hero sticky-header">
@@ -29,16 +26,15 @@ const isMaquinariaPage = pageTitle?.toLowerCase().includes("maquinaria") || fals
       <p class="hero-description">{pageDescription || empresaData.empresa.descripcionLarga}</p>
     </div>
     
-     <Nav />
+      <Nav />
    </div>
 
-   {isMaquinariaPage && (
-     <div class="header-carousel-wrapper">
-       <MaquinaryCarousel items={carouselData.items} autoplay={true} interval={4000} pauseOnHover={true} />
-     </div>
-   )}
+  {/* Carrusel SIEMPRE visible */}
+  <div class="header-carousel-wrapper">
+    <MaquinaryCarousel items={carouselData.items} autoplay={true} interval={4000} pauseOnHover={true} />
+  </div>
 
-   <div class="wave">
+  <div class="wave">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
       <path
         d="M0,40 C240,80 480,0 720,20 960,40 1200,80 1440,60 L1440,120 L0,120 Z"
@@ -310,6 +306,27 @@ const isMaquinariaPage = pageTitle?.toLowerCase().includes("maquinaria") || fals
   }
 }
 
+  </style>
+
+<style>
+  /* ===== CARRUSEL DE MAQUINARIA ===== */
+  .header-carousel-wrapper {
+    display: block;
+    margin: 0.5rem 0 0;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(21, 104, 167, 0.15);
+    background: white;
+  }
+
+  @media (max-width: 768px) {
+    .header-carousel-wrapper {
+      display: none;
+    }
+  }
 </style>
 
 <script>

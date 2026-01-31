@@ -1,28 +1,83 @@
 ---
 import Icon from "./icons/Icon.astro";
 
-interface CarouselItem {
-  categoria: string;
-  nombre: string;
-  imagen: string;
-  enlace: string;
-}
-
 interface Props {
-  items?: CarouselItem[];
   autoplay?: boolean;
   interval?: number;
   pauseOnHover?: boolean;
 }
 
 const { 
-  items = [], 
   autoplay = true, 
   interval = 4000, 
   pauseOnHover = true 
 } = Astro.props;
 
-const displayItems = items.slice(0, 10);
+// Datos del carrusel de maquinaria
+const carouselItems = [
+  {
+    categoria: "aire-comprimido",
+    nombre: "Compresor de Aire",
+    imagen: "/images/maquinaria-carousel/placeholder-1.svg",
+    enlace: "/maquinaria/aire-comprimido"
+  },
+  {
+    categoria: "limpieza",
+    nombre: "Hidrolimpiadora",
+    imagen: "/images/maquinaria-carousel/placeholder-2.svg",
+    enlace: "/maquinaria/limpieza"
+  },
+  {
+    categoria: "elevacion",
+    nombre: "Plataforma Elevadora",
+    imagen: "/images/maquinaria-carousel/placeholder-3.svg",
+    enlace: "/maquinaria/elevacion"
+  },
+  {
+    categoria: "energia",
+    nombre: "Grupo Electrógeno",
+    imagen: "/images/maquinaria-carousel/placeholder-4.svg",
+    enlace: "/maquinaria/energia"
+  },
+  {
+    categoria: "jardin",
+    nombre: "Motosierra",
+    imagen: "/images/maquinaria-carousel/placeholder-5.svg",
+    enlace: "/maquinaria/jardin"
+  },
+  {
+    categoria: "forestal",
+    nombre: "Desbrozadora",
+    imagen: "/images/maquinaria-carousel/placeholder-6.svg",
+    enlace: "/maquinaria/forestal"
+  },
+  {
+    categoria: "compactacion",
+    nombre: "Rodillo Compactador",
+    imagen: "/images/maquinaria-carousel/placeholder-7.svg",
+    enlace: "/maquinaria/compactacion"
+  },
+  {
+    categoria: "demolicion",
+    nombre: "Martillo Demoledor",
+    imagen: "/images/maquinaria-carousel/placeholder-8.svg",
+    enlace: "/maquinaria/demolicion"
+  },
+  {
+    categoria: "vibracion",
+    nombre: "Vibrador de Hormigón",
+    imagen: "/images/maquinaria-carousel/placeholder-9.svg",
+    enlace: "/maquinaria/vibracion"
+  },
+  {
+    categoria: "construccion",
+    nombre: "Hormigonera",
+    imagen: "/images/maquinaria-carousel/placeholder-10.svg",
+    enlace: "/maquinaria/construccion"
+  }
+];
+
+const displayItems = carouselItems.slice(0, 10);
 ---
 
 <div
@@ -32,7 +87,7 @@ const displayItems = items.slice(0, 10);
   data-interval={interval}
 >
   <div class="carousel-track" id="carouselTrack">
-    {displayItems.map((item, index) => (
+    {carouselItems.map((item, index) => (
       <div class="carousel-item" data-index={index}>
         <a href={item.enlace} class="carousel-link">
           <img 
@@ -100,12 +155,26 @@ const displayItems = items.slice(0, 10);
     position: relative;
   }
 
-  .carousel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
+   .carousel-image {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.5s ease, filter 0.5s ease;
+   }
+
+   .carousel-image.zoom-in {
+     transform: scale(1.15);
+     filter: brightness(1.1);
+   }
+
+   .carousel-image.zoom-out {
+     transform: scale(1.0);
+   }
+
+   .carousel-image.zoom-peak {
+     transform: scale(1.15);
+     filter: brightness(1.15);
+   }
 
   .carousel-link:hover .carousel-image {
     transform: scale(1.05);
@@ -260,8 +329,10 @@ const displayItems = items.slice(0, 10);
   };
 
   const nextSlide = () => {
-    currentIndex = (currentIndex + 1) % 10;
-    updateCarousel();
+    animateWithZoom(() => {
+      currentIndex = (currentIndex + 1) % 10;
+      updateCarousel();
+    });
   };
 
   const prevSlide = () => {
@@ -289,6 +360,37 @@ const displayItems = items.slice(0, 10);
       clearInterval(autoplayInterval);
       autoplayInterval = null;
     }
+  };
+
+  const animateWithZoom = (callback: () => void) => {
+    const currentImage = track.querySelector('.carousel-item.active img');
+    if (!currentImage) {
+      callback();
+      return;
+    }
+
+    currentImage.classList.add('zoom-out');
+    currentImage.classList.remove('zoom-in');
+
+    setTimeout(() => {
+      currentImage.classList.remove('zoom-out');
+      currentImage.classList.add('zoom-in');
+      
+      setTimeout(() => {
+        currentImage.classList.remove('zoom-in');
+        currentImage.classList.add('zoom-peak');
+        
+        setTimeout(() => {
+          currentImage.classList.remove('zoom-peak');
+          currentImage.classList.add('zoom-out');
+          
+          setTimeout(() => {
+            currentImage.classList.remove('zoom-out');
+            callback();
+          }, 500);
+        }, 3000);
+      }, 2500);
+    }, 500);
   };
 
   if (prevBtn) {

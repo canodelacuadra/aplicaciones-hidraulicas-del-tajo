@@ -3,61 +3,61 @@
     {
       "categoria": "aire-comprimido",
       "nombre": "Compresor de Aire",
-      "imagen": "/images/maquinaria-carousel/compresor-aire.jpg",
+      "imagen": "/images/maquinaria-carousel/placeholder-1.svg",
       "enlace": "/maquinaria/aire-comprimido"
     },
     {
       "categoria": "limpieza",
       "nombre": "Hidrolimpiadora",
-      "imagen": "/images/maquinaria-carousel/hidrolimpiadora.jpg",
+      "imagen": "/images/maquinaria-carousel/placeholder-2.svg",
       "enlace": "/maquinaria/limpieza"
     },
     {
       "categoria": "elevacion",
       "nombre": "Plataforma Elevadora",
-      "imagen": "/images/maquinaria-carousel/plataforma-elevadora.jpg",
+      "imagen": "/images/maquinaria-carousel/placeholder-3.svg",
       "enlace": "/maquinaria/elevacion"
     },
     {
       "categoria": "energia",
       "nombre": "Grupo Electrógeno",
-      "imagen": "/images/maquinaria-carousel/grupo-electrogeno.jpg",
+      "imagen": "/images/maquinaria-carousel/placeholder-4.svg",
       "enlace": "/maquinaria/energia"
     },
     {
       "categoria": "jardin",
       "nombre": "Motosierra",
-      "imagen": "/images/maquinaria-carousel/motosierra.jpg",
+      "imagen": "/images/maquinaria-carousel/placeholder-5.svg",
       "enlace": "/maquinaria/jardin"
     },
     {
       "categoria": "forestal",
       "nombre": "Desbrozadora",
-      "imagen": "/images/maquinaria-carousel/desbrozadora.jpg",
+      "imagen": "/images/maquinaria-carousel/placeholder-6.svg",
       "enlace": "/maquinaria/forestal"
     },
     {
       "categoria": "compactacion",
       "nombre": "Rodillo Compactador",
-      "imagen": "/images/maquinaria-carousel/rodillo-compactador.jpg",
+      "imagen": "/images/maquinaria-carousel/placeholder-7.svg",
       "enlace": "/maquinaria/compactacion"
     },
     {
       "categoria": "demolicion",
       "nombre": "Martillo Demoledor",
-      "imagen": "/images/maquinaria-carousel/martillo-demoledor.jpg",
+      "imagen": "/images/maquinaria-carousel/placeholder-8.svg",
       "enlace": "/maquinaria/demolicion"
     },
     {
       "categoria": "vibracion",
       "nombre": "Vibrador de Hormigón",
-      "imagen": "/images/maquinaria-carousel/vibrador-hormigon.jpg",
+      "imagen": "/images/maquinaria-carousel/placeholder-9.svg",
       "enlace": "/maquinaria/vibracion"
     },
     {
       "categoria": "construccion",
       "nombre": "Hormigonera",
-      "imagen": "/images/maquinaria-carousel/hormigonera.jpg",
+      "imagen": "/images/maquinaria-carousel/placeholder-10.svg",
       "enlace": "/maquinaria/construccion"
     }
   ]
