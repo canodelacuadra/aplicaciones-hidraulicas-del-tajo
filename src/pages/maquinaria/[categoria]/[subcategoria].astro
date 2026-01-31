@@ -4,16 +4,17 @@ import maquinariaData from "../../../data/maquinaria.json";
 import empresaData from "../../../data/aplicaciones-hidraulicas.json";
 import ConsultaModal from "../../../components/ConsultaModal.astro";
 import SubcategoryHero from "../../../components/SubcategoryHero.astro";
+import Icon from "../../../components/icons/Icon.astro";
 
 // Función para generar rutas estáticas
 export async function getStaticPaths() {
   const paths = [];
-  
+
   for (const categoria of maquinariaData.categorias) {
     for (const subcategoria of categoria.subcategorias || []) {
       if (subcategoria.tieneMaquinas) {
         paths.push({
-          params: { 
+          params: {
             categoria: categoria.slug || categoria.id,
             subcategoria: subcategoria.slug || subcategoria.id
           },
@@ -27,15 +28,15 @@ export async function getStaticPaths() {
       }
     }
   }
-  
+
   return paths;
 }
 
-const { 
-  categoriaData, 
-  subcategoriaData, 
-  categoriaSlug, 
-  subcategoriaSlug 
+const {
+  categoriaData,
+  subcategoriaData,
+  categoriaSlug,
+  subcategoriaSlug
 } = Astro.props;
 
 if (!categoriaData || !subcategoriaData) {
@@ -52,15 +53,15 @@ const todasLasSubcategoriasDisponibles = maquinariaData.categorias.flatMap(cat =
 // Función para obtener imagen de subcategoría con fallback
 const getSubcategoriaImagen = (subcategoria: any) => {
   // Buscar primera máquina con imagen en esta subcategoría
-  const maquinasConImagen = todasLasMaquinas.filter((m: any) => 
+  const maquinasConImagen = todasLasMaquinas.filter((m: any) =>
     m.subcategoriaId === subcategoria.id && m.imagen
   );
-  
+
   if (maquinasConImagen.length > 0) {
     const maquina = maquinasConImagen[0];
     return `/images/${maquina.imagen}`;
   }
-  
+
   // Fallback a imagen default
   return "/images/maquina-default.svg";
 };
@@ -74,13 +75,13 @@ const getMaquinasPorSubcategoria = (subcategoriaId: string) => {
 const getServiciosPorSubcategoria = (subcategoriaId: string) => {
   const maquinasSubcategoria = todasLasMaquinas.filter((m: any) => m.subcategoriaId === subcategoriaId);
   const servicios = new Set();
-  
+
   maquinasSubcategoria.forEach((maquina: any) => {
     if (maquina.servicios?.alquiler) servicios.add('alquiler');
     if (maquina.servicios?.venta) servicios.add('venta');
     if (maquina.servicios?.reparacion) servicios.add('reparacion');
   });
-  
+
   return Array.from(servicios);
 };
 ---
@@ -182,10 +183,10 @@ const getServiciosPorSubcategoria = (subcategoriaId: string) => {
           <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la solución perfecta para tus necesidades en {subcategoriaData.nombre.toLowerCase()}.</p>
           <div class="contacto-buttons">
             <a href="tel:+34613396432" class="contacto-btn primary">
-              <span>📞</span> Llamar ahora
+              <span><Icon name="phone" size={20} /></span> Llamar ahora
             </a>
             <a href={`mailto:ahdtajo@gmail.com?subject=Consulta%20${encodeURIComponent(subcategoriaData.nombre)}`} class="contacto-btn secondary">
-              <span>✉️</span> Enviar email
+              <span><Icon name="mail" size={20} /></span> Enviar email
             </a>
           </div>
         </div>

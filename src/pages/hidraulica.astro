@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
+import Icon from "../components/icons/Icon.astro";
 
 // Get hidraulica aspect data
 const aspectoHidraulica = (empresaData as any).aspectos.find((a: any) => a.nombre === "Hidráulica");
@@ -28,11 +29,11 @@ las personas… y el entorno que nos da vida.`
         {aspectoHidraulica.servicios.map((servicio: string, index: number) => (
           <div class="service-card" style={`animation-delay: ${index * 0.2}s`}>
             <div class="service-header">
-              <div class="service-icon">
-                {servicio === "Riego Agrícola" && "🌾"}
-                {servicio === "Redes hidráulicas en industrias" && "🏭"}
-                {servicio === "Redes municipales de agua potable y residual" && "🏘"}
-              </div>
+             <div class="service-icon">
+                 {servicio === "Riego Agrícola" && <Icon name="droplet" size={32} />}
+                 {servicio === "Redes hidráulicas en industrias" && <Icon name="factory" size={32} />}
+                 {servicio === "Redes municipales de agua potable y residual" && <Icon name="building" size={32} />}
+               </div>
               <h3>{servicio}</h3>
             </div>
             
@@ -72,25 +73,25 @@ las personas… y el entorno que nos da vida.`
       <h2>Características Técnicas</h2>
       <div class="technical-grid">
         <div class="technical-item">
-          <div class="tech-icon">⚙️</div>
+          <div class="tech-icon"><Icon name="gear" size={32} /></div>
           <h3>Ingeniería Avanzada</h3>
           <p>Cálculos hidráulicos precisos y diseño profesional con software especializado.</p>
         </div>
-        
+
         <div class="technical-item">
-          <div class="tech-icon">🔧</div>
+          <div class="tech-icon"><Icon name="wrench" size={32} /></div>
           <h3>Equipamiento Profesional</h3>
-          <p>Utilizamos maquinaria de última generación para garantiza calidad y eficiencia.</p>
+          <p>Utilizamos maquinaria de última generación para garantizar calidad y eficiencia.</p>
         </div>
-        
+
         <div class="technical-item">
-          <div class="tech-icon">📋</div>
+          <div class="tech-icon"><Icon name="clipboard" size={32} /></div>
           <h3>Cumplimiento Normativo</h3>
           <p>Todas nuestras instalaciones cumplen con la normativa vigente y permisos requeridos.</p>
         </div>
-        
+
         <div class="technical-item">
-          <div class="tech-icon">🌿</div>
+          <div class="tech-icon"><Icon name="leaf" size={32} /></div>
           <h3>Sostenibilidad</h3>
           <p>Soluciones que optimizan el uso del agua y minimizan el impacto ambiental.</p>
         </div>
@@ -113,11 +114,11 @@ las personas… y el entorno que nos da vida.`
         <p>Contacta con nuestros ingenieros y solicita un estudio técnico sin compromiso.</p>
         <div class="cta-buttons">
           <a href="#contacto" class="cta-button primary">
-            <span>🔧</span>
+            <span><Icon name="wrench" size={18} /></span>
             Solicitar Estudio
           </a>
           <a href="tel:+34613396432" class="cta-button secondary">
-            <span>📞</span>
+            <span><Icon name="phone" size={18} /></span>
             Consultar por Teléfono
           </a>
         </div>

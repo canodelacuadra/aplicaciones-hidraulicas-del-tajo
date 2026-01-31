@@ -4,6 +4,7 @@ import maquinariaData from "../data/maquinaria.json";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 import ConsultaModal from "../components/ConsultaModal.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
+import Icon from "../components/icons/Icon.astro";
 
 // Preparar datos para los componentes
 const todasLasMaquinas = maquinariaData.maquinas || [];
@@ -11,9 +12,10 @@ const todasLasCategorias = maquinariaData.categorias || [];
 
 // Función para obtener imágenes de categoría
 const getCategoriaImagen = (categoriaId: string) => {
-  const categoria = todasLasMaquinas.find(m => m.categoriaId === categoriaId);
-  if (categoria?.imagen) {
-    return `/images/${categoria.imagen}`;
+  const categoria = todasLasCategorias.find(c => c.id === categoriaId);
+  const primeraMaquina = todasLasMaquinas.find(m => m.categoriaId === categoriaId);
+  if (primeraMaquina?.imagen) {
+    return `/images/${primeraMaquina.imagen}`;
   }
   return `/images/categorias/${categoriaId}.jpg`;
 };
@@ -23,17 +25,17 @@ const getMaquinasCount = (categoriaId: string) => {
   return todasLasMaquinas.filter(m => m.categoriaId === categoriaId).length;
 };
 
-// Función para obtener servicios disponibles por categoría
+// Función para obtener servicios por categoría
 const getServiciosPorCategoria = (categoriaId: string) => {
   const maquinasCategoria = todasLasMaquinas.filter(m => m.categoriaId === categoriaId);
   const servicios = new Set();
-  
+
   maquinasCategoria.forEach(maquina => {
     if (maquina.servicios?.alquiler) servicios.add('alquiler');
     if (maquina.servicios?.venta) servicios.add('venta');
     if (maquina.servicios?.reparacion) servicios.add('reparacion');
   });
-  
+
   return Array.from(servicios);
 };
 ---
@@ -107,10 +109,10 @@ const getServiciosPorCategoria = (categoriaId: string) => {
           <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la maquinaria perfecta para tus necesidades.</p>
           <div class="contacto-buttons">
             <a href="tel:+34613396432" class="contacto-btn primary">
-              <span>📞</span> Llamar ahora
+              <span><Icon name="phone" size={20} /></span> Llamar ahora
             </a>
             <a href="mailto:ahdtajo@gmail.com" class="contacto-btn secondary">
-              <span>✉️</span> Enviar email
+              <span><Icon name="mail" size={20} /></span> Enviar email
             </a>
           </div>
         </div>

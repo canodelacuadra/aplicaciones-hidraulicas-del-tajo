@@ -6,11 +6,12 @@ import MaquinaCard from "../../components/MaquinaCard.astro";
 import FiltroMaquinaria from "../../components/FiltroMaquinaria.astro";
 import ConsultaModal from "../../components/ConsultaModal.astro";
 import CategoryHero from "../../components/CategoryHero.astro";
+import Icon from "../../components/icons/Icon.astro";
 
 export async function getStaticPaths() {
   return maquinariaData.categorias.map((categoria) => ({
     params: { categoria: categoria.slug || categoria.id },
-    props: { 
+    props: {
       categoriaData: categoria,
       categoriaSlug: categoria.slug || categoria.id
     },
@@ -41,14 +42,14 @@ const getCategoriaImagen = () => {
 
 // Función para contar máquinas por subcategoría
 const getMaquinasCountPorSubcategoria = (subcategoriaId: string) => {
-  return todasLasMaquinas.filter(m => 
+  return todasLasMaquinas.filter(m =>
     m.categoriaId === categoriaData.id && m.subcategoriaId === subcategoriaId
   ).length;
 };
 
 // Función para obtener imagen de subcategoría
 const getSubcategoriaImagen = (subcategoriaId: string) => {
-  const primeraMaquina = todasLasMaquinas.find(m => 
+  const primeraMaquina = todasLasMaquinas.find(m =>
     m.subcategoriaId === subcategoriaId
   );
   if (primeraMaquina?.imagen) {
@@ -57,6 +58,18 @@ const getSubcategoriaImagen = (subcategoriaId: string) => {
   return `/images/subcategorias/${subcategoriaId}.jpg`;
 };
 
+// Función para obtener imagen de subcategoría
+const getImagen = (imagen: string) => {
+  return `/images/${imagen}`;
+};
+
+// Formatear especificaciones
+const formatEspecificaciones = (especificaciones: Record<string, any>) => {
+  return Object.entries(especificaciones).map(([key, value]) => ({
+    label: key.charAt(0).toUpperCase() + key.slice(1),
+    value: value
+  }));
+};
 ---
 
 <BaseLayout 
@@ -132,10 +145,10 @@ const getSubcategoriaImagen = (subcategoriaId: string) => {
           <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la maquinaria perfecta para tus necesidades.</p>
           <div class="contacto-buttons">
             <a href="tel:+34613396432" class="contacto-btn primary">
-              <span>📞</span> Llamar ahora
+              <span><Icon name="phone" size={20} /></span> Llamar ahora
             </a>
             <a href="mailto:ahtajo@gmail.com" class="contacto-btn secondary">
-              <span>✉️</span> Enviar email
+              <span><Icon name="mail" size={20} /></span> Enviar email
             </a>
           </div>
         </div>

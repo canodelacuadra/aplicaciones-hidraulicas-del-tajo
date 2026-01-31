@@ -1,4 +1,6 @@
 ---
+import Icon from './icons/Icon.astro';
+
 export interface Props {
   maquina?: {
     id: string;
@@ -63,7 +65,7 @@ const email = 'ahdtajo@gmail.com';
             class="contacto-btn telefono"
             onclick="closeConsultaModal()"
           >
-            <div class="contacto-icono">📞</div>
+            <div class="contacto-icono"><Icon name="phone" size={24} /></div>
             <div class="contacto-info">
               <div class="contacto-titulo">Llamar ahora</div>
               <div class="contacto-valor">{telefono}</div>
@@ -80,7 +82,7 @@ Por favor, contáctenme con más información.`)}`}
             class="contacto-btn email"
             onclick="closeConsultaModal()"
           >
-            <div class="contacto-icono">✉️</div>
+            <div class="contacto-icono"><Icon name="mail" size={24} /></div>
             <div class="contacto-info">
               <div class="contacto-titulo">Enviar email</div>
               <div class="contacto-valor">{email}</div>
@@ -91,7 +93,7 @@ Por favor, contáctenme con más información.`)}`}
             class="contacto-btn whatsapp" 
             onclick="contactarWhatsApp()"
           >
-            <div class="contacto-icono">💬</div>
+            <div class="contacto-icono"><Icon name="messageCircle" size={24} /></div>
             <div class="contacto-info">
               <div class="contacto-titulo">WhatsApp</div>
               <div class="contacto-valor">Respuesta rápida</div>

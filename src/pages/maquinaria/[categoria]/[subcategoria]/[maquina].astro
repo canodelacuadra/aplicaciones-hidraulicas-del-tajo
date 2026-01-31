@@ -3,18 +3,19 @@ import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import maquinariaData from "../../../../data/maquinaria.json";
 import empresaData from "../../../../data/aplicaciones-hidraulicas.json";
 import ConsultaModal from "../../../../components/ConsultaModal.astro";
+import Icon from "../../../../components/icons/Icon.astro";
 
 // Generar rutas estáticas para todas las máquinas
 export async function getStaticPaths() {
   const paths = [];
-  
+
   for (const categoria of maquinariaData.categorias) {
     for (const subcategoria of categoria.subcategorias || []) {
       for (const maquinaId of subcategoria.maquinas || []) {
         const maquina = maquinariaData.maquinas.find(m => m.id === maquinaId);
         if (maquina) {
           paths.push({
-            params: { 
+            params: {
               categoria: categoria.slug || categoria.id,
               subcategoria: subcategoria.slug || subcategoria.id,
               maquina: maquina.slug || maquina.id
@@ -32,13 +33,13 @@ export async function getStaticPaths() {
       }
     }
   }
-  
+
   return paths;
 }
 
-const { 
-  maquinaData, 
-  categoriaData, 
+const {
+  maquinaData,
+  categoriaData,
   subcategoriaData,
   categoriaSlug,
   subcategoriaSlug,
@@ -59,9 +60,9 @@ const getImagenesAdicionales = () => {
 // Obtener máquinas relacionadas
 const getMaquinasRelacionadas = () => {
   return maquinariaData.maquinas
-    .filter(m => 
-      m.categoriaId === categoriaData.id && 
-      m.subcategoriaId === subcategoriaData.id && 
+    .filter(m =>
+      m.categoriaId === categoriaData.id &&
+      m.subcategoriaId === subcategoriaData.id &&
       m.id !== maquinaData.id
     )
     .slice(0, 6);
@@ -73,7 +74,7 @@ const getMaquinaImagen = (maquina: any, fallbackPath: string | null = null) => {
   if (maquina && maquina.imagen) {
     return `/images/${maquina.imagen}`;
   }
-  
+
   // 2. Final fallback - default SVG
   return '/images/maquina-default.svg';
 };
@@ -189,7 +190,7 @@ const formatEspecificaciones = (especificaciones: Record<string, any>) => {
             <div class="servicios-grid">
               {maquinaData.servicios?.alquiler && (
                 <div class="servicio-item">
-                  <div class="servicio-icono">🔧</div>
+                  <div class="servicio-icono"><Icon name="wrench" size={24} /></div>
                   <div class="servicio-info">
                     <h4>Alquiler</h4>
                     <p>Alquiler flexible con mantenimiento incluido</p>
@@ -198,7 +199,7 @@ const formatEspecificaciones = (especificaciones: Record<string, any>) => {
               )}
               {maquinaData.servicios?.venta && (
                 <div class="servicio-item">
-                  <div class="servicio-icono">🛒</div>
+                  <div class="servicio-icono"><Icon name="tag" size={24} /></div>
                   <div class="servicio-info">
                     <h4>Venta</h4>
                     <p>Venta con financiación y garantía</p>
@@ -207,7 +208,7 @@ const formatEspecificaciones = (especificaciones: Record<string, any>) => {
               )}
               {maquinaData.servicios?.reparacion && (
                 <div class="servicio-item">
-                  <div class="servicio-icono">⚙️</div>
+                  <div class="servicio-icono"><Icon name="gear" size={24} /></div>
                   <div class="servicio-info">
                     <h4>Reparación</h4>
                     <p>Reparación técnica especializada</p>
@@ -224,7 +225,7 @@ const formatEspecificaciones = (especificaciones: Record<string, any>) => {
                 Solicitar información
               </button>
               <a href="tel:+34613396432" class="btn-llamada">
-                <span>📞</span> Llamar ahora
+                <span><Icon name="phone" size={18} /></span> Llamar ahora
               </a>
             </div>
           </div>
@@ -273,17 +274,17 @@ const formatEspecificaciones = (especificaciones: Record<string, any>) => {
       <h2>Servicios para {categoriaData.nombre}</h2>
       <div class="servicios-categoria-grid">
         <div class="servicio-categoria-card">
-          <div class="servicio-icono-grande">🔧</div>
+          <div class="servicio-icono-grande"><Icon name="wrench" size={48} /></div>
           <h3>Alquiler Flexible</h3>
           <p>Alquiler a corto y largo plazo con mantenimiento incluido. Precios competitivos para proyectos de cualquier tamaño.</p>
         </div>
         <div class="servicio-categoria-card">
-          <div class="servicio-icono-grande">⚙️</div>
+          <div class="servicio-icono-grande"><Icon name="gear" size={48} /></div>
           <h3>Reparación Especializada</h3>
           <p>Reparación técnica especializada con diagnóstico avanzado y servicio móvil. Atendemos todas las marcas del mercado.</p>
         </div>
         <div class="servicio-categoria-card">
-          <div class="servicio-icono-grande">🛒</div>
+          <div class="servicio-icono-grande"><Icon name="tag" size={48} /></div>
           <h3>Venta Asesorada</h3>
           <p>Venta de maquinaria nueva y certificada con financiación disponible. Asesoramiento técnico completo.</p>
         </div>
@@ -300,17 +301,11 @@ const formatEspecificaciones = (especificaciones: Record<string, any>) => {
           <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar la solución perfecta para tus necesidades.</p>
           <div class="contacto-buttons-large">
             <a href="tel:+34613396432" class="contacto-btn primary">
-              <span>📞</span> Llamar ahora
+              <span><Icon name="phone" size={20} /></span> Llamar ahora
             </a>
             <a href={`mailto:ahdtajo@gmail.com?subject=Consulta%20${encodeURIComponent(maquinaData.nombre)}`} class="contacto-btn secondary">
-              <span>✉️</span> Enviar email
+              <span><Icon name="mail" size={20} /></span> Enviar email
             </a>
-            <button 
-              class="contacto-btn whatsapp"
-              onclick="window.open('https://wa.me/34613396432?text=' + encodeURIComponent('Hola! Estoy interesado en: {maquinaData.nombre}'), '_blank')"
-            >
-              <span>💬</span> WhatsApp
-            </button>
           </div>
         </div>
       </div>

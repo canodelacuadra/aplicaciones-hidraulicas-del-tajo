@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
+import Icon from "../components/icons/Icon.astro";
 
 // Get fotovoltaica aspect data
 const aspectoFotovoltaica = (empresaData as any).aspectos.find((a: any) => a.nombre === "Fotovoltaica");
@@ -26,9 +27,9 @@ const aspectoFotovoltaica = (empresaData as any).aspectos.find((a: any) => a.nom
           <div class="service-card" style={`animation-delay: ${index * 0.2}s`}>
             <div class="service-header">
               <div class="service-icon">
-                {servicio === "Bombeo solar" && "💧"}
-                {servicio === "Instalaciones Residenciales" && "🏠"}
-                {servicio === "Instalaciones industriales" && "🏭"}
+                {servicio === "Bombeo solar" && <Icon name="droplet" size={32} />}
+                {servicio === "Instalaciones Residenciales" && <Icon name="home" size={32} />}
+                {servicio === "Instalaciones industriales" && <Icon name="factory" size={32} />}
               </div>
               <h3>{servicio}</h3>
             </div>
@@ -81,13 +82,13 @@ const aspectoFotovoltaica = (empresaData as any).aspectos.find((a: any) => a.nom
         </div>
         
         <div class="benefit-item">
-          <div class="benefit-icon">🔧</div>
+          <div class="benefit-icon"><Icon name="wrench" size={32} /></div>
           <h3>Bajo Mantenimiento</h3>
           <p>Instalaciones modernas con mínimos requisitos de mantenimiento.</p>
         </div>
-        
+
         <div class="benefit-item">
-          <div class="benefit-icon">⚡</div>
+          <div class="benefit-icon"><Icon name="zap" size={32} /></div>
           <h3>Independencia Energética</h3>
           <p>Reduce dependencia de la red eléctrica y fluctuaciones de precios.</p>
         </div>
@@ -103,11 +104,11 @@ const aspectoFotovoltaica = (empresaData as any).aspectos.find((a: any) => a.nom
         <p>Contacta con nuestros expertos y solicita un estudio personalizado sin compromiso.</p>
         <div class="cta-buttons">
           <a href="#contacto" class="cta-button primary">
-            <span>📞</span>
+            <span><Icon name="phone" size={18} /></span>
             Solicitar Asesoramiento
           </a>
           <a href="tel:+34613396432" class="cta-button secondary">
-            <span>📱</span>
+            <span><Icon name="smartphone" size={18} /></span>
             Llamar Ahora
           </a>
         </div>
