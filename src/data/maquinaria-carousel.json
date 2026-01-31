@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "categoria": "aire-comprimido",
+      "nombre": "Compresor de Aire",
+      "imagen": "/images/maquinaria-carousel/compresor-aire.jpg",
+      "enlace": "/maquinaria/aire-comprimido"
+    },
+    {
+      "categoria": "limpieza",
+      "nombre": "Hidrolimpiadora",
+      "imagen": "/images/maquinaria-carousel/hidrolimpiadora.jpg",
+      "enlace": "/maquinaria/limpieza"
+    },
+    {
+      "categoria": "elevacion",
+      "nombre": "Plataforma Elevadora",
+      "imagen": "/images/maquinaria-carousel/plataforma-elevadora.jpg",
+      "enlace": "/maquinaria/elevacion"
+    },
+    {
+      "categoria": "energia",
+      "nombre": "Grupo Electrógeno",
+      "imagen": "/images/maquinaria-carousel/grupo-electrogeno.jpg",
+      "enlace": "/maquinaria/energia"
+    },
+    {
+      "categoria": "jardin",
+      "nombre": "Motosierra",
+      "imagen": "/images/maquinaria-carousel/motosierra.jpg",
+      "enlace": "/maquinaria/jardin"
+    },
+    {
+      "categoria": "forestal",
+      "nombre": "Desbrozadora",
+      "imagen": "/images/maquinaria-carousel/desbrozadora.jpg",
+      "enlace": "/maquinaria/forestal"
+    },
+    {
+      "categoria": "compactacion",
+      "nombre": "Rodillo Compactador",
+      "imagen": "/images/maquinaria-carousel/rodillo-compactador.jpg",
+      "enlace": "/maquinaria/compactacion"
+    },
+    {
+      "categoria": "demolicion",
+      "nombre": "Martillo Demoledor",
+      "imagen": "/images/maquinaria-carousel/martillo-demoledor.jpg",
+      "enlace": "/maquinaria/demolicion"
+    },
+    {
+      "categoria": "vibracion",
+      "nombre": "Vibrador de Hormigón",
+      "imagen": "/images/maquinaria-carousel/vibrador-hormigon.jpg",
+      "enlace": "/maquinaria/vibracion"
+    },
+    {
+      "categoria": "construccion",
+      "nombre": "Hormigonera",
+      "imagen": "/images/maquinaria-carousel/hormigonera.jpg",
+      "enlace": "/maquinaria/construccion"
+    }
+  ]
+}
