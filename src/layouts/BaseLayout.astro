@@ -73,6 +73,33 @@ const getOGImageAlt = () => {
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Schema.org JSON-LD for Local Business -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": empresaData.empresa.nombre,
+      "image": `${empresaData.empresa.web}${empresaData.empresa.fachadaImagen}`,
+      "telephone": empresaData.contacto.telefono,
+      "email": empresaData.contacto.email,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Dalí 1",
+        "addressLocality": "Torrijos",
+        "addressRegion": "Toledo",
+        "postalCode": "45500",
+        "addressCountry": "ES"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "url": empresaData.empresa.web
+    })} />
   </head>
   <body>
     <Header pageTitle={pageTitle} pageDescription={pageDesc} />

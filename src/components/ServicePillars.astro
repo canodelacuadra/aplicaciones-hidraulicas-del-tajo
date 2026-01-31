@@ -1,5 +1,6 @@
 ---
 import empresaData from "../data/aplicaciones-hidraulicas.json";
+import Icon from "./icons/Icon.astro";
 
 interface Aspecto {
   nombre: string;
@@ -7,9 +8,16 @@ interface Aspecto {
   servicios: string[];
 }
 
-// Type assertion for the data with new structure
+// Type assertion for data with new structure
 const empresaConAspectos = empresaData as any & {
   aspectos: Aspecto[];
+};
+
+// Mapear emojis a nombres de iconos SVG
+const iconMap: Record<string, string> = {
+  '💧': 'droplet',
+  '☀️': 'sun',
+  '🏗️': 'building'
 };
 ---
 
@@ -32,33 +40,34 @@ const empresaConAspectos = empresaData as any & {
       {empresaConAspectos.aspectos.map((aspecto: Aspecto, index: number) => {
         // Asignar clase específica según el nombre del pilar
         const pillarClass = aspecto.nombre.toLowerCase().replace('á', 'a').replace('í', 'i').replace('ó', 'o').replace('ú', 'u').replace('ñ', 'n');
-        
+        const iconName = iconMap[aspecto.icono] || 'building';
+
         return (
           <div class={`pillar-card ${pillarClass}`} style={`animation-delay: ${index * 0.2}s`}>
             <div class="pillar-header">
               <div class="pillar-icon-wrapper">
-                <div class="pillar-icon">{aspecto.icono}</div>
+                <div class="pillar-icon"><Icon name={iconName} size={40} /></div>
               </div>
               <h3>{aspecto.nombre}</h3>
             </div>
-          
-          <div class="pillar-content">
-            <ul class="services-list">
-              {aspecto.servicios.map((servicio: string) => (
-                <li class="service-item">
-                  <span class="service-bullet">✓</span>
-                  <span>{servicio}</span>
-                </li>
-              ))}
-            </ul>
+
+            <div class="pillar-content">
+              <ul class="services-list">
+                {aspecto.servicios.map((servicio: string) => (
+                  <li class="service-item">
+                    <span class="service-bullet">✓</span>
+                    <span>{servicio}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="pillar-footer">
+              <a href={`/${aspecto.nombre.toLowerCase().replace('á', 'a').replace('í', 'i').replace('ó', 'o').replace('ú', 'u').replace('ñ', 'n')}`} class="pillar-cta">
+                Explorar {aspecto.nombre}
+              </a>
+            </div>
           </div>
-          
-          <div class="pillar-footer">
-            <a href={`/${aspecto.nombre.toLowerCase().replace('á', 'a').replace('í', 'i').replace('ó', 'o').replace('ú', 'u').replace('ñ', 'n')}`} class="pillar-cta">
-              Explorar {aspecto.nombre}
-            </a>
-          </div>
-        </div>
         );
       })}
     </div>
@@ -345,81 +354,81 @@ const empresaConAspectos = empresaData as any & {
 
   /* Colores específicos por pilar */
   .pillar-card.hidraulica::before {
-    background: linear-gradient(90deg, var(--hidraulica) 0%, #16a34a 100%);
+    background: linear-gradient(90deg, #28C8F0 0%, #16a34a 100%);
   }
-  
+
   .pillar-card.hidraulica:hover {
-    border-color: rgba(34, 197, 94, 0.3);
+    border-color: rgba(40, 200, 240, 0.3);
   }
-  
+
   .pillar-card.hidraulica .service-bullet {
-    color: var(--hidraulica);
+    color: #28C8F0;
   }
-  
+
   .pillar-card.hidraulica .service-item {
-    border-color: rgba(34, 197, 94, 0.1);
+    border-color: rgba(40, 200, 240, 0.1);
   }
-  
+
   .pillar-card.hidraulica .pillar-cta {
-    border-color: var(--hidraulica);
-    color: var(--hidraulica);
+    border-color: #28C8F0;
+    color: #28C8F0;
   }
-  
+
   .pillar-card.hidraulica .pillar-cta:hover {
-    background: var(--hidraulica);
-    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+    background: #28C8F0;
+    box-shadow: 0 4px 12px rgba(40, 200, 240, 0.3);
   }
 
   .pillar-card.fotovoltaica::before {
-    background: linear-gradient(90deg, var(--fotovoltaica) 0%, #ea580c 100%);
+    background: linear-gradient(90deg, #22c55e 0%, #ea580c 100%);
   }
-  
+
   .pillar-card.fotovoltaica:hover {
-    border-color: rgba(251, 146, 60, 0.3);
+    border-color: rgba(34, 197, 94, 0.3);
   }
-  
+
   .pillar-card.fotovoltaica .service-bullet {
-    color: var(--fotovoltaica);
+    color: #22c55e;
   }
-  
+
   .pillar-card.fotovoltaica .service-item {
-    border-color: rgba(251, 146, 60, 0.1);
+    border-color: rgba(34, 197, 94, 0.1);
   }
-  
+
   .pillar-card.fotovoltaica .pillar-cta {
-    border-color: var(--fotovoltaica);
-    color: var(--fotovoltaica);
+    border-color: #22c55e;
+    color: #22c55e;
   }
-  
+
   .pillar-card.fotovoltaica .pillar-cta:hover {
-    background: var(--fotovoltaica);
-    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.3);
+    background: #22c55e;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
   }
 
   .pillar-card.maquinaria::before {
-    background: linear-gradient(90deg, var(--maquinaria) 0%, #475569 100%);
+    background: linear-gradient(90deg, #fb923c 0%, #475569 100%);
   }
-  
+
   .pillar-card.maquinaria:hover {
-    border-color: rgba(100, 116, 139, 0.3);
+    border-color: rgba(251, 146, 60, 0.3);
   }
-  
+
   .pillar-card.maquinaria .service-bullet {
-    color: var(--maquinaria);
+    color: #fb923c;
   }
-  
+
   .pillar-card.maquinaria .service-item {
-    border-color: rgba(100, 116, 139, 0.1);
+    border-color: rgba(251, 146, 60, 0.1);
   }
-  
+
   .pillar-card.maquinaria .pillar-cta {
-    border-color: var(--maquinaria);
-    color: var(--maquinaria);
+    border-color: #fb923c;
+    color: #fb923c;
   }
-  
+
   .pillar-card.maquinaria .pillar-cta:hover {
-    background: var(--maquinaria);
-    box-shadow: 0 4px 12px rgba(100, 116, 139, 0.3);
+    background: #fb923c;
+    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.3);
   }
 
   /* Accessibility */

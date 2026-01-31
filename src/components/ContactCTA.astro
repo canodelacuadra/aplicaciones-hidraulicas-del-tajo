@@ -1,5 +1,6 @@
 ---
 import empresaData from "../data/aplicaciones-hidraulicas.json";
+import Icon from "./icons/Icon.astro";
 ---
 
 <section  class="contact-cta-section">
@@ -12,7 +13,7 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
         
         <div class="contact-options">
           <div class="contact-option">
-            <div class="option-icon">📞</div>
+            <div class="option-icon"><Icon name="phone" size={40} /></div>
             <div class="option-content">
               <h3>Contacto Directo</h3>
               <p>Asesoramiento inmediato por teléfono</p>
@@ -21,9 +22,9 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
               </a>
             </div>
           </div>
-          
+
           <div class="contact-option">
-            <div class="option-icon">📧</div>
+            <div class="option-icon"><Icon name="mail" size={40} /></div>
             <div class="option-content">
               <h3>Consulta por Email</h3>
               <p>Envíanos tus requisitos y te respondemos en menos de 24h</p>
@@ -32,9 +33,9 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
               </a>
             </div>
           </div>
-          
+
           <div class="contact-option">
-            <div class="option-icon">📍</div>
+            <div class="option-icon"><Icon name="mapPin" size={40} /></div>
             <div class="option-content">
               <h3>Visita Nuestra Tienda</h3>
               <p>Conoce nuestros productos y recibe asesoramiento personal</p>
@@ -52,7 +53,7 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
         <div class="schedule-cards">
           <div class="schedule-card active">
             <div class="schedule-header">
-              <span class="schedule-icon">❄️</span>
+              <span class="schedule-icon"><Icon name="snowflake" size={24} /></span>
               <h4>{empresaData.horario.invierno.nombre}</h4>
             </div>
             <div class="schedule-details">
@@ -61,10 +62,10 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
               <p><strong>Tarde:</strong> {empresaData.horario.invierno.tarde}</p>
             </div>
           </div>
-          
+
           <div class="schedule-card">
             <div class="schedule-header">
-              <span class="schedule-icon">☀️</span>
+              <span class="schedule-icon"><Icon name="sun" size={24} /></span>
               <h4>{empresaData.horario.verano.nombre}</h4>
             </div>
             <div class="schedule-details">

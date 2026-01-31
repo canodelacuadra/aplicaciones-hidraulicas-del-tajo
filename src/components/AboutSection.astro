@@ -1,5 +1,6 @@
 ---
 import empresaData from "../data/aplicaciones-hidraulicas.json";
+import Icon from "./icons/Icon.astro";
 ---
 
 <section class="about-section">
@@ -15,10 +16,10 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
             <p>Te asesoramos, te alquilamos o te proveemos de la mejor instalación y  los mejores consumibles</p>
             <div class="cta-buttons">
               <a href="#contacto" class="store-cta-btn primary">
-                <span>📍</span> Visitar Tienda
+                <span><Icon name="mapPin" size={18} /></span> Visitar Tienda
               </a>
               <a href="tel:+34613396432" class="store-cta-btn secondary">
-                <span>📱</span> Llamar Ahora
+                <span><Icon name="phone" size={18} /></span> Llamar Ahora
               </a>
             </div>
           </div>
@@ -26,23 +27,23 @@ import empresaData from "../data/aplicaciones-hidraulicas.json";
         
         <div class="store-highlights">
           <div class="highlight-item">
-            <span class="highlight-icon">🏪</span>
+            <span class="highlight-icon"><Icon name="store" size={40} /></span>
             <div>
               <h3>Showroom y Almacén</h3>
               <p>Visítanos en Calle Dalí 1 y descubre nuestro catálogo completo</p>
             </div>
           </div>
-          
+
           <div class="highlight-item">
-            <span class="highlight-icon">🔧</span>
+            <span class="highlight-icon"><Icon name="wrench" size={40} /></span>
             <div>
               <h3>Stock Inmediato</h3>
               <p>Consumibles y maquinaria disponibles para alquiler y compra</p>
             </div>
           </div>
-          
+
           <div class="highlight-item">
-            <span class="highlight-icon">📞</span>
+            <span class="highlight-icon"><Icon name="phone" size={40} /></span>
             <div>
               <h3>Asesoramiento Personal</h3>
               <p>Expertos en tienda para ayudarte a encontrar lo que necesitas</p>

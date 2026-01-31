@@ -52,8 +52,8 @@ const getVariantClasses = () => {
     
     if (scrollIndicator) {
       scrollIndicator.addEventListener('click', () => {
-        const targetSelector = '{getScrollTarget()}';
-        const targetElement = targetSelector === 'next-section' 
+        const targetSelector = getScrollTarget();
+        const targetElement = targetSelector === 'next-section'
           ? scrollIndicator.closest('section')?.nextElementSibling
           : document.querySelector(targetSelector);
           

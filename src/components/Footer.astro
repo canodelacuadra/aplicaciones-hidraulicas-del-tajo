@@ -2,6 +2,7 @@
 import FooterSocial from './FooterSocial.astro';
 import LocationMap from './LocationMap.tsx';
 import empresaData from '../data/aplicaciones-hidraulicas.json';
+import Icon from './icons/Icon.astro';
 ---
 
 <footer class="site-footer">
@@ -33,13 +34,13 @@ import empresaData from '../data/aplicaciones-hidraulicas.json';
         <h4>Contacto</h4>
         <ul>
           <li>
-            📍 <span>{empresaData.contacto.direccion}</span>
+            <Icon name="mapPin" size={20} /> <span>{empresaData.contacto.direccion}</span>
           </li>
           <li>
-            📞 <a href={`tel:${empresaData.contacto.telefonoHref}`}>{empresaData.contacto.telefono}</a>
+            <Icon name="phone" size={20} /> <a href={`tel:${empresaData.contacto.telefonoHref}`}>{empresaData.contacto.telefono}</a>
           </li>
           <li>
-            ✉️ <a href={`mailto:${empresaData.contacto.email}`}>{empresaData.contacto.email}</a>
+            <Icon name="mail" size={20} /> <a href={`mailto:${empresaData.contacto.email}`}>{empresaData.contacto.email}</a>
           </li>
         </ul>
         <div class="footer-hours">
@@ -58,7 +59,7 @@ import empresaData from '../data/aplicaciones-hidraulicas.json';
       <div class="footer-image">
         <img src={empresaData.empresa.fachadaImagen} alt={`Fachada de la tienda ${empresaData.empresa.nombre}`} />
       </div>
-      <div class="footer-map">
+      <div id="mapa" class="footer-map">
         <LocationMap client:load empresaData={empresaData} />
         <a href={`https://www.openstreetmap.org/?#map=19/${empresaData.contacto.coordenadas.latitud}/${empresaData.contacto.coordenadas.longitud}&layers=N`} class="map-link" target="_blank" rel="noopener noreferrer">
           Ver el mapa más grande

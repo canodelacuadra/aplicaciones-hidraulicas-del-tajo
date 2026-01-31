@@ -1,5 +1,6 @@
 ---
 import empresaData from "../data/aplicaciones-hidraulicas.json";
+import Icon from "./icons/Icon.astro";
 
 interface Servicio {
   nombre: string;
@@ -12,6 +13,15 @@ interface Servicio {
 const empresaConServicios = empresaData as any & {
   servicios: Servicio[];
 };
+
+// Mapear emojis a nombres de iconos SVG
+const iconMap: Record<string, string> = {
+  '🔑': 'key',
+  '⚙️': 'gear',
+  '🔧': 'wrench',
+  '🛠️': 'hammer',
+  '📦': 'package'
+};
 ---
 
 <section class="services-grid-section">
@@ -22,13 +32,16 @@ const empresaConServicios = empresaData as any & {
     </div>
     
     <div class="services-grid">
-      {empresaConServicios.servicios.map((servicio: Servicio, index: number) => (
-        <div class="service-card" style={`animation-delay: ${index * 0.15}s`}>
-          <div class="service-icon-wrapper">
-            <div class="service-icon">{servicio.icono}</div>
-          </div>
-          
-          <h3 class="service-title">{servicio.nombre}</h3>
+      {empresaConServicios.servicios.map((servicio: Servicio, index: number) => {
+        const iconName = iconMap[servicio.icono] || 'gear';
+
+        return (
+          <div class="service-card" style={`animation-delay: ${index * 0.15}s`}>
+            <div class="service-icon-wrapper">
+              <div class="service-icon"><Icon name={iconName} size={28} /></div>
+            </div>
+
+            <h3 class="service-title">{servicio.nombre}</h3>
           
           <div class="service-description">
             <p>{servicio.descripcion}</p>
@@ -44,7 +57,8 @@ const empresaConServicios = empresaData as any & {
             Consultar {servicio.nombre}
           </a>
         </div>
-      ))}
+        );
+      })}
     </div>
     
   <!--   <div class="services-bottom-cta">
