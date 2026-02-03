@@ -1,18 +1,40 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
+import seoData from "../data/seo.json";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
 import Icon from "../components/icons/Icon.astro";
 
 // Get fotovoltaica aspect data
 const aspectoFotovoltaica = (empresaData as any).aspectos.find((a: any) => a.nombre === "Fotovoltaica");
+
+// SEO Configuration
+const seo = seoData.pages.fotovoltaica;
+const baseConfig = seoData.baseConfig;
+
+// Process template variables
+const processTemplate = (template: string) => {
+  return template
+    .replace(/{empresa}/g, baseConfig.empresa)
+    .replace(/{ubicacion}/g, baseConfig.ubicacion)
+    .replace(/{web}/g, baseConfig.web)
+    .replace(/{telefono}/g, baseConfig.telefono)
+    .replace(/{email}/g, baseConfig.email);
+};
+
+const metaTitle = processTemplate(seo.title);
+const metaDescription = processTemplate(seo.description);
+const metaKeywords = processTemplate(seo.keywords);
+const ogImage = seo.ogImage.startsWith('http') ? seo.ogImage : baseConfig.web + seo.ogImage;
+const ogImageAlt = processTemplate(seo.ogImageAlt);
 ---
 
 <BaseLayout 
-  title={`Soluciones Fotovoltaicas - ${empresaData.empresa.nombre}`} 
-  description={`Instalaciones fotovoltaicas residenciales e industriales. Bombeo solar y soluciones energéticas en Torrijos, Toledo.`}
-  ogImage="/images/tratamiento-aguas-hero.jpg"
-  ogImageAlt="Soluciones fotovoltaicas profesionales de Aplicaciones Hidráulicas del Tajo"
+  title={metaTitle}
+  description={metaDescription}
+  keywords={metaKeywords}
+  ogImage={ogImage}
+  ogImageAlt={ogImageAlt}
   pageTitle="Soluciones Fotovoltaicas"
   pageDescription="Instalaciones solares para autoconsumo, bombeo solar y soluciones energéticas residenciales e industriales."
 >

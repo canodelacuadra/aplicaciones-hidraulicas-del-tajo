@@ -1,0 +1,80 @@
+{
+  "baseConfig": {
+    "empresa": "Aplicaciones Hidráulicas del Tajo",
+    "ubicacion": "Torrijos, Toledo",
+    "web": "https://ahdtajo.com",
+    "telefono": "+34613396432",
+    "email": "ahdtajo@gmail.com"
+  },
+  "templates": {
+    "service": "Expertos en {servicio} en {ubicacion}. {beneficio} {cta}",
+    "product": "{producto} profesional en {ubicacion}. {caracteristicas} {cta}",
+    "location": "Soluciones de {categoria} en {ubicacion}. {especialidad} {cta}"
+  },
+  "pages": {
+    "index": {
+      "title": "Soluciones en Hidráulica, Fotovoltaica y Maquinaria | {empresa}",
+      "description": "Expertos en hidráulica, energía solar y maquinaria profesional en {ubicacion}. Instalaciones certificadas y servicio técnico especializado. Consulta nuestras soluciones.",
+      "keywords": "hidráulica, fotovoltaica, maquinaria, Torrijos, Toledo, instalaciones, reparación, alquiler",
+      "ogImage": "/images/tienda-fachada.jpg",
+      "ogImageAlt": "Tienda y taller de Aplicaciones Hidráulicas del Tajo en Torrijos, Toledo"
+    },
+    "maquinaria": {
+      "title": "Maquinaria Profesional | Alquiler, Venta y Reparación | {empresa}",
+      "description": "Alquiler, venta y reparación de maquinaria profesional en {ubicacion}. Construccion, agricultura, jardinería y forestal. Equipamiento certificado. Descubre más.",
+      "keywords": "maquinaria profesional, alquiler maquinaria, venta maquinaria, reparación, Torrijos, Toledo, construcción, agricultura",
+      "ogImage": "/images/maquinaria-profesional.jpg",
+      "ogImageAlt": "Maquinaria profesional disponible en Aplicaciones Hidráulicas del Tajo"
+    },
+    "hidraulica": {
+      "title": "Instalaciones Hidráulicas | Riego y Redes | {empresa}",
+      "description": "Instalaciones hidráulicas industriales y agrícolas en {ubicacion}. Riego eficiente, redes de agua y tratamiento de aguas. Técnicos certificados. Consulta nuestras soluciones.",
+      "keywords": "hidráulica, riego agrícola, redes agua, tratamiento aguas, instalaciones, Torrijos, Toledo",
+      "ogImage": "/images/tratamiento-aguas-hero.jpg",
+      "ogImageAlt": "Instalaciones hidráulicas profesionales de Aplicaciones Hidráulicas del Tajo"
+    },
+    "fotovoltaica": {
+      "title": "Instalaciones Solares | Autoconsumo Fotovoltaico | {empresa}",
+      "description": "Instalaciones solares para autoconsumo en {ubicacion}. Paneles fotovoltaicos residenciales e industriales con garantía. Ahorra en tu factura eléctrica. Descubre más.",
+      "keywords": "fotovoltaica, energía solar, autoconsumo, paneles solares, instalación solar, Torrijos, Toledo, ahorro energético",
+      "ogImage": "/images/tratamiento-aguas-hero.jpg",
+      "ogImageAlt": "Instalaciones fotovoltaicas profesionales de Aplicaciones Hidráulicas del Tajo"
+    }
+  },
+  "structuredData": {
+    "localBusiness": {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "{empresa}",
+      "url": "{web}",
+      "telephone": "{telefono}",
+      "email": "{email}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Dalí 1",
+        "addressLocality": "Torrijos",
+        "addressRegion": "Toledo",
+        "postalCode": "45500",
+        "addressCountry": "ES"
+      },
+      "openingHours": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "13:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "16:00",
+          "closes": "20:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Torrijos"
+      }
+    }
+  }
+}

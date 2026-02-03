@@ -6,9 +6,36 @@ import ServicesGrid from "../components/ServicesGrid.astro";
 import ContactCTA from "../components/ContactCTA.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
+import seoData from "../data/seo.json";
+
+// SEO Configuration
+const seo = seoData.pages.index;
+const baseConfig = seoData.baseConfig;
+
+// Process template variables
+const processTemplate = (template: string) => {
+  return template
+    .replace(/{empresa}/g, baseConfig.empresa)
+    .replace(/{ubicacion}/g, baseConfig.ubicacion)
+    .replace(/{web}/g, baseConfig.web)
+    .replace(/{telefono}/g, baseConfig.telefono)
+    .replace(/{email}/g, baseConfig.email);
+};
+
+const metaTitle = processTemplate(seo.title);
+const metaDescription = processTemplate(seo.description);
+const metaKeywords = processTemplate(seo.keywords);
+const ogImage = seo.ogImage.startsWith('http') ? seo.ogImage : baseConfig.web + seo.ogImage;
+const ogImageAlt = processTemplate(seo.ogImageAlt);
 ---
 
-<BaseLayout title={empresaData.empresa.nombre} description={empresaData.empresa.descripcionLarga}>
+<BaseLayout 
+  title={metaTitle} 
+  description={metaDescription}
+  keywords={metaKeywords}
+  ogImage={ogImage}
+  ogImageAlt={ogImageAlt}
+>
   <!-- Sección Sobre Nosotros (enfocada en tienda física) -->
   <AboutSection id="sobre-nosotros" />
   

@@ -1,18 +1,40 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
+import seoData from "../data/seo.json";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
 import Icon from "../components/icons/Icon.astro";
 
 // Get hidraulica aspect data
 const aspectoHidraulica = (empresaData as any).aspectos.find((a: any) => a.nombre === "Hidráulica");
+
+// SEO Configuration
+const seo = seoData.pages.hidraulica;
+const baseConfig = seoData.baseConfig;
+
+// Process template variables
+const processTemplate = (template: string) => {
+  return template
+    .replace(/{empresa}/g, baseConfig.empresa)
+    .replace(/{ubicacion}/g, baseConfig.ubicacion)
+    .replace(/{web}/g, baseConfig.web)
+    .replace(/{telefono}/g, baseConfig.telefono)
+    .replace(/{email}/g, baseConfig.email);
+};
+
+const metaTitle = processTemplate(seo.title);
+const metaDescription = processTemplate(seo.description);
+const metaKeywords = processTemplate(seo.keywords);
+const ogImage = seo.ogImage.startsWith('http') ? seo.ogImage : baseConfig.web + seo.ogImage;
+const ogImageAlt = processTemplate(seo.ogImageAlt);
 ---
 
 <BaseLayout 
-  title={`Soluciones Hidráulicas - ${empresaData.empresa.nombre}`} 
-  description={`Soluciones integrales en hidráulica: riego agrícola, redes industriales y municipales. Instalaciones profesionales en Torrijos, Toledo.`}
-  ogImage="/images/tratamiento-aguas-hero.jpg"
-  ogImageAlt="Soluciones hidráulicas profesionales de Aplicaciones Hidráulicas del Tajo"
+  title={metaTitle}
+  description={metaDescription}
+  keywords={metaKeywords}
+  ogImage={ogImage}
+  ogImageAlt={ogImageAlt}
   pageTitle="Soluciones Hidráulicas"
   pageDescription=`Diseñamos y mantenemos redes hidráulicas de riego,
 agua potable y tratamiento de aguas residuales,

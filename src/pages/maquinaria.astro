@@ -2,13 +2,34 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import maquinariaData from "../data/maquinaria.json";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
+import seoData from "../data/seo.json";
 import ConsultaModal from "../components/ConsultaModal.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
 import Icon from "../components/icons/Icon.astro";
 
+// SEO Configuration
+const seo = seoData.pages.maquinaria;
+const baseConfig = seoData.baseConfig;
+
+// Process template variables
+const processTemplate = (template: string) => {
+  return template
+    .replace(/{empresa}/g, baseConfig.empresa)
+    .replace(/{ubicacion}/g, baseConfig.ubicacion)
+    .replace(/{web}/g, baseConfig.web)
+    .replace(/{telefono}/g, baseConfig.telefono)
+    .replace(/{email}/g, baseConfig.email);
+};
+
 // Preparar datos para los componentes
 const todasLasMaquinas = maquinariaData.maquinas || [];
 const todasLasCategorias = maquinariaData.categorias || [];
+
+const metaTitle = processTemplate(seo.title);
+const metaDescription = processTemplate(seo.description);
+const metaKeywords = processTemplate(seo.keywords);
+const ogImage = seo.ogImage.startsWith('http') ? seo.ogImage : baseConfig.web + seo.ogImage;
+const ogImageAlt = processTemplate(seo.ogImageAlt);
 
 // Función para obtener imágenes de categoría
 const getCategoriaImagen = (categoriaId: string) => {
@@ -41,10 +62,11 @@ const getServiciosPorCategoria = (categoriaId: string) => {
 ---
 
 <BaseLayout 
-  title={`Maquinaria Profesional - ${empresaData.empresa.nombre}`} 
-  description="Maquinaria profesional para construcción, agricultura, riego, jardinería y forestal. Alquiler, venta y reparación especializada."
-  ogImage="/images/maquinaria-profesional.jpg"
-  ogImageAlt="Maquinaria profesional para alquiler, venta y reparación de Aplicaciones Hidráulicas del Tajo"
+  title={metaTitle}
+  description={metaDescription}
+  keywords={metaKeywords}
+  ogImage={ogImage}
+  ogImageAlt={ogImageAlt}
   pageTitle="Maquinaria Profesional"
   pageDescription="Maquinaria profesional para construcción, agricultura, riego, jardinería y forestal. Alquiler, venta y reparación especializada."
 >
