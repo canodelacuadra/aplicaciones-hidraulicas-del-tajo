@@ -74,31 +74,65 @@ const getOGImageAlt = () => {
       rel="stylesheet"
     />
     
-    <!-- Schema.org JSON-LD for Local Business -->
+    <!-- Meta keywords para SEO -->
+    <meta name="keywords" content="hidráulica, fotovoltaica, maquinaria, Torrijos, Toledo, riego agrícola, instalación solar, alquiler maquinaria, reparación, aplicaciones hidráulicas, tratamiento aguas" />
+    
+    <!-- Schema.org JSON-LD para Local Business y Organization -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": empresaData.empresa.nombre,
-      "image": `${empresaData.empresa.web}${empresaData.empresa.fachadaImagen}`,
-      "telephone": empresaData.contacto.telefono,
-      "email": empresaData.contacto.email,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Calle Dalí 1",
-        "addressLocality": "Torrijos",
-        "addressRegion": "Toledo",
-        "postalCode": "45500",
-        "addressCountry": "ES"
-      },
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "13:00"
+          "@type": "LocalBusiness",
+          "name": empresaData.empresa.nombre,
+          "image": `${empresaData.empresa.web}${empresaData.empresa.fachadaImagen}`,
+          "telephone": empresaData.contacto.telefono,
+          "email": empresaData.contacto.email,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Dalí 1",
+            "addressLocality": "Torrijos",
+            "addressRegion": "Toledo",
+            "postalCode": "45500",
+            "addressCountry": "ES"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "13:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "16:00",
+              "closes": "20:00"
+            }
+          ],
+          "url": empresaData.empresa.web
+        },
+        {
+          "@type": "Organization",
+          "name": empresaData.empresa.nombre,
+          "url": empresaData.empresa.web,
+          "logo": `${empresaData.empresa.web}${empresaData.empresa.logotipo}`,
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": empresaData.contacto.telefono,
+            "contactType": "customer service",
+            "availableLanguage": ["Spanish"]
+          },
+          "sameAs": [],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Dalí 1",
+            "addressLocality": "Torrijos",
+            "addressRegion": "Toledo",
+            "postalCode": "45500",
+            "addressCountry": "ES"
+          }
         }
-      ],
-      "url": empresaData.empresa.web
+      ]
     })} />
   </head>
   <body>

@@ -7,7 +7,7 @@ function getCurrentDate() {
 
 // Función para generar URLs del sitemap
 function generateSitemapUrls() {
-  const baseUrl = "https://www.ahdtajo.com";
+  const baseUrl = "https://ahdtajo.com";
   const currentDate = getCurrentDate();
   const urls = [];
 

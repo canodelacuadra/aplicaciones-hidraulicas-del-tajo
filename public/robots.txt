@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Block system files
+Disallow: /_astro/
+Disallow: /*.json$
+Disallow: /admin/
+
+# Allow specific file types
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.webp$
+
+# Sitemap location
+Sitemap: https://ahdtajo.com/sitemap.xml
+
+# Special bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
