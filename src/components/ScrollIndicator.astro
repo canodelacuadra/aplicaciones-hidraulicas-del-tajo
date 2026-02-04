@@ -7,16 +7,10 @@ const {
   variant = "default" // default, minimal, prominent
 } = Astro.props;
 
-// Determinar el selector de scroll
-const getScrollTarget = () => {
-  if (scrollTo) return scrollTo;
-  return 'next-section';
-};
-
 // Clases CSS según variant
 const getVariantClasses = () => {
   const baseClasses = 'scroll-indicator';
-  const variantClasses = {
+  const variantClasses: Record<string, string> = {
     default: 'scroll-indicator--default',
     minimal: 'scroll-indicator--minimal', 
     prominent: 'scroll-indicator--prominent'
@@ -45,14 +39,14 @@ const getVariantClasses = () => {
   </div>
 </div>
 
-<script>
+<script define:vars={{ scrollTo }}>
   // Manejar clic en el scroll indicator
   document.addEventListener('astro:page-load', () => {
     const scrollIndicator = document.querySelector('[data-astro-cid-scroll]');
     
     if (scrollIndicator) {
       scrollIndicator.addEventListener('click', () => {
-        const targetSelector = getScrollTarget();
+        const targetSelector = scrollTo || 'next-section';
         const targetElement = targetSelector === 'next-section'
           ? scrollIndicator.closest('section')?.nextElementSibling
           : document.querySelector(targetSelector);
@@ -111,7 +105,7 @@ const getVariantClasses = () => {
 
   /* Text styles */
   .scroll-indicator__text {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--primary, #1568a7);
     font-size: 0.875rem;
     font-weight: 500;
     letter-spacing: 0.05em;
@@ -134,7 +128,7 @@ const getVariantClasses = () => {
   .scroll-indicator__arrow-icon {
     width: 24px;
     height: 24px;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--primary, #1568a7);
     animation: scrollBounce 2s ease-in-out infinite;
   }
 
@@ -144,7 +138,7 @@ const getVariantClasses = () => {
     bottom: 8px;
     width: 6px;
     height: 6px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: var(--primary, #1568a7);
     border-radius: 50%;
     animation: scrollPulse 2s ease-in-out infinite;
   }
@@ -215,11 +209,15 @@ const getVariantClasses = () => {
   /* Dark mode support (if needed) */
   @media (prefers-color-scheme: dark) {
     .scroll-indicator__text {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .scroll-indicator__arrow-icon {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .scroll-indicator__arrow-dot {
+      background-color: rgba(255, 255, 255, 0.7);
     }
   }
 </style>
