@@ -1,146 +1,147 @@
 ---
-// Props del componente
+// Props simplificadas del componente
 const { 
-  text = "Explora más abajo", 
-  showText = true,
   scrollTo = null,
-  variant = "default" // default, minimal, prominent
+  showText = true,
+  text = "Explora más abajo"
 } = Astro.props;
-
-// Clases CSS según variant
-const getVariantClasses = () => {
-  const baseClasses = 'scroll-indicator';
-  const variantClasses: Record<string, string> = {
-    default: 'scroll-indicator--default',
-    minimal: 'scroll-indicator--minimal', 
-    prominent: 'scroll-indicator--prominent'
-  };
-  return `${baseClasses} ${variantClasses[variant] || variantClasses.default}`;
-};
 ---
 
-<!-- Scroll Indicator Component -->
-<div class={getVariantClasses()} data-astro-cid-scroll>
+<!-- Scroll Indicator Component - CSS-first approach -->
+<div class="scroll-indicator" data-scroll-to={scrollTo}>
   {showText && (
-    <div class="scroll-indicator__text" data-astro-cid-scroll>
-      {text}
-    </div>
+    <div class="scroll-indicator__text">{text}</div>
   )}
   
-  <div class="scroll-indicator__arrow" data-astro-cid-scroll>
-    <div class="scroll-indicator__arrow-icon" data-astro-cid-scroll>
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-      </svg>
+  <div class="scroll-indicator__arrow">
+    <div class="scroll-indicator__arrow-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+</svg>
     </div>
-    {variant !== 'minimal' && (
-      <div class="scroll-indicator__arrow-dot" data-astro-cid-scroll></div>
-    )}
   </div>
 </div>
 
-<script define:vars={{ scrollTo }}>
-  // Manejar clic en el scroll indicator
-  document.addEventListener('astro:page-load', () => {
-    const scrollIndicator = document.querySelector('[data-astro-cid-scroll]');
+<script>
+  // Simple click handler - minimal JavaScript
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollIndicators = document.querySelectorAll('.scroll-indicator');
     
-    if (scrollIndicator) {
-      scrollIndicator.addEventListener('click', () => {
-        const targetSelector = scrollTo || 'next-section';
-        const targetElement = targetSelector === 'next-section'
-          ? scrollIndicator.closest('section')?.nextElementSibling
-          : document.querySelector(targetSelector);
+    scrollIndicators.forEach(indicator => {
+      indicator.addEventListener('click', () => {
+        const scrollTo = indicator.getAttribute('data-scroll-to');
+        
+        if (scrollTo) {
+          const selector = scrollTo.startsWith('#') ? scrollTo : `#${scrollTo}`;
+          const target = document.querySelector(selector);
           
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
       });
-    }
+    });
   });
 </script>
 
 <style>
-  :root {
-    --scroll-indicator-color: #1568a7;
-    --scroll-indicator-size: 48px;
-    --scroll-indicator-gap: 1rem;
-  }
-
+  /* CSS-First ScrollIndicator - Minimal JavaScript, Maximum CSS */
+  
   .scroll-indicator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--scroll-indicator-gap);
+    position: fixed;
     cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Desktop positioning: right side */
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* Default sizing and styling */
+    width: 56px;
+    height: 56px;
+    background: rgba(21, 104, 167, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    opacity: 0.9;
   }
 
   .scroll-indicator:hover {
     opacity: 1;
-    transform: translateY(-2px);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
   }
 
-  /* Variants */
-  .scroll-indicator--default {
-    padding: 1.5rem 0;
+  /* Mobile positioning: bottom-center */
+  @media (max-width: 768px) {
+    .scroll-indicator {
+      right: auto;
+      top: auto;
+      bottom: calc(3rem + env(safe-area-inset-bottom, 0));
+      left: 10%;
+      transform: translateX(-50%);
+      width: 64px;
+      height: 64px;
+      background: rgba(21, 104, 167, 0.95);
+      backdrop-filter: blur(12px);
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .scroll-indicator:hover {
+      transform: translateX(-50%) scale(1.08);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Small mobile adjustments */
+    @media (max-width: 480px) {
+      .scroll-indicator {
+        width: 56px;
+        height: 56px;
+        bottom: calc(2rem + env(safe-area-inset-bottom, 0));
+      }
+    }
   }
 
-  .scroll-indicator--minimal {
-    padding: 1rem 0;
-    opacity: 0.6;
-  }
-
-  .scroll-indicator--minimal:hover {
-    opacity: 0.9;
-  }
-
-  .scroll-indicator--prominent {
-    padding: 2rem 0;
-    opacity: 1;
-  }
-
-  /* Text styles */
+  /* Hide text completely */
   .scroll-indicator__text {
-    color: var(--primary, #1568a7);
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    text-align: center;
+    display: none;
   }
 
-  /* Arrow container */
+  /* Arrow styling */
   .scroll-indicator__arrow {
-    position: relative;
-    width: var(--scroll-indicator-size);
-    height: var(--scroll-indicator-size);
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  /* Arrow icon */
   .scroll-indicator__arrow-icon {
-    width: 24px;
-    height: 24px;
-    color: var(--primary, #1568a7);
+    width: 28px;
+    height: 28px;
+    color: white;
     animation: scrollBounce 2s ease-in-out infinite;
   }
 
-  /* Arrow dot (for non-minimal variants) */
-  .scroll-indicator__arrow-dot {
-    position: absolute;
-    bottom: 8px;
-    width: 6px;
-    height: 6px;
-    background-color: var(--primary, #1568a7);
-    border-radius: 50%;
-    animation: scrollPulse 2s ease-in-out infinite;
+  /* Mobile icon sizing */
+  @media (max-width: 768px) {
+    .scroll-indicator__arrow-icon {
+      width: 28px;
+      height: 28px;
+      animation: scrollBounceMobile 2.5s ease-in-out infinite;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .scroll-indicator__arrow-icon {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   /* Animations */
@@ -156,68 +157,32 @@ const getVariantClasses = () => {
     }
   }
 
-  @keyframes scrollPulse {
-    0%, 100% {
-      opacity: 0.6;
-      transform: scale(1);
+  @keyframes scrollBounceMobile {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
     }
-    50% {
-      opacity: 0.3;
-      transform: scale(0.8);
+    40% {
+      transform: translateY(-8px);
     }
-  }
-
-  /* Responsive design */
-  @media (max-width: 768px) {
-    :root {
-      --scroll-indicator-size: 40px;
-      --scroll-indicator-gap: 0.75rem;
-    }
-
-    .scroll-indicator__text {
-      font-size: 0.75rem;
-    }
-
-    .scroll-indicator--minimal {
-      padding: 0.75rem 0;
-    }
-
-    .scroll-indicator--default {
-      padding: 1rem 0;
-    }
-
-    .scroll-indicator--prominent {
-      padding: 1.5rem 0;
+    60% {
+      transform: translateY(-4px);
     }
   }
 
-  /* Accessibility - Respect user preferences */
+  /* Accessibility and performance */
   @media (prefers-reduced-motion: reduce) {
     .scroll-indicator__arrow-icon {
       animation: none;
     }
-
-    .scroll-indicator__arrow-dot {
-      animation: none;
-    }
-
+    
     .scroll-indicator:hover {
-      transform: none;
+      transform: translateY(-50%);
     }
   }
 
-  /* Dark mode support (if needed) */
-  @media (prefers-color-scheme: dark) {
-    .scroll-indicator__text {
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .scroll-indicator__arrow-icon {
-      color: rgba(255, 255, 255, 0.9);
-    }
-    
-    .scroll-indicator__arrow-dot {
-      background-color: rgba(255, 255, 255, 0.7);
+  @media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+    .scroll-indicator:hover {
+      transform: translateX(-50%);
     }
   }
 </style>

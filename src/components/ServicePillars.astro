@@ -21,7 +21,7 @@ const iconMap: Record<string, string> = {
 };
 ---
 
-<section class="service-pillars">
+<section class="service-pillars" id={Astro.props.id}>
   <div class="container">
 <div class="pillars-header">
       <div class="pillars-logo">
@@ -72,20 +72,6 @@ const iconMap: Record<string, string> = {
       })}
     </div>
     
-   <!--  <div class="pillars-bottom-info">
-      <div class="info-item">
-        <span class="info-number">3</span>
-        <span class="info-label">Áreas especializadas</span>
-      </div>
-      <div class="info-item">
-        <span class="info-number">{empresaConAspectos.servicios.length}</span>
-        <span class="info-label">Servicios integrales</span>
-      </div>
-      <div class="info-item">
-        <span class="info-number">15+</span>
-        <span class="info-label">Años de experiencia</span>
-      </div>
-    </div> -->
   </div>
 </section>
 
