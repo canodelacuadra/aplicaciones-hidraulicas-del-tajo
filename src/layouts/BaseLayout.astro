@@ -1,38 +1,49 @@
 ---
 import Header from "../components/header.astro";
 import Footer from "../components/Footer.astro";
+import seoData from "../data/seo.json";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 
 const { title, description, keywords, pageTitle, pageDescription: pageDesc, ogImage, ogImageAlt } = Astro.props;
 
-const metaTitle = title || empresaData.seo.tituloBase;
-const metaDescription = description || empresaData.seo.descripcionBase;
+const metaTitle = title || seoData.pages.index.title;
+const metaDescription = description || seoData.pages.index.description;
 
-// Sistema de fallback inteligente para imágenes OG
+// Sistema de fallback inteligente para imágenes OG usando seo.json
 const getOGImage = () => {
-  if (ogImage) return `${empresaData.empresa.web}${ogImage}`;
+  if (ogImage) return `${seoData.baseConfig.web}${ogImage}`;
   
-  // Lógica por tipo de página basada en URL
+  // Lógica por tipo de página basada en URL usando seo.json
   const path = Astro.url.pathname;
-  if (path === '/') return `${empresaData.empresa.web}${empresaData.empresa.fachadaImagen}`;
-  if (path.includes('/hidraulica')) return `${empresaData.empresa.web}${empresaData.empresa.logotipo}`;
-  if (path.includes('/maquinaria')) return `${empresaData.empresa.web}/images/maquinaria-profesional.jpg`;
-  if (path.includes('/fotovoltaica')) return `${empresaData.empresa.web}/images/tratamiento-aguas-hero.jpg`;
+  if (path === '/') return `${seoData.baseConfig.web}${seoData.pages.index.ogImage}`;
+  if (path.includes('/hidraulica')) return `${seoData.baseConfig.web}${seoData.pages.hidraulica.ogImage}`;
+  if (path.includes('/maquinaria')) return `${seoData.baseConfig.web}${seoData.pages.maquinaria.ogImage}`;
+  if (path.includes('/fotovoltaica')) return `${seoData.baseConfig.web}${seoData.pages.fotovoltaica.ogImage}`;
   
   // Fallback general - logo corporativo
-  return `${empresaData.empresa.web}${empresaData.empresa.logotipo}`;
+  return `${seoData.baseConfig.web}${empresaData.empresa.logotipo}`;
 };
 
 const getOGImageAlt = () => {
   if (ogImageAlt) return ogImageAlt;
   
   const path = Astro.url.pathname;
-  if (path === '/') return `Tienda de ${empresaData.empresa.nombre} en Torrijos, Toledo`;
-  if (path.includes('/hidraulica')) return `Soluciones hidráulicas profesionales de ${empresaData.empresa.nombre}`;
-  if (path.includes('/maquinaria')) return `Maquinaria profesional para alquiler, venta y reparación de ${empresaData.empresa.nombre}`;
-  if (path.includes('/fotovoltaica')) return `Soluciones fotovoltaicas profesionales de ${empresaData.empresa.nombre}`;
+  if (path === '/') return seoData.pages.index.ogImageAlt;
+  if (path.includes('/hidraulica')) return seoData.pages.hidraulica.ogImageAlt;
+  if (path.includes('/maquinaria')) return seoData.pages.maquinaria.ogImageAlt;
+  if (path.includes('/fotovoltaica')) return seoData.pages.fotovoltaica.ogImageAlt;
   
-  return `Logotipo de ${empresaData.empresa.nombre} - Soluciones profesionales en Torrijos, Toledo`;
+  return `Logotipo de ${seoData.baseConfig.empresa} - Soluciones profesionales en ${seoData.baseConfig.ubicacion}`;
+};
+
+// Determinar og:type dinámicamente
+const getOGType = () => {
+  const path = Astro.url.pathname;
+  // Para páginas de máquinas individuales (URL con 4+ segmentos)
+  if (path.includes('/maquinaria/') && path.split('/').length >= 5) {
+    return (seoData as any).maquinaria.individual.ogType;
+  }
+  return "website";
 };
 ---
 
@@ -47,9 +58,9 @@ const getOGImageAlt = () => {
 <!-- Meta tags para SEO -->
     <meta property="og:title" content={metaTitle} />
     <meta property="og:description" content={metaDescription} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={empresaData.empresa.web} />
-    <meta property="og:site_name" content={empresaData.empresa.nombre} />
+    <meta property="og:type" content={getOGType()} />
+    <meta property="og:url" content={seoData.baseConfig.web + Astro.url.pathname} />
+    <meta property="og:site_name" content={seoData.baseConfig.empresa} />
     <meta property="og:image" content={ogImage || getOGImage()} />
     <meta property="og:image:alt" content={ogImageAlt || getOGImageAlt()} />
     <meta property="og:image:width" content="1200" />
@@ -65,7 +76,7 @@ const getOGImageAlt = () => {
     
     <!-- Additional meta tags for social sharing -->
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={empresaData.empresa.web + Astro.url.pathname} />
+    <link rel="canonical" href={seoData.baseConfig.web + Astro.url.pathname} />
     <link rel="shortcut icon" href="ahdt-logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
