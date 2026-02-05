@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import maquinariaData from "../../../../data/maquinaria.json";
+import seoData from "../../../../data/seo.json";
 import empresaData from "../../../../data/aplicaciones-hidraulicas.json";
 import ConsultaModal from "../../../../components/ConsultaModal.astro";
 import Icon from "../../../../components/icons/Icon.astro";
@@ -79,6 +80,40 @@ const getMaquinaImagen = (maquina: any, fallbackPath: string | null = null) => {
   return '/images/maquina-default.svg';
 };
 
+// Función para procesar templates de seo.json
+const processTemplate = (template: string, variables: Record<string, string>) => {
+  let result = template;
+  Object.entries(variables).forEach(([key, value]) => {
+    result = result.replace(new RegExp(`{${key}}`, 'g'), value);
+  });
+  return result;
+};
+
+// Obtener servicios disponibles para template
+const getServiciosString = () => {
+  const servicios = [];
+  if (maquinaData.servicios?.alquiler) servicios.push("alquiler");
+  if (maquinaData.servicios?.venta) servicios.push("venta");
+  if (maquinaData.servicios?.reparacion) servicios.push("reparación");
+  return servicios.length > 0 ? servicios.join(", ") : "servicios disponibles";
+};
+
+// Variables para templates
+const templateVariables = {
+  nombre: maquinaData.nombre,
+  subcategoria: subcategoriaData.nombre,
+  categoria: categoriaData.nombre,
+  empresa: seoData.baseConfig.empresa,
+  ubicacion: seoData.baseConfig.ubicacion,
+  descripcion: maquinaData.descripcion,
+  servicios: getServiciosString()
+};
+
+// Generar metadatos usando templates de seo.json
+const machineTitle = processTemplate((seoData as any).maquinaria.individual.templates.title, templateVariables);
+const machineDescription = processTemplate((seoData as any).maquinaria.individual.templates.description, templateVariables);
+const machineKeywords = processTemplate((seoData as any).maquinaria.individual.templates.keywords, templateVariables);
+
 // Construir ruta de imagen (versión síncrona para compatibilidad)
 const getImagePath = (imagen: string) => {
   return `/images/${imagen}`;
@@ -94,10 +129,11 @@ const formatEspecificaciones = (especificaciones: Record<string, any>) => {
 ---
 
 <BaseLayout 
-  title={`${maquinaData.nombre} - ${subcategoriaData.nombre} - ${categoriaData.nombre}`} 
-  description={maquinaData.meta?.description || `${maquinaData.nombre} en ${subcategoriaData.nombre}. Especialistas en ${maquinaData.nombre.toLowerCase()} en Torrijos, Toledo. Alquiler, venta y reparación.`}
+  title={machineTitle}
+  description={machineDescription}
+  keywords={machineKeywords}
   ogImage={getMaquinaImagen(maquinaData)}
-  ogImageAlt={maquinaData.alt || `${maquinaData.nombre} - ${empresaData.empresa.nombre}`}
+  ogImageAlt={maquinaData.alt || `${maquinaData.nombre} - ${seoData.baseConfig.empresa}`}
 >
 
   <!-- Breadcrumb -->
