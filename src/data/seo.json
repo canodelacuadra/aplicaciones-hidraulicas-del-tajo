@@ -41,6 +41,23 @@
       "ogImageAlt": "Instalaciones fotovoltaicas profesionales de Aplicaciones Hidráulicas del Tajo"
     }
   },
+  "maquinaria": {
+    "individual": {
+      "ogType": "product",
+      "templates": {
+        "title": "{nombre} - {subcategoria} - {categoria} | {empresa}",
+        "description": "{descripcion} Especialistas en {nombre} en {ubicacion}. {servicios}.",
+        "keywords": "{nombre}, {subcategoria}, {categoria}, alquiler, venta, reparación, {ubicacion}"
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "brand": "{empresa}",
+        "category": "{categoria} > {subcategoria}",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
   "structuredData": {
     "localBusiness": {
       "@context": "https://schema.org",
