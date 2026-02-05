@@ -59,7 +59,7 @@ const getOGType = () => {
     <meta property="og:title" content={metaTitle} />
     <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content={getOGType()} />
-    <meta property="og:url" content={seoData.baseConfig.web + Astro.url.pathname} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, seoData.baseConfig.web).toString()} />
     <meta property="og:site_name" content={seoData.baseConfig.empresa} />
     <meta property="og:image" content={ogImage || getOGImage()} />
     <meta property="og:image:alt" content={ogImageAlt || getOGImageAlt()} />
@@ -75,9 +75,19 @@ const getOGType = () => {
     <meta name="twitter:image" content={ogImage || getOGImage()} />
     <meta name="twitter:image:alt" content={ogImageAlt || getOGImageAlt()} />
     
+    <!-- Meta tags específicas para WhatsApp -->
+    <meta property="fb:app_id" content="361873729182501" />
+    <meta property="og:restrictions:country:allowed" content="ES" />
+    <meta name="whatsapp:button" content="share" />
+    
+    <!-- Cache control para redes sociales -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
     <!-- Additional meta tags for social sharing -->
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={seoData.baseConfig.web + Astro.url.pathname} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, seoData.baseConfig.web).toString()} />
     <link rel="shortcut icon" href="ahdt-logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
