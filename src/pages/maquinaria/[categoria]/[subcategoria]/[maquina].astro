@@ -355,8 +355,36 @@ const formatEspecificaciones = (especificaciones: Record<string, any>) => {
         <span>←</span> Volver a {subcategoriaData.nombre}
       </a>
     </div>
-  </section>
+</section>
 </BaseLayout>
+
+<!-- Product Schema for Machine Pages -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": maquinaData.nombre,
+  "description": machineDescription,
+  "image": `${seoData.baseConfig.web}/images/${maquinaData.imagen}`,
+  "brand": {
+    "@type": "Brand",
+    "name": seoData.baseConfig.empresa
+  },
+  "category": `${categoriaData.nombre} > ${subcategoriaData.nombre}`,
+  "offers": {
+    "@type": "AggregateOffer",
+    "availability": "https://schema.org/InStock",
+    "itemOffered": {
+      "@type": "Product",
+      "name": maquinaData.nombre,
+      "category": `${categoriaData.nombre} > ${subcategoriaData.nombre}`
+    }
+  },
+  "additionalProperty": maquinaData.especificaciones ? Object.entries(maquinaData.especificaciones).map(([key, value]) => ({
+    "@type": "PropertyValue",
+    "name": key.charAt(0).toUpperCase() + key.slice(1),
+    "value": value
+  })) : []
+})} />
 
 <ConsultaModal />
 
