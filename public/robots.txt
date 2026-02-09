@@ -3,7 +3,7 @@ Allow: /
 
 # Block system files
 Disallow: /_astro/
-Disallow: /*.json$
+# Allow JSON files for structured data
 Disallow: /admin/
 
 # Allow specific file types
@@ -22,3 +22,14 @@ Allow: /
 
 User-agent: Bingbot
 Allow: /
+
+# Crawl optimization
+Crawl-delay: 1
+
+# Language targeting
+# Spanish content primarily targeting ES
+
+# Additional rules for better crawling
+User-agent: *
+Allow: /images/
+Allow: /public/

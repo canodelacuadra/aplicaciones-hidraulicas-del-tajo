@@ -6,25 +6,25 @@
 [[redirects]]
   from = "/hidraulica"
   to = "/hidraulica/index.html"
-  status = 200
-  force = true
+  status = 301
+  force = false
 
 [[redirects]]
   from = "/fotovoltaica"
   to = "/fotovoltaica/index.html"
-  status = 200
-  force = true
+  status = 301
+  force = false
 
 [[redirects]]
   from = "/maquinaria"
   to = "/maquinaria/index.html"
-  status = 200
-  force = true
+  status = 301
+  force = false
 
 [[redirects]]
   from = "/maquinaria/*"
   to = "/maquinaria/:splat/index.html"
-  status = 200
+  status = 301
 
 [[headers]]
   for = "/*"

@@ -55,6 +55,11 @@ const getOGType = () => {
     <meta name="description" content={metaDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Language targeting for SEO -->
+    <link rel="alternate" hreflang="es" content={new URL(Astro.url.pathname, seoData.baseConfig.web).toString()} />
+    <link rel="alternate" hreflang="es-ES" content={new URL(Astro.url.pathname, seoData.baseConfig.web).toString()} />
+    <link rel="alternate" hreflang="x-default" content={new URL(Astro.url.pathname, seoData.baseConfig.web).toString()} />
+    
 <!-- Meta tags para SEO -->
     <meta property="og:title" content={metaTitle} />
     <meta property="og:description" content={metaDescription} />
