@@ -9,5 +9,24 @@ export default defineConfig({
   trailingSlash: 'never',
   build: {
     format: 'directory'
+  },
+  image: {
+    // Image optimization settings
+    domains: ['localhost'],
+    remotePatterns: [],
+  },
+  vite: {
+    build: {
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
+    },
+    optimizeDeps: {
+      exclude: ['@astrojs/react/client.js'],
+    },
   }
 });

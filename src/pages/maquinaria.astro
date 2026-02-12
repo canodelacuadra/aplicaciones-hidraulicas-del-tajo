@@ -6,6 +6,7 @@ import seoData from "../data/seo.json";
 import ConsultaModal from "../components/ConsultaModal.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
 import Icon from "../components/icons/Icon.astro";
+import { Image } from "astro:assets";
 
 // SEO Configuration
 const seo = seoData.pages.maquinaria;
@@ -38,7 +39,7 @@ const getCategoriaImagen = (categoriaId: string) => {
   if (primeraMaquina?.imagen) {
     return `/images/${primeraMaquina.imagen}`;
   }
-  return `/images/categorias/${categoriaId}.jpg`;
+  return `/images/maquinaria-${categoriaId}.jpg`;
 };
 
 // Función para contar máquinas por categoría
@@ -81,10 +82,19 @@ const getServiciosPorCategoria = (categoriaId: string) => {
           const imagenSrc = getCategoriaImagen(categoria.id);
           const serviciosCategoria = getServiciosPorCategoria(categoria.id);
           
+          // Usar imágenes regulares con optimización básica
+          
           return (
             <div class="categoria-card">
               <div class="categoria-imagen">
-                <img src={imagenSrc} alt={categoria.nombre} loading="lazy" />
+                <img 
+                  src={imagenSrc} 
+                  alt={categoria.nombre} 
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                  style="object-fit: cover;"
+                />
                 <div class="categoria-overlay">
                   <span class="maquinas-count">{maquinasCount} máquinas</span>
                 </div>

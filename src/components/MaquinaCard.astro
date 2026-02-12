@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 export interface Props {
   maquina: {
     id: string;
@@ -36,6 +37,25 @@ const getImagePath = () => {
   return null;
 };
 
+// Importar imagen dinámicamente para optimización
+const getOptimizedImage = () => {
+  if (maquina.imagen) {
+    try {
+      const imagePath = maquina.imagen.startsWith('/') ? maquina.imagen.substring(1) : maquina.imagen;
+      // Intentar importar la imagen si existe
+      const modules = import.meta.glob('../../public/images/**/*.{jpg,jpeg,png,webp}');
+      for (const [path, module] of Object.entries(modules)) {
+        if (path.endsWith(imagePath)) {
+          return module as any;
+        }
+      }
+    } catch (error) {
+      console.log('No se pudo importar imagen optimizada:', maquina.imagen);
+    }
+  }
+  return null;
+};
+
 // Construir URL de la ficha individual
 const getMaquinaUrl = () => {
   const catSlug = categoria?.slug || maquina.categoriaId;
@@ -55,14 +75,25 @@ const getServiciosTags = () => {
 ---
 
 <div class={`maquina-card ${viewMode} ${!maquina.imagen ? 'no-image' : ''}`}>
-  {maquina.imagen && (
-    <div class="maquina-imagen">
-      <a href={getMaquinaUrl()}>
-        <img 
-          src={getImagePath()} 
-          alt={maquina.nombre}
-          loading="lazy"
-        />
+      {maquina.imagen && (
+        <div class="maquina-imagen">
+          <a href={getMaquinaUrl()}>
+            <img 
+              src={getImagePath()} 
+              alt={maquina.nombre}
+              loading="lazy"
+              width="300"
+              height="200"
+              style="object-fit: cover;"
+            />
+          </a>
+          <div class="servicios-badges">
+            {getServiciosTags().map(servicio => (
+              <span class={`servicio-badge ${servicio.type}`}>{servicio.tag}</span>
+            ))}
+          </div>
+        </div>
+      )}
       </a>
       <div class="servicios-badges">
         {getServiciosTags().map(servicio => (

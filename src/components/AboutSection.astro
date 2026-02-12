@@ -1,6 +1,8 @@
 ---
 import empresaData from "../data/aplicaciones-hidraulicas.json";
 import Icon from "./icons/Icon.astro";
+import { Image } from "astro:assets";
+import fachadaImagen from "../../public/images/tienda-fachada.jpg";
 ---
 
 <section class="about-section">
@@ -53,10 +55,15 @@ import Icon from "./icons/Icon.astro";
       </div>
       
       <div class="about-image">
-        <img 
-          src={empresaData.empresa.fachadaImagen} 
+        <Image
+          src={fachadaImagen}
           alt="Fachada de Aplicaciones Hidráulicas del Tajo"
-          loading="lazy"
+          width={600}
+          height={300}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          loading="eager"
+          format="webp"
+          densities={[1, 1.5, 2]}
         />
 <div class="image-overlay">
          <!--  <div class="overlay-logo">

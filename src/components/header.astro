@@ -2,6 +2,8 @@
 // Logo se carga directamente desde /images/
 import Nav from "./Nav.astro";
 import empresaData from "../data/aplicaciones-hidraulicas.json";
+import { Image } from "astro:assets";
+import logoSrc from "../../public/images/ahdt-logo.png";
 
 const { pageTitle, pageDescription } = Astro.props;
 ---
@@ -9,11 +11,16 @@ const { pageTitle, pageDescription } = Astro.props;
 <header class="hero sticky-header">
   <div class="hero-content animate-container">
     <a href="/" class="logo animate-logo">
-      <img
-        id="logo"
-        src="/images/ahdt-logo.png"
+      <Image
+        src={logoSrc}
         alt={empresaData.empresa.nombre}
+        width={140}
+        height={50}
+        sizes="(max-width: 768px) 80px, 140px"
+        loading="eager"
         fetchpriority="high"
+        format="webp"
+        densities={[1, 1.5, 2]}
       />
     </a>
 
