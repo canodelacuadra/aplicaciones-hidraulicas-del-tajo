@@ -48,14 +48,17 @@ const getMaquinasCountPorSubcategoria = (subcategoriaId: string) => {
 };
 
 // Función para obtener imagen de subcategoría
-const getSubcategoriaImagen = (subcategoriaId: string) => {
+const getSubcategoriaImagen = (subcategoriaId: string, tieneMaquinas: boolean) => {
+  if (!tieneMaquinas) {
+    return '/images/maquina-default.svg';
+  }
   const primeraMaquina = todasLasMaquinas.find(m =>
     m.subcategoriaId === subcategoriaId
   );
   if (primeraMaquina?.imagen) {
     return `/images/${primeraMaquina.imagen}`;
   }
-  return `/images/subcategorias/${subcategoriaId}.jpg`;
+  return '/images/maquina-default.svg';
 };
 
 // Función para obtener imagen de subcategoría
@@ -102,7 +105,7 @@ const formatEspecificaciones = (especificaciones: Record<string, any>) => {
       <div class="categorias-grid">
         {subcategorias.map((subcategoria) => {
           const maquinasCount = getMaquinasCountPorSubcategoria(subcategoria.id);
-          const imagenSrc = getSubcategoriaImagen(subcategoria.id);
+          const imagenSrc = getSubcategoriaImagen(subcategoria.id, subcategoria.tieneMaquinas);
           
           return (
             <div class="categoria-card">

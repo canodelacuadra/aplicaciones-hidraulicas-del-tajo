@@ -53,6 +53,22 @@ import Icon from './icons/Icon.astro';
         </div>
         <FooterSocial />
       </div>
+
+      <div class="footer-group-companies">
+        <h4>Empresas del Grupo</h4>
+        <ul>
+          <li>
+            <a href="https://prodisagua.com/" target="_blank" rel="noopener noreferrer">
+              Prodisagua <span class="external-icon">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://2rtools.com/es/" target="_blank" rel="noopener noreferrer">
+              2R Tools <span class="external-icon">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
     
     <div class="footer-right">
@@ -172,6 +188,46 @@ import Icon from './icons/Icon.astro';
     font-size: 0.85rem;
     color: #d1dbe6;
     line-height: 1.4;
+  }
+
+  .footer-group-companies {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .footer-group-companies h4 {
+    margin-bottom: 0.75rem;
+    color: white;
+  }
+
+  .footer-group-companies ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-group-companies li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-group-companies a {
+    color: #e5eef7;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-group-companies a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .external-icon {
+    font-size: 0.85rem;
+    opacity: 0.8;
   }
 
 
